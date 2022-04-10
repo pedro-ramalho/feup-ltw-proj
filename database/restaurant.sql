@@ -18,6 +18,9 @@ DROP TABLE IF EXISTS Customer;
 
 /* OTHERS */
 
+DROP TABLE IF EXISTS BankAccount; /* for restaurant owners */
+DROP TABLE IF EXISTS CreditCard;  /* for customer orders */
+ 
 DROP TABLE IF EXISTS Restaurant;
 DROP TABLE IF EXISTS Review;
 DROP TABLE IF EXISTS Order;
