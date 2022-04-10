@@ -4,7 +4,7 @@
 
 - [Mockups](docs/mokcups.md)
 - [How to run](docs/mokcups.md)
-- [Project UML](docks/uml.md)
+- [UML](docks/uml.md)
 
 ## Credits
 
