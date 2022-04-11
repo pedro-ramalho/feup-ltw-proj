@@ -194,8 +194,12 @@ INSERT INTO FavoriteRestaurant(user, restaurant) VALUES(1, 3);
 /* inserting orders */
 
 INSERT INTO OrderDish(customer, curr_state) VALUES(1, "delivered");
+INSERT INTO OrderDish(customer, curr_state) VALUES(1, "delivered");
+INSERT INTO OrderDish(customer, curr_state) VALUES(1, "delivered");
 
 
 /* inserting orderdish */
 
-INSERT INTO DishQuantity(order_dish, dish, quantity) values(1, 3, 1);
+INSERT INTO DishQuantity(order_dish, dish, quantity) values(1, 1, 1);
+INSERT INTO DishQuantity(order_dish, dish, quantity) values(2, 2, 1);
+INSERT INTO DishQuantity(order_dish, dish, quantity) values(3, 3, 1);
