@@ -21,3 +21,11 @@
 
 On the left, before logging in the website. 
 On the right, after successful login.
+
+## Sign In and Sign Up
+
+<br>
+<p align="center" justify="center">
+  <img src="svg/sign-in.svg" width="30%">
+  <img src="svg/sign-up.svg" width="30%">
+</p>
