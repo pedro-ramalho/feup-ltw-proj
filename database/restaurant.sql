@@ -16,9 +16,6 @@ PRAGMA foreign_keys = on;
 
 DROP TABLE IF EXISTS User;
 
-DROP TABLE IF EXISTS CreditCard;
-DROP TABLE IF EXISTS BankAccount;
-
 DROP TABLE IF EXISTS Review;
 DROP TABLE IF EXISTS Response;
 
@@ -44,24 +41,6 @@ CREATE TABLE User
   pw VARCHAR UNIQUE CONSTRAINT PwLength CHECK(LENGTH(pw) >= 6 AND LENGTH(pw) <= 32),
   addr VARCHAR NOT NULL CONSTRAINT AddressLength CHECK(LENGTH(addr) >= 8 AND LENGTH(addr) <= 256),
   phone_number VARCHAR CONSTRAINT PhoneNumberLength CHECK(LENGTH(phone_number) = 9) 
-);
-
-CREATE TABLE CreditCard
-(
-  id INTEGER PRIMARY KEY,
-  owner_id INTEGER REFERENCES User(id),
-  cc_owner VARCHAR NOT NULL CONSTRAINT NameLength CHECK (LENGTH(cc_owner) > 6 AND LENGTH(cc_owner) <= 96),
-  cc_num VARCHAR NOT NULL UNIQUE CONSTRAINT LengthCCNum CHECK (LENGTH(cc_num) >= 16 AND LENGTH(cc_num) <= 20),
-  cvv VARCHAR(3) NOT NULL CONSTRAINT LengthCVV CHECK (LENGTH(cvv) = 3),
-  exp_date DATE NOT NULL
-);
-
-CREATE TABLE BankAccount
-(
-  id INTEGER PRIMARY KEY,
-  owner_id INTEGER REFERENCES User(id),
-  ba_owner VARCHAR NOT NULL CONSTRAINT NameLength CHECK (LENGTH(ba_owner) >= 6 AND LENGTH(ba_owner) <= 96),
-  iban VARCHAR NOT NULL UNIQUE CONSTRAINT IBANLength CHECK (LENGTH(iban) = 25)
 );
 
 CREATE TABLE Review
@@ -151,23 +130,12 @@ CREATE TABLE RestaurantCategory
 
 INSERT INTO User(username, pw, addr, phone_number) VALUES("super_real_customer", "super_secure_pw", "super_real_address", "987654321");
 
+
 /* inserting restaurant owners */
 
 INSERT INTO User(username, pw, addr, phone_number) VALUES("super_real_owner1", "not_so_secure_pw1", "not_so_real_address1", "999999999");
 INSERT INTO User(username, pw, addr, phone_number) VALUES("super_real_owner2", "not_so_secure_pw2", "not_so_real_address2", "999999998");
 INSERT INTO User(username, pw, addr, phone_number) VALUES("super_real_owner3", "not_so_secure_pw3", "not_so_real_address3", "999999997");
-
-
-/* inserting credit cards */
-
-INSERT INTO CreditCard(owner_id, cc_owner, cc_num, cvv, exp_date) VALUES(1, "John Doe", "9872341782345672", "123", "2022-08-07");
-
-
-/* inserting bank accounts */
-
-INSERT INTO BankAccount(owner_id, ba_owner, iban) VALUES(2, "Jane Pinkman", "8492837451234128543875899");
-INSERT INTO BankAccount(owner_id, ba_owner, iban) VALUES(3, "Ada Lovelace", "8492837451234128543875898");
-INSERT INTO BankAccount(owner_id, ba_owner, iban) VALUES(4, "Marie Curie", "8492837451234128543875897");
 
 
 /* inserting restaurants */
