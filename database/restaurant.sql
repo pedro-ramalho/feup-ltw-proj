@@ -30,6 +30,9 @@ DROP TABLE IF EXISTS FavoriteRestaurant;
 DROP TABLE IF EXISTS OrderDish;
 DROP TABLE IF EXISTS DishQuantity;
 
+DROP TABLE IF EXISTS DishCategory;
+DROP TABLE IF EXISTS RestaurantCategory;
+DROP TABLE IF EXISTS Category;
 
 
 /******** CREATING TABLES ********/
@@ -85,7 +88,6 @@ CREATE TABLE Restaurant
   score REAL NOT NULL CONSTRAINT ScoreLimit CHECK(score >= 1 AND score <= 5),
   res_name VARCHAR,
   addr VARCHAR,
-  category VARCHAR,
   coords VARCHAR
 );
 
@@ -93,8 +95,7 @@ CREATE TABLE Dish
 (
   id INTEGER PRIMARY KEY,
   price REAL NOT NULL CONSTRAINT PriceLimit CHECK(price >= 0),
-  dish_name VARCHAR NOT NULL CONSTRAINT DishNameLength CHECK(LENGTH(dish_name) >= 1 AND LENGTH(dish_name) <= 64),
-  category VARCHAR NOT NULL CONSTRAINT CategoryLength CHECK(LENGTH(category) >= 1 AND LENGTH(category) <= 64)
+  dish_name VARCHAR NOT NULL CONSTRAINT DishNameLength CHECK(LENGTH(dish_name) >= 1 AND LENGTH(dish_name) <= 64)
 );
 
 CREATE TABLE FavoriteDish
@@ -126,7 +127,23 @@ CREATE TABLE DishQuantity
   quantity INTEGER CONSTRAINT QuantityLimit CHECK(quantity >= 1 AND quantity < 1000)
 );
 
+CREATE TABLE Category
+(
+  id INTEGER PRIMARY KEY,
+  category_name VARCHAR NOT NULL CONSTRAINT category_name_length CHECK (LENGTH(category_name) >= 3 AND LENGTH(category_name) < 32)
+);
 
+CREATE TABLE DishCategory
+(
+  dish INTEGER REFERENCES Dish(id),
+  category INTEGER REFERENCES Category(id)
+);
+
+CREATE TABLE RestaurantCategory
+(
+  restaurant INTEGER REFERENCES Restaurant(id),
+  category INTEGER REFERENCES Category(id)
+);
 
 /******** POPULATE DATABASE ********/
 
@@ -155,16 +172,16 @@ INSERT INTO BankAccount(owner_id, ba_owner, iban) VALUES(4, "Marie Curie", "8492
 
 /* inserting restaurants */
 
-INSERT INTO Restaurant(owner_id, score, res_name, addr, category, coords) VALUES(2, 4.5, "Super Real Restaurant 1", "Random Street 1", "Mexican", "142.13214 -8.421421");
-INSERT INTO Restaurant(owner_id, score, res_name, addr, category, coords) VALUES(3, 4.1, "Super Real Restaurant 2", "Random Street 2", "Portuguese", "142.13124 -8.412451");
-INSERT INTO Restaurant(owner_id, score, res_name, addr, category, coords) VALUES(4, 4.8, "Super Real Restaurant 3", "Random Street 3", "Spanish", "145.3124 -8.61232");
+INSERT INTO Restaurant(owner_id, score, res_name, addr, coords) VALUES(2, 4.5, "Super Real Restaurant 1", "Random Street 1", "142.13214 -8.421421");
+INSERT INTO Restaurant(owner_id, score, res_name, addr, coords) VALUES(3, 4.1, "Super Real Restaurant 2", "Random Street 2", "142.13124 -8.412451");
+INSERT INTO Restaurant(owner_id, score, res_name, addr, coords) VALUES(4, 4.8, "Super Real Restaurant 3", "Random Street 3", "145.3124 -8.61232");
 
 
 /* inserting reviews */
 
-INSERT INTO Review(author, restaurant, score, txt) VALUES(1, 2, 4.5, "Very good food.");
-INSERT INTO Review(author, restaurant, score, txt) VALUES(1, 3, 4.1, "Not so good food.");
-INSERT INTO Review(author, restaurant, score, txt) VALUES(1, 4, 4.8, "Very delicious food.");
+INSERT INTO Review(author, restaurant, score, txt) VALUES(1, 1, 4.5, "Very good food.");
+INSERT INTO Review(author, restaurant, score, txt) VALUES(1, 2, 4.1, "Not so good food.");
+INSERT INTO Review(author, restaurant, score, txt) VALUES(1, 3, 4.8, "Very delicious food.");
 
 
 /* inserting responses */
@@ -176,9 +193,9 @@ INSERT INTO Response(review, author, txt) VALUES(3, 4, "Thank you so much for yo
 
 /* inserting dishes */
 
-INSERT INTO Dish(price, dish_name, category) VALUES(5.60, "Dish 1", "Mexican");
-INSERT INTO Dish(price, dish_name, category) VALUES(4.30, "Dish 2", "Portuguese");
-INSERT INTO Dish(price, dish_name, category) VALUES(7.50, "Dish 3", "Spanish");
+INSERT INTO Dish(price, dish_name) VALUES(5.60, "Dish 1");
+INSERT INTO Dish(price, dish_name) VALUES(4.30, "Dish 2");
+INSERT INTO Dish(price, dish_name) VALUES(7.50, "Dish 3");
 
 
 /* inserting favorite dishes */
@@ -203,3 +220,37 @@ INSERT INTO OrderDish(customer, curr_state) VALUES(1, "delivered");
 INSERT INTO DishQuantity(order_dish, dish, quantity) values(1, 1, 1);
 INSERT INTO DishQuantity(order_dish, dish, quantity) values(2, 2, 1);
 INSERT INTO DishQuantity(order_dish, dish, quantity) values(3, 3, 1);
+
+
+/* inserting categories */
+
+INSERT INTO Category(category_name) VALUES("Vegan");        /* id = 1 */
+INSERT INTO Category(category_name) VALUES("Fast-food");    /* id = 2 */
+INSERT INTO Category(category_name) VALUES("Vegetarian");   /* id = 3 */
+INSERT INTO Category(category_name) VALUES("Gluten-free");  /* id = 4 */
+INSERT INTO Category(category_name) VALUES("Lactose-free"); /* id = 5 */
+INSERT INTO Category(category_name) VALUES("Premium");      /* id = 6 */
+INSERT INTO Category(category_name) VALUES("Affordable");   /* id = 7 */
+INSERT INTO Category(category_name) VALUES("Sushi");        /* id = 8 */
+INSERT INTO Category(category_name) VALUES("Diet");         /* id = 9 */
+
+
+/* inserting dish categories */
+
+INSERT INTO DishCategory(dish, category) VALUES(1, 1);
+INSERT INTO DishCategory(dish, category) VALUES(1, 3);
+INSERT INTO DishCategory(dish, category) VALUES(1, 6);
+
+INSERT INTO DishCategory(dish, category) VALUES(2, 4);
+INSERT INTO DishCategory(dish, category) VALUES(2, 7);
+INSERT INTO DishCategory(dish, category) VALUES(2, 2);
+
+INSERT INTO DishCategory(dish, category) VALUES(3, 9);
+INSERT INTO DishCategory(dish, category) VALUES(3, 8);
+
+
+/* inserting restaurant categories */
+
+INSERT INTO RestaurantCategory(restaurant, category) VALUES(1, 2);
+INSERT INTO RestaurantCategory(restaurant, category) VALUES(2, 8);
+INSERT INTO RestaurantCategory(restaurant, category) VALUES(3, 6);
