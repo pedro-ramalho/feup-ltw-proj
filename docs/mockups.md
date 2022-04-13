@@ -2,7 +2,7 @@
 
 ## Main page
 
-### Layout
+### Basic structure
 
 <br>
 <p align="center" justify="center">
@@ -12,7 +12,7 @@
 
 <br>
 
-### Header
+#### Header
 <br>
 <p align="center" justify="center">
   <img src="svg/header-logged-off.svg" width="30%">
@@ -22,10 +22,28 @@
 On the left, before logging in the website. 
 On the right, after successful login.
 
-## Sign In and Sign Up
+#### Sign In and Sign Up
 
 <br>
 <p align="center" justify="center">
   <img src="svg/sign-in.svg" width="30%">
   <img src="svg/sign-up.svg" width="30%">
+</p>
+
+### Basic style
+
+<br>
+<p align="center" justify="center">
+  <img src="svg/index-layout-style.svg">
+</p>
+
+#### Sign In and Sign Up
+
+<br>
+<p align="center" justify="center">
+  <img src="svg/sign-in-style.png">
+</p>
+<br>
+<p align="center" justify="center">
+  <img src="svg/sign-up-style.png">
 </p>
