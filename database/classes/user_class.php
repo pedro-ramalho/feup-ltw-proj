@@ -31,5 +31,22 @@
         $user['phone_number']
       );
     }
+    
+    static function get_restaurants(PDO $db, int $id) : array {
+      return array();
+    }
+
+    static function get_orders(PDO $db, int $id) : array {
+      return array();
+    }
+
+    static function get_fav_dishes(PDO $db, int $id) : array {
+      return array();
+    }
+
+    static function get_fav_restaurants(PDO $db, int $id) : array {
+      return array();
+    }
+
   }
 ?>
