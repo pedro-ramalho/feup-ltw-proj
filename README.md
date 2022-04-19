@@ -2,8 +2,8 @@
 
 ## Table of contents
 
-- [Mockups](docs/mokcups.md)
-- [How to run](docs/mokcups.md)
+- [Mockups](docs/mockups.md)
+- [How to run](docs/how-to-run.md)
 - [UML](docs/uml.md)
 
 ## Credits
