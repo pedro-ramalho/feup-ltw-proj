@@ -19,8 +19,8 @@
       </form>
     </div>
     <div id="signup">
-      <a href="sign_in.php">Sign in</a>
-      <a href="sign_up.php">Sign up</a>
+      <a href="action_sign_in.php">Sign in</a>
+      <a href="action_sign_up.php">Sign up</a>
     </div>
   </header>
 <?php } ?>
