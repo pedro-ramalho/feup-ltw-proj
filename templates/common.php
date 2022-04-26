@@ -1,9 +1,9 @@
 <?php function draw_header() { ?>
   <header>
+    <input type="checkbox" id="hamburger">
+    <label class="hamburger" for="hamburger"></label>
     <aside id="sidebar">
       <nav id="menu">
-        <input type="checkbox" id="hamburger">
-        <label class="hamburger" for="hamburger"></label>
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">Hot Deals</a></li>
