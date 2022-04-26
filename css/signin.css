@@ -1,2 +1,154 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+body {
+  background-image: url("../assets/img/bg/dish.jpg");
+  background-size: cover;
+}
+
+/* sidebar */
+
+header > aside#sidebar > nav#menu > input#hamburger {
+  display: block;
+  appearance: none;
+  padding: 0.5rem;
+}
+
+header > aside#sidebar > nav#menu > input#hamburger:checked {
+  padding-bottom: 0.85rem;
+}
+
+header > aside#sidebar > nav#menu > input#hamburger::after {
+  font-size: 1.5rem;
+  color: white;
+  content: '\2630';
+}
+
+header > aside#sidebar > nav#menu > input#hamburger:checked::after {
+  font-size: 1.2rem;
+  color: white;
+  content: '\2715';
+}
+
+header > aside#sidebar > nav#menu > ul {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  max-height: 0px;
+  height: 0px;
+  transition: height 0.4s ease-out, max-height 0.4s ease-out;
+}
+
+header > aside#sidebar > nav#menu > ul > li {
+  border-width: 0px 0px 0px 3px;
+  text-align: left;
+  max-height: 0px;
+  height: 0px;
+  opacity: 0;
+  transition: background-color 0.2s ease-in, color 0.2s ease-out, opacity 0.3s ease-out, height 0.4s ease-out, max-height 0.4s ease-out;
+}
+
+header > aside#sidebar > nav#menu > input#hamburger:checked ~ ul {
+  max-height: 12em;
+  height: 12em;
+}
+
+header > aside#sidebar > nav#menu > input#hamburger:checked ~ ul > li {
+  max-height: 1em;
+  height: 1em;
+  opacity: 1;
+}
+
+/* fim da sidebar */
+
+/* resto do header */
+
+header > #search-bar-container {
+  display:none;
+}
+
+header > #search-bar-container > form#search-bar {
+  display:none;
+}
+
+header > #signup > a {
+  display:none;
+}
+
+/* fim do header */
+
+section#signin {
+  position: absolute;
+  top: 30%;
+  left: 65%;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+}
+
+section#signin > h2.slogan {
+  color: white;
+  width: 11em;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.8em;
+}
+
+section#signin > fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  place-items: center;
+}
+
+section#signin > fieldset > input {
+  height: 3em;
+  width: 20em;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1em;
+  padding: 0em 0em 0em 0.5em;
+  border-radius: 0px;
+  border: none;
+}
+
+section#signin > fieldset > button {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 2em;
+  width: 10em;
+  background-color: #4abc11;
+  color: white;
+  border: none;
+  border-radius: 0px;
+}
+
+section#signin > h5 {
+  width: 11em;
+  text-align: center;
+  margin-top: 0em;
+}
+
+section#signin > h5 > a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Raleway';
+  font-size: 1em;
+  font-weight: 300;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+
+}
+
+footer > h4 {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  padding: 0em;
+  margin: 0em;
+  font-weight: 400;
+}

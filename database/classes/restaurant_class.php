@@ -19,6 +19,7 @@
       $this->coords = $coords;  
     }
 
+    /* returns a restaurant with a given id */
     static function get_restaurant(PDO $db, int $id) : Restaurant {
       $stmt = $db->prepare('SELECT id, owner_id, score, res_name, addr, coords FROM Restaurant WHERE id = ?');
       $stmt->execute(array($id));
@@ -33,6 +34,29 @@
         $restaurant['addr'],
         $restaurant['coords']
       );
+    }
+
+    /* returns an array containing the restaurants of a user with a given id */
+    static function get_user_restaurants(PDO $db, int $user_id) : array {
+      $stmt = $db->prepare(
+        'SELECT id, owner_id, score, res_name, addr, coords FROM Restaurant WHERE owner_id = ?'
+      );
+      $stmt->execute(array($user_id));
+
+      $restaurants = array();
+
+      while ($restaurant = $stmt->fetch()) {
+        $restaurants[] = new Restaurant(
+          $restaurant['id'],
+          $restaurant['owner_id'],
+          $restaurant['score'],
+          $restaurant['res_name'],
+          $restaurant['addr'],
+          $restaurant['coords']
+        );
+      }
+      
+      return $restaurants;
     }
   }
 ?>

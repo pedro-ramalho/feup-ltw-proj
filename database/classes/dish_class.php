@@ -12,7 +12,8 @@
       $this->score = $score;
       $this->name = $name;
     }
-
+    
+    /* returns a dish with a given id */
     static function get_dish(PDO $db, int $id) : Dish {
       $stmt = $db->prepare('SELECT id, score, dish_name FROM Dish WHERE id = ?');
       $stmt->execute(array($id));

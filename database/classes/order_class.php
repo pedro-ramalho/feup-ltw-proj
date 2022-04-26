@@ -12,7 +12,8 @@
       $this->customer_id = $customer_id;
       $this->state = $state;
     }
-
+    
+    /* returns an order with a given id */
     static function get_order(PDO $db, int $id) : Order {
       $stmt = $db->prepare('SELECT id, customer, curr_state FROM Order WHERE id = ?');
       $stmt->execute(array($id));

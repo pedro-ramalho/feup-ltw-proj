@@ -17,6 +17,7 @@
       $this->phone_number = $phone_number;
     }
 
+    /* returns a user with a given id */
     static function get_user(PDO $db, int $id) : User {
       $stmt = $db->prepare('SELECT id, username, pw, addr, phone_number FROM User WHERE id = ?');
       $stmt->execute(array($id));
@@ -31,22 +32,4 @@
         $user['phone_number']
       );
     }
-    
-    static function get_restaurants(PDO $db, int $id) : array {
-      return array();
-    }
-
-    static function get_orders(PDO $db, int $id) : array {
-      return array();
-    }
-
-    static function get_fav_dishes(PDO $db, int $id) : array {
-      return array();
-    }
-
-    static function get_fav_restaurants(PDO $db, int $id) : array {
-      return array();
-    }
-
   }
-?>
