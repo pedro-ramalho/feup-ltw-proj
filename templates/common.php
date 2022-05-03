@@ -5,16 +5,16 @@
     <aside id="sidebar">
       <nav id="menu">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Hot Deals</a></li>
-          <li><a href="#">Sign In</a></li>
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Cookies Policy</a></li>
+          <li><a href="index.php"><span>Home</span></a></li>
+          <li><a href="#"><span>Hot Deals</span></a></li>
+          <li><a href="action_sign_in.php"><span>Sign In</span></a></li>
+          <li><a href="action_sign_up.php"><span>Sign Up</span></a></li>
+          <li><a href="#"><span>Cookies Policy</span></a></li>
         </ul>
       </nav>
     </aside>
     <div id="search-bar-container">
-      <form id="search_bar">
+      <form id="search-bar">
         <input type="search" id="query" placeholder="Search...">
       </form>
     </div>
