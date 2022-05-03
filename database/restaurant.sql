@@ -73,6 +73,7 @@ CREATE TABLE Restaurant
 CREATE TABLE Dish
 (
   id INTEGER PRIMARY KEY,
+  restaurant INTEGER REFERENCES Restaurant(id),
   price REAL NOT NULL CONSTRAINT PriceLimit CHECK(price >= 0),
   dish_name VARCHAR NOT NULL CONSTRAINT DishNameLength CHECK(LENGTH(dish_name) >= 1 AND LENGTH(dish_name) <= 64)
 );
@@ -94,7 +95,7 @@ CREATE TABLE FavoriteRestaurant
 CREATE TABLE OrderDish
 (
   id INTEGER PRIMARY KEY,
-  customer INTEGER REFERENCES User(id),
+  customer INTEGER REFERENCES User(id), 
   curr_state VARCHAR NOT NULL
 );
 
@@ -161,9 +162,9 @@ INSERT INTO Response(review, author, txt) VALUES(3, 4, "Thank you so much for yo
 
 /* inserting dishes */
 
-INSERT INTO Dish(price, dish_name) VALUES(5.60, "Dish 1");
-INSERT INTO Dish(price, dish_name) VALUES(4.30, "Dish 2");
-INSERT INTO Dish(price, dish_name) VALUES(7.50, "Dish 3");
+INSERT INTO Dish(restaurant, price, dish_name) VALUES(1, 5.60, "Dish 1");
+INSERT INTO Dish(restaurant, price, dish_name) VALUES(2, 4.30, "Dish 2");
+INSERT INTO Dish(restaurant, price, dish_name) VALUES(3, 7.50, "Dish 3");
 
 
 /* inserting favorite dishes */

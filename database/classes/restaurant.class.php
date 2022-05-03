@@ -58,5 +58,29 @@
       
       return $restaurants;
     }
+
+    /* returns an array containing the favorite restaurants of a user with a given id */
+    static function get_fav_restaurants(PDO $db, int $user_id) : array {
+      $stmt = $db->prepare('SELECT id, owner_id, score, res_name, addr, coords 
+                            FROM Restaurant, FavoriteRestaurant
+                            WHERE FavoriteRestaurant.user = ? 
+                            AND Restaurant.id = FavoriteRestaurant.restaurant');
+      $stmt->execute(array($user_id));
+
+      $fav_restaurants = array();
+
+      while ($fav_restaurant = $stmt->fetch()) {
+        $fav_restaurants[] = new Restaurant(
+          $fav_restaurant['id'],
+          $fav_restaurant['owner_id'],
+          $fav_restaurant['score'],
+          $fav_restaurant['res_name'],
+          $fav_restaurant['addr'],
+          $fav_restaurant['coords']
+        );
+      }
+
+      return array();
+    }
   }
 ?>
