@@ -1,5 +1,7 @@
 <?php
   require_once('templates/common.php');
+
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -16,11 +18,11 @@
 
   <section id="signin">
     <h2 class="slogan">Your next meal is only a click away</h2>
-    <fieldset>
-      <input type="text" name="username" id="username" method="get" placeholder="username">
-      <input type="password" name="password" id="password" method="get" placeholder="password">
+    <form action="database/action_sign_in.php" method="post">
+      <input type="text" name="username" id="username" placeholder="username">
+      <input type="password" name="password" id="password" placeholder="password">
       <button type="submit">Sign in</button>
-    </fieldset>
+    </form>
     <h5><a href="sign_up.php">Don't have an account? Sign up instead</a></h5>
   </section>
 

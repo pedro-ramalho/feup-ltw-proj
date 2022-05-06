@@ -8,7 +8,6 @@
     public string $state;
     public array $dishes;
 
-
     public function __construct(int $id, int $customer, int $restaurant, string $state, array $dishes)
     {
       $this->id = $id;

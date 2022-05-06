@@ -32,5 +32,25 @@
         $user['phone_number']
       );
     }
+
+    /* returns a user given a username and a password */
+    static function get_user_from_credentials(PDO $db, string $username, string $password) {
+      $stmt = $db->prepare(
+        'SELECT id, username, pw AS password, addr AS address, phone_number
+         FROM User WHERE username = ? AND password = ?');
+      $stmt->execute(array($username, $password));
+
+      if ($user = $stmt->fetch()) {
+        return new User(
+          intval($user['id']),
+          $user['username'],
+          $user['password'],
+          $user['address'],
+          $user['phone_number']
+        );
+      }
+
+      return null;
+    }
   }
 ?>
