@@ -1,13 +1,6 @@
 <?php
   declare(strict_types = 1);
 
-  /*
-    $id - id of the dish
-    $restaurant - id of the restaurant the dish belongs to
-    $price - price of the dish
-    $name - name of the dish
-    $categories - categories of the dish
-  */
   class Dish {
     public int $id;
     public int $restaurant;
@@ -52,6 +45,10 @@
         $categories[] = $category_names[$category['category']];
       
       return new Dish($dish['id'], $dish['restaurant'], $dish['price'], $dish['name'], $categories);
+    }
+
+    static function get_fav_dishes(PDO $db, int $user_id) {
+      
     }
   }   
 ?>
