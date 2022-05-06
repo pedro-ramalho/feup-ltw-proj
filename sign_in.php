@@ -15,7 +15,7 @@
 </head>
 <body>
   <?php draw_header() ?>
-
+  
   <section id="signin">
     <h2 class="slogan">Your next meal is only a click away</h2>
     <form action="database/action_sign_in.php" method="post">
