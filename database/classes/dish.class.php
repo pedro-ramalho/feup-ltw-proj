@@ -47,6 +47,15 @@
       return new Dish($dish['id'], $dish['restaurant'], $dish['price'], $dish['name'], $categories);
     }
 
+    static function get_dish_restaurant(PDO $db, int $dish_id) {
+      $stmt = $db->prepare('SELECT id, restaurant, price, dish_name AS name FROM dish WHERE id = ?');
+      $stmt->execute(array($dish_id));
+
+      $restaurant = $stmt->fetch();
+
+      return intval($restaurant['restaurant']);
+    }
+
     static function get_fav_dishes(PDO $db, int $user_id) {
       
     }

@@ -25,7 +25,7 @@
       $review = $stmt->fetch();
 
       return new Review(
-        $review['id'],
+        intval($review['id']),
         $review['author'],
         $review['restaurant'],
         $review['score'],
@@ -44,7 +44,7 @@
       
       while ($review = $stmt->fetch()) {
         $reviews[] = new Review(
-          $review['id'],
+          intval($review['id']),
           $review['author'],
           $review['restaurant'],
           $review['score'],
