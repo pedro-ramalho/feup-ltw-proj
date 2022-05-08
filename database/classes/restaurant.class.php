@@ -36,6 +36,26 @@
       );
     }
 
+    /* returns an array containing all restaurants in the given database */
+    static function get_all_restaurants(PDO $db) : array {
+      $stmt = $db->prepare('SELECT id, owner_id, score, res_name, addr, coords FROM Restaurant');
+      $stmt->execute();
+
+      $restaurants = array();
+      
+      while ($restaurant = $stmt->fetch())
+        $restaurants[] = new Restaurant(
+          $restaurant['id'],
+          $restaurant['owner_id'],
+          $restaurant['score'],
+          $restaurant['res_name'],
+          $restaurant['addr'],
+          $restaurant['coords']
+        );
+      
+      return $restaurants;
+    }
+
     /* returns an array containing the restaurants of a user with a given id */
     static function get_user_restaurants(PDO $db, int $user_id) : array {
       $stmt = $db->prepare(
