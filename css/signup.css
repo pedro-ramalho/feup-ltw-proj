@@ -29,7 +29,7 @@ body > header {
 
 /* fim do header */
 
-section#signin {
+section#signup {
   position: absolute;
   top: 30%;
   left: 65%;
@@ -38,7 +38,7 @@ section#signin {
   flex-direction: column;
 }
 
-section#signin > h2.slogan {
+section#signup > h2.slogan {
   color: white;
   width: 11em;
   text-align: center;
@@ -46,7 +46,7 @@ section#signin > h2.slogan {
   font-size: 1.8em;
 }
 
-section#signin > form {
+section#signup > form {
   border: none;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@ section#signin > form {
   place-items: center;
 }
 
-section#signin > form > input {
+section#signup > form > input {
   height: 3em;
   width: 20em;
   font-family: 'Raleway', sans-serif;
@@ -64,7 +64,7 @@ section#signin > form > input {
   border: none;
 }
 
-section#signin > form > button {
+section#signup > form > button {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 1.5em;
@@ -78,11 +78,11 @@ section#signin > form > button {
   border-radius: 0px;
 }
 
-section#signin > form > button:hover {
+section#signup > form > button:hover {
   background-color: #3ea10c;
 }
 
-section#signin > h5 {
+section#signup > h5 {
   width: 11em;
   text-align: center;
   margin-top: 1em;
@@ -96,11 +96,11 @@ section#signin > h5 > a {
   font-weight: 300;
 }
 
-section#signin > h5 > a:hover {
+section#signup > h5 > a:hover {
   text-decoration: underline;
 }
 
-section#signin > h5 > a:visited {
+section#signup > h5 > a:visited {
   color: white;
 }
 

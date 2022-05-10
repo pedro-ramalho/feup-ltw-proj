@@ -10,6 +10,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/signup.css">
   <link rel="stylesheet" href="css/signin.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/sidebar.css">
@@ -20,15 +21,14 @@
   
   <section id="signup">
     <h2 class="slogan">Your next meal is only a click away</h2>
-    <form action=""></form>
-    <fieldset>
+    <form action="database/action_sign_up.php" method="post">
       <input type="text" name="username" id="username" placeholder="username">
       <input type="password" name="password" id="password" placeholder="password">
       <input type="password" name="password" id="confirm-password" placeholder="confirm password">
       <input type="tel" name="phone-number" id="phone-number" placeholder="phone-number">
       <input type="text" name="address" id="address" placeholder="address">
       <button type="submit" formaction="database/register.php" formmethod="post">Sign up</button>
-    </fieldset>
+    </form>
     <h5><a href="sign_in.php">Already have an account? Sign in instead</a></h5>
   </section>
 
