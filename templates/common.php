@@ -43,7 +43,7 @@
 <?php 
   function draw_sb_acc() { 
     if (!isset($_SESSION['id'])) { ?>
-      <ul>
+    <ul>
       <li><a href=""><span>Sign in</span></a></li>
       <li><a href=""><span>Sign up</span></a></li>
     </ul>
