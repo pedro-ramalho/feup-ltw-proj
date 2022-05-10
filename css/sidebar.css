@@ -12,13 +12,13 @@ body {
 header > input#hamburger {
   grid-area: hamburger;
   display: absolute;
-  /*top: 0px;
-  left: 0px;*/
   appearance: none;
   transform: translateY(-10px);
   z-index: 999;
   max-width: 2em;
   border-radius: 50%;
+  height: 2em;
+  max-height: 2em;
   display: flex;
   place-content: center;
   justify-content: center;
@@ -112,7 +112,7 @@ header > input#hamburger:checked ~ aside#sidebar {
     border-top: 0px solid rgb(110, 110, 112);
   }
 
-
+  
 /* H1 */
 
   header > aside#sidebar > nav#menu > section.sidebar-section > h1 {
@@ -231,25 +231,27 @@ header > #search-bar-container > form#search-bar > input#query {
   
 }
 
-header > #signup, header > #header-account {
+header > #header-signup, header > #header-account {
   grid-area: account;
   display: flex;
-  place-content: center;
-  justify-content: space-around;
+  place-content: end;
   align-items: stretch;
+  column-gap: 2em;
+  padding-right: 1em;
 }
 
-header > #signup > a, header > #header-account > a {
+header > #header-signup > a, header > #header-account > a {
   font-family: 'Raleway', sans-serif;
   font-size: 1.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   text-decoration: none;
   color: white;
   font-weight: 500;
-  margin: 0px 1em;
   display: flex;
   place-items: center;
   border: 0.5px solid white;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 /* fim do header */

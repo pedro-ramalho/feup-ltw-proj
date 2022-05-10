@@ -36,7 +36,7 @@
 
 <?php function draw_footer() { ?>
   <footer>
-    <h4>&copy;2022 Glove, Inc.</h4>
+    <h4>&copy;2022 Agile Eating, Inc.</h4>
   </footer>
 <?php } ?>
 
@@ -62,14 +62,14 @@
 <?php 
   function draw_header_acc() { 
     if (!isset($_SESSION['id'])) { ?>
-      <div id="signup">
+      <div id="header-signup">
         <a href="sign_in.php">Sign in</a>
         <a href="sign_up.php">Sign up</a>
       </div>
     <?php } 
     else { ?>
       <div id="header-account">
-        <a href="sign_out.php">Sign out</a>
+        <a href="index.php">Sign out</a>
         <a href="profile.php">Profile</a>
       </div>
     <?php 
