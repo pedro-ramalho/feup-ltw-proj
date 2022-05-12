@@ -3,6 +3,7 @@
 body {
   background-image: url("../assets/img/bg/dish.jpg");
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* resto do header */
@@ -88,7 +89,7 @@ section#signup > h5 {
   margin-top: 1em;
 }
 
-section#signin > h5 > a {
+section#signup > h5 > a {
   color: white;
   text-decoration: none;
   font-family: 'Raleway';
@@ -107,7 +108,6 @@ section#signup > h5 > a:visited {
 footer {
   position: absolute;
   bottom: 0px;
-
 }
 
 footer > h4 {

@@ -3,6 +3,7 @@
 body {
   background-image: url("../assets/img/bg/dish.jpg");
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* header tweaks */

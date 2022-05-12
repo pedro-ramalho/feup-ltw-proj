@@ -50,9 +50,9 @@
     <?php } 
     else { ?>
       <ul>
-        <li><a href="#"><span>Profile</span></a>/<li>
-        <li><a href="#"><span>Favorites</span></a>/<li>
-        <li><a href="#"><span>Sign out</span></a>/<li>
+        <li><a href="#"><span>Profile</span></a></li>
+        <li><a href="#"><span>Favorites</span></a></li>
+        <li><a href="#"><span>Sign out</span></a></li>
       </ul>
     <?php 
     } 
@@ -71,8 +71,8 @@
       <div id="header-account">
         <form action="database/action_sign_out.php" method="post" class="logout">
           <button type="submit">Sign out</button>
-          <a href="profile.php">Profile</a>
         </form>
+        <a href="profile.php">Profile</a>
       </div>
     <?php 
     } 
