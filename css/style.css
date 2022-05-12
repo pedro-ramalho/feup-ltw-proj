@@ -1,1 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* header */
+
+header {
+  position: fixed;
+  display: grid;
+  grid-template-areas: "hamburger searchbar account";
+  grid-template-columns: 15vw 1fr 15vw;
+  width: 100vw;
+  top: 8px;
+}
+  /* search bar */
+header > #search-bar-container {
+  grid-area: searchbar;
+  display: flex;
+  place-content: center;
+}
+
+header > #search-bar-container > form#search-bar > input#query {
+  height: 3em;
+  width: 35em;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8em;
+  padding: 0em 0em 0em 0.5em;
+  border-radius: 0px;
+  border: none;
+}
+
+  /* fim da search bar */
+  /* account div */
+
+header > #header-signup, header > #header-account {
+  grid-area: account;
+  display: flex;
+  place-content: end;
+  align-items: stretch;
+  column-gap: 2em;
+  padding-right: 1em;
+}
+
+header > #header-signup > a, header > #header-account > a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  place-items: center;
+  border: 0.5px solid white;
+  border-radius: 4px;
+}
+
+/* fim do account div */
+
+/* fim do header */
+
+/* footer */
+
+footer {
+  position: absolute;
+  bottom: 0px;
+}
+
+footer > h4 {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  padding: 0em;
+  margin: 0em;
+  font-weight: 400;
+}
+  /* fim do footer */

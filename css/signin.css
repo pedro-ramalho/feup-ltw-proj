@@ -5,7 +5,7 @@ body {
   background-size: cover;
 }
 
-/* resto do header */
+/* header tweaks */
 
 header > #search-bar-container {
   display:none;
@@ -20,11 +20,8 @@ header > aside#sidebar ~ #header-signup, header > aside#sidebar ~ #header-accoun
 }
 
 body > header {
-
   position: fixed;
   display: block;
-  width: 100vw;
-  top: 8px;
 }
 
 /* fim do header */
@@ -102,18 +99,4 @@ section#signin > h5 > a:hover {
 
 section#signin > h5 > a:visited {
   color: white;
-}
-
-footer {
-  position: absolute;
-  bottom: 0px;
-
-}
-
-footer > h4 {
-  color: white;
-  font-family: 'Raleway', sans-serif;
-  padding: 0em;
-  margin: 0em;
-  font-weight: 400;
 }

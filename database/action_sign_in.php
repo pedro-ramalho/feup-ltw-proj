@@ -15,5 +15,5 @@
     $_SESSION['name'] = $user->username;
   }
 
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
+  header('Location: ../index.php');
 ?>
