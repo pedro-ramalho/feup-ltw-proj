@@ -1,18 +1,12 @@
-/*****************
-  Database Script
-******************/
-
-/******** SQLITE OUTPUT CONFIGURATION ********/
+/* SQLite output */
 
 PRAGMA foreign_keys = on;
-
 .mode column
 .headers ON
 .nullvalue NULL
 
 
-
-/******** CLEAR TABLES ********/
+/* clear tables */
 
 DROP TABLE IF EXISTS User;
 
@@ -31,8 +25,11 @@ DROP TABLE IF EXISTS DishCategory;
 DROP TABLE IF EXISTS RestaurantCategory;
 DROP TABLE IF EXISTS Category;
 
+DROP TABLE IF EXISTS RestaurantImage;
+DROP TABLE IF EXISTS DishImage;
 
-/******** CREATING TABLES ********/
+
+/* create tables */
 
 CREATE TABLE User
 (
@@ -125,7 +122,18 @@ CREATE TABLE RestaurantCategory
   category INTEGER REFERENCES Category(id)
 );
 
-/******** POPULATE DATABASE ********/
+CREATE TABLE RestaurantImage
+(
+  id INTEGER PRIMARY KEY,
+  restaurant_id INTEGER REFERENCES Restaurant(id)
+);
+
+CREATE TABLE DishImage
+(
+  id INTEGER PRIMARY KEY,
+  dish_id INTEGER REFERENCES Dish(id)
+);
+
 
 /* inserting a customer */
 
