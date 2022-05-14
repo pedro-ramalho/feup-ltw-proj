@@ -55,7 +55,7 @@ body .suggestions {
 }
 
 .suggestions > .images figure img {
-  border-radius: 10%;
+  border-radius: 5%;
 }
 
 .suggestions > .images figure figcaption {
