@@ -38,9 +38,24 @@
           draw_restaurant_preview($restaurant); 
       ?>
     </section>
-    <section id="restaurant-filter">
-      
-    </section>
+    <aside id="restaurant-filter">
+      <h1>Choose a filter</h1>
+      <form action="#" method="post">
+        <section id="restaurant-score">
+          <h1>Score</h1>
+          <input type="checkbox" name="score" value="score">Score
+        </section>
+        <section id="restaurant-category">
+          <h1>Categories</h1>
+          <input type="checkbox" name="category" value="category">Fast-food
+          <input type="checkbox" name="category" value="category">Premium
+          <input type="checkbox" name="category" value="category">Affordable
+          <input type="checkbox" name="category" value="category">Sushi
+          <input type="checkbox" name="category" value="category">Vegan
+        </section>
+        <button type="submit">Apply</button>
+      </form>
+    </aside>
   </main>
   <?php draw_footer() ?>
 </body>
