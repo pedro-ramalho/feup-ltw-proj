@@ -27,9 +27,9 @@
       $restaurant = $stmt->fetch();
 
       return new Restaurant(
-        $restaurant['id'],
-        $restaurant['owner_id'],
-        $restaurant['score'],
+        intval($restaurant['id']),
+        intval($restaurant['owner_id']),
+        floatval($restaurant['score']),
         $restaurant['res_name'],
         $restaurant['addr'],
         $restaurant['coords']
@@ -45,9 +45,9 @@
       
       while ($restaurant = $stmt->fetch())
         $restaurants[] = new Restaurant(
-          $restaurant['id'],
-          $restaurant['owner_id'],
-          $restaurant['score'],
+          intval($restaurant['id']),
+          intval($restaurant['owner_id']),
+          floatval($restaurant['score']),
           $restaurant['res_name'],
           $restaurant['addr'],
           $restaurant['coords']
@@ -67,9 +67,9 @@
 
       while ($restaurant = $stmt->fetch()) {
         $restaurants[] = new Restaurant(
-          $restaurant['id'],
-          $restaurant['owner_id'],
-          $restaurant['score'],
+          intval($restaurant['id']),
+          intval($restaurant['owner_id']),
+          floatval($restaurant['score']),
           $restaurant['res_name'],
           $restaurant['addr'],
           $restaurant['coords']
@@ -91,9 +91,9 @@
 
       while ($fav_restaurant = $stmt->fetch()) {
         $fav_restaurants[] = new Restaurant(
-          $fav_restaurant['id'],
-          $fav_restaurant['owner_id'],
-          $fav_restaurant['score'],
+          intval($fav_restaurant['id']),
+          intval($fav_restaurant['owner_id']),
+          floatval($fav_restaurant['score']),
           $fav_restaurant['res_name'],
           $fav_restaurant['addr'],
           $fav_restaurant['coords']

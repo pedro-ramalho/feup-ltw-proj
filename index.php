@@ -21,25 +21,25 @@
     <section class="suggestions">
       <h1 class="suggestion-title">Restaurants</h1>
       <div class="images">
-        <a href="#">
+        <a href="list_restaurants.php">
           <figure>
             <img src="assets/img/category/2.jpg" alt="dummy-text" width="300" height="200">
             <figcaption>Fast-food</figcaption>
           </figure>
         </a>
-        <a href="#">
+        <a href="list_restaurants.php">
           <figure>
             <img src="assets/img/category/6.jpg" alt="dummy-text" width="300" height="200">
             <figcaption>Premium</figcaption>
           </figure>
         </a>
-        <a href="#">
+        <a href="list_restaurants.php">
           <figure>
             <img src="assets/img/category/7.jpg" alt="dummy-text" width="300" height="200">
             <figcaption>Affordable</figcaption>
           </figure>
         </a>
-        <a href="#">
+        <a href="list_restaurants.php">
           <figure>
             <img src="assets/img/category/9.jpg" alt="dummy-text" width="300" height="200">
             <figcaption>Diet</figcaption>
