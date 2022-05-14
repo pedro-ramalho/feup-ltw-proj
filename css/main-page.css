@@ -54,6 +54,11 @@ body .suggestions {
   text-decoration: none;
 }
 
+.suggestions > .images a:hover {
+  transition: transform .3s;
+  transform: scale(1.1);
+}
+
 .suggestions > .images figure img {
   border-radius: 5%;
 }

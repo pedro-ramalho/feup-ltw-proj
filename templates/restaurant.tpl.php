@@ -18,9 +18,13 @@
   <div class="restaurant-preview">
     <a href="restaurant.php?id=<?=$restaurant->id?>">
       <h1 class="restaurant-preview-title"><?=$restaurant->res_name?></h1>
-      <img src="../assets/temp.jpg" alt="restaurant's preview image" width="1000" height="120">
-      <h3><?=$restaurant->score?></h3>
-      <button class=" "></button>
+      <img src="../assets/temp.jpg" alt="restaurant's preview image">
+      <div class="score-container">
+        <h3><?=$restaurant->score?></h3>
+      </div>
     </a>
+    <button class="favorite-restaurant">
+      <img src="../assets/star.svg">
+    </button>
   </div>
 <?php } ?>
