@@ -24,16 +24,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/list-restaurants-page.css">
+  <title>Restaurants</title>
 </head>
 <body>
   <?php draw_header() ?>
-  <section id="restaurant-previews">
-    <?php 
-      foreach($restaurants as $restaurant) 
-        draw_restaurant_preview($restaurant); 
-    ?>
-  </section>
+  <main>
+    <section id="restaurant-previews">
+      <?php 
+        foreach($restaurants as $restaurant) 
+          draw_restaurant_preview($restaurant); 
+      ?>
+    </section>
+    <section id="restaurant-filter">
+      
+    </section>
+  </main>
   <?php draw_footer() ?>
 </body>
 </html>
