@@ -80,8 +80,10 @@ header > #header-account > form > button {
 /* footer */
 
 footer {
+  margin-top: 1em;
+  display:block;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
 }
 
 footer > h4 {

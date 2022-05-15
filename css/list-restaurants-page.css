@@ -3,6 +3,8 @@
 /* body styling */
 body {
   background-color: black;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 body::before {
@@ -11,7 +13,7 @@ body::before {
   background-image: url("../assets/img/bg/dish.jpg");
   background-size: cover;
   background-attachment: fixed;
-  position: absolute;
+  position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;

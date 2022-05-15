@@ -2,6 +2,7 @@
 
 body {
   background-color: black;
+  margin: 0;
 }
 
 body::before {
@@ -10,7 +11,7 @@ body::before {
   background-image: url("../assets/img/bg/dish.jpg");
   background-size: cover;
   background-attachment: fixed;
-  position: absolute;
+  position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
@@ -33,6 +34,8 @@ body .suggestions {
   grid-template-areas: "header"
                        "images";
   text-align: center;
+  width: 100vw;
+  max-width: 100vw;
 }
 
 .suggestions > h1 {
@@ -47,16 +50,20 @@ body .suggestions {
   grid-area: images;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .suggestions > .images a {
+  transition: transform .3s;
   text-decoration: none;
 }
 
 .suggestions > .images a:hover {
-  transition: transform .3s;
   transform: scale(1.1);
+}
+
+.suggestions > .images figure {
+  margin: 0;
 }
 
 .suggestions > .images figure img {
@@ -68,4 +75,10 @@ body .suggestions {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 1.2em;
+}
+
+/* footer fix */
+
+body > footer {
+  position: static;
 }
