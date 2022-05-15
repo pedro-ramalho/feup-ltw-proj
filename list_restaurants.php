@@ -59,11 +59,26 @@
         </section>
         <section id="restaurant-category">
           <h1>Categories</h1>
-          <input id="fast-food" type="checkbox" name="fast-food" value="Fast-food"> <label for="fast-food">Fast-food</label>
-          <input id="premium" type="checkbox" name="premium" value="Premium"><label for="premium">Premium</label>
-          <input id="affordable" type="checkbox" name="affordable" value="Affordable"><label for="affordable">Affordable</label>
-          <input id="sushi" type="checkbox" name="sushi" value="Sushi"><label for="sushi">Sushi</label>
-          <input id="vegan" type="checkbox" name="vegan" value="Vegan"><label for="vegan">Vegan</label>
+          <div id="category-input">
+            <label for="fast-food">
+              <input id="fast-food" class="category-checkbox" type="checkbox" name="fast-food" value="Fast-food">Fast-food
+            </label>
+            <label for="premium">
+              <input id="premium" class="category-checkbox" type="checkbox" name="premium" value="Premium">Premium
+            </label>
+            <label for="affordable">
+              <input id="affordable" class="category-checkbox" type="checkbox" name="affordable" value="Affordable">Affordable
+            </label>
+            <label for="sushi">
+              <input id="sushi" class="category-checkbox" type="checkbox" name="sushi" value="Sushi">Sushi
+            </label>
+            <label for="vegan">
+              <input id="vegan" class="category-checkbox" type="checkbox" name="vegan" value="Vegan">Vegan
+            </label>
+            <label for="vegetarian">
+              <input id="vegetarian" class="category-checkbox" type="checkbox" name="vegetarian" value="Vegetarian">Vegetarian
+            </label>
+          </div>
         </section>
         <button type="submit">Apply</button>
       </form>

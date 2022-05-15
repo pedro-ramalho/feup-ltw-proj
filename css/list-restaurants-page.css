@@ -34,7 +34,7 @@ body > main {
 }
 
 
-/* Filter Aside */
+/* filter aside */
 #restaurant-filter {
   grid-area: filter;
   margin: 1em;
@@ -54,8 +54,8 @@ body > main {
   padding: 0;
 }
 
-/* Restaurant Previews Container */
 
+/* restaurant previews container */
 #restaurant-previews {
   grid-area: previews;
   color: white;
@@ -63,8 +63,7 @@ body > main {
   padding: 0;
 }
 
-/* Restaurant Preview Items */
-
+/* restaurant previews items */
 body #restaurant-previews > .restaurant-preview:first-child {
   margin-top: 0;
 }
@@ -165,9 +164,38 @@ body #restaurant-previews > .restaurant-preview:last-child {
   border-radius: 50% 50%;
 }
 
-/* Anchors */
 
+/* anchors */
 #restaurant-filter a, #restaurant-previews a {
   text-decoration: none;
   color: white;
+}
+
+/***********/
+
+#restaurant-filter > form {
+  display: grid;
+  grid-template-areas: "score"
+                       "categories";
+}
+
+#restaurant-filter > form > #restaurant-score {
+  grid-area: score;
+}
+
+#restaurant-filter > form > #restaurant-category {
+  grid-area: categories;
+}
+
+#restaurant-filter > form > #restaurant-category > #category-input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+#restaurant-filter > form > #restaurant-category > #category-input .category-checkbox {
+  padding: 1em;
+  margin: 0.6em;
 }
