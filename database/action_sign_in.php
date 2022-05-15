@@ -6,7 +6,7 @@
   require_once('connection.php');
   require_once('classes/user.class.php');
 
-  $db = getDatabaseConnection();
+  $db = get_db();
 
   $user = User::get_user_from_credentials($db, $_POST['username'], $_POST['password']);
   

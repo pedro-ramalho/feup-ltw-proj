@@ -76,9 +76,3 @@ body .suggestions {
   font-weight: 400;
   font-size: 1.2em;
 }
-
-/* footer fix */
-
-body > footer {
-  position: static;
-}

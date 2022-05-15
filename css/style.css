@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* header */
+button {
+  cursor: pointer;
+}
 
 header {
   position: fixed;
@@ -51,7 +54,15 @@ header > #header-signup > a, header > #header-account > a {
   place-items: center;
   border: 0.5px solid white;
   border-radius: 4px;
+  text-align: center;
+  transition: 0.2s ease;
 }
+
+header > #header-signup > a:hover, header > #header-account > a:hover, header > #header-account > form > button:hover {
+  background-color: white;
+  color: rgb(31, 31, 31);
+}
+
 
 header > #header-account > form {
   padding: 0px 0.5em;
@@ -71,6 +82,7 @@ header > #header-account > form > button {
   display: inline-block;
   background: none;
   height: 100%;
+  transition: 0.2s ease;
 }
 
 /* fim do account div */
