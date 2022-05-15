@@ -37,6 +37,8 @@ body > main {
 /* filter aside */
 #restaurant-filter {
   grid-area: filter;
+  justify-self: center;
+  align-self: center;
   margin: 1em;
 
   color: white;
@@ -171,8 +173,8 @@ body #restaurant-previews > .restaurant-preview:last-child {
   color: white;
 }
 
-/***********/
 
+/* restaurant-filter display structure */
 #restaurant-filter > form {
   display: grid;
   grid-template-areas: "score"
@@ -187,7 +189,27 @@ body #restaurant-previews > .restaurant-preview:last-child {
   grid-area: categories;
 }
 
-#restaurant-filter > form > #restaurant-category > #category-input {
+
+/* restaurant-filter styling */
+
+/* score section display structure */
+#restaurant-filter > form > #restaurant-score > #score-input-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+
+  column-gap: 1.5em;
+}
+
+/* apply margin to the number inputs in the score section */
+#restaurant-filter > form > #restaurant-score > #score-input-container .score-number {
+  margin: 0.5em;
+}
+
+
+/* category section display structure */
+#restaurant-filter > form > #restaurant-category > #category-input-container {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -195,7 +217,30 @@ body #restaurant-previews > .restaurant-preview:last-child {
   justify-content: flex-start;
 }
 
-#restaurant-filter > form > #restaurant-category > #category-input .category-checkbox {
+/* apply padding and margin to checkbox inputs in the category section */
+#restaurant-filter > form > #restaurant-category > #category-input-container .category-checkbox {
   padding: 1em;
   margin: 0.6em;
+}
+
+/* filter button styling */
+#restaurant-filter > form > button {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1.3em;
+
+  background-color: #4abc11;
+  color: white;
+  border: none;
+  border-radius: 0px;
+
+  height: 1.8em;
+  width: 8em;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 1em;
+}
+
+#restaurant-filter > form > button:hover {
+  background-color: #3ea10c;
 }

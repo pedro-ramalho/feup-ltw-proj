@@ -54,12 +54,18 @@
       <form action="list_restaurants.php" method="get">
         <section id="restaurant-score">
           <h1>Score</h1>
-          <input id="min-score" type="number" name="min_score" min="0" max="5" value="0"><label for="min-score">Min</label>
-          <input id="max-score" type="number" name="max_score" min="0" max="5" value="5"><label for="max-score">Max</label>
+          <div id="score-input-container">
+            <label for="min-score">
+              Min<input id="min-score" class="score-number" type="number" name="min_score" min="0" max="5" value="0">
+            </label>
+            <label for="max-score">
+              Max<input id="max-score" class="score-number" type="number" name="max_score" min="0" max="5" value="5">
+            </label>
+          </div>
         </section>
         <section id="restaurant-category">
           <h1>Categories</h1>
-          <div id="category-input">
+          <div id="category-input-container">
             <label for="fast-food">
               <input id="fast-food" class="category-checkbox" type="checkbox" name="fast-food" value="Fast-food">Fast-food
             </label>
