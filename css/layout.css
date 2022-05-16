@@ -1,0 +1,76 @@
+/* 
+@ handles the layout of common components present on (almost) every page
+*/
+
+
+/* body layout */
+
+body {
+  display: grid;
+  grid-template-areas: "header"
+                       "main"
+                       "footer";
+}
+
+
+/* header layout */
+
+body > header {
+  grid-area: header;
+  
+  display: grid;
+  grid-template-areas: "hamburger searchbar account";
+  grid-template-columns: 1fr 3fr 1fr;
+  position: fixed;
+
+  width: 100vw;
+  top: 8px;
+}
+
+body > header > nav {
+  grid-area: hamburger;
+}
+
+body > header > #search-bar-container {
+  grid-area: searchbar;
+  
+  display: flex;
+  place-content: center;
+}
+
+body > header > #header-signup, body > header > #header-account {
+  grid-area: account;
+
+  display: flex;
+  place-content: end;
+  align-items: stretch;
+
+  column-gap: 2em;
+  padding-right: 1em;
+}
+
+body > header > #header-account > form {
+  padding: 0px 0.5em;
+  margin: 0px;
+  height: 100%;
+}
+
+
+/* main content layout */
+
+body > main {
+  grid-area: main;
+}
+
+
+/* footer layout */
+
+body > footer {
+  grid-area: footer;
+  
+  display:block;
+  position: absolute;
+  
+  margin-top: 1em;
+  bottom: 0;
+}
