@@ -14,7 +14,7 @@
   }
 
   function filter_restaurants(float $min_score, float $max_score, $categories) : array {
-    $db = getDatabaseConnection();
+    $db = get_db_extended_path();
 
     $restaurants = Restaurant::get_all_restaurants($db);
     $filtered_restaurants = array();
@@ -38,7 +38,7 @@
   }
 
   function filter_dishes(float $min_price, float $max_price, $categories) : array {
-    $db = getDatabaseConnection();
+    $db = get_db_extended_path();
 
     $dishes = Dish::get_all_dishes($db);
     $filtered_dishes = array();

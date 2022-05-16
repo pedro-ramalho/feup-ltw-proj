@@ -3,7 +3,7 @@
 
   require_once('connection.php');
 
-  $db = getDatabaseConnection();
+  $db = get_db_extended_path();
 
   /* insert new restaurant image into database, must contain the restaurant id */
   $stmt = $db->prepare('INSERT INTO RestaurantImage VALUES(?)');

@@ -21,7 +21,7 @@
 
 <?php function draw_dish_preview(Dish $dish) { ?>
 <?php
-  $db = getDatabaseConnection();
+  $db = get_db_extended_path();
   
   $id = Dish::get_dish_restaurant($db, $dish->id);
   $restaurant = Restaurant::get_restaurant($db, $id);  

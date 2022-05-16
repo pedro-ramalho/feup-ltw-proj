@@ -10,18 +10,23 @@ body {
 body::before {
   z-index: -1;
   content: "";
+
   background-image: url("../assets/img/bg/dish.jpg");
   background-size: cover;
   background-attachment: fixed;
+
   position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
+
   opacity: 0.50;
 }
+/* end body styling */
 
-/* body display structure */
+
+/* main structure */
 body > main {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -30,8 +35,9 @@ body > main {
   
   justify-items: start;
   align-items: center;
-  margin-top: 5em; /* might need some changes */
+  margin-top: 5em; 
 }
+/* end main structure */
 
 
 /* filter aside */
@@ -60,8 +66,6 @@ aside#restaurant-filter > h1 {
   padding: 0;     
   margin: 0;
   width: 100%;
-
-  text-align: center;
 }
 
 aside#restaurant-filter > form {
@@ -69,6 +73,7 @@ aside#restaurant-filter > form {
   padding-left: 1em;
   margin: 0;
 }
+/* end filter aside */
 
 
 /* restaurant previews container */
@@ -133,9 +138,11 @@ body #restaurant-previews > .restaurant-preview:last-child {
 #restaurant-previews > .restaurant-preview > button.favorite-restaurant {
   position: absolute;
   display: inline;
+
   top: 1em;
   right: 1em;
   margin: 0;
+
   background: none;
   border: none;
   
@@ -164,6 +171,7 @@ body #restaurant-previews > .restaurant-preview:last-child {
   display: flex;
   place-items: center;
   justify-content: center;
+
   position: absolute;
   right: 0.5em;
   bottom: 0.5em;
