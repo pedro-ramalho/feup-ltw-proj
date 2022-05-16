@@ -68,7 +68,7 @@ body > main {
 body > footer {
   grid-area: footer;
   
-  display:block;
+  display: block;
   position: absolute;
   
   margin-top: 1em;
