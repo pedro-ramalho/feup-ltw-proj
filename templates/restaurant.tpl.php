@@ -22,6 +22,12 @@
       <div class="score-container">
         <h3><?=$restaurant->score?></h3>
       </div>
+      <div class="restaurant-categories-container">
+        <?php
+        foreach($restaurant->categories as $category) {
+          ?> <h5 class="preview-restaurant-category"><?=$category?></h5>
+        <?php } ?>
+      </div>
     </a>
     <button class="favorite-restaurant">
       <img src="../assets/star.svg">

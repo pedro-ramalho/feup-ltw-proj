@@ -5,10 +5,10 @@
     public int $id;
     public int $author_id;
     public int $restaurant_id;
-    public float $score;
+    public int $score;
     public string $text;
 
-    public function __construct(int $id, int $author_id, int $restaurant_id, float $score, string $text)
+    public function __construct(int $id, int $author_id, int $restaurant_id, int $score, string $text)
     {
       $this->id = $id;
       $this->author_id = $author_id;
@@ -26,9 +26,9 @@
 
       return new Review(
         intval($review['id']),
-        $review['author'],
-        $review['restaurant'],
-        $review['score'],
+        intval($review['author']),
+        intval($review['restaurant']),
+        intval($review['score']),
         $review['txt']
       );
     }
@@ -45,14 +45,21 @@
       while ($review = $stmt->fetch()) {
         $reviews[] = new Review(
           intval($review['id']),
-          $review['author'],
-          $review['restaurant'],
-          $review['score'],
+          intval($review['author']),
+          intval($review['restaurant']),
+          intval($review['score']),
           $review['txt']
         ); 
       }
 
       return $reviews;
+    }
+
+    static function get_author(PDO $db, int $review_id) : string {
+      $stmt = $db->prepare('SELECT username FROM User, Review WHERE user.id = Review.author AND Review.id = ?');
+      $stmt->execute(array($review_id));
+
+      return $stmt->fetch()['username'];
     }
   }
 ?>

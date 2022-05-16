@@ -31,8 +31,14 @@
     <img src="../assets/temp.jpg" alt="dish's preview image">
     <p id="dish-price"><?=$dish->price?>€</p>
     <a id="dish-restaurant" href="restaurant.php?id=<?=$restaurant->id?>"><?=$restaurant->res_name?></a>
-    <button class="favorite-restaurant">
+    <button class="favorite-dish">
       <img src="../assets/star.svg">
     </button>
+    <div class="dish-categories-container">
+        <?php
+        foreach($restaurant->categories as $category) {
+          ?> <h5 class="preview-dish-category"><?=$category?></h5>
+        <?php } ?>
+      </div>
   </div>
 <?php } ?>

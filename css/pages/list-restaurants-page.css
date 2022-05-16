@@ -189,6 +189,44 @@ body #restaurant-previews > .restaurant-preview:last-child {
   border-radius: 50% 50%;
 }
 
+#restaurant-previews > .restaurant-preview > a > .restaurant-categories-container {
+  margin: 0;
+  padding: 0;
+
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.5em;
+
+  height: fit-content;
+  max-width: 80%;
+
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: 0.2em;
+
+  overflow: scroll; 
+  -ms-overflow-style: none; /*edge and IE*/
+  scrollbar-width: none; /* firefox */
+}
+
+.restaurant-categories-container::-webkit-scrollbar { /* chrome, safari */
+  display: none;
+}
+
+#restaurant-previews > .restaurant-preview > a > .restaurant-categories-container > h5.preview-restaurant-category {
+  margin: 0;
+  padding: 0.3em;
+
+  min-height: 1em;
+  max-height: 1em;
+
+  border: 0.5px solid white;
+  border-radius: 2px;
+
+  font-family: 'Raleway';
+  font-size: 1em;
+  font-weight: 300;
+}
 
 /* anchors */
 #restaurant-filter a, #restaurant-previews a {

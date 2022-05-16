@@ -127,7 +127,7 @@ body #dish-previews > .dish-preview:last-child {
   z-index: -1;
 }
 
-#dish-previews > .dish-preview > button.favorite-restaurant {
+#dish-previews > .dish-preview > button.favorite-dish {
   position: absolute;
   display: inline;
   top: 1em;
@@ -140,7 +140,7 @@ body #dish-previews > .dish-preview:last-child {
   max-height: 2em;
 }
 
-#dish-previews > .dish-preview > button.favorite-restaurant > img {
+#dish-previews > .dish-preview > button.favorite-dish > img {
   max-width: 100%;
   max-height: 100%; 
 }
@@ -168,10 +168,49 @@ body #dish-previews > .dish-preview:last-child {
   margin: 0;
 
   position: absolute;
-  left: 0.5em;
-  bottom: 0.5em;
+  left: 1.5em;
+  top: 3.2em;
   margin: 0;
   align-self: flex-start;
+}
+
+#dish-previews > .dish-preview > .dish-categories-container {
+  margin: 0;
+  padding: 0;
+
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.5em;
+
+  height: fit-content;
+  max-width: 80%;
+
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: 0.2em;
+
+  overflow: scroll; 
+  -ms-overflow-style: none; /*edge and IE*/
+  scrollbar-width: none; /* firefox */
+}
+
+.dish-categories-container::-webkit-scrollbar { /* chrome, safari */
+  display: none;
+}
+
+#dish-previews > .dish-preview > .dish-categories-container > h5.preview-dish-category {
+  margin: 0;
+  padding: 0.3em;
+
+  min-height: 1em;
+  max-height: 1em;
+
+  border: 0.5px solid white;
+  border-radius: 2px;
+
+  font-family: 'Raleway';
+  font-size: 1em;
+  font-weight: 300;
 }
 
 /* anchors */
