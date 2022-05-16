@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
-  background-image: url("../assets/img/bg/dish.jpg");
+  background-image: url("../../assets/img/bg/dish.jpg");
   background-size: cover;
   background-attachment: fixed;
 }
 
-/* resto do header */
+/* header tweaks */
 
 header > #search-bar-container {
   display:none;
@@ -21,16 +21,13 @@ header > aside#sidebar ~ #header-signup, header > aside#sidebar ~ #header-accoun
 }
 
 body > header {
-
   position: fixed;
   display: block;
-  width: 100vw;
-  top: 8px;
 }
 
 /* fim do header */
 
-section#signup {
+section#signin {
   position: absolute;
   top: 30%;
   left: 65%;
@@ -39,7 +36,7 @@ section#signup {
   flex-direction: column;
 }
 
-section#signup > h2.slogan {
+section#signin > h2.slogan {
   color: white;
   width: 11em;
   text-align: center;
@@ -47,7 +44,7 @@ section#signup > h2.slogan {
   font-size: 1.8em;
 }
 
-section#signup > form {
+section#signin > form {
   border: none;
   display: flex;
   flex-direction: column;
@@ -55,7 +52,7 @@ section#signup > form {
   place-items: center;
 }
 
-section#signup > form > input {
+section#signin > form > input {
   height: 3em;
   width: 20em;
   font-family: 'Raleway', sans-serif;
@@ -65,7 +62,7 @@ section#signup > form > input {
   border: none;
 }
 
-section#signup > form > button {
+section#signin > form > button {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 1.5em;
@@ -79,17 +76,17 @@ section#signup > form > button {
   border-radius: 0px;
 }
 
-section#signup > form > button:hover {
+section#signin > form > button:hover {
   background-color: #3ea10c;
 }
 
-section#signup > h5 {
+section#signin > h5 {
   width: 11em;
   text-align: center;
   margin-top: 1em;
 }
 
-section#signup > h5 > a {
+section#signin > h5 > a {
   color: white;
   text-decoration: none;
   font-family: 'Raleway';
@@ -97,23 +94,10 @@ section#signup > h5 > a {
   font-weight: 300;
 }
 
-section#signup > h5 > a:hover {
+section#signin > h5 > a:hover {
   text-decoration: underline;
 }
 
-section#signup > h5 > a:visited {
+section#signin > h5 > a:visited {
   color: white;
-}
-
-footer {
-  position: absolute;
-  bottom: 0px;
-}
-
-footer > h4 {
-  color: white;
-  font-family: 'Raleway', sans-serif;
-  padding: 0em;
-  margin: 0em;
-  font-weight: 400;
 }

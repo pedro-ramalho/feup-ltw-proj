@@ -11,7 +11,7 @@ body::before {
   z-index: -1;
   content: "";
 
-  background-image: url("../assets/img/bg/dish.jpg");
+  background-image: url("../../assets/img/bg/dish.jpg");
   background-size: cover;
   background-attachment: fixed;
 

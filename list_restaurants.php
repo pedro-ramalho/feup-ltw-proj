@@ -36,7 +36,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/list-restaurants-page.css">
+  <link rel="stylesheet" href="css/pages/list-restaurants-page.css">
   <title>Restaurants</title>
 </head>
 <body>
