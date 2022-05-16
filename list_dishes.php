@@ -43,7 +43,7 @@
     <section id="dish-previews">
       <?php
         foreach ($dishes as $dish)
-          draw_dish($dish);
+          draw_dish_preview($dish);
       ?>
     </section>
     <aside id="dish-filter">

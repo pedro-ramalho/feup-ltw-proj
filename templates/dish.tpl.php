@@ -6,13 +6,16 @@
 ?>
 
 <?php function draw_dish(Dish $dish) { ?>
-  <div class="dish-container"> <!-- click event listener -->
-    <button class="favorite-dish">+</button>
-    <img src="https://picsum.photos/200" alt="dish image">
+  <div class="dish-frontpage"> <!-- click event listener -->
+    <h1 class="dish-title"><?=$dish->name?></h1>
+    <img src="../assets/temp.jpg" alt="restaurant's preview image">
     <div class="dish-description">
       <p><?=$dish->name?></p>
       <p><?=$dish->price?>€</p>
     </div>
+    <button class="favorite-restaurant">
+      <img src="../assets/star.svg">
+    </button>
   </div>
 <?php } ?>
 
@@ -23,13 +26,13 @@
   $id = Dish::get_dish_restaurant($db, $dish->id);
   $restaurant = Restaurant::get_restaurant($db, $id);  
 ?>
-  <div class="dish-preview-container">
-    <button class="favorite-dish">+</button>
-    <img src="https://picsum.photos/200" alt="dish image">
-    <div class="dish-preview-description">
-      <p><?=$dish->name?></p>
-      <p><?=$dish->price?>€</p>
-      <a href="restaurant.php?id=<?=$restaurant->id?>"><?=$restaurant->res_name?></a>
-    </div>
+  <div class="dish-preview">
+    <h1 class="dish-preview-title"><?=$dish->name?></h1>
+    <img src="../assets/temp.jpg" alt="dish's preview image">
+    <p id="dish-price"><?=$dish->price?>€</p>
+    <a id="dish-restaurant" href="restaurant.php?id=<?=$restaurant->id?>"><?=$restaurant->res_name?></a>
+    <button class="favorite-restaurant">
+      <img src="../assets/star.svg">
+    </button>
   </div>
 <?php } ?>
