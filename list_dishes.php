@@ -10,7 +10,7 @@
   require_once('templates/filter.php');
 
   $min_price = !isset($_GET['min_price']) ? 0.0 : floatval($_GET['min_price']);
-  $max_price = !isset($_GET['max_price']) ? 5.0 : floatval($_GET['max_price']);
+  $max_price = !isset($_GET['max_price']) ? 100.0 : floatval($_GET['max_price']);
 
   if ($min_price > $max_price) 
     $min_price = 0;
@@ -32,6 +32,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/pages/list-dishes-page.css">

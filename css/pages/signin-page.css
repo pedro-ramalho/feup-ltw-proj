@@ -20,14 +20,10 @@ header > aside#sidebar ~ #header-signup, header > aside#sidebar ~ #header-accoun
   display:none;
 }
 
-body > header {
-  position: fixed;
-  display: block;
-}
 
 /* fim do header */
 
-section#signin {
+main > section#signin {
   position: absolute;
   top: 30%;
   left: 65%;
@@ -36,7 +32,7 @@ section#signin {
   flex-direction: column;
 }
 
-section#signin > h2.slogan {
+main > section#signin > h2.slogan {
   color: white;
   width: 11em;
   text-align: center;
@@ -44,7 +40,7 @@ section#signin > h2.slogan {
   font-size: 1.8em;
 }
 
-section#signin > form {
+main > section#signin > form {
   border: none;
   display: flex;
   flex-direction: column;
@@ -52,7 +48,7 @@ section#signin > form {
   place-items: center;
 }
 
-section#signin > form > input {
+main > section#signin > form > input {
   height: 3em;
   width: 20em;
   font-family: 'Raleway', sans-serif;
@@ -62,7 +58,7 @@ section#signin > form > input {
   border: none;
 }
 
-section#signin > form > button {
+main > section#signin > form > button {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 1.5em;
@@ -76,17 +72,17 @@ section#signin > form > button {
   border-radius: 0px;
 }
 
-section#signin > form > button:hover {
+main > section#signin > form > button:hover {
   background-color: #3ea10c;
 }
 
-section#signin > h5 {
+main > section#signin > h5 {
   width: 11em;
   text-align: center;
   margin-top: 1em;
 }
 
-section#signin > h5 > a {
+main > section#signin > h5 > a {
   color: white;
   text-decoration: none;
   font-family: 'Raleway';
@@ -94,10 +90,10 @@ section#signin > h5 > a {
   font-weight: 300;
 }
 
-section#signin > h5 > a:hover {
+main > section#signin > h5 > a:hover {
   text-decoration: underline;
 }
 
-section#signin > h5 > a:visited {
+main > section#signin > h5 > a:visited {
   color: white;
 }
