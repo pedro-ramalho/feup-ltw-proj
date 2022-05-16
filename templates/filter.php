@@ -3,6 +3,7 @@
 
   require_once('database/connection.php');
   require_once('database/classes/restaurant.class.php');
+  require_once('database/classes/dish.class.php');
 
   function array_contains($superset, $set) : bool {
     foreach($set as $elem)
@@ -34,5 +35,27 @@
           );
     
     return $filtered_restaurants;
+  }
+
+  function filter_dishes(float $min_price, float $max_price, $categories) : array {
+    $db = getDatabaseConnection();
+
+    $dishes = Dish::get_all_dishes($db);
+    $filtered_dishes = array();
+
+    foreach ($dishes as $dish) 
+      if (floatval($dish->price) >= $min_price &&
+          floatval($dish->price) <= $max_price &&
+          array_contains($dish->categories, $categories))
+
+          $filtered_dishes[] = new Dish(
+            intval($dish->id),
+            intval($dish->restaurant),
+            floatval($dish->price),
+            $dish->name,
+            $categories
+          );
+    
+    return $filtered_dishes;
   }
 ?>

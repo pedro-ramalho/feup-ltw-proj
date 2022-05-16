@@ -14,10 +14,9 @@
   $min_score = !isset($_GET['min_score']) ? 0.0 : floatval($_GET['min_score']);
   $max_score = !isset($_GET['max_score']) ? 5.0 : floatval($_GET['max_score']);
 
-  if ($min_score > $max_score) {
+  if ($min_score > $max_score) 
     $min_score = 0;
-  }
-
+  
   $categories = array();
 
   if (isset($_GET['fast-food'])) $categories[] = 'Fast-food';

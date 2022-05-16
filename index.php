@@ -51,25 +51,25 @@
     <section class="suggestions">
       <h1 class="suggestion-title">Dishes</h1>
       <div class="images">
-        <a href="#">
+        <a href="list_dishes.php">
           <figure>
             <img src="assets/img/category/1.jpg" alt="dummy-text" width="300" height="200">
             <figcaption>Vegan</figcaption>
           </figure>
         </a>
-        <a href="#">
+        <a href="list_dishes.php">
           <figure>
             <img src="assets/img/category/3.jpg" alt="dummy-text" width="300" height="200">
             <figcaption>Vegetarian</figcaption>
           </figure>
         </a>
-        <a href="#">
+        <a href="list_dishes.php">
           <figure>
             <img src="assets/img/category/8.jpg" alt="dummy-text" width="300" height="200">
             <figcaption>Sushi</figcaption>
           </figure>
         </a>
-        <a href="#">
+        <a href="list_dishes.php">
           <figure>
             <img src="assets/img/category/5.jpg" alt="dummy-text" width="300" height="200">
             <figcaption>Lactose-free</figcaption>

@@ -44,7 +44,13 @@
       while ($category = $stmt->fetch())
         $categories[] = $category_names[$category['category']];
       
-      return new Dish($dish['id'], $dish['restaurant'], $dish['price'], $dish['name'], $categories);
+      return new Dish(
+        intval($dish['id']), 
+        intval($dish['restaurant']), 
+        floatval($dish['price']), 
+        $dish['name'], 
+        $categories
+      );
     }
 
     static function get_dish_restaurant(PDO $db, int $dish_id) {
@@ -54,6 +60,18 @@
       $restaurant = $stmt->fetch();
 
       return intval($restaurant['restaurant']);
+    }
+
+    static function get_all_dishes(PDO $db) : array {
+      $stmt = $db->prepare('SELECT id, restaurant, price, dish_name AS name FROM Dish');
+      $stmt->execute();
+
+      $dishes = array();
+
+      while ($dish = $stmt->fetch())
+        $dishes[] = Dish::get_dish($db, intval($dish['id']));
+      
+      return $dishes;
     }
 
     static function get_fav_dishes(PDO $db, int $user_id) {
