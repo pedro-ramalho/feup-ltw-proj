@@ -16,7 +16,7 @@
 
 <?php function draw_restaurant_preview(Restaurant $restaurant) { ?>
   <div class="restaurant-preview">
-    <a href="restaurant.php?id=<?=$restaurant->id?>">
+    <a href="view_restaurant.php?id=<?=$restaurant->id?>">
       <h1 class="restaurant-preview-title"><?=$restaurant->res_name?></h1>
       <img src="../assets/temp.jpg" alt="restaurant's preview image">
       <div class="score-container">

@@ -53,6 +53,7 @@
       );
     }
 
+    /* returns the restaurant id to which a certain dish belongs */
     static function get_dish_restaurant(PDO $db, int $dish_id) {
       $stmt = $db->prepare('SELECT id, restaurant, price, dish_name AS name FROM dish WHERE id = ?');
       $stmt->execute(array($dish_id));
@@ -73,6 +74,20 @@
       
       return $dishes;
     }
+
+    /* */
+    static function get_restaurant_dishes(PDO $db, int $restaurant_id) : array {
+      $stmt = $db->prepare('SELECT id FROM Dish WHERE restaurant = ?');
+      $stmt->execute(array($restaurant_id));
+      
+      $dishes = array();
+      
+      while ($dish = $stmt->fetch())
+        $dishes[] = Dish::get_dish($db, intval($dish['id']));
+      
+      return $dishes;
+    }
+
 
     static function get_fav_dishes(PDO $db, int $user_id) {
       
