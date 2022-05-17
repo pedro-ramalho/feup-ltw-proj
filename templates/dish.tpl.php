@@ -34,10 +34,10 @@
       <img src="../assets/star.svg">
     </button>
     <div class="dish-categories-container">
-        <?php
-        foreach($restaurant->categories as $category) {
-          ?> <h5 class="preview-dish-category"><?=$category?></h5>
-        <?php } ?>
-      </div>
+      <?php
+      foreach($restaurant->categories as $category) {
+        ?> <h5 class="preview-dish-category"><?=$category?></h5>
+      <?php } ?>
+    </div>
   </div>
 <?php } ?>

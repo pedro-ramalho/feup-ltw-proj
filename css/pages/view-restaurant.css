@@ -2,6 +2,28 @@
 @ handles the styling of the page of a single restaurant
 */
 
+:root {
+  --view-restaurant-body-background-color: black;
+  --view-restaurant-body-main-text-color: white;
+  
+  --restaurant-info-score-button-background-color: #4abc11;
+  --restaurant-info-score-button-hover-background-color: #3ea10c;
+  --restaurant-info-score-button-text-color: white;
+  --restaurant-info-score-button-hover-text-color: white;
+
+  --view-restaurant-dish-description-background-color: white;
+  --view-restaurant-dish-description-p-text-color: black;
+
+  --view-restaurant-dish-categories-container-h5-border-color: white;
+
+  --view-restaurant-reviews-container-background-color: #050505;
+  --view-restaurant-reviews-container-border-color: white;;
+
+  --view-restaurant-customer-review-background-color: #333333;
+
+  --view-restaurant-review-content-background-color: #333333;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
@@ -9,7 +31,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: var(--view-restaurant-body-background-color);
   margin: 0;
 }
 
@@ -36,14 +58,14 @@ body > main {
   margin-top: 5em;
 
   font-family: 'Raleway', sans-serif;
-  color: white;
+  color: var(--view-restaurant-body-main-text-color);
 }
 
 body > main > section#restaurant-info {
   grid-area: restaurant;
 
   display: grid;
-  grid-template-areas: "restaurant-name"
+  grid-template-areas: "restaurant-info"
                        "restaurant-img"
                        "score-button";
 }
@@ -65,9 +87,41 @@ body > main > section#restaurant-reviews {
 
 
 /* restaurant frontpage structure & styling */
-section#restaurant-info > .restaurant-frontpage > h1 {
-  grid-area: restaurant-name;
+section#restaurant-info > .restaurant-frontpage > #restaurant-info {
+  grid-area: restaurant-info;
+}
+
+section#restaurant-info > .restaurant-frontpage > #restaurant-info > .restaurant-name-score {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+section#restaurant-info > .restaurant-frontpage > #restaurant-info > .restaurant-name-score > h1 {
+  padding-right: 1em;
   font-size: 2em;
+}
+
+section#restaurant-info > .restaurant-frontpage > #restaurant-info > .dish-categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1em;
+}
+
+section#restaurant-info > .restaurant-frontpage > #restaurant-info > .dish-categories-container > h5 {
+  margin: 0;
+  padding: 0.5em;  
+  border: 0.5px solid var(--view-restaurant-dish-categories-container-h5-border-color);
+  border-radius: 2px;
+
+  font-family: 'Raleway';
+  font-size: 1em;
+  font-weight: 300;
+}
+
+section#restaurant-info > .restaurant-frontpage > #restaurant-info > .restaurant-coords {
+  font-weight: 500;
 }
 
 section#restaurant-info > .restaurant-frontpage > img {
@@ -83,14 +137,27 @@ section#restaurant-info > .restaurant-frontpage > img {
 section#restaurant-info > .restaurant-frontpage > #score-button {
   grid-area: score-button;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 }
 
-section#restaurant-info > .restaurant-frontpage > #score-button > h3 {
-  
-}
 
 section#restaurant-info > .restaurant-frontpage > #score-button > button {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 2em;
+  width: 10em;
+  background-color: var(--restaurant-info-score-button-background-color);
+  color: var(--restaurant-info-score-button-text-color);
+  border: none;
+  border-radius: 0px;
+}
+
+section#restaurant-info > .restaurant-frontpage > #score-button > button:hover {
+  background-color: var(--restaurant-info-score-button-hover-background-color);
+  color: var(--restaurant-info-score-button-hover-text-color);
 }
 
 
@@ -129,17 +196,17 @@ section#restaurant-dishes > .dishes-container > .dish-frontpage > img {
   margin: 0;
 }
 
-section#restaurant-dishes > .dishes-container > .dish-frontpage > div.dish-description {
+section#restaurant-dishes > .dishes-container > .dish-frontpage > .dish-description {
   grid-area: dish-description;
-  background-color: white;
+  background-color: var(--view-restaurant-dish-description-background-color);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0;
 }
 
-section#restaurant-dishes > .dishes-container > .dish-frontpage > div.dish-description > p {
-  color: black;
+section#restaurant-dishes > .dishes-container > .dish-frontpage > .dish-description > p {
+  color: var(--view-restaurant-dish-description-p-text-color);
   margin: 0;
   padding: 0.5em;
 }
@@ -171,8 +238,8 @@ section#restaurant-reviews > h1 {
 }
 
 section#restaurant-reviews > .reviews-container {
-  background-color: #050505;
-  border: 2px solid white; /* for debug purposes */
+  background-color: var(--view-restaurant-reviews-container-background-color);
+  border: 2px solid var(--view-restaurant-reviews-container-border-color); /* for debug purposes */
 }
 
 section#restaurant-reviews > .reviews-container > #customer-review {
@@ -183,7 +250,7 @@ section#restaurant-reviews > .reviews-container > #customer-review {
                        "review-content";
   grid-template-rows: max-content max-content;
   
-  background-color: #333333;
+  background-color: var(--view-restaurant-customer-review-background-color);
 }
 
 section#restaurant-reviews > .reviews-container > #review-placeholder {
@@ -225,11 +292,50 @@ section#restaurant-reviews > .reviews-container > #customer-review > p#review-co
   grid-area: review-content;
   margin: 0;
   padding: 1em;
-  background-color: #333333;
+  background-color: var(--view-restaurant-review-content-background-color);
 }
 
+section#restaurant-reviews > .reviews-container > #review-form {
+  display: grid;
+  grid-template-areas: "form-header"
+                       "form-content";
+  margin: 1em;
+  padding-bottom: 4em;
+}
 
+section#restaurant-reviews > .reviews-container > #review-form > h2 {
+  grid-area: form-header;
+}
 
+section#restaurant-reviews > .reviews-container > #review-form > form {
+  grid-area: form-content;
 
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
 
+section#restaurant-reviews > .reviews-container > #review-form > form label > input#review-score {
+  margin: 0.5em;
+}
 
+section#restaurant-reviews > .reviews-container > #review-form > form label > input#review-comment {
+  margin: 0em;
+  width: 100%;
+  height: 10em;
+}
+
+section#restaurant-reviews > .reviews-container > #review-form > form > button {
+  align-self: flex-end;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 2em;
+  width: 10em;
+  background-color: var(--restaurant-info-score-button-background-color);
+  color: var(--restaurant-info-score-button-text-color);
+  border: none;
+  border-radius: 0px;
+}

@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+  --sign-up-h2-slogan-text-color: white;
+  
+  --sign-up-form-button-background-color: #4abc11;
+  --sign-up-form-button-hover-background-color: #3ea10c;
+  --sign-up-form-button-text-color: white;
+  --sign-up-form-button-hover-text-color: white;
+
+  --sign-up-h5-a-text-color: white;
+  --sign-up-h5-a-visited-text-color: white;
+
+}
+
 * {
   box-sizing: border-box;
 }
@@ -34,7 +47,7 @@ section#signup {
 }
 
 section#signup > h2.slogan {
-  color: white;
+  color: var(--sign-up-h2-slogan-text-color);
   width: 11em;
   text-align: center;
   font-family: 'Raleway', sans-serif;
@@ -67,14 +80,15 @@ section#signup > form > button {
   padding-bottom: 0px;
   height: 2em;
   width: 10em;
-  background-color: #4abc11;
-  color: white;
+  background-color: var(--sign-up-form-button-background-color);
+  color: var(--sign-up-form-button-text-color);
   border: none;
   border-radius: 0px;
 }
 
 section#signup > form > button:hover {
-  background-color: #3ea10c;
+  background-color: var(--sign-up-form-button-hover-background-color);
+  color: var(--sign-up-form-button-hover-text-color)
 }
 
 section#signup > h5 {
@@ -84,7 +98,7 @@ section#signup > h5 {
 }
 
 section#signup > h5 > a {
-  color: white;
+  color: var(--sign-up-h5-a-text-color);
   text-decoration: none;
   font-family: 'Raleway';
   font-size: 1em;
@@ -96,5 +110,5 @@ section#signup > h5 > a:hover {
 }
 
 section#signup > h5 > a:visited {
-  color: white;
+  color: var(--sign-up-h5-a-visited-text-color);
 }

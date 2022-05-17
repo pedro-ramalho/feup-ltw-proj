@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+  --main-page-body-background-color: black;
+  --main-page-suggestions-h1-text-color: white;
+  --main-page-figcaption-text-color: white;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: black;
+  background-color: var(--main-page-body-background-color);
   margin: 0;
 }
 
@@ -20,6 +26,10 @@ body::before {
   bottom: 0px;
   left: 0px;
   opacity: 0.50;
+}
+
+body > main {
+  align-self: center;
 }
 
 
@@ -37,7 +47,7 @@ body .suggestions {
 .suggestions > h1 {
   grid-area: header;
 
-  color: white;
+  color: --main-page-suggestions-h1-text-color;
   font-family: 'Raleway', sans-serif;
   font-size: 2em;
 }
@@ -67,7 +77,7 @@ body .suggestions {
 }
 
 .suggestions > .images figure figcaption {
-  color: white;
+  color: var(--main-page-figcaption-text-color);
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 1.2em;

@@ -1,12 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+  --list-dishes-body-background-color: black;
+  
+  --list-dishes-text-color: white;
+  
+  --dish-filter-background-color: rgb(31, 31, 31);
+  
+  --dish-filter-button-color: #4abc11;
+  --dish-filter-button-hover-color: #3ea10c ;
+  --dish-filter-button-text-color: white;
+  --dish-filter-button-hover-text-color: white;
+
+  --preview-dish-category-h5-border-color: white;
+}
+
 * {
   box-sizing: border-box;
 }
 
 /* body styling */
 body {
-  background-color: black;
+  background-color: var(--list-dishes-body-background-color);
   min-height: 100vh;
   overflow: hidden;
 }
@@ -49,8 +64,8 @@ aside#dish-filter {
   margin: 1em;
   padding-top: 0.5em;
 
-  color: white;
-  background-color: rgb(31, 31, 31);
+  color: var(--list-dishes-text-color);
+  background-color: var(--dish-filter-background-color);
 
   height: fit-content;
   max-height: 100%;
@@ -83,7 +98,7 @@ aside#dish-filter > form {
 /* dish previews container */
 #dish-previews {
   grid-area: previews;
-  color: white;
+  color: var(--list-dishes-text-color);
   font-family: 'Raleway ', sans-serif;
   padding: 0;
 }
@@ -209,7 +224,7 @@ body #dish-previews > .dish-preview:last-child {
   min-height: 1em;
   max-height: 1em;
 
-  border: 0.5px solid white;
+  border: 0.5px solid var(--preview-dish-category-h5-border-color);
   border-radius: 2px;
 
   font-family: 'Raleway';
@@ -220,7 +235,7 @@ body #dish-previews > .dish-preview:last-child {
 /* anchors */
 #dish-filter a, #dish-previews a {
   text-decoration: none;
-  color: white;
+  color: var(--list-dishes-text-color);
 }
 
 /* dish-filter display structure */
@@ -278,8 +293,8 @@ body #dish-previews > .dish-preview:last-child {
   font-weight: 600;
   font-size: 1.3em;
 
-  background-color: #4abc11;
-  color: white;
+  background-color: var(--dish-filter-button-color);
+  color: var(--dish-filter-button-text-color);
   border: none;
   border-radius: 0px;
 
@@ -291,5 +306,6 @@ body #dish-previews > .dish-preview:last-child {
 }
 
 #dish-filter > form > button:hover {
-  background-color: #3ea10c;
+  background-color: var(--dish-filter-button-hover-color);
+  color: var(--dish-filter-button-hover-text-color)
 }

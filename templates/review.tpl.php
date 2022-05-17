@@ -24,17 +24,20 @@
   function draw_review_form($restaurant_id) { 
     if (isset($_SESSION['id'])) {
     ?>
+    <div id="review-form">
+      <h2>Add your review</h2>
       <form action="database/action_add_review.php" method="post" id="add-review-form">
-        <h2>Add your review</h2>
-        <label>
-        Score:  <input type="number" name="review-score" id="review-score" min="0" max="5">
+        <label for="review-score">
+          Score<input id="review-score" type="number" name="review-score" min="0" max="5">
         </label>
         <label>
-        Comment:  
-        <input type="text" name="review-comment" id="review-comment">
+          Comment<input id="review-comment" type="text" name="review-comment">
         </label>
         <input type="hidden" name="restaurant-id" value="<?=$restaurant_id?>" readonly="readonly">
+        <button id="submit-review" type="submit">Submit</button>
       </form>
+    </div>
+
     <?php }
     else { ?>
       <div id="review-placeholder">
