@@ -171,8 +171,7 @@ section#restaurant-reviews > h1 {
 }
 
 section#restaurant-reviews > .reviews-container {
-  margin: 1em;
-  background-color: rgb(31, 31, 31);
+  background-color: #050505;
   border: 2px solid white; /* for debug purposes */
 }
 
@@ -184,7 +183,7 @@ section#restaurant-reviews > .reviews-container > #customer-review {
                        "review-content";
   grid-template-rows: max-content max-content;
   
-  background-color: rgb(55, 55, 55);
+  background-color: #333333;
 }
 
 section#restaurant-reviews > .reviews-container > #review-placeholder {
@@ -195,24 +194,38 @@ section#restaurant-reviews > .reviews-container > #customer-review > .author-sco
   grid-area: username-score;
 
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
-section#restaurant-reviews > .reviews-container > #customer-review > .author-score-container > h3#review-author {
+section#restaurant-reviews > .reviews-container > #customer-review > .author-score-container > #pfp-author {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5em;
+}
+
+section#restaurant-reviews > .reviews-container > #customer-review > .author-score-container > #pfp-author > img {
+  width: 35px;
+  height: 35px;
+}
+
+section#restaurant-reviews > .reviews-container > #customer-review > .author-score-container > #pfp-author > h3#review-author {
   font-style: italic;
   font-weight: 400;
+  font-size: 1em;
   padding-left: 0.5em;
 }
 
 section#restaurant-reviews > .reviews-container > #customer-review > .author-score-container > h3#review-score {
   padding-right: 0.5em;
+  font-size: 1em;
 }
 
 section#restaurant-reviews > .reviews-container > #customer-review > p#review-content {
   grid-area: review-content;
-  border-top: 1px solid aqua;
   margin: 0;
   padding: 1em;
+  background-color: #333333;
 }
 
 

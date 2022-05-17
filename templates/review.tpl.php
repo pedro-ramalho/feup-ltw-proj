@@ -10,8 +10,11 @@
   function draw_review(Review $review) { ?>
   <div id="customer-review">
     <div class="author-score-container">
-      <h3 id ="review-author"><?=Review::get_author(get_db_extended_path(), $review->id)?></h3>
-      <h3 id="review-score"><?=$review->score?></h3>
+      <div id="pfp-author">
+        <img src="../assets/user.png">
+        <h3 id ="review-author"><?=Review::get_author(get_db_extended_path(), $review->id)?></h3>
+      </div>
+      <h3 id="review-score"><?=$review->score?>/5</h3>
     </div>
     <p id="review-content"><?=$review->text?></p>
   </div>
