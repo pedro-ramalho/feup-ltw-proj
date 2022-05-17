@@ -9,9 +9,11 @@
 <?php
   function draw_review(Review $review) { ?>
   <div id="customer-review">
-    <h3 id ="review-author"><?=Review::get_author(get_db_extended_path(), $review->id)?></h3>
+    <div class="author-score-container">
+      <h3 id ="review-author"><?=Review::get_author(get_db_extended_path(), $review->id)?></h3>
+      <h3 id="review-score"><?=$review->score?></h3>
+    </div>
     <p id="review-content"><?=$review->text?></p>
-    <h3 id="review-score"><?=$review->score?></h3>
   </div>
 <?php } ?>
 

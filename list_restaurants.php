@@ -39,6 +39,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pages/list-restaurants-page.css">
   <title>Restaurants</title>
+  <script src="javascript/header-scroll.js" defer></script>
 </head>
 <body>
   <?php draw_header() ?>

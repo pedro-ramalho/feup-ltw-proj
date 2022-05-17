@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/pages/main-page.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agile Eating</title>
+  <script src="javascript/header-scroll.js" defer></script>
 </head>
 <body>
   <?php draw_header() ?>

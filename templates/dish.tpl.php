@@ -7,7 +7,6 @@
 
 <?php function draw_dish(Dish $dish) { ?>
   <div class="dish-frontpage"> <!-- click event listener -->
-    <h1 class="dish-title"><?=$dish->name?></h1>
     <img src="../assets/temp.jpg" alt="restaurant's preview image">
     <div class="dish-description">
       <p><?=$dish->name?></p>

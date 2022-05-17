@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: black;
   margin: 0;
@@ -28,9 +32,11 @@ body > main {
   grid-template-areas: "restaurant"
                        "dishes"
                        "reviews";
-  text-align: center;
   justify-content: center;
   margin-top: 5em;
+
+  font-family: 'Raleway', sans-serif;
+  color: white;
 }
 
 body > main > section#restaurant-info {
@@ -39,12 +45,12 @@ body > main > section#restaurant-info {
   display: grid;
   grid-template-areas: "restaurant-name"
                        "restaurant-img"
-                       "score-button"
+                       "score-button";
 }
 
 body > main > section#restaurant-dishes {
   grid-area: dishes;
-
+  padding-top: 4em;
   display:grid;
   grid-template-areas: "dish-title"
                        "dish-img"
@@ -53,12 +59,15 @@ body > main > section#restaurant-dishes {
 
 body > main > section#restaurant-reviews {
   grid-area: reviews;
+
+  padding-top: 4em;
 }
 
 
 /* restaurant frontpage structure & styling */
 section#restaurant-info > .restaurant-frontpage > h1 {
   grid-area: restaurant-name;
+  font-size: 2em;
 }
 
 section#restaurant-info > .restaurant-frontpage > img {
@@ -73,18 +82,43 @@ section#restaurant-info > .restaurant-frontpage > img {
 
 section#restaurant-info > .restaurant-frontpage > #score-button {
   grid-area: score-button;
+  display: flex;
+  justify-content: space-between;
+}
 
-  display:flex;
-  flex-direction: row;
+section#restaurant-info > .restaurant-frontpage > #score-button > h3 {
+  
+}
+
+section#restaurant-info > .restaurant-frontpage > #score-button > button {
 }
 
 
 /* restaurant dishes structure & styling */
-section#restaurant-dishes > .dish-frontpage > h1 {
-  grid-area: dish-title;
+
+
+section#restaurant-dishes > .dishes-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.5em;
+  padding: 0 1.5em;
 }
 
-section#restaurant-dishes > .dish-frontpage > img {
+section#restaurant-dishes > h1 {
+  font-size: 2em;
+}
+
+section#restaurant-dishes > .dishes-container > .dish-frontpage {
+  position: relative;
+  max-width: fit-content;
+}
+
+section#restaurant-dishes > .dishes-container > .dish-frontpage > h1 {
+  grid-area: dish-title;
+
+}
+
+section#restaurant-dishes > .dishes-container > .dish-frontpage > img {
   grid-area: dish-img;
 
   width: 200px;
@@ -92,13 +126,25 @@ section#restaurant-dishes > .dish-frontpage > img {
 
   max-width: 200px;
   max-height: 200px;
+  margin: 0;
 }
 
-section#restaurant-dishes > .dish-frontpage > div.dish-description {
+section#restaurant-dishes > .dishes-container > .dish-frontpage > div.dish-description {
   grid-area: dish-description;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
 }
 
-section#restaurant-dishes > .dish-frontpage > button.favorite-restaurant {
+section#restaurant-dishes > .dishes-container > .dish-frontpage > div.dish-description > p {
+  color: black;
+  margin: 0;
+  padding: 0.5em;
+}
+
+section#restaurant-dishes > .dishes-container > .dish-frontpage > button.favorite-restaurant {
   position: absolute;
   display: inline;
 
@@ -113,7 +159,64 @@ section#restaurant-dishes > .dish-frontpage > button.favorite-restaurant {
   max-height: 2em;
 }
 
-section#restaurant-dishes > .dish-frontpage > button.favorite-restaurant > img {
+section#restaurant-dishes > .dishes-container > .dish-frontpage > button.favorite-restaurant > img {
   max-width: 100%;
   max-height: 100%;
 }
+
+
+/* restaurant reviews structure & styling */
+section#restaurant-reviews > h1 { 
+  font-size: 2em;
+}
+
+section#restaurant-reviews > .reviews-container {
+  margin: 1em;
+  background-color: rgb(31, 31, 31);
+  border: 2px solid white; /* for debug purposes */
+}
+
+section#restaurant-reviews > .reviews-container > #customer-review {
+  margin: 1em;
+
+  display: grid;
+  grid-template-areas: "username-score"
+                       "review-content";
+  grid-template-rows: max-content max-content;
+  
+  background-color: rgb(55, 55, 55);
+}
+
+section#restaurant-reviews > .reviews-container > #review-placeholder {
+  margin: 1em;
+}
+
+section#restaurant-reviews > .reviews-container > #customer-review > .author-score-container {
+  grid-area: username-score;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+section#restaurant-reviews > .reviews-container > #customer-review > .author-score-container > h3#review-author {
+  font-style: italic;
+  font-weight: 400;
+  padding-left: 0.5em;
+}
+
+section#restaurant-reviews > .reviews-container > #customer-review > .author-score-container > h3#review-score {
+  padding-right: 0.5em;
+}
+
+section#restaurant-reviews > .reviews-container > #customer-review > p#review-content {
+  grid-area: review-content;
+  border-top: 1px solid aqua;
+  margin: 0;
+  padding: 1em;
+}
+
+
+
+
+
+

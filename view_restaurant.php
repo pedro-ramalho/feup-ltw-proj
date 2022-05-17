@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/pages/view-restaurant.css">
   <title>Document</title>
+  <script src="javascript/header-scroll.js" defer></script>
 </head>
 <body>
   <?php draw_header() ?>
@@ -45,18 +46,23 @@
       <?php draw_restaurant($restaurant) ?>
     </section>
     <section id="restaurant-dishes">
+      <h1>Dishes</h1>
+      <div class="dishes-container">
       <?php
         foreach ($dishes as $dish)
           draw_dish($dish);
       ?>
+      </div>
     </section>
     <section id="restaurant-reviews">
       <h1>Reviews</h1>
-      <?php 
-        draw_review_form($restaurant_id);
-        foreach ($reviews as $review) 
-          draw_review($review);
-      ?>
+      <div class="reviews-container">
+        <?php 
+          draw_review_form($restaurant_id);
+          foreach ($reviews as $review) 
+            draw_review($review);
+        ?>
+      </div>
     </section>
   </main>
   <?php draw_footer() ?>

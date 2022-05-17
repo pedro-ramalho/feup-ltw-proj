@@ -5,6 +5,11 @@
 
 /* body layout */
 
+* {
+  box-sizing: border-box;
+}
+
+
 html, body {
   margin: 0;
   height: 100%;
@@ -15,7 +20,8 @@ body {
   grid-template-areas: "header"
                        "main"
                        "footer";
-  grid-template-rows: 0.5fr auto 0.5fr;
+  grid-template-rows: 2em auto 2em;
+  grid-template-columns: 1fr;
 
   margin: 0;
   padding: 0;
@@ -33,7 +39,7 @@ body > header {
   position: fixed;
 
   width: 100vw;
-  top: 8px;
+  padding: 8px 0;
 }
 
 body > header > nav {

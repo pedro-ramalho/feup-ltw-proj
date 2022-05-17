@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/pages/list-dishes-page.css">
   <title>Dishes</title>
+  <script src="javascript/header-scroll.js" defer></script>
 </head>
 <body>
   <?php draw_header() ?>

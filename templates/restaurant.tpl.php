@@ -11,7 +11,7 @@
     <img src="../assets/temp.jpg" alt="restaurant's display image">
     <div id="score-button">
       <h3><?=$restaurant->score?></h3>
-      <button class="favorite-restaurant">+</button>
+      <button class="favorite-restaurant">Add to favorites</button>
     </div>
   </div>
 <?php } ?>
