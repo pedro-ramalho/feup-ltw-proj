@@ -1,0 +1,119 @@
+/* 
+@ handles the styling of the page of a single restaurant
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  background-color: black;
+  margin: 0;
+}
+
+body::before {
+  z-index: -1;
+  content: "";
+  background-image: url("../../assets/img/bg/restaurant.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.50;
+}
+
+body > main {
+  display: grid;
+  grid-template-areas: "restaurant"
+                       "dishes"
+                       "reviews";
+  text-align: center;
+  justify-content: center;
+  margin-top: 5em;
+}
+
+body > main > section#restaurant-info {
+  grid-area: restaurant;
+
+  display: grid;
+  grid-template-areas: "restaurant-name"
+                       "restaurant-img"
+                       "score-button"
+}
+
+body > main > section#restaurant-dishes {
+  grid-area: dishes;
+
+  display:grid;
+  grid-template-areas: "dish-title"
+                       "dish-img"
+                       "dish-description";
+}
+
+body > main > section#restaurant-reviews {
+  grid-area: reviews;
+}
+
+
+/* restaurant frontpage structure & styling */
+section#restaurant-info > .restaurant-frontpage > h1 {
+  grid-area: restaurant-name;
+}
+
+section#restaurant-info > .restaurant-frontpage > img {
+  grid-area: restaurant-img;
+
+  width: 1600px;
+  height: 700px;
+
+  max-width: 1600px;
+  max-height: 700px;
+}
+
+section#restaurant-info > .restaurant-frontpage > #score-button {
+  grid-area: score-button;
+
+  display:flex;
+  flex-direction: row;
+}
+
+
+/* restaurant dishes structure & styling */
+section#restaurant-dishes > .dish-frontpage > h1 {
+  grid-area: dish-title;
+}
+
+section#restaurant-dishes > .dish-frontpage > img {
+  grid-area: dish-img;
+
+  width: 200px;
+  height: 200px;
+
+  max-width: 200px;
+  max-height: 200px;
+}
+
+section#restaurant-dishes > .dish-frontpage > div.dish-description {
+  grid-area: dish-description;
+}
+
+section#restaurant-dishes > .dish-frontpage > button.favorite-restaurant {
+  position: absolute;
+  display: inline;
+
+  top: 1em;
+  right: 1em;
+  margin: 0;
+
+  background: none;
+  border: none;
+  
+  max-width: 2em;
+  max-height: 2em;
+}
+
+section#restaurant-dishes > .dish-frontpage > button.favorite-restaurant > img {
+  max-width: 100%;
+  max-height: 100%;
+}

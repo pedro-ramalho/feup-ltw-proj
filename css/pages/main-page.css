@@ -10,7 +10,6 @@ body::before {
   content: "";
   background-image: url("../../assets/img/bg/dish.jpg");
   background-size: cover;
-  background-attachment: fixed;
   position: fixed;
   top: 0px;
   right: 0px;
@@ -23,7 +22,7 @@ body::before {
 /* change later */
 
 body > main {
-  margin-top: 6em;
+  margin-top: 5em;
 }
 
 /* restaurant and dish category portions */

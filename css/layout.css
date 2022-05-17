@@ -10,6 +10,7 @@ body {
   grid-template-areas: "header"
                        "main"
                        "footer";
+  grid-template-rows: 0.5fr auto 0.5fr;
 }
 
 

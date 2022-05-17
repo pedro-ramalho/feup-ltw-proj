@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/pages/view-restaurant.css">
   <title>Document</title>
 </head>
 <body>

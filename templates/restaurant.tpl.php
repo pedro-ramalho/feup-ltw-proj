@@ -8,9 +8,11 @@
 <?php function draw_restaurant(Restaurant $restaurant) { ?>
   <div class="restaurant-frontpage">
     <h1 class="restaurant-title"><?=$restaurant->res_name?></h1>
-    <img src="https://picsum.photos/200" alt="restaurant's display image">
-    <h3><?=$restaurant->score?></h3>
-    <button class="favorite-restaurant">+</button>
+    <img src="../assets/temp.jpg" alt="restaurant's display image">
+    <div id="score-button">
+      <h3><?=$restaurant->score?></h3>
+      <button class="favorite-restaurant">+</button>
+    </div>
   </div>
 <?php } ?>
 
