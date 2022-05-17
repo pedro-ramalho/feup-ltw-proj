@@ -19,12 +19,6 @@ body::before {
 }
 
 
-/* change later */
-
-body > main {
-  margin-top: 5em;
-}
-
 /* restaurant and dish category portions */
 
 body .suggestions {

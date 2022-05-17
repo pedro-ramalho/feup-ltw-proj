@@ -5,12 +5,20 @@
 
 /* body layout */
 
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
 body {
   display: grid;
   grid-template-areas: "header"
                        "main"
                        "footer";
   grid-template-rows: 0.5fr auto 0.5fr;
+
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -68,10 +76,5 @@ body > main {
 
 body > footer {
   grid-area: footer;
-  
-  display: block;
-  position: absolute;
-  
-  margin-top: 1em;
-  bottom: 0;
+  align-self: end;
 }
