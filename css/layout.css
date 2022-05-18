@@ -38,8 +38,8 @@ body > header {
   grid-template-columns: 1fr 3fr 1fr;
   position: fixed;
 
-  width: 100vw;
-  padding: 8px 0;
+  width: 100%;
+  padding: 0.5em 0;
 }
 
 body > header > nav {
@@ -76,7 +76,9 @@ body > header > #header-account > form {
 
 body > main {
   grid-area: main;
-
+  width: 80%;
+  margin: 0;
+  padding: 0;
   align-self: center;
   justify-self: center;
 }
