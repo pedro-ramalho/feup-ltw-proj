@@ -29,32 +29,33 @@
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pages/profile.css">
+  <script src="javascript/profile.js" defer></script>
   <title>Profile</title>
 </head>
 <body>
   <?php draw_header() ?>
   <main>
   <nav id="profile-options">
-    <a href="#">Account</a>
-    <a href="#">Owned restaurants</a>
+    <a id="acc-anchor" href="#">Account</a>
+    <a id="owned-res-anchor" href="#">Owned restaurants</a>
     <h1>Favorites</h1>
     <section id="favorites">
-      <a href="#">Favorite dishes</a>
-      <a href="#">Favorite restaurants</a>
+      <a id="fav-dishes-anchor" href="#">Favorite dishes</a>
+      <a id="fav-res-anchor" href="#">Favorite restaurants</a>
     </section>
   </nav>
   <section id="option-content">
-    <section id="account">
+    <section id="user-credentials">
       <?php draw_profile_form($user) ?>
     </section>
     <section id="owned-restaurants">
-
+      <p>Owned restaurants</p>
     </section>
     <section id="favorite-dishes">
-
+      <p>Fav dishes</p>
     </section>
     <section id="favorite-restaurants">
-
+      <p>Fav restaurants</p>
     </section>
   </section>
   </main>

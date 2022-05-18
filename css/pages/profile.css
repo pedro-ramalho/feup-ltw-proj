@@ -62,19 +62,19 @@ nav#profile-options > section#favorites {
 
 /* account form */
 
-section#option-content > section#account > form {
+section#option-content > section#user-credentials > form {
   display: flex;
   flex-direction: column;
   row-gap: 1em;
 }
 
-section#option-content > section#account > form#account-form > label input {
+section#option-content > section#user-credentials > form#account-form > label input {
   margin-left: 0.5em;
   font-size: 1.2em;
   font-family: 'Raleway', sans-serif;
 }
 
-section#option-content > section#account > form#account-form > button {
+section#option-content > section#user-credentials > form#account-form > button {
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   font-size: 1em;
