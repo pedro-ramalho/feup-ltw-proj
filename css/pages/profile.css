@@ -10,25 +10,80 @@ body {
   overflow: hidden;
 }
 
+body > * {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
 body > main {
   display: grid;
 
   grid-template-areas: "profile-options option-content";
   grid-template-columns: 20% 80%;
   column-gap: 0;
-  border: 1px solid red;
 }
 
 body > main > nav#profile-options {
   grid-area: profile-options;
+  
   display: flex;
   flex-direction: column;
   row-gap: 1em;
 
-  border: 1px solid aqua;
+  background-color: rgb(35, 35, 35);
+  padding: 1em;
 }
 
 body > main > section#option-content {
   grid-area: option-content;
-  border: 1px solid green;
+
+  background-color: rgb(70, 70, 70);
+  padding: 1em;
+}
+
+nav#profile-options > h1 {
+  padding: 0;
+  margin: 0;
+}
+
+nav#profile-options > section#favorites {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: 1em;
+  padding-left: 1em;
+}
+
+
+/* account form */
+
+section#option-content > section#account > form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+section#option-content > section#account > form#account-form > label input {
+  margin-left: 0.5em;
+  font-size: 1.2em;
+  font-family: 'Raleway', sans-serif;
+}
+
+section#option-content > section#account > form#account-form > button {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 2em;
+  width: 6em;
+  border-radius: 5px;
+  background-color: rgb(35, 138, 198);
+  color: var(--restaurant-info-score-button-text-color);
+  border: none;
 }

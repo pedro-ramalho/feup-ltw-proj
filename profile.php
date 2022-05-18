@@ -37,8 +37,8 @@
   <nav id="profile-options">
     <a href="#">Account</a>
     <a href="#">Owned restaurants</a>
+    <h1>Favorites</h1>
     <section id="favorites">
-      <h1>Favorites</h1>
       <a href="#">Favorite dishes</a>
       <a href="#">Favorite restaurants</a>
     </section>
