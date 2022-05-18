@@ -17,7 +17,6 @@ body {
 
 
 body > main {
-  background-color: rgb(35, 35, 35);
 
   width: 80%;
   margin: 0;
@@ -31,7 +30,6 @@ body > main > section#main-suggestions {
 
   display:flex;
   flex-direction: column;
-
   row-gap: 1.5em;
 }
 
@@ -43,9 +41,9 @@ body .suggestions {
                        "images";
   
   text-align: center;
+  background-color: rgb(35, 35, 35);
 
-  padding: 0;
-  margin: 0;
+  padding: 1em;
 }
 
 .suggestions > h1 {
@@ -55,8 +53,8 @@ body .suggestions {
   color: white;
   font-family: 'Raleway', sans-serif;
   font-size: 2em;
-  padding-left: 0.5em;
   font-weight: 400;
+  padding-left: 0.5em;
 }
 
 .suggestions > .images {
