@@ -318,43 +318,67 @@ section#restaurant-reviews > .reviews-container > #review-form {
   display: grid;
   grid-template-areas: "form-header"
                        "form-content";
-  margin: 1em;
-  padding-bottom: 4em;
 }
 
 section#restaurant-reviews > .reviews-container > #review-form > h2 {
   grid-area: form-header;
+  font-weight: 300;
 }
 
 section#restaurant-reviews > .reviews-container > #review-form > form {
   grid-area: form-content;
-
   display: flex;
   flex-direction: column;
   row-gap: 1em;
+  padding-bottom: 1em;
+}
+
+section#restaurant-reviews > .reviews-container > #review-form > form label {
+  font-size: 1.2em;
 }
 
 section#restaurant-reviews > .reviews-container > #review-form > form label > input#review-score {
-  margin: 0.5em;
+  margin-left: 0.5em;
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+  background-color: rgb(55, 55, 55);
+  width: 5em; 
 }
 
 section#restaurant-reviews > .reviews-container > #review-form > form label > input#review-comment {
   margin: 0em;
   width: 100%;
   height: 10em;
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+  background-color: rgb(55, 55, 55);
 }
 
 section#restaurant-reviews > .reviews-container > #review-form > form > button {
   align-self: flex-end;
   font-family: 'Raleway', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1em;
   padding-top: 0px;
   padding-bottom: 0px;
   height: 2em;
-  width: 10em;
-  background-color: var(--restaurant-info-score-button-background-color);
+  width: 6em;
+  border-radius: 5px;
+  background-color: rgb(35, 138, 198);
   color: var(--restaurant-info-score-button-text-color);
   border: none;
-  border-radius: 0px;
 }
