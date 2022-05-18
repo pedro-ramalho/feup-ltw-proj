@@ -9,7 +9,7 @@
   --text-color: white;
   
   --button-text-color: white;
-  --button-hover-text-color: rgb(31, 31 ,31);
+  --button-hover-text-color: rgb(50, 50, 50);
   --button-background: rgb(31, 31 ,31);
   --button-background-hover: white;
   --button-border-color: white;
@@ -22,8 +22,7 @@
 /* header styling */
 
 header {
-  transition: background-color 0.4s ease;
-  background-color: transparent;
+  background-color: rgb(55, 55, 55);
 }
 
 header.header-opaque {

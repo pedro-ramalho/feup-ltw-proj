@@ -19,6 +19,7 @@ header > input#hamburger {
   border-radius: 50%;
   height: 2em;
   max-height: 2em;
+  align-self: center;
 }
 
 header > input#hamburger::after {

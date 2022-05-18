@@ -44,6 +44,7 @@ body > header {
 
 body > header > nav {
   grid-area: hamburger;
+  align-self: center;
 }
 
 body > header > #search-bar-container {
@@ -75,6 +76,9 @@ body > header > #header-account > form {
 
 body > main {
   grid-area: main;
+
+  align-self: center;
+  justify-self: center;
 }
 
 
