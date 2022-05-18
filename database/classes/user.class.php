@@ -25,7 +25,7 @@
       $user = $stmt->fetch();
 
       return new User(
-        $user['id'],
+        intval($user['id']),
         $user['username'],
         $user['pw'],
         $user['addr'],
