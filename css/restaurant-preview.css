@@ -85,35 +85,11 @@
 }
 
 .restaurant-preview > a > .categories-container {
-  margin: 0;
-  padding: 0.5em;
   position: absolute;
-  bottom: 0.5em;
-  height: auto;
-  display: flex;
-  flex-wrap: nowrap;
-  column-gap: 0.2em;
-
-  overflow: scroll; 
-  -ms-overflow-style: none; /*edge and IE*/
-  scrollbar-width: none; /* firefox */
 }
 
 .categories-container::-webkit-scrollbar { /* chrome, safari */
   display: none;
-}
-
-.restaurant-preview > a > .categories-container > h5.preview-category {
-  margin: 0;
-  min-height: 1em;
-  max-height: 1em;
-
-  border: 0.5px solid var(--preview-restaurant-category-h5-border-color);
-  border-radius: 2px;
-
-  font-family: 'Raleway';
-  font-size: 1em;
-  font-weight: 300;
 }
 
 /* anchors */

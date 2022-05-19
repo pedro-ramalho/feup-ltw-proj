@@ -22,17 +22,16 @@
   box-sizing: border-box;
 }
 
-/* body styling */
 body {
   background-color: rgb(40, 40, 40);
   overflow: hidden;
 }
 
+#restaurant-previews { 
+  width: 100%;
+}
 
-/* end body styling */
 
-
-/* main structure */
 body > main {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -43,10 +42,8 @@ body > main {
   align-items: center;
   margin-top: 5em; 
 }
-/* end main structure */
 
 
-/* filter aside */
 aside#restaurant-filter {
   grid-area: filter;
   justify-self: center;
@@ -64,6 +61,7 @@ aside#restaurant-filter {
   font-family: 'Raleway', sans-serif;
 }
 
+
 #restaurant-filter > * {
   padding: 1em;
 }
@@ -80,10 +78,7 @@ aside#restaurant-filter > form {
   padding-left: 1em;
   margin: 0;
 }
-/* end filter aside */
 
-
-/* restaurant previews container */
 #restaurant-previews {
   grid-area: previews;
   color: var(--restaurant-previews-text-color);
@@ -91,154 +86,15 @@ aside#restaurant-filter > form {
   padding: 0;
 }
 
-/* restaurant previews items */
-body #restaurant-previews > .restaurant-preview:first-child {
-  margin-top: 0;
-}
-
-body #restaurant-previews > .restaurant-preview:last-child {
-  margin-bottom: 0;
-}
-
-#restaurant-previews > .restaurant-preview {
-  padding: 0;
-
-  margin: 3em 0;
-  
-  display: flex;
-  align-items: stretch;
-
-  position: relative;
-  
-  width: 1000px;
-  height: 120px;
-  max-width: 1000px;
-  max-height: 120px;
-
-  font-family: 'Raleway', sans-serif;
-}
-
-#restaurant-previews > .restaurant-preview > a {
-  margin: 0;
-  padding: 0;
-  
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
-}
-
-#restaurant-previews > .restaurant-preview > a > img {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 5px;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-#restaurant-previews > .restaurant-preview > button.favorite-restaurant {
-  position: absolute;
-  display: inline;
-
-  top: 1em;
-  right: 1em;
-  margin: 0;
-
-  background: none;
-  border: none;
-  
-  max-width: 2em;
-  max-height: 2em;
-}
-
-#restaurant-previews > .restaurant-preview > button.favorite-restaurant > img {
-  max-width: 100%;
-  max-height: 100%; 
-}
-
-#restaurant-previews > .restaurant-preview > a > h1.restaurant-preview-title {
-  position: absolute;
-  left: 1em;
-  top: 1em;
-  margin: 0;
-}
-
-#restaurant-previews > .restaurant-preview > a > h3 {
-  padding: 0;
-  margin: 0;
-}
-
-#restaurant-previews > .restaurant-preview > a > .score-container {
-  display: flex;
-  place-items: center;
-  justify-content: center;
-
-  position: absolute;
-  right: 0.5em;
+.categories-container {
   bottom: 0.5em;
-  margin: 0;
-
-  width: 40px;
-  height: 40px;
-  max-width: 40px;
-  max-height: 40px;
-
-  overflow: hidden;  
-
-  border: 0.4px solid var(--restaurant-previews-score-container-border-color);
-  border-radius: 50% 50%;
 }
 
-#restaurant-previews > .restaurant-preview > a > .categories-container {
-  margin: 0;
-  padding: 0;
-
-  position: absolute;
-  bottom: 0.5em;
-  left: 0.5em;
-
-  height: fit-content;
-  max-width: 80%;
-
-  display: flex;
-  flex-wrap: nowrap;
-  column-gap: 0.2em;
-
-  overflow: scroll; 
-  -ms-overflow-style: none; /*edge and IE*/
-  scrollbar-width: none; /* firefox */
-}
-
-.categories-container::-webkit-scrollbar { /* chrome, safari */
-  display: none;
-}
-
-#restaurant-previews > .restaurant-preview > a > .categories-container > h5.preview-category {
-  margin: 0;
-  padding: 0.3em;
-
-  min-height: 1em;
-  max-height: 1em;
-
-  border: 0.5px solid var(--preview-restaurant-category-h5-border-color);
-  border-radius: 2px;
-
-  font-family: 'Raleway';
-  font-size: 1em;
-  font-weight: 300;
-}
-
-/* anchors */
 #restaurant-filter a, #restaurant-previews a {
   text-decoration: none;
   color: var(--restaurant-filter-text-color);
 }
 
-
-/* restaurant-filter display structure */
 #restaurant-filter > form {
   display: grid;
   grid-template-areas: "score"
@@ -253,10 +109,6 @@ body #restaurant-previews > .restaurant-preview:last-child {
   grid-area: categories;
 }
 
-
-/* restaurant-filter styling */
-
-/* score section display structure */
 #restaurant-filter > form > #restaurant-score > #score-input-container {
   display: flex;
   flex-direction: row;
@@ -266,13 +118,10 @@ body #restaurant-previews > .restaurant-preview:last-child {
   column-gap: 1.5em;
 }
 
-/* apply margin to the number inputs in the score section */
 #restaurant-filter > form > #restaurant-score > #score-input-container .score-number {
   margin: 0.5em;
 }
 
-
-/* category section display structure */
 #restaurant-filter > form > #restaurant-category > #category-input-container {
   display: flex;
   flex-direction: column;
@@ -281,13 +130,11 @@ body #restaurant-previews > .restaurant-preview:last-child {
   justify-content: flex-start;
 }
 
-/* apply padding and margin to checkbox inputs in the category section */
 #restaurant-filter > form > #restaurant-category > #category-input-container .category-checkbox {
   padding: 1em;
   margin: 0.6em;
 }
 
-/* filter button styling */
 #restaurant-filter > form > button {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
