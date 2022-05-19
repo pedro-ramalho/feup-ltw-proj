@@ -132,7 +132,9 @@ body > main {
   justify-self: end;
 }
 
-.edit-restaurant > #edit-dishes > button {
+.edit-restaurant > #edit-dishes > a {
+  text-decoration: none;
+  padding: 0.5em;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 1.5em;
@@ -151,4 +153,44 @@ body > main {
   background-color: rgb(35, 35, 35);
 }
 
+#upload-img > label {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  
+  height: 1em;
+  width: 4em;
+  background-color: rgb(7, 97, 170);
+  color: var(--restaurant-info-score-button-text-color);
+  border: none;
+  border-radius: 0px;
+}
 
+#upload-img > label > input[type="file"] {
+  display: none;
+}
+
+#upload-img > input[type="submit"] {
+  margin-left: 1em;
+  color: white;
+  padding: 0.5em;
+  width: 4em;
+  height: fit-content;
+  font-size: 1.2em;
+
+  background-color: rgb(25, 14, 170);
+  color: var(--restaurant-info-score-button-text-color);
+  border: none;
+  border-radius: 0px;
+  padding: 0.5em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+#upload-img > input {
+  margin-bottom: 1em;
+  margin-top: 3em;
+}

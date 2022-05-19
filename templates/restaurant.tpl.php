@@ -67,6 +67,10 @@
       </div>
     </form>
     <div id="upload-img">
+      <label id="file-upload">
+        <input type="file" name="image">Choose file
+      </label>
+      <input type="submit" value="Send">
       <img src="../assets/temp.jpg" alt="restaurant's display image">
     </div>
     <div id="edit-dishes">
