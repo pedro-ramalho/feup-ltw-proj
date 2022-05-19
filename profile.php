@@ -40,13 +40,15 @@
   <link rel="stylesheet" href="css/pages/profile.css">
 
   <script src="javascript/profile.js" defer></script>
+  <script src="javascript/sidebar-button.js" defer></script>
   <title>Profile</title>
 </head>
 <body>
+  <?php draw_sidebar() ?>
   <?php draw_header() ?>
   <main>
   <nav id="profile-options">
-    <a id="acc-anchor" href="#">Account</a>
+    <a id="acc-anchor" href="#" class="selected">Account</a>
     <a id="owned-res-anchor" href="#">Owned restaurants</a>
     <h1>Favorites</h1>
     <section id="favorites">

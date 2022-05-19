@@ -16,8 +16,10 @@
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/pages/signin-page.css">
   <title>Sign in to Agile Eating</title>
+  <script src="javascript/sidebar-button.js" defer></script>
 </head>
 <body>
+  <?php draw_sidebar() ?>
   <?php draw_header() ?>
   <main>
     <section id="signin">

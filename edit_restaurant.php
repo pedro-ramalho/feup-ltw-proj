@@ -36,8 +36,10 @@
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/pages/edit-restaurant-page.css">
   <title>Edit Restaurant</title>
+  <script src="javascript/sidebar-button.js" defer></script>
 </head>
 <body>
+  <?php draw_sidebar() ?>
   <?php draw_header(); ?>
   <main>
     <section id="restaurant-info">

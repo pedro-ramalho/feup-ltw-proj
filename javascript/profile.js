@@ -13,34 +13,36 @@ const ownedRestaurantsSection = document.querySelector("#owned-restaurants")
 const favDishesSection = document.querySelector("#favorite-dishes")
 const favRestaurantsSection = document.querySelector("#favorite-restaurants")
 
+const sections = Array(accountSection, ownedRestaurantsSection, favDishesSection, favRestaurantsSection)
+
+let visible = accountSection;
+let selected = accountAnchor;
+
+function toggleSection(newVisible, newSelected) {
+  visible.setAttribute("hidden", "")
+  newVisible.removeAttribute("hidden")
+  visible = newVisible;
+
+  selected.classList.remove("selected")
+  newSelected.classList.add("selected")
+  selected = newSelected
+}
+
 
 /* event listeners */
 
 accountAnchor.addEventListener('click', () => {
-  accountSection.removeAttribute("hidden")
-
-  ownedRestaurantsSection.setAttribute("hidden", "")
-  favDishesSection.setAttribute("hidden", "")
-  favRestaurantsSection.setAttribute("hidden", "")
+  toggleSection(accountSection)
 })
 
 ownedRestaurantsAnchor.addEventListener('click', () => {
-  accountSection.setAttribute("hidden", "")
-  ownedRestaurantsSection.removeAttribute("hidden")
-  favDishesSection.setAttribute("hidden", "")
-  favRestaurantsSection.setAttribute("hidden", "")
+  toggleSection(ownedRestaurantsSection)
 })
 
 favDishesAnchor.addEventListener('click', () => {
-  accountSection.setAttribute("hidden", "")
-  ownedRestaurantsSection.setAttribute("hidden", "")
-  favDishesSection.removeAttribute("hidden")
-  favRestaurantsSection.setAttribute("hidden", "")
+  toggleSection(favDishesSection)
 })
 
 favRestaurantsAnchor.addEventListener('click', () => {
-  accountSection.setAttribute("hidden", "")
-  ownedRestaurantsSection.setAttribute("hidden", "")
-  favDishesSection.setAttribute("hidden", "")
-  favRestaurantsSection.removeAttribute("hidden")
+  toggleSection(favRestaurantsSection)
 })

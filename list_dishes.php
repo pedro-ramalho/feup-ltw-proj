@@ -40,8 +40,10 @@
   <link rel="stylesheet" href="css/pages/list-dishes-page.css">
   <title>Dishes</title>
   <script src="javascript/header-scroll.js" defer></script>
+  <script src="javascript/sidebar-button.js" defer></script>
 </head>
 <body>
+  <?php draw_sidebar() ?>
   <?php draw_header() ?>
   <main>
     <section id="dish-previews">
