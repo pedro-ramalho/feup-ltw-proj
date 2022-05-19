@@ -1,5 +1,12 @@
 const searchBar = document.querySelector("#query")
 
+function createAndAppendDiv(parent, divClass) {
+  const elem = document.createElement('div')
+  elem.classList.add(divClass)
+  parent.appendChild(elem)
+  return elem;
+}
+
 function createAndAppendH3(parent, text, h3Class) {
   const elem = document.createElement('h3')
   elem.textContent = text
@@ -12,8 +19,9 @@ function createAndAppendRestaurant(parent, restaurant) {
   searchResult.href = "/view_restaurant.php?id=" + restaurant.id
   searchResult.classList.add("search-result-restaurant")
   createAndAppendH3(searchResult, restaurant.res_name, "restaurant-name")
-  createAndAppendH3(searchResult, restaurant.score, "restaurant-score")
-  createAndAppendH3(searchResult, restaurant.coords, "restaurant-coords")
+  const div = createAndAppendDiv(searchResult, "score-and-coords-container")
+  createAndAppendH3(div, restaurant.score, "restaurant-score")
+  createAndAppendH3(div, restaurant.coords, "restaurant-coords")
   parent.appendChild(searchResult)
 }
 
@@ -22,8 +30,8 @@ function createAndAppendDish(parent, dish) {
   searchResult.href = "/view_restaurant.php?id=" + dish.restaurant
   searchResult.classList.add("search-result-dish")
   createAndAppendH3(searchResult, dish.name, "dish-name")
-  createAndAppendH3(searchResult, dish.score, "dish-socre")
-  //createAndAppendH3(searchResult, dish.price, "dish-restaurant-name") 💀💀💀
+  createAndAppendH3(searchResult, dish.price + '€', "dish-price")
+  //createAndAppendH3(searchResult, dish.restaurant, "dish-restaurant-name") 💀💀💀
   parent.appendChild(searchResult)
 }
 
@@ -34,15 +42,13 @@ if (searchBar) {
     const restaurants = response[0]
     const dishes = response[1]
     
-    console.log(restaurants)
-
     const container = document.querySelector("#search-results-container")
-    container.innerHTML = ''
     if (searchBar.value.length === 0) {
-      container.setAttribute("hidden", '')
+      container.classList.add("hidden-search-results")
     }
     else {
-      container.removeAttribute("hidden")
+      container.innerHTML = ''
+      container.classList.remove("hidden-search-results")
       //restaurants
       const restaurantSectionTitle = document.createElement('h1')
       restaurantSectionTitle.textContent = "Restaurants"

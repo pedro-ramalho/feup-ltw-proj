@@ -102,7 +102,7 @@
     }
 
     static function search_restaurants(PDO $db, string $search, int $count) : array {
-      $stmt = $db->prepare('SELECT id FROM Restaurant WHERE res_name LIKE ? LIMIT ?');
+      $stmt = $db->prepare('SELECT id FROM Restaurant WHERE res_name LIKE ? ORDER BY score DESC LIMIT ? ');
       $stmt->execute(array('%' . $search . '%', $count));
       
       $restaurants = Array();

@@ -1,5 +1,5 @@
 <?php function draw_header() { ?>
-  <section id="search-results-container" hidden="">
+  <section id="search-results-container" class="hidden-search-results">
   </section>
   <header>
     <div id="sidebar-button-container">

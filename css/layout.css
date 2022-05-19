@@ -30,9 +30,8 @@ body {
 
 /* header layout */
 
-body > header {
+body > header {  
   grid-area: header;
-  
   height: 55px;
 
   display: flex;
@@ -44,20 +43,15 @@ body > header {
 }
 
 body > header > nav {
-  grid-area: hamburger;
   align-self: center;
 }
 
-body > header > #search-bar-container {
-  grid-area: searchbar;
-  
+body > header > #search-bar-container {  
   display: flex;
   place-content: center;
 }
 
 body > header > #header-signup, body > header > #header-account {
-  grid-area: account;
-
   display: flex;
   place-content: end;
   align-items: stretch;
@@ -70,6 +64,23 @@ body > header > #header-account > form {
   padding: 0px 0.5em;
   margin: 0px;
   height: 100%;
+}
+
+body > section#search-results-container {
+  margin: 0;
+  padding: 0.5em 0;
+
+  position: fixed;
+  top:56px;
+  left:50%;
+  transform: translate(calc(-50% - 2.5px), 0);  
+  
+  
+  min-width: 28rem;
+  max-width: 28rem;
+
+  display: flex;
+  flex-direction: column;
 }
 
 
