@@ -10,6 +10,7 @@
   require_once('templates/common.php');
   require_once('templates/profile.tpl.php');
   require_once('templates/restaurant.tpl.php');
+  require_once('templates/dish.tpl.php');
 
   require_once('database/classes/user.class.php');
   require_once('database/classes/restaurant.class.php');
@@ -33,8 +34,11 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/pages/profile.css">
+  <link rel="stylesheet" href="css/categories.css">
   <link rel="stylesheet" href="css/restaurant-preview.css">
+  <link rel="stylesheet" href="css/dish-preview.css">
+  <link rel="stylesheet" href="css/pages/profile.css">
+
   <script src="javascript/profile.js" defer></script>
   <title>Profile</title>
 </head>

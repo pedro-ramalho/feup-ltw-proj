@@ -27,7 +27,7 @@
 ?>
   <div class="dish-preview">
     <h1 class="dish-preview-title"><?=$dish->name?></h1>
-    <img src="../assets/temp.jpg" alt="dish's preview image" width="200" height="200">
+    <img src="../assets/temp.jpg" alt="dish's preview image">
     <p id="dish-price"><?=$dish->price?>€</p>
     <a id="dish-restaurant" href="restaurant.php?id=<?=$restaurant->id?>"><?=$restaurant->res_name?></a>
     <button class="favorite-dish">

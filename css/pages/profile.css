@@ -15,6 +15,10 @@ body > * {
   color: white;
 }
 
+.categories-container {
+  bottom: 0.5em;
+}
+
 a {
   text-decoration: none;
   color: white;
