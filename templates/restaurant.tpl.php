@@ -35,10 +35,10 @@
       <div class="score-container">
         <h3><?=$restaurant->score?></h3>
       </div>
-      <div class="restaurant-categories-container">
+      <div class="categories-container">
         <?php
         foreach($restaurant->categories as $category) {
-          ?> <h5 class="preview-restaurant-category"><?=$category?></h5>
+          ?> <h5 class="preview-category"><?=$category?></h5>
         <?php } ?>
       </div>
     </a>

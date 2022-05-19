@@ -9,6 +9,7 @@
   
   require_once('templates/common.php');
   require_once('templates/profile.tpl.php');
+  require_once('templates/restaurant.tpl.php');
 
   require_once('database/classes/user.class.php');
   require_once('database/classes/restaurant.class.php');
@@ -17,6 +18,9 @@
   $db = get_db_extended_path();
 
   $user = User::get_user($db, intval($_SESSION['id']));
+
+  $fav_restaurants = Restaurant::get_fav_restaurants($db, intval($_SESSION['id']));
+  $owned_restaurants = Restaurant::get_owned_restaurants($db, intval($_SESSION['id']));
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +33,7 @@
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pages/profile.css">
+  <link rel="stylesheet" href="css/restaurant-preview.css">
   <script src="javascript/profile.js" defer></script>
   <title>Profile</title>
 </head>
@@ -49,13 +54,17 @@
       <?php draw_profile_form($user) ?>
     </section>
     <section id="owned-restaurants" hidden>
-      <p>Owned restaurants</p>
+      <?php foreach ($owned_restaurants as $owned_restaurant)
+              draw_restaurant_preview($owned_restaurant);
+      ?>
     </section>
     <section id="favorite-dishes" hidden>
       <p>Fav dishes</p>
     </section>
     <section id="favorite-restaurants" hidden>
-      <p>Fav restaurants</p>
+      <?php foreach ($fav_restaurants as $fav_restaurant)
+              draw_restaurant_preview($fav_restaurant);
+      ?>
     </section>
   </section>
   </main>

@@ -72,21 +72,6 @@
       return $restaurants;
     }
 
-    /* returns an array containing the restaurants of a user with a given id */
-    static function get_user_restaurants(PDO $db, int $user_id) : array {
-      $stmt = $db->prepare(
-        'SELECT id, owner_id, score, res_name, addr, coords FROM Restaurant WHERE owner_id = ?'
-      );
-      $stmt->execute(array($user_id));
-
-      $restaurants = array();
-
-      while ($restaurant = $stmt->fetch()) 
-        $restaurants[] = Restaurant::get_restaurant($db, $restaurant['id']);
-      
-      return $restaurants;
-    }
-
     /* returns an array containing the favorite restaurants of a user with a given id */
     static function get_fav_restaurants(PDO $db, int $user_id) : array {
       $stmt = $db->prepare('SELECT id, owner_id, score, res_name, addr, coords 
