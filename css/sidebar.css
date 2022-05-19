@@ -8,109 +8,62 @@
   box-sizing: border-box;
 }
 
-/* hamburger button, unchecked */
+/* sidebar, hidden */
 
-header > input#hamburger {
-  grid-area: hamburger;
-  appearance: none;
-  transform: translateY(-10px);
-  z-index: 10;
-  max-width: 2em;
-  border-radius: 50%;
-  height: 2em;
-  max-height: 2em;
-  align-self: center;
-}
-
-header > input#hamburger::after {
-  font-size: 2rem;
-  color: white;
-  content: '\2630';
-  grid-area: hamburger;
-}
-
-/* hamburger button, checked */
-  
-header > input#hamburger:checked {
-  transform: translateY(-1px);
-}
-
-header > input#hamburger:checked::after {
-  font-size: 1.5rem;
-  color: white;
-  content: '\2715';
-  grid-area: hamburger;
-}
-
-
-/* sidebar, unchecked */
-
-header > aside#sidebar {
+aside#sidebar {
   position: fixed;
+  left: 0px;
+
+  margin: 0px;
+  padding: 0px;
+
+  height: 100vh;
+  width: 18em;
+  max-width: 18em;
+
+  z-index: 9;
 
   background-color: rgb(66, 66, 75);
   
-  height: 100vh;
-  width: 0px;
-  max-width: 0px;
-  
-  margin: 0px;
-  padding: 0px;
-  
-  top: 0px;
-  left: 0px;
-
   box-shadow: none;
 
-  transition: width 0.3s ease-out, max-width 0.3s ease-out;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform: translateX(-18em);
 }
 
-/* sidebar, checked */
+/* sidebar, displayed */
 
-header > input#hamburger:checked ~ aside#sidebar {
-  z-index: 9;
-  width: 20vw;
-  max-width: 20vw;
+aside#sidebar.displayed {
   box-shadow: 4px 0px 25px black;
+  transform: translateX(0);
 }
 
+/* nav menu */
 
-/* nav menu, unchecked */
-
-header > aside#sidebar > nav#menu {
+aside#sidebar > nav#menu {
   width: 100%;
   height: 100%;
 
   padding: 0px;
-  padding-top: 2em;
   margin: 0px;
-
-  transition: transform 0.3s ease-out;
-  transform: translate(-20vw, 0px);
-}
-
-/* nav menu, checked */
-
-header input#hamburger:checked ~ aside#sidebar > nav#menu {
-  transform: translate(0px, 0px);
-
 }
 
 
 /* sidebar section */
 
-header > aside#sidebar > nav#menu > section.sidebar-section {
+aside#sidebar > nav#menu > section.sidebar-section {
   padding: 0px;
   margin: 0px;
   width: 100%;
   border-top: 0.5px solid rgb(110, 110, 112);
 }
 
-header > aside#sidebar > nav#menu > section.sidebar-section:first-child {
+aside#sidebar > nav#menu > section.sidebar-section:first-child {
   border-top: 0px solid rgb(110, 110, 112);
+  margin-top: 55px;
 }
 
-header > aside#sidebar > nav#menu > section.sidebar-section > h1 {
+aside#sidebar > nav#menu > section.sidebar-section > h1 {
   margin: 0.7em 0px 0px 0.6em;
   font-family: 'Raleway';
   font-size: 1.2em;
@@ -121,7 +74,7 @@ header > aside#sidebar > nav#menu > section.sidebar-section > h1 {
 
 /* unordered list, unchecked */
 
-header > aside#sidebar > nav#menu > section.sidebar-section > ul {
+aside#sidebar > nav#menu > section.sidebar-section > ul {
   display: flex;
   flex-direction: column;
 
@@ -135,7 +88,7 @@ header > aside#sidebar > nav#menu > section.sidebar-section > ul {
 
 /* list items, unchecked */
 
-header > aside#sidebar > nav#menu > section.sidebar-section > ul > li {
+aside#sidebar > nav#menu > section.sidebar-section > ul > li {
   text-align: left;
   max-height: 3em;
   height: 3em;
@@ -149,7 +102,7 @@ header > aside#sidebar > nav#menu > section.sidebar-section > ul > li {
 
 /* list items, checked */
 
-header > input#hamburger:checked ~ aside#sidebar > nav#menu > section.sidebar-section > ul > li {
+aside#sidebar > nav#menu > section.sidebar-section > ul > li {
   opacity: 1;
 
   max-width: 100%;
@@ -158,13 +111,13 @@ header > input#hamburger:checked ~ aside#sidebar > nav#menu > section.sidebar-se
 
 /* list items, hovered */
 
-header > aside#sidebar > nav#menu > section.sidebar-section > ul > li:hover {
+aside#sidebar > nav#menu > section.sidebar-section > ul > li:hover {
   background-color: rgb(84, 84, 95);
 }
 
 /* anchors */
 
-header > aside#sidebar > nav#menu > section.sidebar-section > ul > li > a {
+aside#sidebar > nav#menu > section.sidebar-section > ul > li > a {
   text-decoration: none;
 
   display: flex;
@@ -184,7 +137,14 @@ header > aside#sidebar > nav#menu > section.sidebar-section > ul > li > a {
 
 /* anchors' content */
 
-header > aside#sidebar > nav#menu > section.sidebar-section > ul > li > a > span {
+aside#sidebar > nav#menu > section.sidebar-section > ul > li > a > span {
   margin-left: 1em;
   text-align: left;
 }
+
+/* toggle home */
+
+aside#sidebar > nav#menu > section.sidebar-section > ul > li#sidebar-home { /* when the screen is small, this will be displayed */
+  display: none;
+}
+

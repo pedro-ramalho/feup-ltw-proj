@@ -1,12 +1,27 @@
 <?php function draw_header() { ?>
   <header>
-    <input type="checkbox" id="hamburger">
-    <label class="hamburger" for="hamburger"></label>
-    <aside id="sidebar">
+    <div id="sidebar-button-container">
+      <button id="toggle-sidebar" class="hamburger">
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" id="hamburger"><path d="M 4 24 V22 H28 V24 Z M 4 17 V15 H28 V17 Z M 4 10 V8 H28 V10 Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" id="close"><path d="M8.3 25.1 6.9 23.7 14.6 16 6.9 8.3 8.3 6.9 16 14.6 23.7 6.9 25.1 8.3 17.4 16 25.1 23.7 23.7 25.1 16 17.4Z"/></svg>
+      </button>
+      <a href="/">Agile Eating</a>
+    </div>
+    <div id="search-bar-container">
+      <form id="search-bar">
+        <input type="search" id="query" placeholder="Search...">
+      </form>
+    </div>
+    <?php draw_header_acc() ?>
+  </header>
+<?php } ?>
+
+<?php function draw_sidebar() { ?>
+  <aside id="sidebar">
       <nav id="menu">
         <section id="highlight" class="sidebar-section">
           <ul>
-            <li><a href="index.php"><span>Home</span></a></li>
+            <li id="sidebar-home"><a href="/"><span>Home</span></a></li>
             <li><a href="#"><span>Hot Deals</span></a></li>
           </ul>
         </section>  
@@ -25,13 +40,6 @@
         </section>    
       </nav>
     </aside>
-    <div id="search-bar-container">
-      <form id="search-bar">
-        <input type="search" id="query" placeholder="Search...">
-      </form>
-    </div>
-    <?php draw_header_acc() ?>
-  </header>
 <?php } ?>
 
 <?php function draw_footer() { ?>
@@ -39,7 +47,7 @@
     <h4>&copy;2022 Agile Eating, Inc.</h4>
   </footer>
 <?php } ?>
-
+  
 <?php 
   function draw_sb_acc() { 
     if (!isset($_SESSION['id'])) { ?>
