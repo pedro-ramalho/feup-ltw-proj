@@ -216,7 +216,7 @@ body #restaurant-previews > .restaurant-preview:last-child {
   display: none;
 }
 
-#restaurant-previews > .restaurant-preview > a > .categories-container > h5.preview-restaurant-category {
+#restaurant-previews > .restaurant-preview > a > .categories-container > h5.preview-category {
   margin: 0;
   padding: 0.3em;
 

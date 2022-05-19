@@ -1,0 +1,154 @@
+:root {
+  --edit-restaurant-body-background-color: rgb(40, 40, 40);
+  --edit-restaurant-body-main-text-color: white;
+  
+  --restaurant-info-score-button-background-color: #4abc11;
+  --restaurant-info-score-button-hover-background-color: #3ea10c;
+  --restaurant-info-score-button-text-color: white;
+  --restaurant-info-score-button-hover-text-color: white;
+
+  --edit-restaurant-dish-description-background-color: white;
+  --edit-restaurant-dish-description-p-text-color: black;
+
+  --edit-restaurant-dish-categories-container-h5-border-color: white;
+
+  --edit-restaurant-reviews-container-background-color: #050505;
+  --edit-restaurant-reviews-container-border-color: white;;
+
+  --edit-restaurant-customer-review-background-color: #333333;
+
+  --edit-restaurant-review-content-background-color: #333333;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--edit-restaurant-body-background-color);
+  margin: 0;
+}
+
+body > main {
+  justify-content: center;
+  margin-top: 5em;
+
+  font-family: 'Raleway', sans-serif;
+  color: var(--view-restaurant-body-main-text-color);
+}
+
+.edit-restaurant {
+  display: grid;
+  grid-template-areas: "restaurant-form"
+                       "restaurant-img"
+                       "edit-dishes";
+  row-gap: 1em;
+}
+
+.edit-restaurant > form {
+  color: white;
+  grid-area: restaurant-form;
+  background-color: rgb(35, 35, 35);
+}
+
+#restaurant-info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.restaurant-name-score {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  column-gap: 1em;
+}
+
+.restaurant-name-score input {
+  font-size: 1.5em;
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(60, 60, 60);
+  border-radius: 10px;
+  border: 1px solid rgb(55, 55, 55);
+  padding: 10px;
+  color: white;
+}
+
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1em;
+  padding-right: 1em;
+}
+
+.categories-container > h5 {
+  margin: 0;
+  background-color: #626D58;
+  padding: 0.5em;  
+  border: 0.5px solid #555e4c;
+  border-radius: 2px;
+  color: white;
+  font-family: 'Raleway';
+  font-size: 1em;
+  font-weight: 300;
+}
+
+#new-restaurant-coords {
+  font-size: 1em;
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(60, 60, 60);
+  border-radius: 10px;
+  border: 1px solid rgb(55, 55, 55);
+  padding: 10px;
+  color: white;
+  align-self: flex-start;
+}
+
+#save-restaurant-info {
+  align-self: flex-end;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 2em;
+  width: 5em;
+  border-radius: 5px;
+  background-color: rgb(35, 138, 198);
+  color: var(--restaurant-info-score-button-text-color);
+  border: none;
+}
+
+.edit-restaurant > #upload-img img {
+  grid-area: restaurant-img;
+  max-width: 100%;
+}
+
+.edit-restaurant > #edit-dishes {
+  grid-area: edit-dishes;
+  justify-self: end;
+}
+
+.edit-restaurant > #edit-dishes > button {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+
+  height: 2em;
+  width: 6em;
+  background-color: var(--restaurant-info-score-button-background-color);
+  color: var(--restaurant-info-score-button-text-color);
+  border: none;
+  border-radius: 0px;
+}
+
+.edit-restaurant > form > #restaurant-info {
+  padding: 1em;
+  margin: 0;
+  background-color: rgb(35, 35, 35);
+}
+
+

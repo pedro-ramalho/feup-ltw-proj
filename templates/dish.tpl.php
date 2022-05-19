@@ -41,27 +41,3 @@
     </div>
   </div>
 <?php } ?>
-
-<?php function draw_dish_edit_preview(Dish $dish) { ?>
-<?php
-  $db = get_db_extended_path();
-  
-  $id = Dish::get_dish_restaurant($db, $dish->id);
-  $restaurant = Restaurant::get_restaurant($db, $id);  
-?>
-  <div class="dish-edit_preview">
-    <h1 class="dish-preview-title"><?=$dish->name?></h1>
-    <img src="../assets/temp.jpg" alt="dish's preview image" width="200" height="200">
-    <p id="dish-price"><?=$dish->price?>€</p>
-    <a id="dish-restaurant" href="restaurant.php?id=<?=$restaurant->id?>"><?=$restaurant->res_name?></a>
-    <a href="edit_dish.php?id=<?=$dish->id?>">
-      <img src="#" alt="config"> <!-- roda dentada .svg -->
-    </a>
-    <div class="dish-categories-container">
-      <?php
-      foreach($restaurant->categories as $category) {
-        ?> <h5 class="preview-dish-category"><?=$category?></h5>
-      <?php } ?>
-    </div>
-  </div>
-<?php } ?>

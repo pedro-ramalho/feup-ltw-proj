@@ -178,7 +178,7 @@ body #dish-previews > .dish-preview:last-child {
   align-self: flex-start;
 }
 
-#dish-previews > .dish-preview > .dish-categories-container {
+#dish-previews > .dish-preview > .categories-container {
   margin: 0;
   padding: 0;
 
@@ -198,11 +198,11 @@ body #dish-previews > .dish-preview:last-child {
   scrollbar-width: none; /* firefox */
 }
 
-.dish-categories-container::-webkit-scrollbar { /* chrome, safari */
+.categories-container::-webkit-scrollbar { /* chrome, safari */
   display: none;
 }
 
-#dish-previews > .dish-preview > .dish-categories-container > h5.preview-dish-category {
+#dish-previews > .dish-preview > .categories-container > h5.preview-category {
   margin: 0;
   padding: 0.3em;
 

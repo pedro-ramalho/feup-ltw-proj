@@ -50,11 +50,27 @@
 
 <?php function draw_restaurant_form(Restaurant $restaurant) { ?>
   <div class="edit-restaurant">
-    <div id="restaurant-info">
-      <div class="restaurant-name-score">
-        <input type="text" value="<?=$restaurant->res_name?>" name="new-restaurant-name" id="edit-restaurant-name">
-        <h3 class="restaurant-score"><?=$restaurant->score?>/5</h3>
+    <form method="post">
+      <div id="restaurant-info">
+        <div class="restaurant-name-score">
+          <input type="text" value="<?=$restaurant->res_name?>">
+          <h3 class="restaurant-score"><?=$restaurant->score?>/5</h3>
+        </div>
+        <div class="categories-container">
+          <?php
+          foreach($restaurant->categories as $category) {
+            ?> <h5 class="preview-category"><?=$category?></h5>
+          <?php } ?>
+        </div>
+        <input id="new-restaurant-coords" type="text" value="<?=$restaurant->coords?>">
+        <button id="save-restaurant-info">Save</button>
       </div>
-      
+    </form>
+    <div id="upload-img">
+      <img src="../assets/temp.jpg" alt="restaurant's display image">
+    </div>
+    <div id="edit-dishes">
+      <a href="edit_dishes.php?id=<?=$restaurant->id?>">Edit dishes</a>
+    </div>
   </div>
 <?php } ?>

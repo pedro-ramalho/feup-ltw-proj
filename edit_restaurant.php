@@ -31,22 +31,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/pages/edit-restaurant-page.css">
   <title>Edit Restaurant</title>
 </head>
 <body>
   <?php draw_header(); ?>
   <main>
     <section id="restaurant-info">
-      <?php draw_restaurant($restaurant) ?>
-    </section>
-    <section id="restaurant-dishes">
-      <h1>Dishes</h1>
-      <div class="dishes-container">
-      <?php
-        foreach ($dishes as $dish)
-          draw_dish($dish);
-      ?>
-      </div>
+      <?php draw_restaurant_form($restaurant) ?>
     </section>
   </main>
   <?php draw_footer(); ?>
