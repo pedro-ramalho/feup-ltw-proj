@@ -66,12 +66,27 @@ section#option-content > section#user-credentials > form {
   display: flex;
   flex-direction: column;
   row-gap: 1em;
+  height: 100%;
+  width: 100%;
+}
+
+form#account-form label, form#account-form input {
+  display: block;
+}
+
+section#option-content > section#user-credentials > form#account-form > label {
+  font-size: 1.2em;
 }
 
 section#option-content > section#user-credentials > form#account-form > label input {
-  margin-left: 0.5em;
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: 'Raleway', sans-serif;
+  background-color: rgb(65, 65, 65);
+  border-radius: 10px;
+  border: 1px solid rgb(60, 60, 60);
+  padding: 8px;
+  margin-top: 0.5em;
+  color: white;
 }
 
 section#option-content > section#user-credentials > form#account-form > button {

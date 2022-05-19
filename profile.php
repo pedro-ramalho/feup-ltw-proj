@@ -48,13 +48,13 @@
     <section id="user-credentials">
       <?php draw_profile_form($user) ?>
     </section>
-    <section id="owned-restaurants">
+    <section id="owned-restaurants" hidden>
       <p>Owned restaurants</p>
     </section>
-    <section id="favorite-dishes">
+    <section id="favorite-dishes" hidden>
       <p>Fav dishes</p>
     </section>
-    <section id="favorite-restaurants">
+    <section id="favorite-restaurants" hidden>
       <p>Fav restaurants</p>
     </section>
   </section>
