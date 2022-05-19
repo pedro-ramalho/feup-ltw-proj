@@ -76,6 +76,7 @@ section.dishes > form > label input {
   border: 1px solid rgb(55, 55, 55);
   padding: 8px;
   margin-top: 0.5em;
+  width: 100%;
   color: white;
 }
 
@@ -83,6 +84,7 @@ section.dishes > form > .categories-container {
   display: flex;
   flex-direction: row;
   column-gap: 1em;
+  width: 100%;
 }
 
 .categories-container > h5 { 
@@ -105,6 +107,8 @@ section.dishes > form > button {
   padding-top: 0px;
   padding-bottom: 0px;
   height: 2em;
+  margin-top: 1.5em;
+  align-self: flex-end;
   width: 6em;
   border-radius: 5px;
   background-color: rgb(35, 138, 198);
