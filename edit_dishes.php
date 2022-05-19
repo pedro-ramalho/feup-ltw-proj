@@ -40,7 +40,11 @@
 <body>
   <?php draw_header(); ?>
   <main>
-
+    <?php foreach($dishes as $dish) { ?>
+      <section class="dishes">
+        <?php draw_dish_form($dish) ?>
+      </section>
+    <?php } ?>
   </main>
   <?php draw_footer(); ?>
 </body>

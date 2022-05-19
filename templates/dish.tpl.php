@@ -48,7 +48,7 @@
       Name<input id="dish-name" type="text" value="<?=$dish->name?>">
     </label>
     <label for="dish-price">
-      Name<input id="dish-name" type="text" value="<?=$dish->price?>">
+      Price<input id="dish-price" type="text" value="<?=$dish->price?>">
     </label>
     <div class="categories-container">
     <?php
@@ -58,11 +58,11 @@
     </div>
     <button type="submit">Save</button>
   </form>
-  <div id="#img-upload">
+  <img src="../assets/temp.jpg" alt="restaurant's display image">
+  <div id="buttons">
     <label id="file-upload">
       <input type="file" name="image">Choose file
     </label>
     <input type="submit" value="Send">
-    <img src="../assets/temp.jpg" alt="restaurant's display image">
   </div>
 <?php } ?>
