@@ -12,10 +12,10 @@
         <h1 class="restaurant-title"><?=$restaurant->res_name?></h1>
         <h3 class="restaurant-score"><?=$restaurant->score?>/5</h3>
       </div>
-      <div class="dish-categories-container">
+      <div class="categories-container">
         <?php
         foreach($restaurant->categories as $category) {
-          ?> <h5 class="preview-dish-category"><?=$category?></h5>
+          ?> <h5 class="preview-category"><?=$category?></h5>
         <?php } ?>
       </div>
       <h3 class="restaurant-coords"><?=$restaurant->coords?></h3>
@@ -45,5 +45,16 @@
     <button class="favorite-restaurant">
       <img src="../assets/star.svg">
     </button>
+  </div>
+<?php } ?>
+
+<?php function draw_restaurant_form(Restaurant $restaurant) { ?>
+  <div class="edit-restaurant">
+    <div id="restaurant-info">
+      <div class="restaurant-name-score">
+        <input type="text" value="<?=$restaurant->res_name?>" name="new-restaurant-name" id="edit-restaurant-name">
+        <h3 class="restaurant-score"><?=$restaurant->score?>/5</h3>
+      </div>
+      
   </div>
 <?php } ?>

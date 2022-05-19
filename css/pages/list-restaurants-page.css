@@ -192,7 +192,7 @@ body #restaurant-previews > .restaurant-preview:last-child {
   border-radius: 50% 50%;
 }
 
-#restaurant-previews > .restaurant-preview > a > .restaurant-categories-container {
+#restaurant-previews > .restaurant-preview > a > .categories-container {
   margin: 0;
   padding: 0;
 
@@ -212,11 +212,11 @@ body #restaurant-previews > .restaurant-preview:last-child {
   scrollbar-width: none; /* firefox */
 }
 
-.restaurant-categories-container::-webkit-scrollbar { /* chrome, safari */
+.categories-container::-webkit-scrollbar { /* chrome, safari */
   display: none;
 }
 
-#restaurant-previews > .restaurant-preview > a > .restaurant-categories-container > h5.preview-restaurant-category {
+#restaurant-previews > .restaurant-preview > a > .categories-container > h5.preview-restaurant-category {
   margin: 0;
   padding: 0.3em;
 
