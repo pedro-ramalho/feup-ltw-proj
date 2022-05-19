@@ -90,7 +90,18 @@
 
 
     static function get_fav_dishes(PDO $db, int $user_id) {
+      $stmt = $db->prepare('SELECT id, restaurant, price, dish_name, dish 
+                            FROM Dish, FavoriteDish 
+                            WHERE FavoriteDish.user = ? 
+                            AND Dish.id = FavoriteDish.dish');
+      $stmt->execute(array($user_id));
+
+      $fav_dishes = array();
+
+      while ($fav_dish = $stmt->fetch())
+        $fav_dishes[] = Dish::get_dish($db, intval($fav_dish['id']));
       
+      return $fav_dishes;
     }
   }   
 ?>

@@ -19,8 +19,9 @@
 
   $user = User::get_user($db, intval($_SESSION['id']));
 
-  $fav_restaurants = Restaurant::get_fav_restaurants($db, intval($_SESSION['id']));
   $owned_restaurants = Restaurant::get_owned_restaurants($db, intval($_SESSION['id']));
+  $fav_restaurants = Restaurant::get_fav_restaurants($db, intval($_SESSION['id']));
+  $fav_dishes = Dish::get_fav_dishes($db, intval($_SESSION['id']));
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +60,9 @@
       ?>
     </section>
     <section id="favorite-dishes" hidden>
-      <p>Fav dishes</p>
+      <?php foreach ($fav_dishes as $fav_dish)
+              draw_dish_preview($fav_dish);
+      ?>
     </section>
     <section id="favorite-restaurants" hidden>
       <?php foreach ($fav_restaurants as $fav_restaurant)

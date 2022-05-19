@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/categories.css">
   <link rel="stylesheet" href="css/pages/view-restaurant.css">
   <title>Document</title>
   <script src="javascript/header-scroll.js" defer></script>

@@ -94,26 +94,6 @@ section#restaurant-info > .restaurant-frontpage > #restaurant-info > .restaurant
   font-weight: 300;
 }
 
-section#restaurant-info > .restaurant-frontpage > #restaurant-info > .categories-container {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-}
-
-section#restaurant-info > .restaurant-frontpage > #restaurant-info > .categories-container > h5 {
-  margin: 0;
-  background-color: #626D58;
-  padding: 0.5em;  
-  border: 0.5px solid #555e4c;
-  border-radius: 2px;
-  color: white;
-  font-family: 'Raleway';
-  font-size: 1em;
-  font-weight: 300;
-}
-
 section#restaurant-info > .restaurant-frontpage > #restaurant-info > .restaurant-coords {
   font-family: 'Montserrat', sans-serif;
   font-weight: 100;
