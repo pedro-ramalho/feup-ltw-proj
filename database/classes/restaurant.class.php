@@ -98,9 +98,22 @@
       $fav_restaurants = array();
 
       while ($fav_restaurant = $stmt->fetch()) 
-        $fav_restaurants[] = Restaurant::get_restaurant($db, $fav_restaurant['id']);
+        $fav_restaurants[] = Restaurant::get_restaurant($db, intval($fav_restaurant['id']));
       
       return $fav_restaurants;
+    }
+
+    static function get_owned_restaurants(PDO $db, int $user_id) : array {
+      $stmt = $db->prepare('SELECT id, owner_id, score, res_name, addr, coords
+                            FROM Restaurant WHERE owner_id = ?');
+      $stmt->execute(array($user_id));
+
+      $owned_restaurants = array();
+      
+      while ($owned_restaurant = $stmt->fetch())
+        $owned_restaurants[] = Restaurant::get_restaurant($db, intval($owned_restaurant['id']));
+
+      return $owned_restaurants;
     }
   }
 ?>
