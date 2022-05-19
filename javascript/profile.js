@@ -32,17 +32,17 @@ function toggleSection(newVisible, newSelected) {
 /* event listeners */
 
 accountAnchor.addEventListener('click', () => {
-  toggleSection(accountSection)
+  toggleSection(accountSection, accountAnchor)
 })
 
 ownedRestaurantsAnchor.addEventListener('click', () => {
-  toggleSection(ownedRestaurantsSection)
+  toggleSection(ownedRestaurantsSection, ownedRestaurantsAnchor)
 })
 
 favDishesAnchor.addEventListener('click', () => {
-  toggleSection(favDishesSection)
+  toggleSection(favDishesSection, favDishesAnchor)
 })
 
 favRestaurantsAnchor.addEventListener('click', () => {
-  toggleSection(favRestaurantsSection)
+  toggleSection(favRestaurantsSection, favRestaurantsAnchor)
 })
