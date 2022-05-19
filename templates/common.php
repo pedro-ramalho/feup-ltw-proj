@@ -1,4 +1,6 @@
 <?php function draw_header() { ?>
+  <section id="search-results-container" hidden="">
+  </section>
   <header>
     <div id="sidebar-button-container">
       <button id="toggle-sidebar" class="hamburger">

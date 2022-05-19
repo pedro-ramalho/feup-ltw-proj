@@ -100,5 +100,17 @@
 
       return $owned_restaurants;
     }
+
+    static function search_restaurants(PDO $db, string $search, int $count) : array {
+      $stmt = $db->prepare('SELECT id FROM Restaurant WHERE res_name LIKE ? LIMIT ?');
+      $stmt->execute(array('%' . $search . '%', $count));
+      
+      $restaurants = Array();
+      while ($restaurant = $stmt->fetch()) {
+        $restaurants[] = Restaurant::get_restaurant($db, intval($restaurant['id']));
+      }
+      
+      return $restaurants;
+    }
   }
 ?>

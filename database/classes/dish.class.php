@@ -103,5 +103,18 @@
       
       return $fav_dishes;
     }
+    
+    static function search_dishes(PDO $db, string $search, int $count) : array {
+      $stmt = $db->prepare('SELECT id FROM Dish WHERE dish_name LIKE ? LIMIT ?');
+      $stmt->execute(array('%' . $search . '%', $count));
+      
+      $dishes = Array();
+      while ($dish = $stmt->fetch()) {
+        $dishes[] = Dish::get_dish($db, intval($dish['id']));
+      }
+      
+      return $dishes;
+    }
+
   }   
 ?>

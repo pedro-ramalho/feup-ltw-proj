@@ -13,7 +13,7 @@ function showSidebar() {
     sidebar.classList.add("displayed")
 }
 
-sidebarButton.onclick = function (e) {
+sidebarButton.onclick = function () {
   if (sidebarButton.classList.contains("hamburger")) {
     showSidebar();
 

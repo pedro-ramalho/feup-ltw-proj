@@ -17,6 +17,7 @@
   <title>Agile Eating</title>
   <script src="javascript/header-scroll.js" defer></script>
   <script src="javascript/sidebar-button.js" defer></script>
+  <script src="javascript/dynamic-search.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar() ?>
