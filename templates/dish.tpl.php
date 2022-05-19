@@ -41,3 +41,28 @@
     </div>
   </div>
 <?php } ?>
+
+<?php function draw_dish_form(Dish $dish) { ?>
+  <form method="post">
+    <label for="dish-name">
+      Name<input id="dish-name" type="text" value="<?=$dish->name?>">
+    </label>
+    <label for="dish-price">
+      Name<input id="dish-name" type="text" value="<?=$dish->price?>">
+    </label>
+    <div class="categories-container">
+    <?php
+      foreach($dish->categories as $category) {
+        ?> <h5 class="preview-category"><?=$category?></h5>
+      <?php } ?>
+    </div>
+    <button type="submit">Save</button>
+  </form>
+  <div id="#img-upload">
+    <label id="file-upload">
+      <input type="file" name="image">Choose file
+    </label>
+    <input type="submit" value="Send">
+    <img src="../assets/temp.jpg" alt="restaurant's display image">
+  </div>
+<?php } ?>
