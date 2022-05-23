@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages/page_index.css">
   <link rel="stylesheet" href="css/pages/main-page.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agile Eating</title>
@@ -23,6 +24,18 @@
   <?php draw_sidebar() ?>
   <?php draw_header() ?>
   <main>
+    <section id="frontpage">
+      <section id="slogan">
+        <h1>Agile Eating - fast and simple</h1>
+        <p>Discover amazing places to eat, tasteful dishes to enjoy</p>
+        <p>Join our community!</p>
+        <div id="slogan-anchors">
+          <a href="sign_in.php">Sign in</a>
+          <a href="sign_up.php">Sign up</a>
+        </div>
+      </section>
+      <img src="assets/frontpage_v2.png">
+    </section>
     <section id="main-suggestions">
       <section class="suggestions">
         <h1 class="suggestion-title">Restaurants</h1>
