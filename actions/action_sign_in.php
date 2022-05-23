@@ -3,10 +3,10 @@
 
   session_start();
 
-  require_once('connection.php');
-  require_once('classes/user.class.php');
+  require_once(__DIR__ . '/../database/connection.php');
+  require_once(__DIR__ . '/../classes/user.class.php');
 
-  $db = get_db_simple_path();
+  $db = get_db();
 
   $user = User::get_user_from_credentials($db, $_POST['username'], $_POST['password']);
   

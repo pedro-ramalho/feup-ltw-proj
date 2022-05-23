@@ -73,8 +73,8 @@
   function draw_header_acc() { 
     if (!isset($_SESSION['id'])) { ?>
       <div id="header-signup">
-        <a href="sign_in.php">Sign in</a>
-        <a href="sign_up.php">Sign up</a>
+        <a href="../pages/sign_in.php">Sign in</a>
+        <a href="../pages/sign_up.php">Sign up</a>
       </div>
     <?php } 
     else { ?>
@@ -82,7 +82,7 @@
         <form action="database/action_sign_out.php" method="post" class="logout">
           <button type="submit">Sign out</button>
         </form>
-        <a href="profile.php">Profile</a>
+        <a href="../pages/profile.php">Profile</a>
       </div>
     <?php 
     } 

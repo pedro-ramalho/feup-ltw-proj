@@ -3,11 +3,11 @@
 
   session_start();
 
-  require_once('connection.php');
-  require_once('classes/restaurant.class.php');
-  require_once('classes/dish.class.php');
+  require_once(__DIR__ . '/../database/connection.php');
+  require_once(__DIR__ . '/../classes/restaurant.class.php');
+  require_once(__DIR__ . '/../classes/dish.class.php');
 
-  $db = get_db_simple_path();
+  $db = get_db();
 
   $restaurant = Restaurant::get_restaurant($db, intval($_POST['restaurant-id']));
   $dishes = Dish::get_restaurant_dishes($db, ($_POST['restaurant-id']));

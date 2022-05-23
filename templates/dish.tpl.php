@@ -1,8 +1,8 @@
 <?php 
   declare(strict_types = 1);
 
-  require_once('database/connection.php');
-  require_once('database/classes/dish.class.php');
+  require_once(__DIR__ . '/../database/connection.php');
+  require_once(__DIR__ . '/../classes/dish.class.php');
 ?>
 
 <?php function draw_dish(Dish $dish) { ?>
@@ -20,7 +20,7 @@
 
 <?php function draw_dish_preview(Dish $dish) { ?>
 <?php
-  $db = get_db_extended_path();
+  $db = get_db();
   
   $id = Dish::get_dish_restaurant($db, $dish->id);
   $restaurant = Restaurant::get_restaurant($db, $id);  

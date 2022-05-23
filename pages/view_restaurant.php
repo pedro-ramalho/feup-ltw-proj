@@ -4,20 +4,20 @@
   session_start();
 
   /* include database connection */
-  require_once('database/connection.php');
+  require_once(__DIR__ . '/../database/connection.php');
 
   /* include classes */
-  require_once('database/classes/restaurant.class.php');
-  require_once('database/classes/review.class.php');
-  require_once('database/classes/dish.class.php');
+  require_once(__DIR__ . '/../classes/restaurant.class.php');
+  require_once(__DIR__ . '/../classes/review.class.php');
+  require_once(__DIR__ . '/../classes/dish.class.php');
 
   /* include restaurant templates */
-  require_once('templates/common.php');
-  require_once('templates/restaurant.tpl.php');
-  require_once('templates/dish.tpl.php');
-  require_once('templates/review.tpl.php');
+  require_once(__DIR__ . '/../templates/common.php');
+  require_once(__DIR__ . '/../templates/restaurant.tpl.php');
+  require_once(__DIR__ . '/../templates/dish.tpl.php');
+  require_once(__DIR__ . '/../templates/review.tpl.php');
 
-  $db = get_db_extended_path();
+  $db = get_db();
   
   $restaurant_id = intval($_GET['id']);
 
@@ -32,14 +32,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/sidebar.css">
-  <link rel="stylesheet" href="css/categories.css">
-  <link rel="stylesheet" href="css/pages/view-restaurant.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/pages/page_view_restaurant.css">
   <title>Document</title>
-  <script src="javascript/header-scroll.js" defer></script>
-  <script src="javascript/sidebar-button.js" defer></script>
+  <script src="../javascript/header_scroll.js" defer></script>
+  <script src="../javascript/sidebar_button.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar() ?>

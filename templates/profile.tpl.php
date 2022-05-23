@@ -1,9 +1,8 @@
 <?php 
   declare(strict_types = 1);
 
-  require_once('database/connection.php');
-
-  require_once('database/classes/user.class.php');
+  require_once(__DIR__ . '/../database/connection.php');
+  require_once(__DIR__ . '/../classes/user.class.php');
 ?>
 
 <?php function draw_profile_form(User $user) { ?>

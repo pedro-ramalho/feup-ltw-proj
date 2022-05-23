@@ -5,18 +5,18 @@
 
   if (!isset($_SESSION['id'])) die(header('Location: /'));
 
-  require_once('database/connection.php');
+  require_once(__DIR__ . '/../database/connection.php');
   
-  require_once('templates/common.php');
-  require_once('templates/profile.tpl.php');
-  require_once('templates/restaurant.tpl.php');
-  require_once('templates/dish.tpl.php');
+  require_once(__DIR__ . '/../templates/common.php');
+  require_once(__DIR__ . '/../templates/profile.tpl.php');
+  require_once(__DIR__ . '/../templates/restaurant.tpl.php');
+  require_once(__DIR__ . '/../templates/dish.tpl.php');
 
-  require_once('database/classes/user.class.php');
-  require_once('database/classes/restaurant.class.php');
-  require_once('database/classes/dish.class.php');
+  require_once(__DIR__ . '/../classes/user.class.php');
+  require_once(__DIR__ . '/../classes/restaurant.class.php');
+  require_once(__DIR__ . '/../classes/dish.class.php');
 
-  $db = get_db_extended_path();
+  $db = get_db();
 
   $user = User::get_user($db, intval($_SESSION['id']));
 
@@ -31,16 +31,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/sidebar.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/categories.css">
-  <link rel="stylesheet" href="css/restaurant-preview.css">
-  <link rel="stylesheet" href="css/dish-preview.css">
-  <link rel="stylesheet" href="css/pages/profile.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/previews/preview_restaurant.css">
+  <link rel="stylesheet" href="../css/previews/preview_dish.css">
+  <link rel="stylesheet" href="../css/pages/page_profile.css">
 
-  <script src="javascript/profile.js" defer></script>
-  <script src="javascript/sidebar-button.js" defer></script>
+  <script src="../javascript/profile.js" defer></script>
+  <script src="../javascript/sidebar_button.js" defer></script>
   <title>Profile</title>
 </head>
 <body>

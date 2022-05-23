@@ -16,9 +16,9 @@
   <link rel="stylesheet" href="css/pages/main-page.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agile Eating</title>
-  <script src="javascript/header-scroll.js" defer></script>
-  <script src="javascript/sidebar-button.js" defer></script>
-  <script src="javascript/dynamic-search.js" defer></script>
+  <script src="javascript/header_scroll.js" defer></script>
+  <script src="javascript/sidebar_button.js" defer></script>
+  <script src="javascript/dynamic_search.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar() ?>
@@ -30,8 +30,8 @@
         <p>Discover amazing places to eat, tasteful dishes to enjoy</p>
         <p>Join our community!</p>
         <div id="slogan-anchors">
-          <a href="sign_in.php">Sign in</a>
-          <a href="sign_up.php">Sign up</a>
+          <a href="pages/page_sign_in.php">Sign in</a>
+          <a href="pages/page_sign_up.php">Sign up</a>
         </div>
       </section>
       <img src="assets/frontpage_v2.png">
@@ -40,25 +40,25 @@
       <section class="suggestions">
         <h1 class="suggestion-title">Restaurants</h1>
         <div class="images">
-          <a href="list_restaurants.php">
+          <a href="pages/list_restaurants.php">
             <figure>
               <img src="assets/img/category/2.jpg" alt="dummy-text" width="300" height="200">
               <figcaption>Fast-food</figcaption>
             </figure>
           </a>
-          <a href="list_restaurants.php">
+          <a href="pages/list_restaurants.php">
             <figure>
               <img src="assets/img/category/6.jpg" alt="dummy-text" width="300" height="200">
               <figcaption>Premium</figcaption>
             </figure>
           </a>
-          <a href="list_restaurants.php">
+          <a href="pages/list_restaurants.php">
             <figure>
               <img src="assets/img/category/7.jpg" alt="dummy-text" width="300" height="200">
               <figcaption>Affordable</figcaption>
             </figure>
           </a>
-          <a href="list_restaurants.php">
+          <a href="pages/list_restaurants.php">
             <figure>
               <img src="assets/img/category/9.jpg" alt="dummy-text" width="300" height="200">
               <figcaption>Diet</figcaption>
@@ -69,25 +69,25 @@
       <section class="suggestions">
         <h1 class="suggestion-title">Dishes</h1>
         <div class="images">
-          <a href="list_dishes.php">
+          <a href="pages/list_dishes.php">
             <figure>
               <img src="assets/img/category/1.jpg" alt="dummy-text" width="300" height="200">
               <figcaption>Vegan</figcaption>
             </figure>
           </a>
-          <a href="list_dishes.php">
+          <a href="pages/list_dishes.php">
             <figure>
               <img src="assets/img/category/3.jpg" alt="dummy-text" width="300" height="200">
               <figcaption>Vegetarian</figcaption>
             </figure>
           </a>
-          <a href="list_dishes.php">
+          <a href="pages/list_dishes.php">
             <figure>
               <img src="assets/img/category/8.jpg" alt="dummy-text" width="300" height="200">
               <figcaption>Sushi</figcaption>
             </figure>
           </a>
-          <a href="list_dishes.php">
+          <a href="pages/list_dishes.php">
             <figure>
               <img src="assets/img/category/5.jpg" alt="dummy-text" width="300" height="200">
               <figcaption>Lactose-free</figcaption>

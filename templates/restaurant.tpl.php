@@ -1,8 +1,8 @@
 <?php
   declare(strict_types = 1);
 
-  require_once('database/connection.php');
-  require_once('database/classes/restaurant.class.php');
+  require_once(__DIR__ . '/../database/connection.php');
+  require_once(__DIR__ . '/../classes/restaurant.class.php');
 ?>
 
 <?php function draw_restaurant(Restaurant $restaurant) { ?>
@@ -74,7 +74,7 @@
       <img src="../assets/temp.jpg" alt="restaurant's display image">
     </div>
     <div id="edit-dishes">
-      <a href="edit_dishes.php?id=<?=$restaurant->id?>">Edit dishes</a>
+      <a href="../pages/edit_dishes.php?id=<?=$restaurant->id?>">Edit dishes</a>
     </div>
   </div>
 <?php } ?>

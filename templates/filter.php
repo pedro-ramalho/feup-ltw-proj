@@ -1,9 +1,9 @@
 <?php
   declare(strict_types = 1);
 
-  require_once('database/connection.php');
-  require_once('database/classes/restaurant.class.php');
-  require_once('database/classes/dish.class.php');
+  require_once(__DIR__ . '/../database/connection.php');
+  require_once(__DIR__ . '/../classes/restaurant.class.php');
+  require_once(__DIR__ . '/../classes/dish.class.php');
 
   function array_contains($superset, $set) : bool {
     foreach($set as $elem)
@@ -14,7 +14,7 @@
   }
 
   function filter_restaurants(float $min_score, float $max_score, $categories) : array {
-    $db = get_db_extended_path();
+    $db = get_db();
 
     $restaurants = Restaurant::get_all_restaurants($db);
     $filtered_restaurants = array();
@@ -38,7 +38,7 @@
   }
 
   function filter_dishes(float $min_price, float $max_price, $categories) : array {
-    $db = get_db_extended_path();
+    $db = get_db();
 
     $dishes = Dish::get_all_dishes($db);
     $filtered_dishes = array();

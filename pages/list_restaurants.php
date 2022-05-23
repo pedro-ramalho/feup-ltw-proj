@@ -3,17 +3,19 @@
 
   session_start();
 
-  require_once('database/classes/dish.class.php');
+  /* include restaurant class */
+  require_once(__DIR__ . '/../classes/restaurant.class.php');
 
-  require_once('templates/common.php');
-  require_once('templates/dish.tpl.php');
-  require_once('templates/filter.php');
+  /* include templates */
+  require_once(__DIR__ . '/../templates/common.php');
+  require_once(__DIR__ . '/../templates/restaurant.tpl.php');
+  require_once(__DIR__ . '/../templates/filter.php');
 
-  $min_price = !isset($_GET['min_price']) ? 0.0 : floatval($_GET['min_price']);
-  $max_price = !isset($_GET['max_price']) ? 100.0 : floatval($_GET['max_price']);
+  $min_score = !isset($_GET['min_score']) ? 0.0 : floatval($_GET['min_score']);
+  $max_score = !isset($_GET['max_score']) ? 5.0 : floatval($_GET['max_score']);
 
-  if ($min_price > $max_price) 
-    $min_price = 0;
+  if ($min_score > $max_score) 
+    $min_score = 0;
   
   $categories = array();
 
@@ -23,7 +25,7 @@
   if (isset($_GET['sushi'])) $categories[] = 'Sushi';
   if (isset($_GET['vegan'])) $categories[] = 'Vegan';
 
-  $dishes = filter_dishes(floatval($min_price), floatval($max_price), $categories);
+  $restaurants = filter_restaurants($min_score, $max_score, $categories);
 ?>
 
 <!DOCTYPE html>
@@ -32,41 +34,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/sidebar.css">
-  <link rel="stylesheet" href="css/dish-preview.css">
-  <link rel="stylesheet" href="css/categories.css">
-  <link rel="stylesheet" href="css/pages/list-dishes-page.css">
-  <title>Dishes</title>
-  <script src="javascript/header-scroll.js" defer></script>
-  <script src="javascript/sidebar-button.js" defer></script>
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/previews/preview_restaurant.css">
+  <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/pages/page_list_restaurants.css">
+  <title>Restaurants</title>
+  <script src="../javascript/header_scroll.js" defer></script>
+  <script src="../javascript/sidebar_button.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar() ?>
   <?php draw_header() ?>
   <main>
-    <section id="dish-previews">
-      <?php
-        foreach ($dishes as $dish)
-          draw_dish_preview($dish);
+    <section id="restaurant-previews">
+      <?php 
+        foreach($restaurants as $restaurant) 
+          draw_restaurant_preview($restaurant); 
       ?>
     </section>
-    <aside id="dish-filter">
+    <aside id="restaurant-filter">
       <h1>Choose a filter</h1>
-      <form action="list_dishes.php" method="get">
-        <section id="dish-price">
-          <h1>Price</h1>
-          <div id="price-input-container">
-            <label for="min-price">
-              Min<input id="min-price" class="price-number" type="number" name="min_price" min="0" max="100" value="0">
+      <form action="list_restaurants.php" method="get">
+        <section id="restaurant-score">
+          <h1>Score</h1>
+          <div id="score-input-container">
+            <label for="min-score">
+              Min<input id="min-score" class="score-number" type="number" name="min_score" min="0" max="5" value="0">
             </label>
-            <label for="max-price">
-              Max<input id="max-price" class="price-number" type="number" name="max_price" min="0" max="100" value="100">
+            <label for="max-score">
+              Max<input id="max-score" class="score-number" type="number" name="max_score" min="0" max="5" value="5">
             </label>
           </div>
         </section>
-        <section id="dish-category">
+        <section id="restaurant-category">
           <h1>Categories</h1>
           <div id="category-input-container">
             <label for="fast-food">

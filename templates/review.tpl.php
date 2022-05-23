@@ -1,9 +1,9 @@
 <?php
   declare(strict_types = 1);
 
-  require_once('database/connection.php');
-  require_once('database/classes/review.class.php');
-  require_once('database/classes/user.class.php');
+  require_once(__DIR__ . '/../database/connection.php');
+  require_once(__DIR__ . '/../classes/review.class.php');
+  require_once(__DIR__ . '/../classes/user.class.php');
 ?>
 
 <?php
@@ -12,7 +12,7 @@
     <div class="author-score-container">
       <div id="pfp-author">
         <img src="../assets/user.png">
-        <h3 id ="review-author"><?=Review::get_author(get_db_extended_path(), $review->id)?></h3>
+        <h3 id ="review-author"><?=Review::get_author(get_db(), $review->id)?></h3>
       </div>
       <h3 id="review-score"><?=$review->score?>/5</h3>
     </div>
