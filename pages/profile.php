@@ -61,18 +61,32 @@
       <?php draw_profile_form($user) ?>
     </section>
     <section id="owned-restaurants" hidden>
-      <?php foreach ($owned_restaurants as $owned_restaurant)
-              draw_restaurant_preview($owned_restaurant);
+      <?php
+      if ($owned_restaurants && count($owned_restaurants) > 0) {
+        echo "<a href=\"#\" id=\"add-restaurant-link\">+</a>";
+        foreach ($owned_restaurants as $owned_restaurant)
+          draw_restaurant_preview($owned_restaurant);
+      }
+      else
+        echo "<p class=\"none-found-message\">You own no restaurants yet. <a href=\"#\">Create your restaurant</a></p>"
       ?>
     </section>
     <section id="favorite-dishes" hidden>
-      <?php foreach ($fav_dishes as $fav_dish)
-              draw_dish_preview($fav_dish);
+      <?php
+        if ($fav_dishes && count($fav_dishes) > 0)
+          foreach ($fav_dishes as $fav_dish)
+            draw_dish_preview($fav_dish);
+        else
+          echo "<p class=\"none-found-message\">You haven't favorited any dishes yet.</p>";
       ?>
     </section>
     <section id="favorite-restaurants" hidden>
-      <?php foreach ($fav_restaurants as $fav_restaurant)
-              draw_restaurant_preview($fav_restaurant);
+      <?php
+        if ($fav_restaurants && count($fav_restaurants) > 0)
+          foreach ($fav_restaurants as $fav_restaurant)
+            draw_restaurant_preview($fav_restaurant);
+        else
+          echo "<p class=\"none-found-message\">You haven't favorited any restaurants yet!</p>";
       ?>
     </section>
   </section>

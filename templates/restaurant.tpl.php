@@ -78,3 +78,29 @@
     </div>
   </div>
 <?php } ?>
+
+
+<?php function draw_restaurant_setup(int $user_id) { ?>
+  <h1>Setup your own restaurant</h1>
+  <div class="setup-restaurant">
+    <form method="post">
+      <div class="res-info">
+        <label for="res-name">
+          Restaurant name<input type="text" placeholder="name">
+        </label>
+        <label for="category">
+          Cagegory<input type="text" placeholder="category">
+        </label>
+        <label for="coords">
+          Coordinates<input type="text" placeholder="coordinates">
+        </label>
+        <div id="upload-img">
+          <label id="file-upload">
+            <input type="file" name="image">Choose file
+          </label>
+        </div>
+      </div>
+      <button type="submit" value="Save">Save</button>
+    </form>
+  </div>
+<?php } ?>

@@ -17,12 +17,6 @@
   require_once(__DIR__ . '/../templates/restaurant.tpl.php');
   require_once(__DIR__ . '/../templates/dish.tpl.php');
 
-  $db = get_db();
-  
-  $restaurant_id = intval($_GET['id']);
-  
-  $restaurant = Restaurant::get_restaurant($db, $restaurant_id);
-  $dishes = Dish::get_restaurant_dishes($db, $restaurant_id);
 ?>
 
 <!DOCTYPE html>
@@ -32,22 +26,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/layout.css">
-  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/sidebar.css">
-  <link rel="stylesheet" href="../css/pages/page_edit_dishes.css">
-  <title>Edit Dishes</title>
-  <script src="../javascript/sidebar_button.js" defer></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages/page_add_restaurant.css">
+  <title>Document</title>
 </head>
 <body>
   <?php draw_sidebar() ?>
-  <?php draw_header(); ?>
+  <?php draw_header() ?>
   <main>
-    <?php foreach($dishes as $dish) { ?>
-      <section class="dishes">
-        <?php draw_dish_form($dish) ?>
-      </section>
-    <?php } ?>
+    <?php draw_restaurant_setup($_SESSION['id']) ?>
   </main>
-  <?php draw_footer(); ?>
+  <?php draw_footer() ?>
 </body>
 </html>

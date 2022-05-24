@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(40, 40, 40);
+  overflow: hidden;
+}
+
+main > h1 {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+text-align: center;
+}
+
+.setup-restaurant { 
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+}
+
+
+.setup-restaurant {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+
+.setup-restaurant > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.setup-restaurant > form > .res-info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  align-items: center;
+}
+
+
+.setup-restaurant > form label {
+  font-size: 1.2em;
+}
+
+.setup-restaurant input {
+  font-size: 1em;
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(60, 60, 60);
+  border-radius: 10px;
+  border: 1px solid rgb(55, 55, 55);
+  padding: 8px;
+  margin-top: 0.5em;
+  color: white;
+  display: block;
+}
+
+#upload-img {
+  display: flex;
+  flex-direction: row;
+}
+
+#upload-img > label > input[type="file"] {
+  display: none;
+}
+
+#upload-img > label {
+  margin-left: 1em;
+  color: white;
+  padding: 0.5em;
+  width: 4em;
+  height: fit-content;
+  font-size: 1.2em;
+
+  background-color: rgb(25, 14, 170);
+  color: white;
+  border: none;
+  border-radius: 0px;
+  padding: 0.5em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
