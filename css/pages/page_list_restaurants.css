@@ -81,6 +81,9 @@ aside#restaurant-filter > form {
 
 #restaurant-previews {
   grid-area: previews;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
   color: var(--restaurant-previews-text-color);
   font-family: 'Raleway ', sans-serif;
   padding: 0;

@@ -79,7 +79,7 @@
     <?php } 
     else { ?>
       <div id="header-account">
-        <form action="database/action_sign_out.php" method="post" class="logout">
+        <form action="../actions/action_sign_out.php" method="post" class="logout">
           <button type="submit">Sign out</button>
         </form>
         <a href="../pages/profile.php">Profile</a>
