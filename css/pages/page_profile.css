@@ -47,11 +47,24 @@ body > main > nav#profile-options {
   padding: 1em;
 }
 
+.profile-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-section img {
+  max-width: 2em;
+  max-height: 2em;
+  align-self: center;
+  filter: invert(27%) sepia(0%) saturate(1491%) hue-rotate(145deg) brightness(88%) contrast(86%);
+}
+
 body > main > section#option-content {
   grid-area: option-content;
 
   background-color: rgb(70, 70, 70);
   padding: 1em;
+  max-height: 100%;
 }
 
 nav#profile-options > h1 {
@@ -59,12 +72,15 @@ nav#profile-options > h1 {
   margin: 0;
 }
 
+nav#profile-options  a {
+  padding: 0.5em;
+}
+
 nav#profile-options > section#favorites {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   row-gap: 1em;
-  padding-left: 1em;
 }
 
 nav#profile-options > section#owned-restaurants {
@@ -104,9 +120,19 @@ nav#profile-options p.none-found-message a:visited {
 
 /* account form */
 
+section#option-content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+
 section#option-content > section#user-credentials > form {
   display: flex;
   flex-direction: column;
+
   row-gap: 1em;
   height: 100%;
   width: 100%;

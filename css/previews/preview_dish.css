@@ -41,15 +41,27 @@
   right: 1em;
   margin: 0;
   background: none;
-  border: none;
-  
-  max-width: 2em;
-  max-height: 2em;
+  border: none;  
 }
 
 .dish-preview > button.favorite-dish > img {
-  max-width: 100%;
-  max-height: 100%; 
+  max-width: 80%;
+  max-height: 80%; 
+}
+
+.dish-preview > button.order {
+  position: absolute;
+  display: inline;
+  right: 5em;
+  margin: 0;
+  top: 1em;
+  background: none;
+  border: none;
+}
+
+.dish-preview > button.order > img {
+  max-width: 80%;
+  max-height: 80%;
 }
 
 .dish-preview > h1.dish-preview-title {

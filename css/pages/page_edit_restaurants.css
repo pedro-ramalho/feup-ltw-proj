@@ -107,21 +107,6 @@ body > main {
   align-self: flex-start;
 }
 
-#save-restaurant-info {
-  align-self: flex-end;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 1em;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  height: 2em;
-  width: 5em;
-  border-radius: 5px;
-  background-color: rgb(35, 138, 198);
-  color: var(--restaurant-info-score-button-text-color);
-  border: none;
-}
-
 .edit-restaurant > #upload-img img {
   grid-area: restaurant-img;
   max-width: 100%;

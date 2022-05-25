@@ -48,17 +48,36 @@
   <?php draw_header() ?>
   <main>
   <nav id="profile-options">
-    <a id="acc-anchor" href="#" class="selected">Account</a>
-    <a id="owned-res-anchor" href="#">Owned restaurants</a>
+    <div class="profile-section">
+      <img src="../assets/icons/account.svg"> 
+      <a id="acc-anchor" href="#" class="selected">Account</a>
+    </div>
+    <div class="profile-section">
+      <img src="../assets/icons/orders.svg">
+      <a id="orders-anchor" href="#">Orders</a>
+    </div>
+    <div class="profile-section">
+      <img src="../assets/icons/owner.svg">
+      <a id="owned-res-anchor" href="#">Owned restaurants</a>
+    </div>
     <h1>Favorites</h1>
     <section id="favorites">
-      <a id="fav-dishes-anchor" href="#">Favorite dishes</a>
-      <a id="fav-res-anchor" href="#">Favorite restaurants</a>
+      <div class="profile-section">
+        <img src="../assets/icons/dish.svg">
+        <a id="fav-dishes-anchor" href="#">Favorite dishes</a>
+      </div>
+      <div class="profile-section">
+        <img src="../assets/icons/restaurant.svg">
+        <a id="fav-res-anchor" href="#">Favorite restaurants</a>
+      </div>
     </section>
   </nav>
   <section id="option-content">
     <section id="user-credentials">
       <?php draw_profile_form($user) ?>
+    </section>
+    <section id="user-orders">
+      <p>temp</p>
     </section>
     <section id="owned-restaurants" hidden>
       <?php

@@ -63,7 +63,7 @@
           <?php } ?>
         </div>
         <input id="new-restaurant-coords" type="text" value="<?=$restaurant->coords?>">
-        <button id="save-restaurant-info">Save</button>
+        <button class="save">Save</button>
       </div>
     </form>
     <div id="upload-img">
@@ -96,11 +96,11 @@
         </label>
         <div id="upload-img">
           <label id="file-upload">
-            <input type="file" name="image">Choose file
+            <input type="file" name="image">Upload image
           </label>
+          <button type="submit" value="Save">Save</button>
         </div>
       </div>
-      <button type="submit" value="Save">Save</button>
     </form>
   </div>
 <?php } ?>

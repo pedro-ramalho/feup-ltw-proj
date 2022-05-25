@@ -24,6 +24,7 @@ text-align: center;
 .setup-restaurant {
   font-family: 'Raleway', sans-serif;
   color: white;
+  display: grid;
 }
 
 .setup-restaurant > form {
@@ -58,6 +59,22 @@ text-align: center;
 #upload-img {
   display: flex;
   flex-direction: row;
+  row-gap: 1em;
+  height: 100%;
+  width: 100%;
+}
+
+#upload-img button {
+  height: 100%;
+  font-size: 1.2em;
+  justify-self: center;
+  align-self: center;
+  color: white;
+  margin-left: 2.5em;
+  font-family: 'Raleway', sans-serif;
+  background-color: blue;
+  border-radius: 0;
+  border: none;
 }
 
 #upload-img > label > input[type="file"] {
@@ -65,13 +82,10 @@ text-align: center;
 }
 
 #upload-img > label {
-  margin-left: 1em;
   color: white;
   padding: 0.5em;
-  width: 4em;
   height: fit-content;
   font-size: 1.2em;
-
   background-color: rgb(25, 14, 170);
   color: white;
   border: none;

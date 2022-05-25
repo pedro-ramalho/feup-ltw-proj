@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/pages/page_edit_restaurants.css">
   <title>Edit Restaurant</title>
   <script src="../javascript/sidebar_button.js" defer></script>

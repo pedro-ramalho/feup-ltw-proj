@@ -33,6 +33,9 @@
     <button class="favorite-dish">
       <img src="../assets/star.svg">
     </button>
+    <button class="order">
+      <img src="../assets/shopping_bag.svg">
+    </button>
     <div class="categories-container">
       <?php
       foreach($restaurant->categories as $category) {
