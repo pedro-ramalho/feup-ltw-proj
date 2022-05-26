@@ -5,16 +5,16 @@
     public int $id;
     public int $customer;
     public int $restaurant;
+    public int $dish;
     public string $state;
-    public array $dishes;
 
-    public function __construct(int $id, int $customer, int $restaurant, string $state, array $dishes)
+    public function __construct(int $id, int $customer, int $restaurant, int $dish, string $state)
     {
       $this->id = $id;
       $this->customer = $customer;
       $this->restaurant = $restaurant;
+      $this->dish = $dish;
       $this->state = $state;
-      $this->dishes = $dishes;
     }
     
     /* returns an order with a given id */
@@ -28,22 +28,15 @@
       ');
       $stmt->execute(array($order_id));
       
-      $customer = -1;
-      $restaurant = -1;
-      $state = '';
-      
-      /* works as a hash map where each key is a dish ID and it's value is the dish's quantity */
-      $dishes = array(); 
-      
-      /* build the array of dishes and initialize other variables */
-      while ($dish = $stmt->fetch()) {
-        $dishes[$dish['dish']] = $dish['quantity'];
-        $customer = $dish['customer'];
-        $restaurant = $dish['restaurant'];
-        $state = $dish['state'];
-      }
+      $order = $stmt->fetch();
 
-      return new Order($order_id, $customer, $restaurant, $state, $dishes);
+      return new Order(
+        intval($order['order_id']),
+        intval($order['customer']),
+        intval($order['restaurant']),
+        intval($order['dish']),
+        $order['state']
+      );
     }
 
     /* returns an array containing the orders of a given restaurant */

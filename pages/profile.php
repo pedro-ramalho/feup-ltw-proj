@@ -76,9 +76,24 @@
     <section id="user-credentials">
       <?php draw_profile_form($user) ?>
     </section>
+
+    
     <section id="user-orders">
-      <p>temp</p>
+      <section id="your-orders">
+        <h1>Your orders</h1>
+        <div id="self-orders" class="orders">
+
+        </div>
+      </section>
+      <section id="other-orders">
+        <h1>Orders made by other customers</h1>
+        <div id="other-orders" class="orders">
+
+        </div>
+      </section>
     </section>
+
+
     <section id="owned-restaurants" hidden>
       <?php
       if ($owned_restaurants && count($owned_restaurants) > 0) {
