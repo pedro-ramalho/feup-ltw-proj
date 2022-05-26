@@ -11,10 +11,12 @@
   require_once(__DIR__ . '/../templates/profile.tpl.php');
   require_once(__DIR__ . '/../templates/restaurant.tpl.php');
   require_once(__DIR__ . '/../templates/dish.tpl.php');
+  require_once(__DIR__ . '/../templates/orders.tpl.php');
 
   require_once(__DIR__ . '/../classes/user.class.php');
   require_once(__DIR__ . '/../classes/restaurant.class.php');
   require_once(__DIR__ . '/../classes/dish.class.php');
+  require_once(__DIR__ . '/../classes/order.class.php');
 
   $db = get_db();
 
@@ -23,6 +25,7 @@
   $owned_restaurants = Restaurant::get_owned_restaurants($db, intval($_SESSION['id']));
   $fav_restaurants = Restaurant::get_fav_restaurants($db, intval($_SESSION['id']));
   $fav_dishes = Dish::get_fav_dishes($db, intval($_SESSION['id']));
+  $orders = Order::get_customer_orders($db, $_SESSION['id']);
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +38,8 @@
   <link rel="stylesheet" href="../css/sidebar.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/orders/orders_layout.css">
+  <link rel="stylesheet" href="../css/orders/orders_customer.css">
   <link rel="stylesheet" href="../css/previews/preview_restaurant.css">
   <link rel="stylesheet" href="../css/previews/preview_dish.css">
   <link rel="stylesheet" href="../css/pages/page_profile.css">
@@ -77,15 +82,18 @@
       <?php draw_profile_form($user) ?>
     </section>
 
-    
-    <section id="user-orders">
-      <section id="your-orders">
-        <h1>Your orders</h1>
-        <div id="self-orders" class="orders">
 
+    <section id="user-orders">
+      <section id="customer-orders">
+        <h1>Your orders</h1>
+        <div class="orders-container">
+          <?php 
+            foreach ($orders as $order)
+              draw_customer_order($order);
+          ?>
         </div>
       </section>
-      <section id="other-orders">
+      <section id="restaurant-orders">
         <h1>Orders made by other customers</h1>
         <div id="other-orders" class="orders">
 

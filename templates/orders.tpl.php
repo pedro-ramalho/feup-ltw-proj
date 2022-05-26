@@ -14,6 +14,7 @@
 
 ?>
 
+<!-- orders made by a customer -->
 <?php function draw_customer_order(Order $order) { 
   $db = get_db();
 
@@ -21,6 +22,12 @@
   $dish = Dish::get_dish($db, $order->dish);
 ?>
   <div class="order">
-
+    <img src="../assets/temp.jpg" width="200" height="200">
+    <div class="order-info">
+      <h1><?=$restaurant->res_name?></h1>
+      <h2><?=$dish->name?></h2>
+      <h3><?=$dish->price?>€</h3>
+      <h3 class="state"><?=$order->state?></h3>
+    </div>
   </div>
 <?php } ?> 

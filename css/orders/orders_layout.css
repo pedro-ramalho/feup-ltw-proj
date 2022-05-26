@@ -1,0 +1,42 @@
+#customer-orders {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+}
+
+#customer-orders > h1 {
+  font-size: 2em;
+  padding: 0;
+  margin: 0;
+}
+
+.orders-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2em;
+  row-gap: 1em;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+}
+
+.order {
+  display: grid;
+  grid-template-areas: "img info";
+  align-items: center;
+  justify-items: center;
+  column-gap: 1em;
+}
+
+.order > img {
+  grid-area: img;
+}
+
+.order > .order-info {
+  grid-area: info;
+  background-color: rgb(50, 50, 50);
+  padding: 1em;
+  padding-top: 0;
+  padding-bottom: 0;
+}

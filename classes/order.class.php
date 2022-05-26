@@ -40,7 +40,7 @@
     }
 
     /* returns an array containing the orders of a given restaurant */
-    public function get_restaurant_orders(PDO $db, int $restaurant_id) : array {
+    static function get_restaurant_orders(PDO $db, int $restaurant_id) : array {
       $stmt = $db->prepare(
         'SELECT order_dish AS order_id, curr_state AS state, restaurant, customer, dish, quantity
            FROM Dish, OrderDish, DishQuantity 
@@ -53,13 +53,13 @@
       $orders = array();
 
       while ($order = $stmt->fetch()) 
-        $orders[] = $this::get_orders($db, $order['order_id']);
+        $orders[] = Order::get_orders($db, intval($order['order_id']));
 
       return $orders;
     }
 
     /* returns an array containing the orders of a given customer */
-    public function get_customer_orders(PDO $db, int $customer_id) : array {
+    static function get_customer_orders(PDO $db, int $customer_id) : array {
       $stmt = $db->prepare(
         'SELECT order_dish AS order_id, curr_state AS state, restaurant, customer, dish, quantity
            FROM Dish, OrderDish, DishQuantity 
@@ -72,7 +72,7 @@
       $orders = array();
 
       while ($order = $stmt->fetch()) 
-        $orders[] = $this::get_orders($db, $order['order_id']);
+        $orders[] = Order::get_orders($db, intval($order['order_id']));
 
       return $orders;
     }
