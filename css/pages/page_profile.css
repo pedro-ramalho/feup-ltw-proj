@@ -74,6 +74,11 @@ body > main > section#option-content {
   row-gap: 2em;
 }
 
+.content-header {
+  border-bottom: 1px solid rgb(60, 60, 60);
+  padding-bottom: 0.5em;
+  font-size: 1.5em; 
+}
 
 
 #customer-orders {
@@ -160,7 +165,7 @@ form#account-form label, form#account-form input {
 }
 
 section#option-content > section#user-credentials > form#account-form > label {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 section#option-content > section#user-credentials > form#account-form > label input {

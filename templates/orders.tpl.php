@@ -21,13 +21,29 @@
   $restaurant = Restaurant::get_restaurant($db, $order->restaurant);
   $dish = Dish::get_dish($db, $order->dish);
 ?>
-  <div class="order">
-    <img src="../assets/temp.jpg" width="200" height="200">
-    <div class="order-info">
-      <h1><?=$restaurant->res_name?></h1>
-      <h2><?=$dish->name?></h2>
-      <h3><?=$dish->price?>€</h3>
-      <h3 class="state"><?=$order->state?></h3>
-    </div>
-  </div>
+  <tr>
+    <td><?=$order->id?></td><td><?=$restaurant->res_name?></td>
+    <td><?=$dish->name?></td><td><?=$dish->price?>€</td><td><?=$order->state?></td>
+  </tr>    
 <?php } ?> 
+
+<?php function draw_restaurant_order(Order $order) {
+  $db = get_db();
+
+  $restaurant = Restaurant::get_restaurant($db, $order->restaurant);
+  $dish = Dish::get_dish($db, $order->dish);
+  $user = User::get_user($db, $order->customer);
+?>
+  <tr>
+    <td><?=$order->id?></td><td><?=$user->username?></td><td><?=$restaurant->res_name?></td>
+    <td><?=$dish->name?></td><td><?=$dish->price?>€</td>
+    <td>
+      <select>
+        <option value="received">received</option>
+        <option value="preparing">preparing</option>
+        <option value="ready">ready</option>
+        <option value="delivered">delivered</option>
+      </select>
+    </td>
+  </tr>    
+<?php } ?>

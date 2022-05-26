@@ -25,7 +25,7 @@
   $owned_restaurants = Restaurant::get_owned_restaurants($db, intval($_SESSION['id']));
   $fav_restaurants = Restaurant::get_fav_restaurants($db, intval($_SESSION['id']));
   $fav_dishes = Dish::get_fav_dishes($db, intval($_SESSION['id']));
-  $orders = Order::get_customer_orders($db, $_SESSION['id']);
+  $customer_orders = Order::get_customer_orders($db, $_SESSION['id']);
 ?>
 
 <!DOCTYPE html>
@@ -79,25 +79,38 @@
   </nav>
   <section id="option-content">
     <section id="user-credentials">
+      <h1 class="content-header">Your profile</h1>
       <?php draw_profile_form($user) ?>
     </section>
 
 
     <section id="user-orders">
       <section id="customer-orders">
-        <h1>Your orders</h1>
-        <div class="orders-container">
+        <h1 class="content-header">Your orders</h1>
+        <table>
+          <tr class="table-header">
+            <td>Order</td><td>Restaurant</td><td>Dish</td><td>Price</td><td>State</td>
+          </tr>        
           <?php 
-            foreach ($orders as $order)
+            foreach ($customer_orders as $order)
               draw_customer_order($order);
           ?>
-        </div>
+        </table>
       </section>
       <section id="restaurant-orders">
-        <h1>Orders made by other customers</h1>
-        <div id="other-orders" class="orders">
-
-        </div>
+        <h1 class="content-header">Orders made by other customers</h1>
+        <form method="post" action="#">
+          <table>
+            <tr class="table-header">
+              <td>Order</td><td>Customer</td><td>Restaurant</td><td>Dish</td><td>Price</td><td>State</td>
+            </tr>
+            <?php
+              foreach ($customer_orders as $order)
+                draw_restaurant_order($order);
+            ?>
+          </table>
+          <button type="submit">Save</button>
+        </form>
       </section>
     </section>
 
@@ -114,6 +127,7 @@
       ?>
     </section>
     <section id="favorite-dishes" hidden>
+      <h1 class="content-header">Your favorite dishes</h1>
       <?php
         if ($fav_dishes && count($fav_dishes) > 0)
           foreach ($fav_dishes as $fav_dish)
@@ -123,6 +137,7 @@
       ?>
     </section>
     <section id="favorite-restaurants" hidden>
+      <h1 class="content-header">Your favorite restaurants</h1>
       <?php
         if ($fav_restaurants && count($fav_restaurants) > 0)
           foreach ($fav_restaurants as $fav_restaurant)
