@@ -13,6 +13,6 @@
     <label for="password">
       Password<input id="password" type="password">
     </label>
-    <button type="submit">Save</button>
+    <button class="save" type="submit">Save</button>
   </form>
 <?php } ?>

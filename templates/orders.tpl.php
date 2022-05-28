@@ -38,7 +38,7 @@
     <td><?=$order->id?></td><td><?=$user->username?></td><td><?=$restaurant->res_name?></td>
     <td><?=$dish->name?></td><td><?=$dish->price?>€</td>
     <td>
-      <select>
+      <select class="order-state">
         <option value="received">received</option>
         <option value="preparing">preparing</option>
         <option value="ready">ready</option>

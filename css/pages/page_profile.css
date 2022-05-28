@@ -179,17 +179,8 @@ section#option-content > section#user-credentials > form#account-form > label in
   color: white;
 }
 
-section#option-content > section#user-credentials > form#account-form > button {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 500;
-  font-size: 1em;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  height: 2em;
-  width: 6em;
-  border-radius: 5px;
-  background-color: rgb(35, 138, 198);
-  color: var(--restaurant-info-score-button-text-color);
-  border: none;
+.save {
+  align-items: flex-start;
 }
+
 

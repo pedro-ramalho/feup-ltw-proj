@@ -38,6 +38,7 @@
   <link rel="stylesheet" href="../css/sidebar.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/orders/orders_layout.css">
   <link rel="stylesheet" href="../css/orders/orders_customer.css">
   <link rel="stylesheet" href="../css/previews/preview_restaurant.css">
@@ -85,7 +86,7 @@
 
 
     <section id="user-orders">
-      <section id="customer-orders">
+      <section class="orders" id="customer-orders" hidden>
         <h1 class="content-header">Your orders</h1>
         <table>
           <tr class="table-header">
@@ -97,7 +98,7 @@
           ?>
         </table>
       </section>
-      <section id="restaurant-orders">
+      <section class="orders" id="restaurant-orders" hidden>
         <h1 class="content-header">Orders made by other customers</h1>
         <form method="post" action="#">
           <table>
@@ -109,11 +110,10 @@
                 draw_restaurant_order($order);
             ?>
           </table>
-          <button type="submit">Save</button>
+          <button class="save" type="submit">Save</button>
         </form>
       </section>
     </section>
-
 
     <section id="owned-restaurants" hidden>
       <?php
