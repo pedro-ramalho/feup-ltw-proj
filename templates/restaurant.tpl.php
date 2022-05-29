@@ -18,7 +18,10 @@
           ?> <h5 class="preview-category"><?=$category?></h5>
         <?php } ?>
       </div>
-      <h3 class="restaurant-coords"><?=$restaurant->coords?></h3>
+      <div class="coordinates">
+        <img src="../assets/icons/gps.svg">
+        <h3 class="restaurant-coords"><?=$restaurant->coords?></h3>    
+      </div>
     </div>
     <img src="../assets/temp.jpg" alt="restaurant's display image">
     <div id="score-button">

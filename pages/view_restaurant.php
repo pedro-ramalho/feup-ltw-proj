@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/pages/page_view_restaurant.css">
-  <title>Document</title>
+  <title><?=$restaurant->res_name?></title>
   <script src="../javascript/header_scroll.js" defer></script>
   <script src="../javascript/sidebar_button.js" defer></script>
 </head>

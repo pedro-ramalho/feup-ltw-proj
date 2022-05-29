@@ -317,6 +317,16 @@ section#restaurant-reviews > .reviews-container > #review-form > form label {
   font-size: 1.2em;
 }
 
+#review-form input {
+  font-size: 1.1em;
+}
+
+#review-comment {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  height: 4em;
+}
+
 section#restaurant-reviews > .reviews-container > #review-form > form label > input#review-score {
   margin-left: 0.5em;
   border: none;
@@ -329,21 +339,43 @@ section#restaurant-reviews > .reviews-container > #review-form > form label > in
 
   resize: none;
   background-color: rgb(55, 55, 55);
+  color: white;
+  font-family: 'Raleway', sans-serif;
   width: 5em; 
 }
 
 section#restaurant-reviews > .reviews-container > #review-form > form label > input#review-comment {
-  margin: 0em;
   width: 100%;
-  height: 10em;
-  border: none;
+  height: 5em;
   overflow: auto;
   outline: none;
-
+  margin-top: 0.5em;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-
+  border: 1px solid rgb(75, 75, 75);
+  padding: 1em;
   resize: none;
-  background-color: rgb(55, 55, 55);
+  background-color: rgb(40, 40, 40);
+}
+
+.categories-container {
+  padding-left: 1em;
+}
+
+.coordinates {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.5em;
+}
+
+.coordinates > h3 {
+  font-weight: 300;
+}
+
+.coordinates img {
+  max-width: 2em;
+  max-height: 2em;
+  align-self: center;
+  filter: invert(27%) sepia(0%) saturate(1491%) hue-rotate(145deg) brightness(88%) contrast(86%);
 }
