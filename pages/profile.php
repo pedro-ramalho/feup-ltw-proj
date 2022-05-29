@@ -86,7 +86,7 @@
 
 
     <section id="user-orders">
-      <section class="orders" id="customer-orders" hidden>
+      <section class="orders" id="customer-orders">
         <h1 class="content-header">Your orders</h1>
         <table>
           <tr class="table-header">
@@ -98,7 +98,7 @@
           ?>
         </table>
       </section>
-      <section class="orders" id="restaurant-orders" hidden>
+      <section class="orders" id="restaurant-orders">
         <h1 class="content-header">Orders made by other customers</h1>
         <form method="post" action="#">
           <table>

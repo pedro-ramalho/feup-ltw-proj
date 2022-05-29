@@ -109,6 +109,10 @@ nav#profile-options > section#owned-restaurants {
   position: relative;
 }
 
+.save {
+  margin-top: 1em;
+}
+
 section#owned-restaurants a#add-restaurant-link {
   position: absolute;
   top: 5px;

@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/sidebar.css">
   <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/pages/page_view_restaurant.css">
   <title>Document</title>
   <script src="../javascript/header_scroll.js" defer></script>

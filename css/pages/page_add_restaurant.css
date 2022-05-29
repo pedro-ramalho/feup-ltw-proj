@@ -62,35 +62,13 @@ text-align: center;
   row-gap: 1em;
   height: 100%;
   width: 100%;
-}
-
-#upload-img button {
-  height: 100%;
-  font-size: 1.2em;
-  justify-self: center;
-  align-self: center;
-  color: white;
-  margin-left: 2.5em;
-  font-family: 'Raleway', sans-serif;
-  background-color: blue;
-  border-radius: 0;
-  border: none;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  column-gap: 1em;
 }
 
 #upload-img > label > input[type="file"] {
   display: none;
 }
 
-#upload-img > label {
-  color: white;
-  padding: 0.5em;
-  height: fit-content;
-  font-size: 1.2em;
-  background-color: rgb(25, 14, 170);
-  color: white;
-  border: none;
-  border-radius: 0px;
-  padding: 0.5em;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-}

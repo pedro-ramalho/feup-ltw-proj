@@ -95,10 +95,10 @@
           Coordinates<input type="text" placeholder="coordinates">
         </label>
         <div id="upload-img">
-          <label id="file-upload">
+          <label class="upload-img" id="file-upload">
             <input type="file" name="image">Upload image
           </label>
-          <button type="submit" value="Save">Save</button>
+          <button class="save" type="submit" value="Save">Save</button>
         </div>
       </div>
     </form>
