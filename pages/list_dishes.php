@@ -35,8 +35,10 @@
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/sidebar.css">
-  <link rel="stylesheet" href="../css/previews/preview_dish.css">
   <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/filter.css">
+  <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/previews/preview_dish.css">
   <link rel="stylesheet" href="../css/pages/page_list_dishes.css">
   <title>Dishes</title>
   <script src="../javascript/header_scroll.js" defer></script>
@@ -52,12 +54,12 @@
           draw_dish_preview($dish);
       ?>
     </section>
-    <aside id="dish-filter">
+    <aside class="filter" id="dish-filter">
       <h1>Choose a filter</h1>
-      <form action="list_dishes.php" method="get">
-        <section id="dish-price">
+      <form class="filter-form" action="list_dishes.php" method="get">
+        <section class="section-input" id="dish-price">
           <h1>Price</h1>
-          <div id="price-input-container">
+          <div class="number-input" id="price-input-container">
             <label for="min-price">
               Min<input id="min-price" class="price-number" type="number" name="min_price" min="0" max="100" value="0">
             </label>
@@ -66,9 +68,9 @@
             </label>
           </div>
         </section>
-        <section id="dish-category">
+        <section class="section-categories" id="dish-category">
           <h1>Categories</h1>
-          <div id="category-input-container">
+          <div class="category-input-container">
             <label for="fast-food">
               <input id="fast-food" class="category-checkbox" type="checkbox" name="fast-food" value="Fast-food">Fast-food
             </label>
@@ -89,7 +91,7 @@
             </label>
           </div>
         </section>
-        <button type="submit">Apply</button>
+        <button class="apply" type="submit">Apply</button>
       </form>
     </aside>
   </main>

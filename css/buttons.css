@@ -51,6 +51,7 @@
 }
 
 /* styles the submit button */
+
 .submit {
   align-self: flex-end;
   font-family: 'Raleway', sans-serif;
@@ -64,4 +65,28 @@
   border: 1px solid rgb(50, 140, 215);
   background-color: rgb(30, 120, 195);
   color: var(--restaurant-info-score-button-text-color);
+}
+
+/* styles the apply button */
+
+.apply {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1.3em;
+
+  background-color: rgb(180, 80, 75);
+  color: var(--dish-filter-button-text-color);
+  border: none;
+  border-radius: 0px;
+
+  height: 1.8em;
+  width: 6em;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 1em;
+}
+
+.apply:hover {
+  background-color: rgb(200, 100, 95);
+  color: var(--dish-filter-button-hover-text-color);
 }

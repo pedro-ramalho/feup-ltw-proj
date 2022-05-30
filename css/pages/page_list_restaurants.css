@@ -74,8 +74,6 @@ aside#restaurant-filter > h1 {
 }
 
 aside#restaurant-filter > form {
-  padding: 0;
-  padding-left: 1em;
   margin: 0;
 }
 
@@ -110,52 +108,4 @@ aside#restaurant-filter > form {
 
 #restaurant-filter > form > #restaurant-category {
   grid-area: categories;
-}
-
-#restaurant-filter > form > #restaurant-score > #score-input-container {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-
-  column-gap: 1.5em;
-}
-
-#restaurant-filter > form > #restaurant-score > #score-input-container .score-number {
-  margin: 0.5em;
-}
-
-#restaurant-filter > form > #restaurant-category > #category-input-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: flex-start;
-  justify-content: flex-start;
-}
-
-#restaurant-filter > form > #restaurant-category > #category-input-container .category-checkbox {
-  padding: 1em;
-  margin: 0.6em;
-}
-
-#restaurant-filter > form > button {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 1.3em;
-
-  background-color: var(--restaurant-filter-button-background-color);
-  color: var(--restaurant-filter-text-color);
-  border: none;
-  border-radius: 0px;
-
-  height: 1.8em;
-  width: 8em;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin: 1em;
-}
-
-#restaurant-filter > form > button:hover {
-  background-color: var(--restaurant-filter-button-hover-background-color);
-  color: var(--restaurant-filter-button-hover-text-color)
 }

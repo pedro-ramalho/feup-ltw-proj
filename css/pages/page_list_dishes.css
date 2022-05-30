@@ -59,6 +59,12 @@ aside#dish-filter {
   font-family: 'Raleway', sans-serif;
 }
 
+#dish-previews { 
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+}
+
 #dish-filter > * {
   padding: 1em;
 }
@@ -73,8 +79,7 @@ aside#dish-filter > h1 {
 }
 
 aside#dish-filter > form {
-  padding: 0;
-  padding-left: 1em;
+  padding: 1em;
   margin: 0;
 }
 /* end filter aside */
@@ -89,9 +94,6 @@ aside#dish-filter > form {
   font-family: 'Raleway ', sans-serif;
   padding: 0;
 }
-
-
-
 
 /* anchors */
 #dish-filter a, #dish-previews a {
@@ -112,61 +114,4 @@ aside#dish-filter > form {
 
 #dish-filter > form > #dish-category {
   grid-area: categories;
-}
-
-
-/* dish-filter styling */
-
-/* price section display structure */
-#dish-filter > form > #dish-price > #price-input-container {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-
-  column-gap: 1.5em;
-}
-
-/* apply margin to the number inputs in the price section */
-#dish-filter > form > #dish-price > #price-input-container .price-number {
-  margin: 0.5em;
-}
-
-
-/* category section display structure */
-#dish-filter > form > #dish-category > #category-input-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: flex-start;
-  justify-content: flex-start;
-}
-
-/* apply padding and margin to checkbox inputs in the category section */
-#dish-filter > form > #dish-category > #category-input-container .category-checkbox {
-  padding: 1em;
-  margin: 0.6em;
-}
-
-/* filter button styling */
-#dish-filter > form > button {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 1.3em;
-
-  background-color: var(--dish-filter-button-color);
-  color: var(--dish-filter-button-text-color);
-  border: none;
-  border-radius: 0px;
-
-  height: 1.8em;
-  width: 8em;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin: 1em;
-}
-
-#dish-filter > form > button:hover {
-  background-color: var(--dish-filter-button-hover-color);
-  color: var(--dish-filter-button-hover-text-color)
 }

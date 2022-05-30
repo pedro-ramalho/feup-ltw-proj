@@ -37,8 +37,10 @@
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/sidebar.css">
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/previews/preview_restaurant.css">
   <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/filter.css">
+  <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/previews/preview_restaurant.css">
   <link rel="stylesheet" href="../css/pages/page_list_restaurants.css">
   <title>Restaurants</title>
   <script src="../javascript/header_scroll.js" defer></script>
@@ -59,7 +61,7 @@
       <form action="list_restaurants.php" method="get">
         <section id="restaurant-score">
           <h1>Score</h1>
-          <div id="score-input-container">
+          <div class="number-input" id="score-input-container">
             <label for="min-score">
               Min<input id="min-score" class="score-number" type="number" name="min_score" min="0" max="5" value="0">
             </label>
@@ -70,7 +72,7 @@
         </section>
         <section id="restaurant-category">
           <h1>Categories</h1>
-          <div id="category-input-container">
+          <div class="category-input-container">
             <label for="fast-food">
               <input id="fast-food" class="category-checkbox" type="checkbox" name="fast-food" value="Fast-food">Fast-food
             </label>
@@ -91,7 +93,7 @@
             </label>
           </div>
         </section>
-        <button type="submit">Apply</button>
+        <button class="apply" type="submit">Apply</button>
       </form>
     </aside>
   </main>

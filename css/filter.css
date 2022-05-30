@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200&display=swap');
+
+
+.number-input {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  column-gap: 1.5em;  
+}
+
+.number-input input {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(40, 40, 40);
+  border: 1px solid rgb(75, 75, 75);
+  overflow: auto;
+  outline: none;
+  margin-top: 0.5em;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+  padding: 5px;
+  font-size: 1em;
+  width: 50%;
+}
+
+.price-number, .score-number {
+  margin: 0.5em;
+}
+
+.apply {
+  justify-self: center;
+}
+
+.category-input-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+.category-checkbox {
+  padding: 1em;
+  margin: 0.6em;
+}
+
+
