@@ -1,7 +1,8 @@
 <?php
   declare(strict_types = 1);
+  require_once(__DIR__ . '/../utils/session.php');
 
-  session_start();
+  $session = new Session();
 
   /* include database connection */
   require_once(__DIR__ . '/../database/connection.php');
@@ -43,8 +44,8 @@
   <script src="../javascript/sidebar_button.js" defer></script>
 </head>
 <body>
-  <?php draw_sidebar() ?>
-  <?php draw_header() ?>
+  <?php draw_sidebar($session) ?>
+  <?php draw_header($session) ?>
   <main>
     <section id="restaurant-info">
       <?php draw_restaurant($restaurant) ?>
@@ -62,7 +63,7 @@
       <h1>Reviews</h1>
       <div class="reviews-container">
         <?php 
-          draw_review_form($restaurant_id);
+          draw_review_form($restaurant_id, $session);
           foreach ($reviews as $review) 
             draw_review($review);
         ?>

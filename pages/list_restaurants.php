@@ -1,7 +1,9 @@
 <?php
   declare(strict_types = 1);
+  require_once(__DIR__ . '/../utils/session.php');
 
-  session_start();
+  $session = new Session();
+
 
   /* include restaurant class */
   require_once(__DIR__ . '/../classes/restaurant.class.php');
@@ -47,8 +49,8 @@
   <script src="../javascript/sidebar_button.js" defer></script>
 </head>
 <body>
-  <?php draw_sidebar() ?>
-  <?php draw_header() ?>
+  <?php draw_sidebar($session) ?>
+  <?php draw_header($session) ?>
   <main>
     <section id="restaurant-previews">
       <?php 

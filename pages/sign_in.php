@@ -1,8 +1,11 @@
 <?php
   require_once(__DIR__ . '/../templates/common.php');
+  require_once(__DIR__ . '/../utils/session.php');
 
-  session_start();
-  if (isset($_SESSION['id'])) die(header('Location: /'));
+  $session = new Session();
+
+
+  if ($session->isLoggedIn()) die(header('Location: /'));
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +22,8 @@
   <script src="../javascript/sidebar_button.js" defer></script>
 </head>
 <body>
-  <?php draw_sidebar() ?>
-  <?php draw_header() ?>
+  <?php draw_sidebar($session) ?>
+  <?php draw_header($session) ?>
   <main>
     <section id="signin">
       <h2 class="slogan">Your next meal is only a click away</h2>

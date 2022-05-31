@@ -1,7 +1,8 @@
 <?php
   require_once('templates/common.php');
+  require_once('utils/session.php');
   
-  session_start();
+  $session = new Session();
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +22,8 @@
   <script src="javascript/dynamic_search.js" defer></script>
 </head>
 <body>
-  <?php draw_sidebar() ?>
-  <?php draw_header() ?>
+  <?php draw_sidebar($session) ?>
+  <?php draw_header($session) ?>
   <main>
     <section id="frontpage">
       <section id="slogan">

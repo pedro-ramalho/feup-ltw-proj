@@ -1,9 +1,11 @@
 <?php
   declare(strict_types = 1);
+  require_once(__DIR__ . '/../utils/session.php');
 
-  session_start();
+  $session = new Session();
 
-  if (!isset($_SESSION['id'])) die(header('Location: /'));
+
+  if (!$session->isLoggedIn()) die(header('Location: /'));
 
   require_once(__DIR__ . '/../database/connection.php');
   
@@ -20,12 +22,12 @@
 
   $db = get_db();
 
-  $user = User::get_user($db, intval($_SESSION['id']));
+  $user = User::get_user($db, intval($session->getId()));
 
-  $owned_restaurants = Restaurant::get_owned_restaurants($db, intval($_SESSION['id']));
-  $fav_restaurants = Restaurant::get_fav_restaurants($db, intval($_SESSION['id']));
-  $fav_dishes = Dish::get_fav_dishes($db, intval($_SESSION['id']));
-  $customer_orders = Order::get_customer_orders($db, $_SESSION['id']);
+  $owned_restaurants = Restaurant::get_owned_restaurants($db, intval($session->getId()));
+  $fav_restaurants = Restaurant::get_fav_restaurants($db, intval($session->getId()));
+  $fav_dishes = Dish::get_fav_dishes($db, intval($session->getId()));
+  $customer_orders = Order::get_customer_orders($db, $session->getId());
 ?>
 
 <!DOCTYPE html>
@@ -50,8 +52,8 @@
   <title>Profile</title>
 </head>
 <body>
-  <?php draw_sidebar() ?>
-  <?php draw_header() ?>
+  <?php draw_sidebar($session) ?>
+  <?php draw_header($session) ?>
   <main>
   <nav id="profile-options">
     <div class="profile-section">
