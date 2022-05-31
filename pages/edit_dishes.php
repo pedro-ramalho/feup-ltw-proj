@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/pages/page_edit_dishes.css">
   <title>Edit Dishes</title>
   <script src="../javascript/sidebar_button.js" defer></script>
@@ -42,11 +43,14 @@
   <?php draw_sidebar() ?>
   <?php draw_header(); ?>
   <main>
-    <?php foreach($dishes as $dish) { ?>
-      <section class="dishes">
-        <?php draw_dish_form($dish) ?>
-      </section>
-    <?php } ?>
+    <div id="edit-dishes">
+      <?php foreach($dishes as $dish) { ?>
+        <section class="dishes">
+          <?php edit_dish_form($dish) ?>
+          <?php edit_dish_form($dish) ?>
+        </section>
+      <?php } ?>
+    </div>
   </main>
   <?php draw_footer(); ?>
 </body>

@@ -10,8 +10,8 @@
       <a href="/">Agile Eating</a>
     </div>
     <div id="search-bar-container">
-      <form id="search-bar">
-        <input type="search" id="query" placeholder="Search...">
+      <form id="search-bar" autocomplete="off">
+        <input type="search" id="query" placeholder="Search..." autocomplete="off">
       </form>
     </div>
     <?php draw_header_acc() ?>

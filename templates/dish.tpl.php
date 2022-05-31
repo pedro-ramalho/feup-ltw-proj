@@ -69,3 +69,28 @@
     <input type="submit" value="Send">
   </div>
 <?php } ?>
+
+<?php function edit_dish_form(Dish $dish) { ?>
+  <div class="edit-dish">
+    <h1>Edit dish</h1>
+    <form method="post">
+      <div class="dish-info">
+        <label for="dish-name">
+          Name<input id="dish-name" type="text" value="<?=$dish->name?>">
+        </label>
+        <label for="category">
+          Categories<input type="text" placeholder="category">
+        </label>
+        <label for="price">
+          Price<input id="price" type="text" value="<?=$dish->price?>">
+        </label>
+        <div id="upload-img">
+          <label class="upload-img" id="file-upload">
+            <input type="file" name="image">Upload image
+          </label>
+          <button class="save" type="submit" value="Save">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+<?php } ?> 

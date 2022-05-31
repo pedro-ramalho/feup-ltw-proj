@@ -62,7 +62,7 @@
         <div class="categories-container">
           <?php
           foreach($restaurant->categories as $category) {
-            ?> <h5 class="preview-category"><?=$category?></h5>
+            ?> <input type="text" class="preview-category" value="<?=$category?>">
           <?php } ?>
         </div>
         <input id="new-restaurant-coords" type="text" value="<?=$restaurant->coords?>">

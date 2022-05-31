@@ -23,52 +23,52 @@ body > main {
   row-gap: 1.5em;
 }
 
-
-section.dishes {
-  display: grid;
-  max-width: 100%;
-  grid-template-areas: "dish-img dish-form"
-                        "buttons buttons";
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1.5em;
+#edit-dishes {
+  align-self: center;
 }
 
-section.dishes > img {
-  grid-area: dish-img;
-  max-height: 100%;
-  max-width: 100%;
-  height: 100%;
-}
-
-
-section.dishes > #buttons {
-  padding-top: 1em;
-  grid-area: buttons;
+.dishes {
   display: flex;
   flex-direction: row;
-  column-gap: 1.5em;
+  column-gap: 5em;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  width: fit-content;
 }
 
-section.dishes > form {
-  grid-area: dish-form;
+h1 {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+.edit-dish {
   display: flex;
   flex-direction: column;
-  max-height: 100%;
-  justify-content: center;
-  margin-top: 0;
-  width: fit-content;
-  padding: 1em;
+  margin: 0 auto;
+  align-items: center;
 }
 
-section.dishes > form > label {
-  color: white;
-  margin-top: 1em;
-  font-weight: 600;
+.edit-dish > form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em; 
+}
+
+.edit-dish > form > .dish-info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  align-items: center;
+}
+
+label {
   font-size: 1.2em;
+  color: white;
 }
 
-section.dishes > form > label input {
-  display: block;
+.edit-dish input {
   font-size: 1em;
   font-family: 'Raleway', sans-serif;
   background-color: rgb(60, 60, 60);
@@ -76,81 +76,23 @@ section.dishes > form > label input {
   border: 1px solid rgb(55, 55, 55);
   padding: 8px;
   margin-top: 0.5em;
-  width: 100%;
   color: white;
+  display: block;
 }
 
-section.dishes > form > .categories-container {
+#upload-img {
   display: flex;
   flex-direction: row;
-  column-gap: 1em;
+  row-gap: 1em;
+  height: 100%;
   width: 100%;
-}
-
-.categories-container > h5 { 
-  margin-top: 1em;
-  margin-bottom: 1em;
-  background-color: #626D58;
-  padding: 0.5em;  
-  border: 0.5px solid #555e4c;
-  border-radius: 2px;
-  color: white;
-  font-family: 'Raleway';
-  font-size: 1em;
-  font-weight: 300;
-}
-
-section.dishes > form > button {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 500;
-  font-size: 1em;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  height: 2em;
-  margin-top: 1.5em;
-  align-self: flex-end;
-  width: 6em;
-  border-radius: 5px;
-  background-color: rgb(35, 138, 198);
-  color: var(--restaurant-info-score-button-text-color);
-  border: none;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  column-gap: 1em;
   color: white;
 }
 
-#buttons { 
-  color: white;
-}
-
-#buttons label {
-  color: white;
-  text-decoration: none;
-  padding: 0.5em;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 1.2em;
-  
-  height: fit-content;
-  width: fit-content;
-  background-color: rgb(7, 97, 170);
-  color: var(--restaurant-info-score-button-text-color);
-  border: none;
-  border-radius: 0px;
-}
-
-section.dishes input[type="file"] {
+#upload-img > label > input[type="file"] {
   display: none;
-}
-
-section.dishes input[type="submit"] {
-  color: white;
-  height: fit-content;
-  font-size: 1.2em;
-
-  background-color: rgb(25, 14, 170);
-  color: var(--restaurant-info-score-button-text-color);
-  border: none;
-  border-radius: 0px;
-  padding: 0.5em;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
 }
