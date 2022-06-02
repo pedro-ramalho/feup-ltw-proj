@@ -19,7 +19,9 @@
 
     /* returns a user with a given id */
     static function get_user(PDO $db, int $id) : User {
-      $stmt = $db->prepare('SELECT id, username, pw, addr, phone_number FROM User WHERE id = ?');
+      $stmt = $db->prepare('
+        SELECT id, username, pw, addr, phone_number FROM User WHERE id = ?
+      ');
       $stmt->execute(array($id));
       
       $user = $stmt->fetch();
@@ -37,8 +39,9 @@
     static function get_user_from_credentials(PDO $db, string $username, string $password) {
       $stmt = $db->prepare(
         'SELECT id, username, pw AS password, addr AS address, phone_number
-         FROM User WHERE username = ? AND password = ?');
-      $stmt->execute(array($username, $password));
+         FROM User WHERE username = ? AND password = ?
+        ');
+      $stmt->execute(array($username, hash('sha256', $password)));
 
       if ($user = $stmt->fetch()) {
         return new User(

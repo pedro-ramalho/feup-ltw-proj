@@ -35,7 +35,7 @@ CREATE TABLE User
 (
   id INTEGER PRIMARY KEY,
   username VARCHAR UNIQUE CONSTRAINT UserLength CHECK(LENGTH(username) >= 4 AND LENGTH(username) <= 32),
-  pw VARCHAR UNIQUE CONSTRAINT PwLength CHECK(LENGTH(pw) >= 6 AND LENGTH(pw) <= 32),
+  pw NVARCHAR(40) UNIQUE CONSTRAINT PwLength CHECK(LENGTH(pw) >8),
   addr VARCHAR NOT NULL CONSTRAINT AddressLength CHECK(LENGTH(addr) >= 8 AND LENGTH(addr) <= 256),
   phone_number VARCHAR CONSTRAINT PhoneNumberLength CHECK(LENGTH(phone_number) = 9) 
 );
@@ -137,14 +137,14 @@ CREATE TABLE DishImage
 
 /* inserting a customer */
 
-INSERT INTO User(username, pw, addr, phone_number) VALUES("super_real_customer", "super_secure_pw", "super_real_address", "987654321");
+INSERT INTO User(username, pw, addr, phone_number) VALUES("super_real_customer", "f0f561d2945cdcb8b7f5bee352f9de5d83e9233a315d31a1ca6fece3cb30dcf7", "super_real_address", "987654321");
 
 
 /* inserting restaurant owners */
 
-INSERT INTO User(username, pw, addr, phone_number) VALUES("super_real_owner1", "not_so_secure_pw1", "not_so_real_address1", "999999999");
-INSERT INTO User(username, pw, addr, phone_number) VALUES("super_real_owner2", "not_so_secure_pw2", "not_so_real_address2", "999999998");
-INSERT INTO User(username, pw, addr, phone_number) VALUES("super_real_owner3", "not_so_secure_pw3", "not_so_real_address3", "999999997");
+INSERT INTO User(username, pw, addr, phone_number) VALUES("super_real_owner1", "5fea1a7485c3034925d5c6577f3543196ed44e055c210b4b2bfec2fe0106340a", "not_so_real_address1", "999999999");
+INSERT INTO User(username, pw, addr, phone_number) VALUES("super_real_owner2", "fd398dda7c7dea50dbcbf1c4bff9d2679cd1de57c7ef8aaf75ade1574d165d9d", "not_so_real_address2", "999999998");
+INSERT INTO User(username, pw, addr, phone_number) VALUES("super_real_owner3", "bd603c0b0c81155193329e27f95e45eb9838865d59bb990dcf4d0f7ca344cb81", "not_so_real_address3", "999999997");
 
 
 /* inserting restaurants */

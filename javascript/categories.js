@@ -9,12 +9,8 @@ const colors = {
   'Vegetarian' : 'rgb(55, 142, 63)'
 }
 
-function color(category) {
-  return colors[category]
-}
-
 for (let categories of container) {
   let children = categories.children
   for (let child of children)
-    child.style.background = color(child.innerHTML)
+    child.style.background = colors[child.innerHTML]
 }
