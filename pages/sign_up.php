@@ -30,7 +30,7 @@
         <input type="password" name="password" id="confirm-password" placeholder="confirm password">
         <input type="tel" name="phone-number" id="phone-number" placeholder="phone-number">
         <input type="text" name="address" id="address" placeholder="address">
-        <button type="submit" formaction="database/register.php" formmethod="post">Sign up</button>
+        <button type="submit">Sign up</button>
       </form>
       <h5><a href="sign_in.php">Already have an account? Sign in instead</a></h5>
     </section>
