@@ -25,11 +25,11 @@
     <section id="signup">
       <h2 class="slogan">Your next meal is only a click away</h2>
       <form action="../actions/action_sign_up.php" method="post">
-        <input type="text" name="username" id="username" placeholder="username">
-        <input type="password" name="password" id="password" placeholder="password">
-        <input type="password" name="password" id="confirm-password" placeholder="confirm password">
-        <input type="tel" name="phone-number" id="phone-number" placeholder="phone-number">
-        <input type="text" name="address" id="address" placeholder="address">
+        <input type="text" name="username" id="username" placeholder="username" require="required">
+        <input type="password" name="password" id="password" placeholder="password" require="required" minlength="8">
+        <input type="password" name="confirm-password" id="confirm-password" placeholder="confirm password" require="required">
+        <input type="tel" name="phone-number" id="phone-number" placeholder="phone-number" require="required">
+        <input type="text" name="address" id="address" placeholder="address" require="required">
         <button type="submit">Sign up</button>
       </form>
       <h5><a href="sign_in.php">Already have an account? Sign in instead</a></h5>

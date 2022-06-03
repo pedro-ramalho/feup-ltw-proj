@@ -15,8 +15,14 @@
   }
 
   /* the password must contain at least a lowercase character, an uppercase character, a number and a '#', '$' and '%' */
-  if (!preg_match("/^[a-z]+[A-Z]+[0-9]+[\#]+[\$]+[\%]+/", $_POST['password'])) {
+  if (!preg_match("/^[a-z]+[A-Z]+[0-9]+[\#]+[\$]+[\%]+/", $_POST['password'])
+      || strlen($_POST['password']) < 8) {
     echo "Invalid password";
+    die();
+  }
+
+  if (strcmp($_POST['password'], $_POST['confirm-password']) != 0) {
+    echo 'Passwords do not match';
     die();
   }
 

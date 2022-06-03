@@ -51,14 +51,14 @@
       return null;
     }
 
-    static function register_user(PDO $db, string $username, string $password, string $address, string $phone_number) : void {
+    static function register_user(PDO $db, string $username, string $password, string $address, string $phone_number) : void {      
       $stmt = $db->prepare(
         'INSERT INTO User(username, pw, addr, phone_number) VALUES(?, ?, ?, ?)'
       );
 
       $opts = ['cost' => 12];
 
-      $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $opts  ), $address, $phone_number));
+      $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $opts), $address, $phone_number));
     }
   }
 ?>
