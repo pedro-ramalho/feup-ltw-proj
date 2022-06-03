@@ -8,8 +8,6 @@
 
   $db = get_db();
 
-  echo $_POST['password'];
-
   $user = User::get_user_from_credentials($db, $_POST['username'], $_POST['password']);
 
   if ($user) {

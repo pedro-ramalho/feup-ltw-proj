@@ -61,5 +61,12 @@
 
       return $stmt->fetch()['username'];
     }
+
+    static function add_review(PDO $db, int $author_id, int $restaurant_id, int $score, string $text) : void {
+      $stmt = $db->prepare(
+        'INSERT INTO Review(author, restaurant, score, txt) VALUES(?, ?, ?, ?)'
+      );
+      $stmt->execute(array($author_id, $restaurant_id, $score, $text));
+    }
   }
 ?>

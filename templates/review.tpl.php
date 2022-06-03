@@ -26,14 +26,14 @@
     ?>
     <div id="review-form">
       <h2>Add your review</h2>
-      <form action="database/action_add_review.php" method="post" id="add-review-form">
+      <form action="../actions/action_add_review.php" method="post" id="add-review-form">
         <label for="review-score">
           Score<input id="review-score" type="number" name="review-score" min="0" max="5" placeholder="score...">
         </label>
         <label>
           Comment<input id="review-comment" type="text" name="review-comment" placeholder="Add a comment...">
         </label>
-        <input type="hidden" name="restaurant-id" value="<?=$restaurant_id?>" readonly="readonly">
+        <input id="restaurant-id" type="hidden" name="restaurant-id" value="<?=$restaurant_id?>" readonly="readonly">
         <button class="submit" id="submit-review" type="submit">Submit</button>
       </form>
     </div>
