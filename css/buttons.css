@@ -90,3 +90,12 @@
   background-color: rgb(200, 100, 95);
   color: var(--dish-filter-button-hover-text-color);
 }
+
+.favorite {
+  filter: invert(73%) sepia(100%) saturate(431%) hue-rotate(358deg) brightness(103%) contrast(104%);
+}
+
+.favorite > form > input {
+  max-width: 35px;
+  max-height: 35px;
+}

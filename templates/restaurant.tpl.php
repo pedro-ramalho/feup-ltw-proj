@@ -31,23 +31,29 @@
 <?php } ?>
 
 <?php function draw_restaurant_preview(Restaurant $restaurant, $image) { ?>
-  <div class="restaurant-preview">
-    <a href="view_restaurant.php?id=<?=$restaurant->id?>">
-      <h1 class="restaurant-preview-title"><?=$restaurant->res_name?></h1>
-      <img src="../assets/img/preview/restaurants/<?=$image['id']?>.jpg" alt="restaurant's preview image">
-      <div class="score-container">
-        <h3><?=$restaurant->score?></h3>
+  <div class="preview">
+    <section class="restaurant-info">
+      <h1><?=$restaurant->res_name?></h1>
+      <div class="preview-section">
+        <img id="home-icon" class="icon" src="../assets/icons/home.svg">
+        <h2><?=$restaurant->addr?></h2>
       </div>
-      <div class="categories-container">
-        <?php
-        foreach($restaurant->categories as $category) {
-          ?> <h5 class="preview-category"><?=$category?></h5>
-        <?php } ?>
+      <p>Category</p>
+      <div class="favorite-score-container">
+        <div id="score" class="preview-section">
+          <img id="star-icon" class="icon" src="../assets/icons/star.svg">
+          <p><?=$restaurant->score?></p>
+        </div>
+        <div class="favorite">
+          <form method="post" action="#">
+            <input type="image" src="../assets/icons/favorite.svg">
+          </form>
+        </div>
       </div>
-    </a>
-    <button class="favorite-restaurant">
-      <img src="../assets/star.svg">
-    </button>
+    </section>
+    <section class="image-container">
+      <img src="../assets/Solid_blue.png">
+    </section>
   </div>
 <?php } ?>
 

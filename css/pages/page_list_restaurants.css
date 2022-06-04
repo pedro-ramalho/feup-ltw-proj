@@ -27,11 +27,6 @@ body {
   overflow: hidden;
 }
 
-#restaurant-previews { 
-  width: 100%;
-}
-
-
 body > main {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -75,20 +70,6 @@ aside#restaurant-filter > h1 {
 
 aside#restaurant-filter > form {
   margin: 0;
-}
-
-#restaurant-previews {
-  grid-area: previews;
-  display: flex;
-  flex-direction: column;
-  row-gap: 2em;
-  color: var(--restaurant-previews-text-color);
-  font-family: 'Raleway ', sans-serif;
-  padding: 0;
-}
-
-.categories-container {
-  bottom: 0.5em;
 }
 
 #restaurant-filter a, #restaurant-previews a {

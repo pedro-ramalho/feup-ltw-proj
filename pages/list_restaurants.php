@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/filter.css">
   <link rel="stylesheet" href="../css/buttons.css">
-  <link rel="stylesheet" href="../css/previews/preview_restaurant.css">
+  <link rel="stylesheet" href="../css/previews.css">
   <link rel="stylesheet" href="../css/pages/page_list_restaurants.css">
   <title>Restaurants</title>
   <script src="../javascript/header_scroll.js" defer></script>
