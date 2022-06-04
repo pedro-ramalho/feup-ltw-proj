@@ -112,5 +112,10 @@
       
       return $restaurants;
     }
+
+    static function update_restaurant(PDO $db, int $id, string $new_name, array $new_categories, string $new_coords) {
+      $stmt = $db->prepare('UPDATE Restaurant SET res_name = ?, coords = ? WHERE id = ?');
+      $stmt->execute(array($new_name, $new_coords, $id));
+    }
   }
 ?>

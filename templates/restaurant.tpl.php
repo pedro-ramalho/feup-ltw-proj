@@ -30,11 +30,11 @@
   </div>
 <?php } ?>
 
-<?php function draw_restaurant_preview(Restaurant $restaurant) { ?>
+<?php function draw_restaurant_preview(Restaurant $restaurant, $image) { ?>
   <div class="restaurant-preview">
     <a href="view_restaurant.php?id=<?=$restaurant->id?>">
       <h1 class="restaurant-preview-title"><?=$restaurant->res_name?></h1>
-      <img src="../assets/temp.jpg" alt="restaurant's preview image">
+      <img src="../assets/img/preview/restaurants/<?=$image['id']?>.jpg" alt="restaurant's preview image">
       <div class="score-container">
         <h3><?=$restaurant->score?></h3>
       </div>
@@ -51,55 +51,25 @@
   </div>
 <?php } ?>
 
-<?php function draw_restaurant_form(Restaurant $restaurant) { ?>
-  <div class="edit-restaurant">
-    <form method="post">
-      <div id="restaurant-info">
-        <div class="restaurant-name-score">
-          <input type="text" value="<?=$restaurant->res_name?>">
-          <h3 class="restaurant-score"><?=$restaurant->score?>/5</h3>
-        </div>
-        <div class="categories-container">
-          <?php
-          foreach($restaurant->categories as $category) {
-            ?> <input type="text" class="preview-category" value="<?=$category?>">
-          <?php } ?>
-        </div>
-        <input id="new-restaurant-coords" type="text" value="<?=$restaurant->coords?>">
-        <button class="save">Save</button>
-      </div>
-    </form>
-    <div id="upload-img">
-      <label id="file-upload">
-        <input type="file" name="image">Choose file
-      </label>
-      <input type="submit" value="Send">
-      <img src="../assets/temp.jpg" alt="restaurant's display image">
-    </div>
-    <div id="edit-dishes">
-      <a href="../pages/edit_dishes.php?id=<?=$restaurant->id?>">Edit dishes</a>
-    </div>
-  </div>
-<?php } ?>
-
 <?php function edit_restaurant_form(Restaurant $restaurant) { ?>
   <div class="edit-restaurant">
     <h1>Edit restaurant</h1>
-    <form method="post">
+    <form action="../actions/action_edit_restaurant.php" method="post" enctype="multipart/form-data">
       <div class="restaurant-info">
         <label for="restaurant-name">
-          Name<input id="restaurant-name" type="text" value="<?=$restaurant->res_name?>">
+          Name<input id="restaurant-name" name="restaurant-name" type="text" value="<?=$restaurant->res_name?>">
         </label>
         <label for="category">
-          Categories<input type="text" placeholder="category">
+          Categories<input type="text" id="categories" name="categories" placeholder="category">
         </label>
         <label for="coordinates">
-          Price<input id="coordinates" type="text" value="<?=$restaurant->coords?>">
+          Coordinates<input id="coordinates" name="coordinates" type="text" value="<?=$restaurant->coords?>">
         </label>
         <div id="upload-img">
           <label class="upload-img" id="file-upload">
             <input type="file" name="image">Upload image
           </label>
+          <input type="hidden" name="restaurant-id" value="<?=$restaurant->id?>">
           <button class="save" type="submit" value="Save">Save</button>
           <a href="../pages/edit_dishes.php?id=<?=$restaurant->id?>">Edit dishes</a>
         </div>

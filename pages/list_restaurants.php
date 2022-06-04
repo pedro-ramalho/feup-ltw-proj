@@ -26,6 +26,8 @@
   if (isset($_GET['vegan'])) $categories[] = 'Vegan';
 
   $restaurants = filter_restaurants($min_score, $max_score, $categories);
+
+  $db = get_db();
 ?>
 
 <!DOCTYPE html>
@@ -54,8 +56,12 @@
   <main>
     <section id="restaurant-previews">
       <?php 
-        foreach($restaurants as $restaurant) 
-          draw_restaurant_preview($restaurant); 
+        foreach($restaurants as $restaurant) {
+          $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ?');
+          $stmt->execute(array($restaurant->id));
+          $img = $stmt->fetch();
+          draw_restaurant_preview($restaurant, $img);
+        } 
       ?>
     </section>
     <aside id="restaurant-filter">

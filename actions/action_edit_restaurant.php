@@ -1,6 +1,8 @@
 <?php
   declare(strict_types = 1);
 
+use LDAP\Result;
+
   session_start();
 
   require_once(__DIR__ . '/../database/connection.php');
@@ -9,21 +11,55 @@
 
   $db = get_db();
 
-  $restaurant = Restaurant::get_restaurant($db, intval($_POST['restaurant-id']));
-  $dishes = Dish::get_restaurant_dishes($db, ($_POST['restaurant-id']));
 
-  if ($restaurant) {
-    /* 
-    $restaurant->res_name = $_POST['res-name'];
-    $restaurant->categories = $_POST['categories'];
-    
-    foreach ($dishes as $dish) {
-      $dish->name = ;
-      $dish->price = ;
-    }
+  /* fetch data from POST */
 
-    $restaurant->save($db);
-    $dish->save($db);
-    */
+  $restaurant_id = intval($_POST['restaurant-id']);
+  $restaurant_name = $_POST['restaurant-name'];
+  $categories = $_POST['categories'];
+  $coordinates = $_POST['coordinates'];
+
+  Restaurant::update_restaurant($db, $restaurant_id, $restaurant_name, array($categories), $coordinates);
+
+  $stmt = $db->prepare('INSERT INTO RestaurantImage(restaurant_id) VALUES(?)');
+  $stmt->execute(array($restaurant_id));
+
+  $id = $db->lastInsertId();
+
+  $original_file = "../assets/img/original/restaurants/$id.jpg";
+  $preview_file = "../assets/img/preview/restaurants/$id.jpg";
+  $display_file = "../assets/img/display/restaurants/$id.jpg";
+
+  move_uploaded_file($_FILES['image']['tmp_name'], $original_file);
+
+  $original = imagecreatefromjpeg($original_file);
+
+  if (!$original) {
+    $original = imagecreatefrompng($original_file);
+    $original = imagecreatetruecolor(imagesx($original), imagesy($original));
+    imagefill($original, 0, 0, imagecolorallocate($original, 255, 255, 255));
+    imagealphablending($original, TRUE);
   }
+
+  /* calculate the width and height of the original image */
+
+  $width = imagesx($original);    
+  $height = imagesy($original);   
+  
+
+  /* create and save a preview image */
+
+  $preview = imagecreatetruecolor(800, 400); 
+  imagecopyresized($preview, $original, 0, 0, 0, 0, 400, 200, $width, $height);
+  imagejpeg($preview, $preview_file);
+
+
+  /* create and save a display image */
+  
+  $display = imagecreatetruecolor(1200, 600);
+  imagecopyresized($display, $original, 0, 0, 0, 0, 1200, 600, $width, $height);
+  imagejpeg($display, $display_file);
+
+
+  header('Location: ../index.php');
 ?>
