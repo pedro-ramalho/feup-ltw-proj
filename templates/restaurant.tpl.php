@@ -52,7 +52,7 @@
       </div>
     </section>
     <section class="image-container">
-      <img src="../assets/Solid_blue.png">
+      <img src="../assets/img/preview/restaurants/<?=$image['id']?>.jpg" alt="restaurant's preview image">
     </section>
   </div>
 <?php } ?>

@@ -57,7 +57,7 @@
     <section id="restaurant-previews">
       <?php 
         foreach($restaurants as $restaurant) {
-          $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ?');
+          $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ? ORDER BY id DESC');
           $stmt->execute(array($restaurant->id));
           $img = $stmt->fetch();
           draw_restaurant_preview($restaurant, $img);

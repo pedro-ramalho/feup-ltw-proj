@@ -5,7 +5,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   row-gap: 2em;
-  column-gap: 2em;
+  column-gap: 4em;
 }
 
 .preview {

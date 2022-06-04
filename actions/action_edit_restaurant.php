@@ -44,13 +44,14 @@ use LDAP\Result;
   /* calculate the width and height of the original image */
 
   $width = imagesx($original);    
-  $height = imagesy($original);   
+  $height = imagesy($original);  
+  $square = min($width, $height); 
   
 
   /* create and save a preview image */
 
-  $preview = imagecreatetruecolor(800, 400); 
-  imagecopyresized($preview, $original, 0, 0, 0, 0, 400, 200, $width, $height);
+  $preview = imagecreatetruecolor(200, 200); 
+  imagecopyresized($preview, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 200, 200, $square, $square);
   imagejpeg($preview, $preview_file);
 
 
