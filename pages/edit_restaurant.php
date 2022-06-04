@@ -43,9 +43,11 @@
   <?php draw_sidebar() ?>
   <?php draw_header(); ?>
   <main>
-    <section id="restaurant-info">
-      <?php draw_restaurant_form($restaurant) ?>
-    </section>
+    <div id="edit-restaurant">
+      <section class="restaurant">
+        <?php edit_restaurant_form($restaurant) ?>
+      </section>
+    </div>
   </main>
   <?php draw_footer(); ?>
 </body>

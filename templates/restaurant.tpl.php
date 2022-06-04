@@ -82,6 +82,32 @@
   </div>
 <?php } ?>
 
+<?php function edit_restaurant_form(Restaurant $restaurant) { ?>
+  <div class="edit-restaurant">
+    <h1>Edit restaurant</h1>
+    <form method="post">
+      <div class="restaurant-info">
+        <label for="restaurant-name">
+          Name<input id="restaurant-name" type="text" value="<?=$restaurant->res_name?>">
+        </label>
+        <label for="category">
+          Categories<input type="text" placeholder="category">
+        </label>
+        <label for="coordinates">
+          Price<input id="coordinates" type="text" value="<?=$restaurant->coords?>">
+        </label>
+        <div id="upload-img">
+          <label class="upload-img" id="file-upload">
+            <input type="file" name="image">Upload image
+          </label>
+          <button class="save" type="submit" value="Save">Save</button>
+          <a href="../pages/edit_dishes.php?id=<?=$restaurant->id?>">Edit dishes</a>
+        </div>
+      </div>
+    </form>
+  </div>
+<?php } ?>
+
 
 <?php function draw_restaurant_setup(int $user_id) { ?>
   <h1>Setup your own restaurant</h1>
