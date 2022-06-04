@@ -6,34 +6,31 @@
   require_once(__DIR__ . '/../database/connection.php');
   require_once(__DIR__ . '/../classes/user.class.php');
 
+  require_once(__DIR__ . '/../utils/validation.php');
+
   $db = get_db();
 
-  /* the username can only contain lowercase/uppercase characters and numbers */
-  if (!preg_match("/^[a-zA-Z0-9]+$/", $_POST['username'])) {
+  if (!valid_username($_POST['username'])) {
     echo 'Invalid username';
     die();
   }
 
-  /* the password must contain at least a lowercase character, an uppercase character, a number and a '#', '$' and '%' */
-  if (!preg_match("/^[a-z]+[A-Z]+[0-9]+[\#]+[\$]+[\%]+/", $_POST['password'])
-      || strlen($_POST['password']) < 8) {
+  if (!valid_password($_POST['password'])) {
     echo "Invalid password";
     die();
   }
 
-  if (strcmp($_POST['password'], $_POST['confirm-password']) != 0) {
+  if (!passwords_match($_POST['password'], $_POST['confirm-password'])) {
     echo 'Passwords do not match';
     die();
   }
 
-  /* the phone number must contain exactly 9 numbers and 9 numbers only */
-  if (!preg_match("/[0-9]{9}/", $_POST['phone-number'])) {
+  if (!valid_phone_nr($_POST['phone-number'])) {
     echo 'Invalid phone number';
     die();
   }
 
-  /* the address can only contain lowercase/uppercase characters and numbers */
-  if (!preg_match("/^[a-zA-Z0-9\s]+$/", $_POST['address'])) {
+  if (!valid_address($_POST['address'])) {
     echo 'Invalid address';
     die();
   }

@@ -9,11 +9,12 @@
   require_once(__DIR__ . '/../database/connection.php');
   require_once(__DIR__ . '/../classes/user.class.php');
   require_once(__DIR__ . '/../classes/review.class.php');
+  require_once(__DIR__ . '/../utils/validation.php');
 
   $db = get_db();
 
-  if (!preg_match("/^[a-zA-Z0-9\s]+$/", $_POST['review-comment'])) {
-    echo 'The review can only contain numbers, letters and whitespaces';
+  if (!valid_review($_POST['review-comment'])) {
+    echo 'Nice try dumbass';
     die();
   }
 
