@@ -58,8 +58,13 @@
           $stmt = $db->prepare('SELECT * FROM DishImage WHERE dish_id = ? ORDER BY id DESC');
           $stmt->execute(array($dish->id));
           $img = $stmt->fetch();
-
-          draw_dish_preview($dish, $img);
+          
+          $path = "../assets/img/default";
+          
+          if ($img) 
+            $path = "../assets/img/preview/dishes/" . $img['id'];
+          
+          draw_dish_preview($dish, $path);
         }
       ?>
     </section>

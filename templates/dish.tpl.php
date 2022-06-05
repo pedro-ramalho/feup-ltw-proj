@@ -50,7 +50,7 @@
       </div>
     </section>
     <section class="image-container">
-      <img src="../assets/square.jpg" width="250" height="250">
+      <img src="<?=$image?>.jpg" width="250" height="250" alt="Dish preview image">
     </section>
   </div>
 <?php } ?>

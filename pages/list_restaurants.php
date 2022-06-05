@@ -60,7 +60,13 @@
           $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ? ORDER BY id DESC');
           $stmt->execute(array($restaurant->id));
           $img = $stmt->fetch();
-          draw_restaurant_preview($restaurant, $img);
+
+          $path = "../assets/img/default";
+          
+          if ($img) 
+            $path = "../assets/img/preview/restaurants/" . $img['id'];
+          
+          draw_restaurant_preview($restaurant, $path);
         } 
       ?>
     </section>
