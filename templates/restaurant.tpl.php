@@ -32,27 +32,26 @@
 
 <?php function draw_restaurant_preview(Restaurant $restaurant, $image) { ?>
   <div class="preview">
-    <section class="restaurant-info">
+    <section class="info">
       <h1><?=$restaurant->res_name?></h1>
-      <div class="preview-section">
-        <img id="home-icon" class="icon" src="../assets/icons/home.svg">
-        <h2><?=$restaurant->addr?></h2>
+      <h2><?=$restaurant->addr?></h2>
+      <div class="categories-container">
+        <p>Category</p>
       </div>
-      <p>Category</p>
-      <div class="favorite-score-container">
-        <div id="score" class="preview-section">
-          <img id="star-icon" class="icon" src="../assets/icons/star.svg">
+      <div class="icons-container">
+        <div class="score">
+          <img id="star" class="icon" src="../assets/icons/star.svg">
           <p><?=$restaurant->score?></p>
         </div>
-        <div class="favorite">
-          <form method="post" action="#">
-            <input type="image" src="../assets/icons/favorite.svg">
+        <div class="favorite-form">
+          <form method="post">
+            <input id="favorite" class="icon" type="image" src="../assets/icons/favorite.svg">
           </form>
         </div>
       </div>
     </section>
     <section class="image-container">
-      <img src="../assets/img/preview/restaurants/<?=$image['id']?>.jpg" alt="restaurant's preview image">
+      <img src="../assets/square.jpg" width="250" height="250">
     </section>
   </div>
 <?php } ?>
