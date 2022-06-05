@@ -1,9 +1,9 @@
 <?php
   declare(strict_types = 1);
+  require_once(__DIR__ . '/../utils/session.php');
+  $session = new Session();
 
-  session_start();
-
-  if(!isset($_SESSION['id'])) die(header('Location: /sign_in.php'));
+  if(!$session->isLoggedIn()) die(header('Location: /sign_in.php'));
 
   /* include database connection */
   require_once(__DIR__ . '/../database/connection.php');
@@ -33,10 +33,10 @@
   <title>Document</title>
 </head>
 <body>
-  <?php draw_sidebar() ?>
-  <?php draw_header() ?>
+  <?php draw_sidebar($session) ?>
+  <?php draw_header($session) ?>
   <main>
-    <?php draw_restaurant_setup($_SESSION['id']) ?>
+    <?php draw_restaurant_setup($session->getId()) ?>
   </main>
   <?php draw_footer() ?>
 </body>

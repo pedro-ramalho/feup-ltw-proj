@@ -1,6 +1,7 @@
 <?php
   declare(strict_types = 1);
 
+  require_once(__DIR__ . '/../utils/session.php');
   require_once(__DIR__ . '/../database/connection.php');
   require_once(__DIR__ . '/../classes/review.class.php');
   require_once(__DIR__ . '/../classes/user.class.php');
@@ -21,8 +22,8 @@
 <?php } ?>
 
 <?php
-  function draw_review_form($restaurant_id) { 
-    if (isset($_SESSION['id'])) {
+  function draw_review_form($restaurant_id, Session $session) { 
+    if ($session->isLoggedIn()) {
     ?>
     <div id="review-form">
       <h2>Add your review</h2>
