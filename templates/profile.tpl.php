@@ -10,6 +10,12 @@
     <label for="username">
       Username<input id="username" type="text" value="<?=$user->username?>">
     </label>
+    <label for="address">
+      Address<input id="address" type="text" value="<?=$user->address?>">
+    </label>
+    <label for="phone-number">
+      Phone number<input id="phone-number" type="text" value="<?=$user->phone_number?>">
+    </label> 
     <label for="password">
       Password<input id="password" type="password">
     </label>

@@ -5,9 +5,13 @@
 
   require_once(__DIR__ . '/../classes/dish.class.php');
 
+  require_once(__DIR__ . '/../database/connection.php');
+
   require_once(__DIR__ . '/../templates/common.php');
   require_once(__DIR__ . '/../templates/dish.tpl.php');
   require_once(__DIR__ . '/../templates/filter.php');
+
+  $db = get_db();
 
   $min_price = !isset($_GET['min_price']) ? 0.0 : floatval($_GET['min_price']);
   $max_price = !isset($_GET['max_price']) ? 100.0 : floatval($_GET['max_price']);
@@ -38,7 +42,7 @@
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/filter.css">
   <link rel="stylesheet" href="../css/buttons.css">
-  <link rel="stylesheet" href="../css/previews/preview_dish.css">
+  <link rel="stylesheet" href="../css/previews.css">
   <link rel="stylesheet" href="../css/pages/page_list_dishes.css">
   <title>Dishes</title>
   <script src="../javascript/header_scroll.js" defer></script>
@@ -50,8 +54,13 @@
   <main>
     <section id="dish-previews">
       <?php
-        foreach ($dishes as $dish)
-          draw_dish_preview($dish);
+        foreach ($dishes as $dish) {
+          $stmt = $db->prepare('SELECT * FROM DishImage WHERE dish_id = ? ORDER BY id DESC');
+          $stmt->execute(array($dish->id));
+          $img = $stmt->fetch();
+
+          draw_dish_preview($dish, $img);
+        }
       ?>
     </section>
     <aside class="filter" id="dish-filter">

@@ -18,30 +18,38 @@
   </div>
 <?php } ?>
 
-<?php function draw_dish_preview(Dish $dish) { ?>
+<?php function draw_dish_preview(Dish $dish, $image) { ?>
 <?php
   $db = get_db();
   
   $id = Dish::get_dish_restaurant($db, $dish->id);
   $restaurant = Restaurant::get_restaurant($db, $id);  
 ?>
-  <div class="dish-preview">
-    <h1 class="dish-preview-title"><?=$dish->name?></h1>
-    <img src="../assets/temp.jpg" alt="dish's preview image">
-    <p id="dish-price"><?=$dish->price?>€</p>
-    <a id="dish-restaurant" href="restaurant.php?id=<?=$restaurant->id?>"><?=$restaurant->res_name?></a>
-    <button class="favorite-dish">
-      <img src="../assets/star.svg">
-    </button>
-    <button class="order">
-      <img src="../assets/shopping_bag.svg">
-    </button>
-    <div class="categories-container">
-      <?php
-      foreach($restaurant->categories as $category) {
-        ?> <h5 class="preview-category"><?=$category?></h5>
-      <?php } ?>
-    </div>
+  <div class="preview">
+    <section class="dish-info">
+      <h1><?=$dish->name?></h1>
+      <div class="preview-section">
+        <img id="restaurant-icon" src="../assets/icons/restaurant.svg">
+        <h2><?=$restaurant->res_name?></h2>
+      </div>
+      <p>Category</p>
+      <div class="favorite-price-container">
+        <p class="price"><?=$dish->price?>€</p>
+        <div class="shopping-bag">
+          <form>
+            <input type="image" src="../assets/icons/shopping_bag.svg">
+          </form>
+        </div>
+        <div class="favorite">
+          <form method="post" action="#">
+            <input type="image" src="../assets/icons/favorite.svg">
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="image-container">
+      <img src="../assets/img/preview/dishes/<?=$image['id']?>.jpg" alt="dish's preview image">
+    </section>
   </div>
 <?php } ?>
 

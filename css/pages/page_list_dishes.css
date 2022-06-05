@@ -59,12 +59,6 @@ aside#dish-filter {
   font-family: 'Raleway', sans-serif;
 }
 
-#dish-previews { 
-  display: flex;
-  flex-direction: column;
-  row-gap: 2em;
-}
-
 #dish-filter > * {
   padding: 1em;
 }
