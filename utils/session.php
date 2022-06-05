@@ -34,6 +34,9 @@
     }
 
     public function addMessage(string $type, string $text) {
+      if (!isset($_SESSION['messages'])) {
+        $_SESSION['messages'] = array();
+      }
       $_SESSION['messages'][] = array('type' => $type, 'text' => $text, 'index' => count($_SESSION['messages']));
     }
 

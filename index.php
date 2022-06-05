@@ -1,8 +1,7 @@
 <?php
-  require_once('templates/common.php');
   require_once('utils/session.php');
-  
   $session = new Session();
+  require_once('templates/common.php');
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +19,7 @@
   <script src="javascript/header_scroll.js" defer></script>
   <script src="javascript/sidebar_button.js" defer></script>
   <script src="javascript/dynamic_search.js" defer></script>
+  <script src="javascript/messages.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar($session) ?>

@@ -1,9 +1,7 @@
 <?php
-  require_once(__DIR__ . '/../templates/common.php');
   require_once(__DIR__ . '/../utils/session.php');
-
   $session = new Session();
-
+  require_once(__DIR__ . '/../templates/common.php');
 
   if ($session->isLoggedIn()) die(header('Location: /'));
 ?>
@@ -20,6 +18,7 @@
   <link rel="stylesheet" href="../css/pages/page_sign_in.css">
   <title>Sign in to Agile Eating</title>
   <script src="../javascript/sidebar_button.js" defer></script>
+  <script src="../javascript/messages.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar($session) ?>

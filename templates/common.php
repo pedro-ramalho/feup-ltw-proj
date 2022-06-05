@@ -22,9 +22,9 @@
     <?php draw_header_acc($session) ?>
   </header>
   <section id="messages-container">
-    <?php foreach ($session->getMessages() as $messsage) { ?>
-      <article class="<?=$messsage['type']?>">
-          <?=$messsage['text']?>
+    <?php foreach ($session->getMessages() as $message) { ?>
+      <article class="<?=$message['type']?>">
+          <p><?=$message['text']?></p>
         </article>
       <?php } ?>
   </section>

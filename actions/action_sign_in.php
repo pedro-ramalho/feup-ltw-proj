@@ -14,6 +14,7 @@
   if ($user) {
     $session->setId($user->id);
     $session->setName($user->username);
+    $session->addMessage("success", "Logged in successfuly");
     header('Location: ../index.php');
   }
   else {

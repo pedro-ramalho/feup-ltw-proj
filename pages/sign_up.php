@@ -1,9 +1,8 @@
 <?php
-  require_once(__DIR__ . '/../templates/common.php');
   require_once(__DIR__ . '/../utils/session.php');
-
   $session = new Session();
-
+  require_once(__DIR__ . '/../templates/common.php');
+  
   if ($session->isLoggedIn()) die(header('Location: /'));
 ?>
 
