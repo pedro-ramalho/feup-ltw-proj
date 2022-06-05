@@ -60,5 +60,21 @@
 
       $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $opts), $address, $phone_number));
     }
+
+    static function get_user_password(PDO $db, int $user_id) : string {
+      $stmt = $db->prepare(
+        'SELECT pw FROM User WHERE id = ?'
+      );
+      $stmt->execute(array($user_id));
+
+      return $stmt->fetch()['pw'];
+    }
+
+    static function update_user(PDO $db, int $user_id, string $new_username, string $new_address, string $new_phone_nr) : void {
+      $stmt = $db->prepare(
+        'UPDATE User SET username = ?, addr = ?, phone_number = ? WHERE id = ?'
+      );
+      $stmt->execute(array($new_username, $new_address, $new_phone_nr, $user_id));
+    }
   }
 ?>

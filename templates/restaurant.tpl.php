@@ -7,7 +7,6 @@
 
 <?php function draw_restaurant(Restaurant $restaurant) { ?>
   <div class="restaurant-frontpage">
-    
     <div id="restaurant-bg-img-container">
       <img id="res-bg-image" src="../assets/img/bg/restaurant.jpg" alt="restaurant background image">
       <img id="add-res-to-favorites" class="icon res-favorite-button" src="../assets/img/" alt="add to favorite">
@@ -26,26 +25,6 @@
           ?> <h5 class="res-preview-category"><?=$category?></h5>
         <?php } ?>
       </div>
-
-    </div>
-
-
-
-    <div id="restaurant-info">
-      <div class="restaurant-name-score">
-        <h1 class="restaurant-title"><?=$restaurant->res_name?></h1>
-        
-      </div>
-      
-      </div>
-      <div class="coordinates">
-        <img src="../assets/icons/gps.svg">
-        <h3 class="restaurant-coords"><?=$restaurant->coords?></h3>    
-      </div>
-    </div>
-    <img src="../assets/temp.jpg" alt="restaurant's display image">
-    <div id="score-button">
-      <button class="favorite-restaurant">Add to favorites</button>
     </div>
   </div>
 <?php } ?>
