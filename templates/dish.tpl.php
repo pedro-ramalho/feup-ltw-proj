@@ -26,29 +26,31 @@
   $restaurant = Restaurant::get_restaurant($db, $id);  
 ?>
   <div class="preview">
-    <section class="dish-info">
-      <h1><?=$dish->name?></h1>
-      <div class="preview-section">
-        <img id="restaurant-icon" src="../assets/icons/restaurant.svg">
-        <h2><?=$restaurant->res_name?></h2>
+    <section class="info">
+      <div class="order">
+        <form method="post">
+          <input id="shopping-bag" class="icon" type="image" src="../assets/icons/shopping_bag.svg">
+        </form>
+        <h1><?=$dish->name?></h1>
       </div>
-      <p>Category</p>
-      <div class="favorite-price-container">
-        <p class="price"><?=$dish->price?>€</p>
-        <div class="shopping-bag">
-          <form>
-            <input type="image" src="../assets/icons/shopping_bag.svg">
-          </form>
+      <h2><?=$restaurant->res_name?></h2>
+      <div class="categories-container">
+        <p>Category</p>
+      </div>
+      <div class="icons-container">
+        <div class="price">
+          <img id="price" class="icon" src="../assets/icons/price.svg">
+          <p><?=$dish->price?></p>
         </div>
-        <div class="favorite">
-          <form method="post" action="#">
-            <input type="image" src="../assets/icons/favorite.svg">
+        <div class="favorite-form">
+          <form method="post">
+            <input id="favorite" class="icon" type="image" src="../assets/icons/favorite.svg">
           </form>
         </div>
       </div>
     </section>
     <section class="image-container">
-      <img src="../assets/img/preview/dishes/<?=$image['id']?>.jpg" alt="dish's preview image">
+      <img src="../assets/square.jpg" width="250" height="250">
     </section>
   </div>
 <?php } ?>

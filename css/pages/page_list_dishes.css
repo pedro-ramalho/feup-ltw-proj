@@ -81,12 +81,7 @@ aside#dish-filter > form {
 
 /* dish previews container */
 #dish-previews {
-  height: 100%;
-  width: 100%;
   grid-area: previews;
-  color: var(--list-dishes-text-color);
-  font-family: 'Raleway ', sans-serif;
-  padding: 0;
 }
 
 /* anchors */

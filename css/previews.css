@@ -1,4 +1,4 @@
-#restaurant-previews {
+#restaurant-previews, #dish-previews {
   display: flex;
   flex-direction: row;
   column-gap: 3em;
@@ -26,8 +26,20 @@
   text-align: center;
 }
 
+.order {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.order > form {
+  text-align: center;
+  align-self: center;
+}
+
 .info > h2 {
   font-weight: 400;
+  font-size: 20px;
 }
 
 .categories-container {
@@ -44,7 +56,7 @@
   column-gap: 8em;
 }
 
-.score {
+.score, .price {
   display: flex;
   flex-direction: row;
   align-self: center;
