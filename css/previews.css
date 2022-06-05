@@ -10,7 +10,6 @@
   display: flex;
   flex-direction: row;
   border-radius: 20px;
-
   font-family: 'Raleway', sans-serif;
   color: white;
 
@@ -23,6 +22,8 @@
 
 .info {
   padding: 1em;
+  min-width: 18em;
+  min-height: 12em;
   text-align: center;
 }
 
@@ -53,31 +54,21 @@
 .icons-container {
   display: flex;
   flex-direction: row;
-  column-gap: 8em;
+  align-items: center;
+  column-gap: 10em; 
 }
 
 .score, .price {
   display: flex;
   flex-direction: row;
-  align-self: center;
-  align-items: center;
-}
-
-.favorite-form {
-  align-items: center;
-  align-self: center;
-}
-
-.favorite-form input {
-  align-self: center;
 }
 
 .icon {
   align-self: center;
-  max-width: 2em;
-  max-height: 2em;
-  height: 2em;
-  width: 2em;
+  max-width: 2rem;
+  max-height: 2rem;
+  height: 2rem;
+  width: 2rem;
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(138deg) brightness(103%) contrast(101%);
 }
 

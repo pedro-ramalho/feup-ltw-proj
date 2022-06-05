@@ -113,7 +113,14 @@
       return $restaurants;
     }
 
-    static function update_restaurant(PDO $db, int $id, string $new_name, array $new_categories, string $new_coords) {
+    static function add_restaurant(PDO $db, int $owner_id, string $res_name, string $addr, string $coords) : void {
+      $stmt = $db->prepare(
+        'INSERT INTO Restaurant(owner_id, score, res_name, addr, coords) VALUES(?, ?, ?, ?, ?)'
+      );
+      $stmt->execute(array($owner_id, 3, $res_name, $addr, $coords));
+    }
+
+    static function update_restaurant(PDO $db, int $id, string $new_name, array $new_categories, string $new_coords) : void {
       $stmt = $db->prepare('UPDATE Restaurant SET res_name = ?, coords = ? WHERE id = ?');
       $stmt->execute(array($new_name, $new_coords, $id));
     }

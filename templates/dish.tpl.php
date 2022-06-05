@@ -42,11 +42,7 @@
           <img id="price" class="icon" src="../assets/icons/price.svg">
           <p><?=$dish->price?></p>
         </div>
-        <div class="favorite-form">
-          <form method="post">
-            <input id="favorite" class="icon" type="image" src="../assets/icons/favorite.svg">
-          </form>
-        </div>
+        <img id="favorite" class="icon" src="../assets/icons/favorite.svg">
       </div>
     </section>
     <section class="image-container">

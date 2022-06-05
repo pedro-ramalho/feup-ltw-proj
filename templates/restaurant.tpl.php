@@ -7,16 +7,36 @@
 
 <?php function draw_restaurant(Restaurant $restaurant) { ?>
   <div class="restaurant-frontpage">
+    
+    <div id="restaurant-bg-img-container">
+      <img id="res-bg-image" src="../assets/img/bg/restaurant.jpg" alt="restaurant background image">
+      <img id="add-res-to-favorites" class="icon res-favorite-button" src="../assets/img/" alt="add to favorite">
+      <img id="remove-res-from-favorites" class="icon res-favorite-button" src="../assets/img" alt="">
+    </div>
+    <div id="restaurant-details">
+      <h1 id="res-name"><?=$restaurant->res_name?></h1>
+      <div id="res-miscellaneous">
+        <h3 class="restaurant-score"><?=$restaurant->score?>/5</h3>
+        <h3 class="restaurant-addr"><?=$restaurant->addr?></h3>
+        <h3 class="restaurant-coords"><img id="res-gps-icon" src="../assets/icons/gps.svg" alt=""> <?=$restaurant->coords?></h3>
+      </div>
+      <div class="res-categories-container">
+        <?php
+        foreach($restaurant->categories as $category) {
+          ?> <h5 class="res-preview-category"><?=$category?></h5>
+        <?php } ?>
+      </div>
+
+    </div>
+
+
+
     <div id="restaurant-info">
       <div class="restaurant-name-score">
         <h1 class="restaurant-title"><?=$restaurant->res_name?></h1>
-        <h3 class="restaurant-score"><?=$restaurant->score?>/5</h3>
+        
       </div>
-      <div class="categories-container">
-        <?php
-        foreach($restaurant->categories as $category) {
-          ?> <h5 class="preview-category"><?=$category?></h5>
-        <?php } ?>
+      
       </div>
       <div class="coordinates">
         <img src="../assets/icons/gps.svg">
@@ -33,7 +53,9 @@
 <?php function draw_restaurant_preview(Restaurant $restaurant, $image) { ?>
   <div class="preview">
     <section class="info">
-      <h1><?=$restaurant->res_name?></h1>
+      <a href="view_restaurant.php?id=<?=$restaurant->id?>">
+        <h1><?=$restaurant->res_name?></h1>
+      </a>
       <h2><?=$restaurant->addr?></h2>
       <div class="categories-container">
         <p>Category</p>
@@ -43,11 +65,7 @@
           <img id="star" class="icon" src="../assets/icons/star.svg">
           <p><?=$restaurant->score?></p>
         </div>
-        <div class="favorite-form">
-          <form method="post">
-            <input id="favorite" class="icon" type="image" src="../assets/icons/favorite.svg">
-          </form>
-        </div>
+        <img id="favorite" class="icon" src="../assets/icons/favorite.svg">
       </div>
     </section>
     <section class="image-container">
@@ -87,16 +105,20 @@
 <?php function draw_restaurant_setup(int $user_id) { ?>
   <h1>Setup your own restaurant</h1>
   <div class="setup-restaurant">
-    <form method="post">
+    <form action="../actions/action_add_restaurant.php" method="post">
       <div class="res-info">
+        <input id="owner-id" name="owner-id" type="hidden" value=<?=$_SESSION['id']?>>
         <label for="res-name">
-          Restaurant name<input type="text" placeholder="name">
+          Restaurant name<input id="res-name" name="res-name" type="text" placeholder="name">
         </label>
         <label for="category">
-          Cagegory<input type="text" placeholder="category">
+          Cagegory<input id="res-category" name="res-category" type="text" placeholder="category">
+        </label>
+        <label for="address">
+          Address<input id="res-address" name="res-address" type="text" placeholder="address">
         </label>
         <label for="coords">
-          Coordinates<input type="text" placeholder="coordinates">
+          Coordinates<input id="res-coords" name="res-coords" type="text" placeholder="coordinates">
         </label>
         <div id="upload-img">
           <label class="upload-img" id="file-upload">
