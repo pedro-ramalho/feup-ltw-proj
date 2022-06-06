@@ -5,10 +5,10 @@
   require_once(__DIR__ . '/../classes/restaurant.class.php');
 ?>
 
-<?php function draw_restaurant(Restaurant $restaurant) { ?>
+<?php function draw_restaurant(Restaurant $restaurant, $image) { ?>
   <div id="restaurant-frontpage">
     <div id="restaurant-bg-img-container">
-      <img id="res-bg-image" src="../assets/img/bg/restaurant.jpg" alt="restaurant background image">
+      <img id="res-bg-image" src="<?=$image?>.jpg" alt="restaurant background image">
       <img id="add-res-to-favorites" class="icon res-favorite-button" src="../assets/icons/favorite.svg" alt="add to favorite" title="add restaurant to favorites">
       <img id="remove-res-from-favorites" class="icon res-favorite-button" src="../assets/icons/favorite.svg" alt="remove from favorites" title="remove restaurant from favorites">
     </div>
@@ -85,7 +85,7 @@
 <?php function draw_restaurant_setup(int $user_id) { ?>
   <h1>Setup your own restaurant</h1>
   <div class="setup-restaurant">
-    <form action="../actions/action_add_restaurant.php" method="post">
+    <form action="../actions/action_add_restaurant.php" method="post" enctype="multipart/form-data">
       <div class="res-info">
         <input id="owner-id" name="owner-id" type="hidden" value=<?=$_SESSION['id']?>>
         <label for="res-name">

@@ -22,7 +22,7 @@
 /* body styling */
 body {
   background-color: rgb(40, 40, 40);
-  overflow: hidden;
+  overflow-y: scroll;
 }
 /* end body styling */
 

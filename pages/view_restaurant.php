@@ -47,7 +47,18 @@
   <?php draw_header() ?>
   <main>
     <section id="restaurant-info">
-      <?php draw_restaurant($restaurant) ?>
+      <?php 
+          $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ? ORDER BY id DESC');
+          $stmt->execute(array($restaurant->id));
+          $img = $stmt->fetch();
+
+          $path = "../assets/img/default";
+          
+          if ($img) 
+            $path = "../assets/img/display/restaurants/" . $img['id'];
+
+        draw_restaurant($restaurant, $path) 
+      ?>
     </section>
     <section id="restaurant-dishes">
       <h1>Dishes</h1>
