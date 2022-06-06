@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pages/page_index.css">
   <link rel="stylesheet" href="css/pages/main-page.css">
+  <link rel="icon" href="assets/logo/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agile Eating</title>
   <script src="javascript/header_scroll.js" defer></script>

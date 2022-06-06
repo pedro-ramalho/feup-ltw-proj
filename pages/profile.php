@@ -44,7 +44,7 @@
   <link rel="stylesheet" href="../css/previews/preview_restaurant.css">
   <link rel="stylesheet" href="../css/previews/preview_dish.css">
   <link rel="stylesheet" href="../css/pages/page_profile.css">
-
+  <link rel="icon" href="../assets/logo/favicon.png">
   <script src="../javascript/profile.js" defer></script>
   <script src="../javascript/sidebar_button.js" defer></script>
   <title>Profile</title>

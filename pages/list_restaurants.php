@@ -44,6 +44,7 @@
   <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/previews.css">
   <link rel="stylesheet" href="../css/pages/page_list_restaurants.css">
+  <link rel="icon" href="../assets/logo/favicon.png">
   <title>Restaurants</title>
   <script src="../javascript/header_scroll.js" defer></script>
   <script src="../javascript/sidebar_button.js" defer></script>

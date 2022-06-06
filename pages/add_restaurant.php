@@ -30,7 +30,8 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/pages/page_add_restaurant.css">
-  <title>Document</title>
+  <link rel="icon" href="../assets/logo/favicon.png">
+  <title>Setup Restaurant</title>
 </head>
 <body>
   <?php draw_sidebar() ?>
