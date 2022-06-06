@@ -22,6 +22,13 @@
   --view-restaurant-customer-review-background-color: #333333;
 
   --view-restaurant-review-content-background-color: #333333;
+
+  --restaurant-title-color: white;
+  --restaurant-details-color: white;
+  --miscellanious-text-color: white;
+  --res-categories-text-color: white;
+
+  --fav-button-bg-color: white;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -68,94 +75,98 @@ body > main > section#restaurant-reviews {
 
 /* restaurant frontpage structure & styling */
 
-section#restaurant-info > .restaurant-frontpage #restaurant-bg-img-container {
+section#restaurant-info > #restaurant-frontpage #restaurant-bg-img-container {
   width: 100%;
-  max-height: 100px;
+  max-height: 250px;
   position: relative;
+  overflow: hidden;
 }
 
-section#restaurant-info > .restaurant-frontpage #restaurant-bg-img-container #res-bg-image {
-
+section#restaurant-info > #restaurant-frontpage #restaurant-bg-img-container #res-bg-image {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.restaurant-frontpage #restaurant-bg-img-container .res-favorite-button {
+#restaurant-frontpage #restaurant-bg-img-container .res-favorite-button {
+  padding: 8px;
   position: absolute;
   right: 20px;
-  top: 10px;
+  top: 20px;
+  border-radius: 50%;
+  background-color: var(--fav-button-bg-color);
+  max-width: 40px;
+  max-height: 40px;
+  cursor: pointer;
 }
 
-.restaurant-frontpage #restaurant-bg-img-container #add-res-to-favorites.hidden {
+#restaurant-frontpage #restaurant-bg-img-container #add-res-to-favorites.hidden {
   display: none;
 }
 
-.restaurant-frontpage #restaurant-bg-img-container #remove-res-from-favorites {
+#restaurant-frontpage #restaurant-bg-img-container #remove-res-from-favorites.hidden {
   display: none;
 }
 
-/* old
-section#restaurant-info > .restaurant-frontpage > #restaurant-info {
-  grid-area: restaurant-info;
-  background-color: rgb(35, 35, 35);
+section#restaurant-info > #restaurant-frontpage #restaurant-details {
+  width: 100%;
 }
 
-section#restaurant-info > .restaurant-frontpage > #restaurant-info > .restaurant-name-score {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding-left: 1em;
-}
-
-section#restaurant-info > .restaurant-frontpage > #restaurant-info > .restaurant-name-score > h1 {
-  padding-right: 1em;
+section#restaurant-info > #restaurant-frontpage #restaurant-details h1#res-name {
+  font-family: 'Raleway', sans-serif;
+  color: var(--restaurant-title-color);
   font-size: 2em;
-  font-weight: 400;
+  font-weight: 500;
 }
 
-section#restaurant-info > .restaurant-frontpage > #restaurant-info > .restaurant-name-score > h3 {
+section#restaurant-info > #restaurant-frontpage #restaurant-details #res-miscellaneous {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  flex-wrap: wrap;
+}
+
+.res-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.5em;
+}
+
+#res-star-icon, #res-home-icon, #res-gps-icon, #res-category-icon {
+  max-width: 2rem;
+  max-height: 2rem;
+  width: 2em;
+  height: 2em;
+  filter: invert(90%) sepia(0%) saturate(661%) hue-rotate(159deg) brightness(93%) contrast(57%);
+}
+
+#res-miscellaneous h3 {
+  color: var(--miscellanious-text-color);
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
 }
 
-section#restaurant-info > .restaurant-frontpage > #restaurant-info > .restaurant-coords {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 100;
-  padding-left: 1em;
-  padding-bottom: 1em;
-}
-
-section#restaurant-info > .restaurant-frontpage > img {
-  grid-area: restaurant-img;
-
-  max-height: 100%;
-  max-width: 100%;
-}
-
-section#restaurant-info > .restaurant-frontpage > #score-button {
-  grid-area: restaurant-img;
-  justify-content: end;
+section#restaurant-info > #restaurant-frontpage #res-categories-container {
+  width: 100%;
   display: flex;
-  padding: 0;
+  column-gap: 0.5em;
+  align-content: center;
+  align-items: center;
+  justify-content: left;
+  flex-wrap: wrap;
 }
 
-
-section#restaurant-info > .restaurant-frontpage > #score-button > button {
+#res-categories-container h5.res-preview-category {
+  margin: 0;
+  font-weight: 500;
+  font-style: italic;
   font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 1.5em;
-
-  height: 2em;
-  width: 10em;
-  background-color: var(--restaurant-info-score-button-background-color);
-  color: var(--restaurant-info-score-button-text-color);
-  border: none;
-  border-radius: 0px;
+  color: var(--res-categories-text-color);
 }
-
-section#restaurant-info > .restaurant-frontpage > #score-button > button:hover {
-  background-color: var(--restaurant-info-score-button-hover-background-color);
-  color: var(--restaurant-info-score-button-hover-text-color);
-}
-*/
 
 /* restaurant dishes structure & styling */
 

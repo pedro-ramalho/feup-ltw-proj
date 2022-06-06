@@ -6,24 +6,25 @@
 ?>
 
 <?php function draw_restaurant(Restaurant $restaurant) { ?>
-  <div class="restaurant-frontpage">
+  <div id="restaurant-frontpage">
     <div id="restaurant-bg-img-container">
       <img id="res-bg-image" src="../assets/img/bg/restaurant.jpg" alt="restaurant background image">
-      <img id="add-res-to-favorites" class="icon res-favorite-button" src="../assets/img/" alt="add to favorite">
-      <img id="remove-res-from-favorites" class="icon res-favorite-button" src="../assets/img" alt="">
+      <img id="add-res-to-favorites" class="icon res-favorite-button" src="../assets/icons/favorite.svg" alt="add to favorite" title="add restaurant to favorites">
+      <img id="remove-res-from-favorites" class="icon res-favorite-button" src="../assets/icons/favorite.svg" alt="remove from favorites" title="remove restaurant from favorites">
     </div>
     <div id="restaurant-details">
       <h1 id="res-name"><?=$restaurant->res_name?></h1>
       <div id="res-miscellaneous">
-        <h3 class="restaurant-score"><?=$restaurant->score?>/5</h3>
-        <h3 class="restaurant-addr"><?=$restaurant->addr?></h3>
-        <h3 class="restaurant-coords"><img id="res-gps-icon" src="../assets/icons/gps.svg" alt=""> <?=$restaurant->coords?></h3>
-      </div>
-      <div class="res-categories-container">
-        <?php
-        foreach($restaurant->categories as $category) {
-          ?> <h5 class="res-preview-category"><?=$category?></h5>
-        <?php } ?>
+        <h3 id="restaurant-score" class="res-info"><img id="res-star-icon" class="icon" src="../assets/icons/star.svg"><?=$restaurant->score?>/5</h3>
+        <h3 id="restaurant-addr" class="res-info"><img id="res-home-icon" class="icon" src="../assets/icons/home.svg"><?=$restaurant->addr?></h3>
+        <h3 id="restaurant-coords" class="res-info"><img id="res-gps-icon" class="icon" src="../assets/icons/gps.svg" alt=""><?=$restaurant->coords?></h3>
+        <div id="res-categories-container">
+          <img id="res-category-icon" class="icon" src="../assets/icons/category.svg">
+          <?php
+          foreach($restaurant->categories as $category) {
+            ?> <h5 class="res-preview-category"><?=$category?></h5>
+          <?php } ?>
+        </div>
       </div>
     </div>
   </div>

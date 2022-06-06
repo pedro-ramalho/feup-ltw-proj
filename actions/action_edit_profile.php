@@ -36,9 +36,6 @@
 
   if (!password_verify($password, User::get_user_password($db, $_SESSION['id']))) {
     echo 'Invalid password';
-    echo "New username = " . $new_username;
-    echo "New address = " . $new_address;
-    echo "New phone number = " . $new_phone_nr;
     die();
   }
 
