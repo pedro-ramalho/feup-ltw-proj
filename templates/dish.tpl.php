@@ -9,12 +9,18 @@
   <div class="dish-frontpage"> <!-- click event listener -->
     <img src="../assets/temp.jpg" alt="restaurant's preview image">
     <div class="dish-description">
-      <p><?=$dish->name?></p>
-      <p><?=$dish->price?>€</p>
+      <p id="dish-shopping-bag"><img id="dish-shopping-bag-icon" src="../assets/icons/shopping_bag.svg"><?=$dish->name?></p>
+      <div id="dish-categories-container">
+        <?php
+        foreach($dish->categories as $category) {
+          ?> <h5 class="dish-preview-category"><?=$category?></h5>
+        <?php } ?>
+      </div>
+      <div id="dish-price-favorite-container">
+        <p id="dish-price"><img id="dish-price-icon" src="../assets/icons/price.svg"><?=$dish->price?></p>
+        <img id="dish-favorite-icon" src="../assets/icons/favorite.svg">
+      </div>
     </div>
-    <button class="favorite-restaurant">
-      <img src="../assets/star.svg">
-    </button>
   </div>
 <?php } ?>
 

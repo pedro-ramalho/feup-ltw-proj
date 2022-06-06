@@ -194,59 +194,77 @@ section#restaurant-dishes > .dishes-container {
 
 
 section#restaurant-dishes > .dishes-container > .dish-frontpage {
-  position: relative;
-  max-width: fit-content;
-}
-
-section#restaurant-dishes > .dishes-container > .dish-frontpage > h1 {
-  border: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  column-gap: 1em;
 }
 
 section#restaurant-dishes > .dishes-container > .dish-frontpage > img {
-  grid-area: dish-img;
-
   width: 200px;
   height: 200px;
-
+  border-radius: 50%;
   max-width: 200px;
   max-height: 200px;
   margin: 0;
 }
 
 section#restaurant-dishes > .dishes-container > .dish-frontpage > .dish-description {
-  grid-area: dish-description;
-  background-color: var(--view-restaurant-dish-description-background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+}
+
+#dish-shopping-bag {
+  font-size: 1.5em;
+}
+
+#dish-shopping-bag-icon, #dish-price-icon, #dish-favorite-icon {
+  max-width: 2rem;
+  max-height: 2rem;
+  width: 2em;
+  height: 2em;
+  filter: invert(90%) sepia(0%) saturate(661%) hue-rotate(159deg) brightness(93%) contrast(57%);
+}
+
+#dish-categories-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 0;
+  column-gap: 1em;
 }
 
-section#restaurant-dishes > .dishes-container > .dish-frontpage > .dish-description > p {
-  color: var(--view-restaurant-dish-description-p-text-color);
-  margin: 0;
-  padding: 0.5em;
+#dish-categories-container > h5 {
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1em;
+  font-family: 'Raleway', sans-serif;
+  color: var(--res-categories-text-color);
 }
 
-section#restaurant-dishes > .dishes-container > .dish-frontpage > button.favorite-restaurant {
-  position: absolute;
-  display: inline;
-
-  top: 1em;
-  right: 1em;
-  margin: 0;
-
-  background: none;
-  border: none;
-  
-  max-width: 2em;
-  max-height: 2em;
+#dish-price-favorite-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
 }
 
-section#restaurant-dishes > .dishes-container > .dish-frontpage > button.favorite-restaurant > img {
-  max-width: 100%;
-  max-height: 100%;
+#dish-price-favorite-container > #dish-price {
+  margin-right: auto;
 }
+
+#dish-favorite-icon {
+  justify-self: flex-end;
+  justify-content: flex-end;
+  justify-items: flex-end;
+}
+
+#dish-shopping-bag, #dish-price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 
 
 /* restaurant reviews structure & styling */
