@@ -1,4 +1,9 @@
-<?php function draw_header() { ?>
+<?php
+  declare(strict_types = 1); 
+  require_once(__DIR__ . '/../utils/session.php');
+?>
+
+<?php function draw_header(Session $session) { ?>
   <section id="search-results-container" class="hidden-search-results">
   </section>
   <header>
@@ -14,11 +19,18 @@
         <input type="search" id="query" placeholder="Search..." autocomplete="off">
       </form>
     </div>
-    <?php draw_header_acc() ?>
+    <?php draw_header_acc($session) ?>
   </header>
+  <section id="messages-container">
+    <?php foreach ($session->getMessages() as $message) { ?>
+      <article class="<?=$message['type']?>">
+          <p><?=$message['text']?></p>
+        </article>
+      <?php } ?>
+  </section>
 <?php } ?>
 
-<?php function draw_sidebar() { ?>
+<?php function draw_sidebar(Session $session) { ?>
   <aside id="sidebar">
       <nav id="menu">
         <section id="highlight" class="sidebar-section">
@@ -38,7 +50,7 @@
         </section>
         <section id="account" class="sidebar-section">
           <h1>ACCOUNT</h1>
-          <?php draw_sb_acc() ?>
+          <?php draw_sb_acc($session) ?>
         </section>    
       </nav>
     </aside>
@@ -51,8 +63,8 @@
 <?php } ?>
   
 <?php 
-  function draw_sb_acc() { 
-    if (!isset($_SESSION['id'])) { ?>
+  function draw_sb_acc(Session $session) { 
+    if (!$session->isLoggedIn()) { ?>
     <ul>
       <li><a href=""><span>Sign in</span></a></li>
       <li><a href=""><span>Sign up</span></a></li>
@@ -70,8 +82,8 @@
 ?>
 
 <?php 
-  function draw_header_acc() { 
-    if (!isset($_SESSION['id'])) { ?>
+  function draw_header_acc(Session $session) { 
+    if (!$session->isLoggedIn()) { ?>
       <div id="header-signup">
         <a href="../pages/sign_in.php">Sign in</a>
         <a href="../pages/sign_up.php">Sign up</a>

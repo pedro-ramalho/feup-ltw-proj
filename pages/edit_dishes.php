@@ -1,9 +1,9 @@
 <?php
   declare(strict_types = 1);
+  require_once(__DIR__ . '/../utils/session.php');
+  $session = new Session();
 
-  session_start();
-
-  if(!isset($_SESSION['id'])) die(header('Location: /sign_in.php'));
+  if(!$session->isLoggedIn()) die(header('Location: /sign_in.php'));
 
   /* include database connection */
   require_once(__DIR__ . '/../database/connection.php');
@@ -41,8 +41,8 @@
   <script src="../javascript/sidebar_button.js" defer></script>
 </head>
 <body>
-  <?php draw_sidebar() ?>
-  <?php draw_header(); ?>
+  <?php draw_sidebar($session) ?>
+  <?php draw_header($session); ?>
   <main>
     <div id="edit-dishes">
       <?php foreach($dishes as $dish) { ?>

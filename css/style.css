@@ -21,6 +21,11 @@
   --search-results-h1-text-color: white;
   --search-results-a-text-color: white;
   --search-results-h2-text-color: darkgrey;
+
+  --message-success-bg-color: rgb(126, 225, 126);
+  --message-success-text-color: rgb(8, 120, 8);
+  --message-error-bg-color: rgb(203, 97, 97);
+  --message-error-text-color: rgb(116, 2, 2);
 }
 
 * {
@@ -255,4 +260,56 @@ footer > h4 {
 
 button {
   cursor: pointer;
+}
+
+/* messages */
+
+section#messages-container {
+  position: fixed;
+  top: 4em;
+  left: 25vw;
+  width: 50vw;
+}
+
+
+section#messages-container > article {
+  width: 100%;
+  padding: 0.5em 0;
+  text-align: center;
+  opacity: 70%;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+}
+
+section#messages-container > article {
+  opacity: 70%;
+}
+
+section#messages-container > article.hovered {
+  opacity: 100%;
+}
+
+section#messages-container > article.success {
+  background-color: var(--message-success-bg-color);
+}
+
+section#messages-container > article.error {
+  background-color: var(--message-error-bg-color);
+}
+
+section#messages-container > article > p {
+  padding: 0;
+  margin: 0;
+  opacity: 100%;
+  font-family: 'Raleway';
+  font-size: 1em;
+  font-weight: 600;
+}
+
+section#messages-container > article.success > p {
+  color: var(--message-success-text-color);
+}
+
+section#messages-container > article.error > p {
+  color: var(--message-error-text-color);
 }
