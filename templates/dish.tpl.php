@@ -9,7 +9,10 @@
   <div class="dish-frontpage"> <!-- click event listener -->
     <img src="../assets/temp.jpg" alt="restaurant's preview image">
     <div class="dish-description">
-      <p id="dish-shopping-bag"><img id="dish-shopping-bag-icon" src="../assets/icons/shopping_bag.svg"><?=$dish->name?></p>
+      <div id="dish-header">
+        <p id="dish-shopping-bag"><?=$dish->name?></p>
+        <img id="dish-favorite-icon" src="../assets/icons/favorite.svg">
+      </div>
       <div id="dish-categories-container">
         <?php
         foreach($dish->categories as $category) {
@@ -18,7 +21,7 @@
       </div>
       <div id="dish-price-favorite-container">
         <p id="dish-price"><img id="dish-price-icon" src="../assets/icons/price.svg"><?=$dish->price?></p>
-        <img id="dish-favorite-icon" src="../assets/icons/favorite.svg">
+        <p id="dish-order"><img id="dish-shopping-bag-icon" src="../assets/icons/shopping_bag.svg">Order</p>
       </div>
     </div>
   </div>

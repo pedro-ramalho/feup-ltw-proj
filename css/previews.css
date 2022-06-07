@@ -63,6 +63,28 @@
   margin-right: auto;
 }
 
+#dish-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+#dish-favorite-icon {
+  margin-left: auto;
+}
+
+.dish-description > .dish-name-favorite {
+  display: flex;
+  flex-direction: row;
+}
+
+#dish-order {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .icon {
   align-self: center;
   max-width: 2rem;
