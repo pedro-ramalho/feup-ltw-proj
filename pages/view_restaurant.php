@@ -66,7 +66,7 @@
       <div class="dishes-container">
       <?php
         foreach ($dishes as $dish)
-          draw_dish($dish);
+          draw_dish($dish, $session);
       ?>
       </div>
     </section>

@@ -116,5 +116,15 @@
       return $dishes;
     }
 
+    static function is_favorited(PDO $db, int $userID, int $dishID) {
+      $stmt = $db->prepare('SELECT * from FavoriteDish WHERE dish = ? AND user = ?');
+      $stmt->execute(array($dishID, $userID));
+
+      $results = Array();
+      $results[] = $stmt->fetchAll();
+      if (count(results) == 0) return false;
+      return true;
+    }
+
   }   
 ?>

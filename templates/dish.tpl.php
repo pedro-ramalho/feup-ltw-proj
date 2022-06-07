@@ -1,24 +1,37 @@
 <?php 
   declare(strict_types = 1);
+  require_once(__DIR__ . '/../utils/session.php');
 
   require_once(__DIR__ . '/../database/connection.php');
   require_once(__DIR__ . '/../classes/dish.class.php');
 ?>
 
-<?php function draw_dish(Dish $dish) { ?>
+<?php function draw_dish(Dish $dish, Session $session) { ?>
   <div class="dish-frontpage"> <!-- click event listener -->
+    <p hidden="hidden"><?=$dish->id?></p>
     <img src="../assets/temp.jpg" alt="restaurant's preview image">
     <div class="dish-description">
-      <p id="dish-shopping-bag"><img id="dish-shopping-bag-icon" src="../assets/icons/shopping_bag.svg"><?=$dish->name?></p>
-      <div id="dish-categories-container">
+      <p class="dish-shopping-bag"><img class="dish-shopping-bag-icon" src="../assets/icons/shopping_bag.svg"><?=$dish->name?></p>
+      <div class="dish-categories-container">
         <?php
         foreach($dish->categories as $category) {
           ?> <h5 class="dish-preview-category"><?=$category?></h5>
         <?php } ?>
       </div>
-      <div id="dish-price-favorite-container">
-        <p id="dish-price"><img id="dish-price-icon" src="../assets/icons/price.svg"><?=$dish->price?></p>
-        <img id="dish-favorite-icon" src="../assets/icons/favorite.svg">
+      <div class="dish-price-favorite-container">
+        <p class="dish-price"><img class="dish-price-icon" src="../assets/icons/price.svg"><?=$dish->price?></p>
+        
+        <img src=<?php 
+        if(!$session->isLoggedIn()) {
+          echo '"../assets/icons/favorite.svg" class="not-logged-in dish-favorite-icon"';
+        }
+        else {
+          if (Dish::is_favorited($session->getId(), $dish->id)) {
+            echo '"../assets/icons/favorite_filled.svg" class="dish-is-favorited dish-favorite-icon"';
+          } else {
+            echo '"../assets/icons/favorite.svg" class="dish-is-not-favorited dish-favorite-icon"';
+          }
+        }?>>
       </div>
     </div>
   </div>
