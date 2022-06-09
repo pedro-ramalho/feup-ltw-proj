@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/stickers.css">
   <link rel="stylesheet" href="css/pages/page_index.css">
   <link rel="stylesheet" href="css/pages/main-page.css">
   <link rel="icon" href="assets/logo/favicon.png">
@@ -25,7 +26,7 @@
 <body>
   <?php draw_sidebar($session) ?>
   <?php draw_header($session) ?>
-  <main>
+  <main id="main-page">
     <section id="frontpage">
       <section id="slogan">
         <h1>Agile Eating - fast and simple</h1>
@@ -40,7 +41,10 @@
     </section>
     <section id="main-suggestions">
       <section class="suggestions">
-        <h1 class="suggestion-title">Restaurants</h1>
+        <div class="suggestions-header">
+          <h1 class="suggestion-title">Restaurants</h1>
+          <a href="pages/view_restaurant.php" class="suggestions-anchor">SEE MORE</a>
+        </div>
         <div class="images">
           <a href="pages/list_restaurants.php">
             <figure>
@@ -69,7 +73,10 @@
         </div>
       </section>
       <section class="suggestions">
-        <h1 class="suggestion-title">Dishes</h1>
+        <div class="suggestions-header">
+          <h1 class="suggestion-title">Dishes</h1>
+          <a href="pages/view_restaurant.php" class="suggestions-anchor">SEE MORE</a>
+        </div>
         <div class="images">
           <a href="pages/list_dishes.php">
             <figure>
@@ -98,6 +105,7 @@
         </div>
       </section>
     </section>  
+    <?php draw_stickers(); ?>
   </main>
   <?php draw_footer() ?>
 </body>

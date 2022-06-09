@@ -22,7 +22,7 @@ body > main > section#main-suggestions {
 
   display:flex;
   flex-direction: column;
-  row-gap: 1.5em;
+  row-gap: 5em;
 }
 
 /* restaurant and dish category portions */
@@ -33,21 +33,43 @@ body .suggestions {
                        "images";
   
   text-align: center;
-  background-color: rgb(35, 35, 35);
 
   padding: 1em;
 }
 
-.suggestions > h1 {
+.suggestion-title {
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.suggestions-header {
   grid-area: header;
   text-align: left;
   align-self: center;
   color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   font-family: 'Raleway', sans-serif;
   font-size: 2em;
   font-weight: 400;
   padding-left: 0.5em;
 }
+
+.suggestions-anchor {
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: auto;
+  text-decoration: none;
+  color: white;
+  padding: 12px;
+}
+
+.suggestions-anchor:hover {
+  background-color: rgb(60, 60, 60);
+  color: white;
+}
+
 
 .suggestions > .images {
   grid-area: images;
