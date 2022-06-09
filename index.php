@@ -39,6 +39,25 @@
       </section>
       <img src="assets/frontpage_v2.png">
     </section>
+
+    <section id="categories">
+      <div id="categories-header">
+        <img src="assets/icons/category.svg" class="icon">
+        <h1>Categories</h1>
+      </div>
+      <div id="categories-container">
+        <p>FAST-FOOD</p>
+        <p>PREMIUM</p>
+        <p>AFFORDABLE</p>
+        <p>DIET</p>
+        <p>VEGAN</p>
+        <p>VEGETARIAN</p>
+        <p>SUSHI</p>
+        <p>LACTOSE-FREE</p>
+        <p>FAST-FOOD</p>
+      </div>    
+    </section>
+
     <section id="main-suggestions">
       <section class="suggestions">
         <div class="suggestions-header">

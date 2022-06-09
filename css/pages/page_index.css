@@ -25,6 +25,11 @@ main {
   color: white;
 }
 
+.suggestions {
+  max-width: 80%;
+  width: 80%;
+  margin: 0 auto;
+}
 
 #frontpage img {
   grid-area: img;
@@ -57,4 +62,59 @@ main {
   border: 1px solid white;
   padding: 0.5em;
   border-radius: 4px;
+}
+
+#categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1em;
+}
+
+#categories-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.5em; 
+}
+
+.icon {
+  max-width: 4em;
+  max-height: 4em;
+
+  width: 4em;
+  height: 4em;
+
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
+}
+
+#categories-header > h1 {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+}
+
+#categories-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 2em;
+  row-gap: 1em;
+  justify-content: center;
+}
+
+#categories-container > p {
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  max-width: 10em;
+  text-align: center;
+  border-radius: 6px;
+  background-color: rgb(40, 67, 60);
+}
+
+#categories-container > img {
+  border-radius: 30%;
 }

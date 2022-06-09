@@ -66,7 +66,9 @@ body .suggestions {
 }
 
 .suggestions-anchor:hover {
-  background-color: rgb(60, 60, 60);
+  background-color: rgba(102, 102, 102, 0.257);
+  border: 2px solid rgba(82, 82, 82, 0.257);
+  border-radius: 5px;
   color: white;
 }
 
@@ -77,7 +79,6 @@ body .suggestions {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  column-gap: 1.5em;
 }
 
 .suggestions > .images a {
@@ -87,10 +88,22 @@ body .suggestions {
 
 .suggestions > .images figure {
   margin: 0;
+  padding: 1em;
+
+}
+
+.suggestions > .images figure:hover {
+  -moz-box-shadow: 1px 1px 6px rgb(20, 20, 20);
+  -webkit-box-shadow: 1px 1px 6px rgb(20, 20, 20);
+  box-shadow: 1px 1px 6px rgb(20, 20, 20);
+  transition: box-shadow 0.4s;
 }
 
 .suggestions > .images figure img {
   border-radius: 3%;
+  width: 250px;
+  height: 200px;
+  transition: box-shadow 125ms;
 }
 
 .suggestions > .images figure figcaption {
