@@ -16,7 +16,7 @@ function createAndAppendH3(parent, text, h3Class) {
 
 function createAndAppendRestaurant(parent, restaurant) {
   const searchResult = document.createElement('a')
-  searchResult.href = "/view_restaurant.php?id=" + restaurant.id
+  searchResult.href = "/pages/view_restaurant.php?id=" + restaurant.id
   searchResult.classList.add("search-result-restaurant")
   createAndAppendH3(searchResult, restaurant.res_name, "restaurant-name")
   const div = createAndAppendDiv(searchResult, "score-and-coords-container")
@@ -27,7 +27,7 @@ function createAndAppendRestaurant(parent, restaurant) {
 
 function createAndAppendDish(parent, dish) {
   const searchResult = document.createElement('a')
-  searchResult.href = "/view_restaurant.php?id=" + dish.restaurant
+  searchResult.href = "/pages/view_restaurant.php?id=" + dish.restaurant
   searchResult.classList.add("search-result-dish")
   createAndAppendH3(searchResult, dish.name, "dish-name")
   createAndAppendH3(searchResult, dish.price + '€', "dish-price")

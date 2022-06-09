@@ -121,8 +121,8 @@
       $stmt->execute(array($dishID, $userID));
 
       $results = Array();
-      $results[] = $stmt->fetchAll();
-      if (count(results) == 0) return false;
+      $results = $stmt->fetchAll();
+      if (count($results) == 0) return false;
       return true;
     }
 

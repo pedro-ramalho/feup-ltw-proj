@@ -7,6 +7,9 @@
 ?>
 
 <?php function draw_dish(Dish $dish, Session $session) { ?>
+  <?php
+  $db = get_db();
+?>
   <div class="dish-frontpage"> <!-- click event listener -->
     <p hidden="hidden"><?=$dish->id?></p>
     <img src="../assets/temp.jpg" alt="restaurant's preview image">
@@ -26,7 +29,7 @@
           echo '"../assets/icons/favorite.svg" class="not-logged-in dish-favorite-icon"';
         }
         else {
-          if (Dish::is_favorited($session->getId(), $dish->id)) {
+          if (Dish::is_favorited($db, $session->getId(), $dish->id)) {
             echo '"../assets/icons/favorite_filled.svg" class="dish-is-favorited dish-favorite-icon"';
           } else {
             echo '"../assets/icons/favorite.svg" class="dish-is-not-favorited dish-favorite-icon"';

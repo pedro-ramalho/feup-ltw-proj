@@ -42,6 +42,7 @@
   <title><?=$restaurant->res_name?></title>
   <script src="../javascript/header_scroll.js" defer></script>
   <script src="../javascript/sidebar_button.js" defer></script>
+  <script src="../javascript/favorite_button.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar($session) ?>
