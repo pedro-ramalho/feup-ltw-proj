@@ -1,7 +1,34 @@
 <?php
+  
+  /* include and start a new session */
+
   require_once('utils/session.php');
+
   $session = new Session();
+
+
+  /* include templates */
+
   require_once('templates/common.php');
+  require_once('templates/restaurant.tpl.php');
+  require_once('templates/dish.tpl.php');
+  
+  
+  /* include classes */
+
+  require_once('classes/restaurant.class.php');
+  require_once('classes/dish.class.php');
+
+  
+  define("NUMBER_OF_ITEMS", 4);
+
+
+  /* quick database access to fetch some restaurants and dishes */
+
+  $db = new PDO('sqlite:' . __DIR__ . '/database/restaurant.db');
+  
+  $restaurants = Restaurant::get_limited_restaurants($db, NUMBER_OF_ITEMS);
+  $dishes = Dish::get_limited_dishes($db, NUMBER_OF_ITEMS);
 ?>
 
 <!DOCTYPE html>
@@ -61,66 +88,46 @@
     <section id="main-suggestions">
       <section class="suggestions">
         <div class="suggestions-header">
-          <h1 class="suggestion-title">Restaurants</h1>
-          <a href="pages/view_restaurant.php" class="suggestions-anchor">SEE MORE</a>
+          <h1 class="suggestion-title">Popular restaurants</h1>
+          <a href="pages/list_restaurants.php" class="suggestions-anchor">SEE MORE</a>
         </div>
         <div class="images">
-          <a href="pages/list_restaurants.php">
-            <figure>
-              <img src="assets/img/category/2.jpg" alt="dummy-text" width="300" height="200">
-              <figcaption>Fast-food</figcaption>
-            </figure>
-          </a>
-          <a href="pages/list_restaurants.php">
-            <figure>
-              <img src="assets/img/category/6.jpg" alt="dummy-text" width="300" height="200">
-              <figcaption>Premium</figcaption>
-            </figure>
-          </a>
-          <a href="pages/list_restaurants.php">
-            <figure>
-              <img src="assets/img/category/7.jpg" alt="dummy-text" width="300" height="200">
-              <figcaption>Affordable</figcaption>
-            </figure>
-          </a>
-          <a href="pages/list_restaurants.php">
-            <figure>
-              <img src="assets/img/category/9.jpg" alt="dummy-text" width="300" height="200">
-              <figcaption>Diet</figcaption>
-            </figure>
-          </a>
+          <?php 
+            foreach($restaurants as $restaurant) {
+              $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ? ORDER BY id DESC');
+              $stmt->execute(array($restaurant->id));
+              $img = $stmt->fetch();
+
+              $path = "../assets/img/default";
+              
+              if ($img) 
+                $path = "../assets/img/preview/restaurants/" . $img['id'];
+              
+              draw_restaurant_showcase($restaurant, $path);
+            } 
+          ?>
         </div>
       </section>
       <section class="suggestions">
         <div class="suggestions-header">
-          <h1 class="suggestion-title">Dishes</h1>
-          <a href="pages/view_restaurant.php" class="suggestions-anchor">SEE MORE</a>
+          <h1 class="suggestion-title">Popular dishes</h1>
+          <a href="pages/list_dishes.php" class="suggestions-anchor">SEE MORE</a>
         </div>
         <div class="images">
-          <a href="pages/list_dishes.php">
-            <figure>
-              <img src="assets/img/category/1.jpg" alt="dummy-text" width="300" height="200">
-              <figcaption>Vegan</figcaption>
-            </figure>
-          </a>
-          <a href="pages/list_dishes.php">
-            <figure>
-              <img src="assets/img/category/3.jpg" alt="dummy-text" width="300" height="200">
-              <figcaption>Vegetarian</figcaption>
-            </figure>
-          </a>
-          <a href="pages/list_dishes.php">
-            <figure>
-              <img src="assets/img/category/8.jpg" alt="dummy-text" width="300" height="200">
-              <figcaption>Sushi</figcaption>
-            </figure>
-          </a>
-          <a href="pages/list_dishes.php">
-            <figure>
-              <img src="assets/img/category/5.jpg" alt="dummy-text" width="300" height="200">
-              <figcaption>Lactose-free</figcaption>
-            </figure>
-          </a>
+          <?php 
+            foreach($dishes as $dish) {
+              $stmt = $db->prepare('SELECT * FROM DishImage WHERE dish_id = ? ORDER BY id DESC');
+              $stmt->execute(array($dish->id));
+              $img = $stmt->fetch();
+
+              $path = "../assets/img/default";
+              
+              if ($img) 
+                $path = "../assets/img/preview/dishes/" . $img['id'];
+              
+              draw_dish_showcase($dish, $path);
+            } 
+          ?>
         </div>
       </section>
     </section>  

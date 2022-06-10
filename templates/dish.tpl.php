@@ -109,3 +109,13 @@
     </form>
   </div>
 <?php } ?> 
+
+<?php function draw_dish_showcase(Dish $dish, $image) { ?>
+  <div class="showcase">
+    <img src="<?=$image?>.jpg" width="200" height="200">
+    <div class="showcase-info">
+      <h1><?=$dish->name?></h1>
+      <p><?=$dish->price?>€</p>
+    </div>
+  </div>
+<?php } ?>

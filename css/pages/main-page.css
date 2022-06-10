@@ -22,7 +22,9 @@ body > main > section#main-suggestions {
 
   display:flex;
   flex-direction: column;
-  row-gap: 5em;
+  row-gap: 3em;
+  border-top: 2px solid rgb(60, 60, 60);
+  border-bottom: 2px solid rgb(60, 60, 60);
 }
 
 /* restaurant and dish category portions */
@@ -57,7 +59,7 @@ body .suggestions {
 }
 
 .suggestions-anchor {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 20px;
   margin-left: auto;
   text-decoration: none;
@@ -79,17 +81,36 @@ body .suggestions {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  column-gap: 3em;
+}
+
+.showcase {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+
+.showcase > img {
+  border-radius: 5px;
+}
+
+.showcase-info {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.showcase-info > p {
+  margin-left: auto;
 }
 
 .suggestions > .images a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 
 .suggestions > .images figure {
   margin: 0;
   padding: 1em;
-
 }
 
 .suggestions > .images figure:hover {
@@ -111,4 +132,39 @@ body .suggestions {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 1.2em;
+}
+
+footer {
+  background-color: rgb(30, 30, 30);
+  border-top: 3px solid rgb(50, 50, 50);
+  padding: 8px;
+  align-items: center;
+  display: flex;
+}
+
+#media-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: auto;
+  align-items: center;
+  column-gap: 6em;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+
+.media {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon {
+  max-height: 2em;
+  max-width: 2em;
+
+  height: 2em;
+  max-width: 2em;
+
+  filter: invert(95%) sepia(100%) saturate(14%) hue-rotate(213deg) brightness(104%) contrast(104%);
 }

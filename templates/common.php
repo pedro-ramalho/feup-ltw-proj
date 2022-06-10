@@ -59,6 +59,20 @@
 <?php function draw_footer() { ?>
   <footer>
     <h4>&copy;2022 Agile Eating, Inc.</h4>
+    <div id="media-container">
+      <div id="twitter" class="media">
+        <img src="../assets/icons/twitter.svg" class="icon">
+        <p>@AgileEating</p>
+      </div>
+      <div id="instagram" class="media">
+        <img src="../assets/icons/instagram.svg" class="icon">
+        <p>@AgileEating</p>
+      </div>
+      <div id="facebook" class="media">
+        <img src="../assets/icons/facebook.svg" class="icon">
+        <p>AgileEating</p>
+      </div>
+    </div>
   </footer>
 <?php } ?>
   

@@ -44,6 +44,7 @@
   <link rel="stylesheet" href="../css/filter.css">
   <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/previews.css">
+  <link rel="stylesheet" href="../css/pages/main-page.css">
   <link rel="stylesheet" href="../css/pages/page_list_restaurants.css">
   <link rel="icon" href="../assets/logo/favicon.png">
   <title>Restaurants</title>
