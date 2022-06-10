@@ -16,7 +16,7 @@ function createAndAppendH3(parent, text, h3Class) {
 
 function createAndAppendRestaurant(parent, restaurant) {
   const searchResult = document.createElement('a')
-  searchResult.href = "/pages/view_restaurant.php?id=" + restaurant.id
+  searchResult.href = "http://localhost:9000/pages/view_restaurant.php?id=" + restaurant.id
   searchResult.classList.add("search-result-restaurant")
   createAndAppendH3(searchResult, restaurant.res_name, "restaurant-name")
   const div = createAndAppendDiv(searchResult, "score-and-coords-container")
@@ -27,7 +27,7 @@ function createAndAppendRestaurant(parent, restaurant) {
 
 function createAndAppendDish(parent, dish) {
   const searchResult = document.createElement('a')
-  searchResult.href = "/pages/view_restaurant.php?id=" + dish.restaurant
+  searchResult.href = "http://localhost:9000/pages/view_restaurant.php?id=" + dish.restaurant
   searchResult.classList.add("search-result-dish")
   createAndAppendH3(searchResult, dish.name, "dish-name")
   createAndAppendH3(searchResult, dish.price + '€', "dish-price")
@@ -37,7 +37,7 @@ function createAndAppendDish(parent, dish) {
 
 if (searchBar) {
   searchBar.addEventListener('input', async function() {
-    let response = await fetch('api_search.php?search=' + this.value)
+    let response = await fetch('http://localhost:9000/api_search.php?search=' + this.value)
     response = await response.json()
     const restaurants = response[0]
     const dishes = response[1]

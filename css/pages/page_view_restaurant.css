@@ -98,13 +98,6 @@ section#restaurant-info > #restaurant-frontpage #restaurant-bg-img-container #re
   cursor: pointer;
 }
 
-#restaurant-frontpage #restaurant-bg-img-container #add-res-to-favorites.hidden {
-  display: none;
-}
-
-#restaurant-frontpage #restaurant-bg-img-container #remove-res-from-favorites.hidden {
-  display: none;
-}
 
 section#restaurant-info > #restaurant-frontpage #restaurant-details {
   width: 100%;

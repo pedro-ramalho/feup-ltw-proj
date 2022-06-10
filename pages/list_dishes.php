@@ -48,6 +48,8 @@
   <title>Dishes</title>
   <script src="../javascript/header_scroll.js" defer></script>
   <script src="../javascript/sidebar_button.js" defer></script>
+  <script src="../javascript/dynamic_search.js" defer></script>
+  <script src="../javascript/favorite_button.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar($session) ?>
@@ -65,7 +67,7 @@
           if ($img) 
             $path = "../assets/img/preview/dishes/" . $img['id'];
           
-          draw_dish_preview($dish, $path);
+          draw_dish_preview($dish, $path, $session);
         }
       ?>
     </section>
