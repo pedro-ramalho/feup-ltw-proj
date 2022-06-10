@@ -35,7 +35,7 @@
           Comment<input id="review-comment" type="text" name="review-comment" placeholder="Add a comment...">
         </label>
         <input id="restaurant-id" type="hidden" name="restaurant-id" value="<?=$restaurant_id?>" readonly="readonly">
-        <button class="submit" id="submit-review" type="submit">Submit</button>
+        <button class="submit" id="submit-review" type="submit">SUBMIT</button>
       </form>
     </div>
 
