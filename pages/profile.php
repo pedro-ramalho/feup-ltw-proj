@@ -84,9 +84,7 @@
       <h1 class="content-header">Your profile</h1>
       <?php draw_profile_form($user) ?>
     </section>
-
-
-    <section id="user-orders">
+    <section id="user-orders" hidden>
       <section class="orders" id="customer-orders">
         <h1 class="content-header">Your orders</h1>
         <table>
@@ -115,7 +113,6 @@
         </form>
       </section>
     </section>
-
     <section id="owned-restaurants" hidden>
       <?php
       if ($owned_restaurants && count($owned_restaurants) > 0) {

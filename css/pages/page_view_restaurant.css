@@ -270,7 +270,6 @@ section#restaurant-reviews {
   padding: 1em;
   padding-top: 0;
   margin: 0;
-  background-color: rgb(35, 35, 35);
 }
 
 section#restaurant-reviews > h1 {
@@ -281,8 +280,7 @@ section#restaurant-reviews > h1 {
 
 section#restaurant-reviews > .reviews-container {
   grid-area: review-container;
-  background-color: rgb(55, 55, 55);
-  padding: 1em;
+  padding-bottom: 3em;
 }
 
 section#restaurant-reviews > .reviews-container > #customer-review {
@@ -373,7 +371,7 @@ section#restaurant-reviews > .reviews-container > #review-form > form label {
 
 section#restaurant-reviews > .reviews-container > #review-form > form label > input#review-score {
   margin-left: 0.5em;
-  border: none;
+  border: 2px solid rgb(50, 50, 50);
   overflow: auto;
   outline: none;
 
@@ -382,7 +380,7 @@ section#restaurant-reviews > .reviews-container > #review-form > form label > in
   box-shadow: none;
 
   resize: none;
-  background-color: rgb(55, 55, 55);
+  background-color: rgb(30, 30, 30);
   color: white;
   font-family: 'Raleway', sans-serif;
   width: 5em; 
@@ -397,10 +395,10 @@ section#restaurant-reviews > .reviews-container > #review-form > form label > in
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  border: 1px solid rgb(75, 75, 75);
+  border: 2px solid rgb(50, 50, 50);
   padding: 1em;
   resize: none;
-  background-color: rgb(40, 40, 40);
+  background-color: rgb(30, 30, 30);
 }
 
 .categories-container {

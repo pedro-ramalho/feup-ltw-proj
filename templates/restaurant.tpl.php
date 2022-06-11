@@ -139,3 +139,14 @@
     </form>
   </div>
 <?php } ?>
+
+
+<?php function draw_restaurant_showcase(Restaurant $restaurant, $image) { ?>
+  <div class="showcase">
+    <img src="<?=$image?>.jpg" width="200" height="200">
+    <div class="showcase-info">
+      <h1><?=$restaurant->res_name?></h1>
+      <p><?=$restaurant->score?>/5</p>
+    </div>
+  </div>
+<?php } ?>

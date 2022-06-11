@@ -75,6 +75,18 @@
       return $dishes;
     }
 
+    static function get_limited_dishes(PDO $db, int $limit) : array {
+      $stmt = $db->prepare('SELECT id, restaurant, price, dish_name AS name FROM Dish LIMIT ?');
+      $stmt->execute(array($limit));
+
+      $dishes = array();
+
+      while ($dish = $stmt->fetch())
+        $dishes[] = Dish::get_dish($db, intval($dish['id']));
+      
+      return $dishes;
+    }
+
     /* */
     static function get_restaurant_dishes(PDO $db, int $restaurant_id) : array {
       $stmt = $db->prepare('SELECT id FROM Dish WHERE restaurant = ?');

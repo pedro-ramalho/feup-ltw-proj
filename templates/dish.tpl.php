@@ -14,7 +14,10 @@
     <p hidden="hidden" class="dish-id-holder"><?=$dish->id?></p>
     <img src="../assets/temp.jpg" alt="restaurant's preview image">
     <div class="dish-description">
-      <p class="dish-shopping-bag"><img class="dish-shopping-bag-icon" src="../assets/icons/shopping_bag.svg"><?=$dish->name?></p>
+      <div id="dish-header">
+        <p id="dish-shopping-bag"><?=$dish->name?></p>
+        <img id="dish-favorite-icon" src="../assets/icons/favorite.svg">
+      </div>
       <div class="dish-categories-container">
         <?php
         foreach($dish->categories as $category) {
@@ -23,7 +26,7 @@
       </div>
       <div class="dish-price-favorite-container">
         <p class="dish-price"><img class="dish-price-icon" src="../assets/icons/price.svg"><?=$dish->price?></p>
-        
+        <p id="dish-order"><img id="dish-shopping-bag-icon" src="../assets/icons/shopping_bag.svg">Order</p>
         <img src=<?php 
         if(!$session->isLoggedIn()) {
           echo '"../assets/icons/favorite.svg" class="not-logged-in dish-favorite-icon"';
@@ -134,3 +137,13 @@
     </form>
   </div>
 <?php } ?> 
+
+<?php function draw_dish_showcase(Dish $dish, $image) { ?>
+  <div class="showcase">
+    <img src="<?=$image?>.jpg" width="200" height="200">
+    <div class="showcase-info">
+      <h1><?=$dish->name?></h1>
+      <p><?=$dish->price?>€</p>
+    </div>
+  </div>
+<?php } ?>

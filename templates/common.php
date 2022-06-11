@@ -59,6 +59,20 @@
 <?php function draw_footer() { ?>
   <footer>
     <h4>&copy;2022 Agile Eating, Inc.</h4>
+    <div id="media-container">
+      <div id="twitter" class="media">
+        <img src="../assets/icons/twitter.svg" class="icon">
+        <p>@AgileEating</p>
+      </div>
+      <div id="instagram" class="media">
+        <img src="../assets/icons/instagram.svg" class="icon">
+        <p>@AgileEating</p>
+      </div>
+      <div id="facebook" class="media">
+        <img src="../assets/icons/facebook.svg" class="icon">
+        <p>AgileEating</p>
+      </div>
+    </div>
   </footer>
 <?php } ?>
   
@@ -100,3 +114,33 @@
     } 
   } 
 ?>
+
+<?php
+  function draw_stickers() { ?>
+    <div id="stickers-container">
+      <h1 id="stickers-header">How does it work?</h1>
+      <section id="stickers">
+        <article class="sticker-container">
+          <figure>
+            <img src="assets/icons/rounded_star.svg" class="large-icon">
+            <figcaption>Best choice</figcaption>
+            <p>Find a wide variety of restaurants and dishes</p>
+          </figure>
+        </article>
+        <article class="sticker-container">
+          <figure>
+            <img src="assets/icons/star.svg" class="large-icon">
+            <figcaption>User reviews</figcaption>
+            <p>Recommendations and reviews from a powerful community</p>
+          </figure>
+        </article>
+        <article class="sticker-container">
+          <figure>
+            <img src="assets/icons/calendar.svg" class="large-icon">
+            <figcaption>Easy ordering</figcaption>
+            <p>Instant, free and easy, from anywhere you are</p>
+          </figure>
+        </article>
+      </section>
+    </div>
+<?php } ?>

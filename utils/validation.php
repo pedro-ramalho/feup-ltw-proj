@@ -11,8 +11,8 @@
   }
 
   function valid_password(string $password) : bool {
-    return preg_match("/^[a-z]+[A-Z]+[0-9]+[\#]+[\$]+[\%]+/", $password)
-           && strlen($password) > 8;
+    return preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!#$%&])/", $password)
+           && strlen($password) >= 8;
   }
 
   function passwords_match(string $pw1, string $pw2) : bool {

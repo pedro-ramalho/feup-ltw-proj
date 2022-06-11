@@ -11,7 +11,7 @@ const favRestaurantsAnchor = document.querySelector("#fav-res-anchor")
 
 const accountSection = document.querySelector("#user-credentials")
 const ownedRestaurantsSection = document.querySelector("#owned-restaurants")
-const ordersSection = document.querySelector(".orders")
+const ordersSection = document.querySelector("section#user-orders")
 const favDishesSection = document.querySelector("#favorite-dishes")
 const favRestaurantsSection = document.querySelector("#favorite-restaurants")
 
