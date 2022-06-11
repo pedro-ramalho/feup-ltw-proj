@@ -313,3 +313,35 @@ section#messages-container > article.success > p {
 section#messages-container > article.error > p {
   color: var(--message-error-text-color);
 }
+
+/* footer */
+
+footer {
+  background-color: rgb(30, 30, 30);
+  border-top: 3px solid rgb(50, 50, 50);
+  padding: 8px;
+  align-items: center;
+  display: flex;
+}
+
+#twitter > img, #facebook > img, #instagram > img {
+  max-height: 2em;
+  max-width: 2em;
+}
+
+#media-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: auto;
+  align-items: center;
+  column-gap: 6em;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+
+.media {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

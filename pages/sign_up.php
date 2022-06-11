@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/pages/main-page.css">
   <link rel="stylesheet" href="../css/pages/page_sign_up.css">
   <link rel="icon" href="../assets/logo/favicon.png">
   <title>Join Agile Eating</title>

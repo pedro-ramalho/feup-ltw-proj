@@ -71,6 +71,18 @@
       
       return $restaurants;
     }
+    
+    static function get_limited_restaurants(PDO $db, int $limit) : array {
+      $stmt = $db->prepare('SELECT id, owner_id, score, res_name, addr, coords FROM Restaurant LIMIT ?');
+      $stmt->execute(array($limit));
+
+      $restaurants = array();
+      
+      while ($restaurant = $stmt->fetch())
+      $restaurants[] = Restaurant::get_restaurant($db, intval($restaurant['id']));
+    
+      return $restaurants;
+    }
 
     /* returns an array containing the favorite restaurants of a user with a given id */
     static function get_fav_restaurants(PDO $db, int $user_id) : array {
@@ -124,5 +136,6 @@
       $stmt = $db->prepare('UPDATE Restaurant SET res_name = ?, coords = ? WHERE id = ?');
       $stmt->execute(array($new_name, $new_coords, $id));
     }
+
   }
 ?>

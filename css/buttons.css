@@ -55,15 +55,15 @@
 .submit {
   align-self: flex-end;
   font-family: 'Raleway', sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.2em;
   padding-top: 0px;
   padding-bottom: 0px;
   height: 2em;
-  width: 5em;
-  border-radius: 3px;
-  border: 1px solid rgb(50, 140, 215);
-  background-color: rgb(30, 120, 195);
+  width: 6em;
+  border-radius: 2px;
+  border: 1px solid rgb(28, 101, 161);
+  background-color: rgb(8, 81, 141);
   color: var(--restaurant-info-score-button-text-color);
 }
 
