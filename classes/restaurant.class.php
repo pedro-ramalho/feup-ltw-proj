@@ -137,5 +137,14 @@
       $stmt->execute(array($new_name, $new_coords, $id));
     }
 
+    static function is_favorited(PDO $db, int $userID, int $resID) {
+      $stmt = $db->prepare('SELECT * from FavoriteRestaurant WHERE restaurant = ? AND user = ?');
+      $stmt->execute(array($resID, $userID));
+
+      $results = Array();
+      $results = $stmt->fetchAll();
+      if (count($results) == 0) return false;
+      return true;
+    }
   }
 ?>

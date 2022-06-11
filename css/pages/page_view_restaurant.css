@@ -98,13 +98,6 @@ section#restaurant-info > #restaurant-frontpage #restaurant-bg-img-container #re
   cursor: pointer;
 }
 
-#restaurant-frontpage #restaurant-bg-img-container #add-res-to-favorites.hidden {
-  display: none;
-}
-
-#restaurant-frontpage #restaurant-bg-img-container #remove-res-from-favorites.hidden {
-  display: none;
-}
 
 section#restaurant-info > #restaurant-frontpage #restaurant-details {
   width: 100%;
@@ -214,11 +207,11 @@ section#restaurant-dishes > .dishes-container > .dish-frontpage > .dish-descript
   justify-self: center;
 }
 
-#dish-shopping-bag {
+.dish-shopping-bag {
   font-size: 1.5em;
 }
 
-#dish-shopping-bag-icon, #dish-price-icon, #dish-favorite-icon {
+.dish-shopping-bag-icon, .dish-price-icon, .dish-favorite-icon {
   max-width: 2rem;
   max-height: 2rem;
   width: 2em;
@@ -226,13 +219,13 @@ section#restaurant-dishes > .dishes-container > .dish-frontpage > .dish-descript
   filter: invert(90%) sepia(0%) saturate(661%) hue-rotate(159deg) brightness(93%) contrast(57%);
 }
 
-#dish-categories-container {
+.dish-categories-container {
   display: flex;
   flex-direction: row;
   column-gap: 1em;
 }
 
-#dish-categories-container > h5 {
+.dish-categories-container > h5 {
   font-weight: 500;
   font-style: italic;
   font-size: 1em;
@@ -240,7 +233,7 @@ section#restaurant-dishes > .dishes-container > .dish-frontpage > .dish-descript
   color: var(--res-categories-text-color);
 }
 
-#dish-price-favorite-container {
+.dish-price-favorite-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -248,17 +241,18 @@ section#restaurant-dishes > .dishes-container > .dish-frontpage > .dish-descript
   width: 100%;
 }
 
-#dish-price-favorite-container > #dish-price {
+.dish-price-favorite-container > .dish-price {
   margin-right: auto;
 }
 
-#dish-favorite-icon {
+.dish-favorite-icon {
   justify-self: flex-end;
   justify-content: flex-end;
   justify-items: flex-end;
+  cursor: pointer;
 }
 
-#dish-shopping-bag, #dish-price {
+.dish-shopping-bag, .dish-price {
   display: flex;
   flex-direction: row;
   align-items: center;

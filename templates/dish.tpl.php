@@ -1,40 +1,57 @@
 <?php 
   declare(strict_types = 1);
+  require_once(__DIR__ . '/../utils/session.php');
 
   require_once(__DIR__ . '/../database/connection.php');
   require_once(__DIR__ . '/../classes/dish.class.php');
 ?>
 
-<?php function draw_dish(Dish $dish) { ?>
-  <div class="dish-frontpage"> <!-- click event listener -->
+<?php function draw_dish(Dish $dish, Session $session) { ?>
+  <?php
+  $db = get_db();
+?>
+  <div class="dish-frontpage dish-array-element">
+    <p hidden="hidden" class="dish-id-holder"><?=$dish->id?></p>
     <img src="../assets/temp.jpg" alt="restaurant's preview image">
     <div class="dish-description">
       <div id="dish-header">
         <p id="dish-shopping-bag"><?=$dish->name?></p>
         <img id="dish-favorite-icon" src="../assets/icons/favorite.svg">
       </div>
-      <div id="dish-categories-container">
+      <div class="dish-categories-container">
         <?php
         foreach($dish->categories as $category) {
           ?> <h5 class="dish-preview-category"><?=$category?></h5>
         <?php } ?>
       </div>
-      <div id="dish-price-favorite-container">
-        <p id="dish-price"><img id="dish-price-icon" src="../assets/icons/price.svg"><?=$dish->price?></p>
+      <div class="dish-price-favorite-container">
+        <p class="dish-price"><img class="dish-price-icon" src="../assets/icons/price.svg"><?=$dish->price?></p>
         <p id="dish-order"><img id="dish-shopping-bag-icon" src="../assets/icons/shopping_bag.svg">Order</p>
+        <img src=<?php 
+        if(!$session->isLoggedIn()) {
+          echo '"../assets/icons/favorite.svg" class="not-logged-in dish-favorite-icon"';
+        }
+        else {
+          if (Dish::is_favorited($db, $session->getId(), $dish->id)) {
+            echo '"../assets/icons/favorite_filled.svg" class="dish-is-favorited dish-favorite-icon"';
+          } else {
+            echo '"../assets/icons/favorite.svg" class="dish-is-not-favorited dish-favorite-icon"';
+          }
+        }?>>
       </div>
     </div>
   </div>
 <?php } ?>
 
-<?php function draw_dish_preview(Dish $dish, $image) { ?>
+<?php function draw_dish_preview(Dish $dish, $image, Session $session) { ?>
 <?php
   $db = get_db();
   
   $id = Dish::get_dish_restaurant($db, $dish->id);
   $restaurant = Restaurant::get_restaurant($db, $id);  
 ?>
-  <div class="preview">
+  <div class="preview dish-array-element">
+    <p hidden="hidden" class="dish-id-holder"><?=$dish->id?></p>
     <section class="info">
       <div class="order">
         <form method="post">
@@ -51,7 +68,18 @@
           <img id="price" class="icon" src="../assets/icons/price.svg">
           <p><?=$dish->price?></p>
         </div>
-        <img id="favorite" class="icon" src="../assets/icons/favorite.svg">
+        <!--<img id="favorite" class="icon" src="../assets/icons/favorite.svg">-->
+        <img src=<?php 
+        if(!$session->isLoggedIn()) {
+          echo '"../assets/icons/favorite.svg" class="not-logged-in dish-favorite-icon icon"';
+        }
+        else {
+          if (Dish::is_favorited($db, $session->getId(), $dish->id)) {
+            echo '"../assets/icons/favorite_filled.svg" class="dish-is-favorited dish-favorite-icon icon"';
+          } else {
+            echo '"../assets/icons/favorite.svg" class="dish-is-not-favorited dish-favorite-icon icon"';
+          }
+        }?>>
       </div>
     </section>
     <section class="image-container">

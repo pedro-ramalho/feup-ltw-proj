@@ -5,12 +5,27 @@
   require_once(__DIR__ . '/../classes/restaurant.class.php');
 ?>
 
-<?php function draw_restaurant(Restaurant $restaurant, $image) { ?>
-  <div id="restaurant-frontpage">
+<?php function draw_restaurant(Restaurant $restaurant, $image, Session $session) { ?>
+  <?php
+    $db = get_db();
+  ?>
+  <div id="restaurant-frontpage" class="restaurant-array-element">
+    <p hidden="hidden" class="res-id-holder"><?=$restaurant->id?></p>
     <div id="restaurant-bg-img-container">
-      <img id="res-bg-image" src="<?=$image?>.jpg" alt="restaurant background image">
-      <img id="add-res-to-favorites" class="icon res-favorite-button" src="../assets/icons/favorite.svg" alt="add to favorite" title="add restaurant to favorites">
-      <img id="remove-res-from-favorites" class="icon res-favorite-button" src="../assets/icons/favorite.svg" alt="remove from favorites" title="remove restaurant from favorites">
+     <img id="res-bg-image" src="<?=$image?>.jpg" alt="restaurant background image">
+      <!--<img id="add-res-to-favorites" class="icon res-favorite-button" src="../assets/icons/favorite.svg" alt="add to favorite" title="add restaurant to favorites">
+      <img id="remove-res-from-favorites" class="icon res-favorite-button" src="../assets/icons/favorite.svg" alt="remove from favorites" title="remove restaurant from favorites">-->
+      <img src=<?php 
+        if(!$session->isLoggedIn()) {
+          echo '"../assets/icons/favorite.svg" class="not-logged-in res-favorite-button icon"';
+        }
+        else {
+          if (Restaurant::is_favorited($db, $session->getId(), $restaurant->id)) {
+            echo '"../assets/icons/favorite_filled.svg" class="res-is-favorited res-favorite-button icon"';
+          } else {
+            echo '"../assets/icons/favorite.svg" class="res-is-not-favorited res-favorite-button icon"';
+          }
+        }?>>
     </div>
     <div id="restaurant-details">
       <h1 id="res-name"><?=$restaurant->res_name?></h1>
@@ -30,8 +45,12 @@
   </div>
 <?php } ?>
 
-<?php function draw_restaurant_preview(Restaurant $restaurant, $image) { ?>
-  <div class="preview">
+<?php function draw_restaurant_preview(Restaurant $restaurant, $image, Session $session) { ?>
+  <?php
+    $db = get_db();
+  ?>
+  <div class="preview restaurant-array-element">
+    <p hidden="hidden" class="res-id-holder"><?=$restaurant->id?></p>
     <section class="info">
       <a href="view_restaurant.php?id=<?=$restaurant->id?>">
         <h1><?=$restaurant->res_name?></h1>
@@ -45,7 +64,17 @@
           <img id="star" class="icon" src="../assets/icons/star.svg">
           <p><?=$restaurant->score?></p>
         </div>
-        <img id="favorite" class="icon" src="../assets/icons/favorite.svg">
+        <img src=<?php 
+        if(!$session->isLoggedIn()) {
+          echo '"../assets/icons/favorite.svg" class="not-logged-in res-favorite-button icon"';
+        }
+        else {
+          if (Restaurant::is_favorited($db, $session->getId(), $restaurant->id)) {
+            echo '"../assets/icons/favorite_filled.svg" class="res-is-favorited res-favorite-button icon"';
+          } else {
+            echo '"../assets/icons/favorite.svg" class="res-is-not-favorited res-favorite-button icon"';
+          }
+        }?>>
       </div>
     </section>
     <section class="image-container">

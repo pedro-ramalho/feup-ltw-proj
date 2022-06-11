@@ -52,6 +52,7 @@
   <script src="../javascript/sidebar_button.js" defer></script>
   <script src="../javascript/score.js" defer></script>
   <script src="../javascript/categories.js" defer></script>
+  <script src="../javascript/favorite_button.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar($session) ?>
@@ -69,7 +70,7 @@
           if ($img) 
             $path = "../assets/img/preview/restaurants/" . $img['id'];
           
-          draw_restaurant_preview($restaurant, $path);
+          draw_restaurant_preview($restaurant, $path, $session);
         } 
       ?>
     </section>

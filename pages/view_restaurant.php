@@ -44,6 +44,8 @@
   <title><?=$restaurant->res_name?></title>
   <script src="../javascript/header_scroll.js" defer></script>
   <script src="../javascript/sidebar_button.js" defer></script>
+  <script src="../javascript/dynamic_search.js" defer></script>
+  <script src="../javascript/favorite_button.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar($session) ?>
@@ -60,7 +62,7 @@
           if ($img) 
             $path = "../assets/img/display/restaurants/" . $img['id'];
 
-        draw_restaurant($restaurant, $path) 
+        draw_restaurant($restaurant, $path, $session) 
       ?>
     </section>
     <section id="restaurant-dishes">
@@ -68,7 +70,7 @@
       <div class="dishes-container">
       <?php
         foreach ($dishes as $dish)
-          draw_dish($dish);
+          draw_dish($dish, $session);
       ?>
       </div>
     </section>
