@@ -36,14 +36,14 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/stickers.css">
   <link rel="stylesheet" href="css/pages/page_index.css">
-  <link rel="stylesheet" href="css/pages/main-page.css">
   <link rel="icon" href="assets/logo/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agile Eating</title>
   <script src="javascript/header_scroll.js" defer></script>
   <script src="javascript/sidebar_button.js" defer></script>
@@ -54,17 +54,18 @@
   <?php draw_sidebar($session) ?>
   <?php draw_header($session) ?>
   <main id="main-page">
+
     <section id="frontpage">
       <section id="slogan">
         <h1>Agile Eating - fast and simple</h1>
         <p>Discover amazing places to eat, tasteful dishes to enjoy</p>
         <p>Join our community!</p>
         <div id="slogan-anchors">
-          <a href="pages/page_sign_in.php">Sign in</a>
-          <a href="pages/page_sign_up.php">Sign up</a>
+          <a href="pages/sign_in.php">Sign in</a>
+          <a href="pages/sign_up.php">Sign up</a>
         </div>
       </section>
-      <img src="assets/frontpage_v2.png">
+      <img src="assets/frontpage_v2.png" id="frontpage-img">
     </section>
 
     <section id="categories">
@@ -108,6 +109,7 @@
           ?>
         </div>
       </section>
+
       <section class="suggestions">
         <div class="suggestions-header">
           <h1 class="suggestion-title">Popular dishes</h1>
@@ -130,9 +132,12 @@
           ?>
         </div>
       </section>
-    </section>  
+    </section>
+
     <?php draw_stickers(); ?>
+
   </main>
+
   <?php draw_footer() ?>
 </body>
 </html>
