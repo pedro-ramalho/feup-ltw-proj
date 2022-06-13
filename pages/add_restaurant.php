@@ -33,6 +33,9 @@
   <link rel="stylesheet" href="../css/pages/main-page.css">
   <link rel="stylesheet" href="../css/pages/page_add_restaurant.css">
   <link rel="icon" href="../assets/logo/favicon.png">
+  <script src="../javascript/dynamic_search.js" defer></script>
+  <script src="../javascript/messages.js"  defer></script>
+  <script src="../javascript/header_scroll.js"  defer></script>
   <title>Setup Restaurant</title>
 </head>
 <body>

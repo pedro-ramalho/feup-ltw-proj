@@ -52,6 +52,8 @@
   <script src="../javascript/sidebar_button.js" defer></script>
   <script src="../javascript/favorite_button.js" defer></script>
   <script src="../javascript/dynamic_search.js" defer></script>
+  <script src="../javascript/messages.js" defer></script>
+  <script src="../javascript/header_scroll.js" defer></script>
   <title>Profile</title>
 </head>
 <body>

@@ -31,7 +31,7 @@
   /* validates the input for reviews */
 
   function valid_review(string $review) : int {
-    return preg_match("/^[a-zA-Z0-9\s]+$/", $review);
+    return preg_match("/^[.!?()@,'\-\^a-zA-Z0-9\s]+$/", $review);
   }
 
 

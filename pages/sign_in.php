@@ -22,6 +22,7 @@
   <title>Sign in to Agile Eating</title>
   <script src="../javascript/sidebar_button.js" defer></script>
   <script src="../javascript/messages.js" defer></script>
+  <script src="../javascript/header_scroll.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar($session) ?>

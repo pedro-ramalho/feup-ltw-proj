@@ -1,11 +1,14 @@
 <?php
   declare(strict_types = 1);
 
-  session_start();
+  require_once(__DIR__ . '/../utils/session.php');
+  $session = new Session();
 
-  if (!isset($_SESSION['id']))
+  if (!$session->isLoggedIn()) {
+    $session->addMessage("error", "Login to be able to add a review");
+    header('Location: localhost:9000/pages/sign-in.php');
     die();
-
+  }
   require_once(__DIR__ . '/../database/connection.php');
   require_once(__DIR__ . '/../classes/user.class.php');
   require_once(__DIR__ . '/../classes/review.class.php');
@@ -14,7 +17,8 @@
   $db = get_db();
 
   if (!valid_review($_POST['review-comment'])) {
-    echo 'Nice try dumbass';
+    $session->addMessage("error", "The review you tried to enter contained invalid characters. Please try again.");
+    header("Location:".$_SERVER['HTTP_REFERER']);
     die();
   }
 
@@ -23,5 +27,6 @@
     intval($_POST['review-score']), $_POST['review-comment']
   );
 
-  header('Location: ../index.php');
+  $session->addMessage("success", "Review added.");
+  header("Location:".$_SERVER['HTTP_REFERER']);
 ?>

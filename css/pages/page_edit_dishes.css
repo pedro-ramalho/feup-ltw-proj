@@ -27,6 +27,10 @@ body > main {
   align-self: center;
 }
 
+.icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
+}
+
 .dishes {
   display: flex;
   flex-direction: row;

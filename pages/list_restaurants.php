@@ -53,6 +53,8 @@
   <script src="../javascript/score.js" defer></script>
   <script src="../javascript/categories.js" defer></script>
   <script src="../javascript/favorite_button.js" defer></script>
+  <script src="../javascript/dynamic_search.js" defer></script>
+  <script src="../javascript/messages.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar($session) ?>
