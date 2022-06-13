@@ -38,6 +38,7 @@ header {
   background-color: transparent;
   position: relative;
   z-index: 10;
+  transition: background-color 0.3s ease;
 }
 
 header.header-opaque {
@@ -174,6 +175,8 @@ section#search-results-container a h3.dish-price {
   font-weight: 400;
 }
 
+
+
 section#search-results-container a .score-and-coords-container {
   display: flex;
   justify-content: space-between;
@@ -189,6 +192,7 @@ header > #search-bar-container > form#search-bar > input#query {
   height: 3em;
   width: 28rem;
 
+  border-radius: 10px;
   border: none;
 }
 

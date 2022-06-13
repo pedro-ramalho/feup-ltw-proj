@@ -12,7 +12,6 @@ main {
 
   row-gap: 2em;
   font-family: 'Raleway', sans-serif;
-  border: 1px solid red;
 }
 
 
@@ -88,6 +87,7 @@ main {
 
 #categories {
   align-items: center;
+  justify-content: center;
   color: white;
 }
 
@@ -186,6 +186,7 @@ main {
   justify-content: center;
 
   column-gap: 3em;
+  row-gap: 3em;
 }
 
 .showcase {
@@ -227,7 +228,11 @@ main {
   align-items: center;
   justify-content: center;
   
+  flex-wrap: wrap;
+
   column-gap: 2em;
+
+  margin-bottom: 2em;
 }
 
 #stickers-header {
@@ -275,13 +280,67 @@ main {
   margin: 0 auto;
 }
 
+
 @media screen and (max-width: 30em) {
-  main {
-    border: 1px solid red;
-  }
+
+  /* frontpage */
 
   #frontpage {
     width: fit-content;
     height: fit-content;
+    font-size: 1em;
+    padding: 1em;
+    align-items: center;
+  }
+
+  #slogan {
+    align-self: center;
+    text-align: center;
+  }
+
+  #slogan-anchors > a {
+    font-size: 1.5em;
+  }
+
+  #frontpage > img {
+    display: none;
+  }
+
+
+  /* categories */
+
+  #categories > * {
+    justify-content: center;
+  }
+
+  #categories-header {
+    font-size: 1em;
+  }
+
+  #categories-container > p {
+    font-size: 1em;
+  }
+
+
+  /* suggestions */
+
+  .suggestions-header > * {
+    font-size: 0.5em;
+  }
+  
+  .showcase > img {
+    width: 80%;
+    height: 80%;
+  }
+
+
+  /* stickers */
+
+  #stickers-header {
+    font-size: 1.5em;
+  }
+
+  .sticker-container {
+    font-size: 1em;
   }
 }

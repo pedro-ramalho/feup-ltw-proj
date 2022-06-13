@@ -40,11 +40,11 @@
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/sidebar.css">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/filter.css">
   <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/previews.css">
-  <link rel="stylesheet" href="../css/pages/main-page.css">
   <link rel="stylesheet" href="../css/pages/page_list_restaurants.css">
   <link rel="icon" href="../assets/logo/favicon.png">
   <title>Restaurants</title>
@@ -58,22 +58,6 @@
   <?php draw_sidebar($session) ?>
   <?php draw_header($session) ?>
   <main>
-    <section id="restaurant-previews">
-      <?php 
-        foreach($restaurants as $restaurant) {
-          $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ? ORDER BY id DESC');
-          $stmt->execute(array($restaurant->id));
-          $img = $stmt->fetch();
-
-          $path = "../assets/img/default";
-          
-          if ($img) 
-            $path = "../assets/img/preview/restaurants/" . $img['id'];
-          
-          draw_restaurant_preview($restaurant, $path, $session);
-        } 
-      ?>
-    </section>
     <aside id="restaurant-filter">
       <h1>Choose a filter</h1>
       <form action="list_restaurants.php" method="get">
@@ -114,6 +98,22 @@
         <button class="apply" type="submit">Apply</button>
       </form>
     </aside>
+    <section id="restaurant-previews">
+      <?php 
+        foreach($restaurants as $restaurant) {
+          $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ? ORDER BY id DESC');
+          $stmt->execute(array($restaurant->id));
+          $img = $stmt->fetch();
+
+          $path = "../assets/img/default";
+          
+          if ($img) 
+            $path = "../assets/img/preview/restaurants/" . $img['id'];
+          
+          draw_restaurant_preview($restaurant, $path, $session);
+        } 
+      ?>
+    </section>
   </main>
   <?php draw_footer() ?>
 </body>

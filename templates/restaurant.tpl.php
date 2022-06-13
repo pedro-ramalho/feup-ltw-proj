@@ -78,7 +78,7 @@
       </div>
     </section>
     <section class="image-container">
-      <img src="<?=$image?>.jpg" width="250" height="250">
+      <img class="restaurant-preview-image" src="<?=$image?>.jpg" width="250" height="250">
     </section>
   </div>
 <?php } ?>

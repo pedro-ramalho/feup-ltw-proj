@@ -117,8 +117,17 @@
       <?php
       if ($owned_restaurants && count($owned_restaurants) > 0) {
         echo "<a href=\"#\" id=\"add-restaurant-link\">+</a>";
-        foreach ($owned_restaurants as $owned_restaurant)
-          draw_restaurant_preview($owned_restaurant);
+        foreach ($owned_restaurants as $owned_restaurant) {
+          $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ? ORDER BY id DESC');
+          $stmt->execute(array($owned_restaurant->id));
+          $img = $stmt->fetch();
+
+          $path = "../assets/img/default";
+          
+          if ($img) 
+            $path = "../assets/img/preview/restaurants/" . $img['id'];
+          draw_restaurant_preview($owned_restaurant, $path, $session);
+        }
       }
       else
         echo "<p class=\"none-found-message\">You own no restaurants yet. <a href=\"#\">Create your restaurant</a></p>"
@@ -128,8 +137,18 @@
       <h1 class="content-header">Your favorite dishes</h1>
       <?php
         if ($fav_dishes && count($fav_dishes) > 0)
-          foreach ($fav_dishes as $fav_dish)
-            draw_dish_preview($fav_dish);
+          foreach ($fav_dishes as $fav_dish) {
+            $stmt = $db->prepare('SELECT * FROM DishImage WHERE dish_id = ? ORDER BY id DESC');
+            $stmt->execute(array($dish->id));
+            $img = $stmt->fetch();
+          
+            $path = "../assets/img/default";
+          
+            if ($img) 
+              $path = "../assets/img/preview/dishes/" . $img['id'];
+
+            draw_dish_preview($fav_dish, $path, $session);
+          }
         else
           echo "<p class=\"none-found-message\">You haven't favorited any dishes yet.</p>";
       ?>
@@ -137,11 +156,22 @@
     <section id="favorite-restaurants" hidden>
       <h1 class="content-header">Your favorite restaurants</h1>
       <?php
-        if ($fav_restaurants && count($fav_restaurants) > 0)
-          foreach ($fav_restaurants as $fav_restaurant)
-            draw_restaurant_preview($fav_restaurant);
-        else
+        if ($fav_restaurants && count($fav_restaurants) > 0) {
+          foreach ($fav_restaurants as $fav_restaurant) {
+            $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ? ORDER BY id DESC');
+          $stmt->execute(array($fav_restaurant->id));
+          $img = $stmt->fetch();
+
+          $path = "../assets/img/default";
+          
+          if ($img) 
+            $path = "../assets/img/preview/restaurants/" . $img['id'];
+            draw_restaurant_preview($fav_restaurant, $path, $session);
+          }
+        }
+        else {
           echo "<p class=\"none-found-message\">You haven't favorited any restaurants yet!</p>";
+        }
       ?>
     </section>
   </section>

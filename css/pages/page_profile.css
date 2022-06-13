@@ -67,26 +67,14 @@ body > main > section#option-content {
   max-height: 100%;
 }
 
-#user-orders {
-  display: grid;
-  grid-template-areas: "customer-orders"
-                       "restaurant-orders";
-  row-gap: 2em;
-}
-
 .content-header {
   border-bottom: 1px solid rgb(60, 60, 60);
   padding-bottom: 0.5em;
   font-size: 1.5em; 
 }
 
-
 #customer-orders {
-  grid-area: customer-orders;
-}
-
-#restaurant-orders {
-  grid-area: restaurant-orders;
+  margin-bottom: 2em;
 }
 
 nav#profile-options > h1 {

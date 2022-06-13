@@ -1,9 +1,36 @@
-@media screen and (max-width: 30em) {
-  body > header {
-    display: block;
+@media screen and (max-width: 60em) {
+  header > * {
+    font-size: 12px;
   }
 
-  #frontpage-img {
+  body > footer {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+  }
+
+  main {
+    width: fit-content;
+    height: fit-content;
+    column-gap: 0em;
+    row-gap: 1em;
+  
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 3em;
+  }
+
+  #sidebar-button-container {
+    width: fit-content;
+    display: inline;
+  }
+
+  #header-signup, #header-account {
+    width: fit-content;
+    display: inline;
+  }
+
+  #search-bar-container, #query, #search-bar {
     display: none;
   }
 }

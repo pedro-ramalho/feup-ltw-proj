@@ -86,7 +86,7 @@ body > section#search-results-container {
 
 /* main content layout */
 
-body > main {
+main {
   grid-area: main;
   width: 80%;
   margin: 0;

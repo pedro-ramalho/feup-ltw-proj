@@ -54,20 +54,21 @@
   <?php draw_sidebar($session) ?>
   <?php draw_header($session) ?>
   <main id="main-page">
-
-    <section id="frontpage">
-      <section id="slogan">
-        <h1>Agile Eating - fast and simple</h1>
-        <p>Discover amazing places to eat, tasteful dishes to enjoy</p>
-        <p>Join our community!</p>
-        <div id="slogan-anchors">
-          <a href="pages/sign_in.php">Sign in</a>
-          <a href="pages/sign_up.php">Sign up</a>
-        </div>
+    <?php
+      if (!$session->isLoggedIn()) { ?> 
+      <section id="frontpage">
+        <section id="slogan">
+          <h1>Agile Eating - fast and simple</h1>
+          <p>Discover amazing places to eat, tasteful dishes to enjoy</p>
+          <p>Join our community!</p>
+          <div id="slogan-anchors">
+            <a href="pages/sign_in.php">Sign in</a>
+            <a href="pages/sign_up.php">Sign up</a>
+          </div>
+        </section>
+        <img src="assets/frontpage_v2.png" id="frontpage-img">
       </section>
-      <img src="assets/frontpage_v2.png" id="frontpage-img">
-    </section>
-
+    <?php } ?>
     <section id="categories">
       <div id="categories-header">
         <img src="assets/icons/category.svg" class="icon">

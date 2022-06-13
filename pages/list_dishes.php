@@ -38,6 +38,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
   <link rel="stylesheet" href="../css/sidebar.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/filter.css">
@@ -56,22 +57,6 @@
   <?php draw_sidebar($session) ?>
   <?php draw_header($session) ?>
   <main>
-    <section id="dish-previews">
-      <?php
-        foreach ($dishes as $dish) {
-          $stmt = $db->prepare('SELECT * FROM DishImage WHERE dish_id = ? ORDER BY id DESC');
-          $stmt->execute(array($dish->id));
-          $img = $stmt->fetch();
-          
-          $path = "../assets/img/default";
-          
-          if ($img) 
-            $path = "../assets/img/preview/dishes/" . $img['id'];
-          
-          draw_dish_preview($dish, $path, $session);
-        }
-      ?>
-    </section>
     <aside class="filter" id="dish-filter">
       <h1>Choose a filter</h1>
       <form class="filter-form" action="list_dishes.php" method="get">
@@ -112,6 +97,22 @@
         <button class="apply" type="submit">Apply</button>
       </form>
     </aside>
+    <section id="dish-previews">
+      <?php
+        foreach ($dishes as $dish) {
+          $stmt = $db->prepare('SELECT * FROM DishImage WHERE dish_id = ? ORDER BY id DESC');
+          $stmt->execute(array($dish->id));
+          $img = $stmt->fetch();
+          
+          $path = "../assets/img/default";
+          
+          if ($img) 
+            $path = "../assets/img/preview/dishes/" . $img['id'];
+          
+          draw_dish_preview($dish, $path, $session);
+        }
+      ?>
+    </section>
   </main>
   <?php draw_footer() ?>
 </body>

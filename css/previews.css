@@ -4,11 +4,23 @@
   column-gap: 3em;
   row-gap: 3em;
   flex-wrap: wrap;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  width: fit-content;
+  height: fit-content;
 }
 
 .preview {
   display: flex;
   flex-direction: row;
+
+  width: fit-content;
+  height: fit-content;
+
+  max-width: 100%;
+
   border-radius: 20px;
   font-family: 'Raleway', sans-serif;
   color: white;
@@ -100,4 +112,31 @@
   border-radius: 20px;
   display: flex;
   align-items: center;
+}
+
+/* media queries */
+
+@media screen and (max-width: 60em) {
+  body > main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    row-gap: 1em;
+
+    width: 100%;
+  }
+
+  body > main > aside#restaurant-filter, body > main > aside#dish-filter {
+    margin: 0;
+  }
+
+  #restaurant-previews, #dish-previews {
+    justify-content: center;
+  }
+
+  .image-container {
+    max-height: 100%;
+    max-width: 50%;
+  }
 }
