@@ -40,6 +40,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/responsive.css">
   <link rel="stylesheet" href="../css/orders/orders_layout.css">
   <link rel="stylesheet" href="../css/orders/orders_customer.css">
   <link rel="stylesheet" href="../css/previews/preview_restaurant.css">

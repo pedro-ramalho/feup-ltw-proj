@@ -326,6 +326,7 @@ footer {
   padding: 8px;
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
 }
 
 #twitter > img, #facebook > img, #instagram > img {

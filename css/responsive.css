@@ -6,7 +6,6 @@
   body > footer {
     display: block;
     width: 100%;
-    font-size: 12px;
   }
 
   main {
@@ -32,5 +31,16 @@
 
   #search-bar-container, #query, #search-bar {
     display: none;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  footer {
+    font-size: 8px;
+  }
+
+  footer img {
+    max-width: 1em;
+    max-height: 1em;
   }
 }

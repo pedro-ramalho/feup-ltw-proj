@@ -68,6 +68,7 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  row-gap: 2em;
   justify-content: center;
   align-items: center;
   column-gap: 2em;
@@ -281,7 +282,7 @@ main {
 }
 
 
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 60em) {
 
   /* frontpage */
 
@@ -344,3 +345,16 @@ main {
     font-size: 1em;
   }
 }
+
+
+@media screen and (max-width: 30em) {
+  main *, #frontpage {
+    font-size: 1em;
+  }
+
+  .icon {
+    max-width: 2em;
+    max-height: 2em;
+  }
+}
+

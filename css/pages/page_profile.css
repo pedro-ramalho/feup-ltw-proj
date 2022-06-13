@@ -175,4 +175,9 @@ section#option-content > section#user-credentials > form#account-form > label in
   align-items: flex-start;
 }
 
+@media screen and (max-width: 30em) {
+  main * {
+    font-size: 0.8em;
+  }
+}
 

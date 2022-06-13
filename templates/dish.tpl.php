@@ -12,7 +12,7 @@
 ?>
   <div class="dish-frontpage dish-array-element">
     <p hidden="hidden" class="dish-id-holder"><?=$dish->id?></p>
-    <img src="../assets/temp.jpg" alt="restaurant's preview image">
+    <img id="dish-bg-img" src="../assets/temp.jpg" alt="restaurant's preview image">
     <div class="dish-description">
       <div id="dish-header">
         <p id="dish-shopping-bag"><?=$dish->name?></p>

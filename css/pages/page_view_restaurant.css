@@ -421,3 +421,21 @@ section#restaurant-reviews > .reviews-container > #review-form > form label > in
   align-self: center;
   filter: invert(27%) sepia(0%) saturate(1491%) hue-rotate(145deg) brightness(88%) contrast(86%);
 }
+
+@media screen and (max-width: 60em) {
+  main {
+    padding: 1em;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  #restaurant-bg-img-container {
+    display: none;
+  }
+
+  section#restaurant-dishes > .dishes-container > .dish-frontpage > #dish-bg-img {
+    height: 50px;
+    width: 50px;
+    border: 1px solid red;
+  }
+}
