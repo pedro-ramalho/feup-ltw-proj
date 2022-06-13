@@ -18,7 +18,7 @@
 
   width: fit-content;
   height: fit-content;
-
+  font-size: 0.8em;
   max-width: 100%;
 
   border-radius: 20px;
@@ -28,8 +28,6 @@
   align-items: center;
   justify-items: center;
 
-  background-color: rgb(25, 25, 25);
-  border: 2px solid rgb(60, 60, 60)
 }
 
 .info {
@@ -137,6 +135,17 @@
 
   .image-container {
     max-height: 100%;
-    max-width: 50%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .preview, .image-container > img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .info {
+    font-size: 0.9em;
   }
 }

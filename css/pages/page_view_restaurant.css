@@ -84,6 +84,8 @@ section#restaurant-info > #restaurant-frontpage #restaurant-bg-img-container {
 section#restaurant-info > #restaurant-frontpage #restaurant-bg-img-container #res-bg-image {
   max-width: 100%;
   max-height: 100%;
+  height: auto;
+  width: 100%;
 }
 
 #restaurant-frontpage #restaurant-bg-img-container .res-favorite-button {
@@ -192,11 +194,13 @@ section#restaurant-dishes > .dishes-container > .dish-frontpage {
 }
 
 section#restaurant-dishes > .dishes-container > .dish-frontpage > img {
-  width: 200px;
-  height: 200px;
   border-radius: 50%;
   max-width: 200px;
   max-height: 200px;
+  min-width: 50px;
+  min-height: 50px;
+
+  height: auto;
   margin: 0;
 }
 
@@ -369,6 +373,12 @@ section#restaurant-reviews > .reviews-container > #review-form > form label {
   height: 4em;
 }
 
+#dish-bg-img {
+  width: 100%;
+  height: auto;
+}
+
+
 section#restaurant-reviews > .reviews-container > #review-form > form label > input#review-score {
   margin-left: 0.5em;
   border: 2px solid rgb(50, 50, 50);
@@ -430,12 +440,13 @@ section#restaurant-reviews > .reviews-container > #review-form > form label > in
 
 @media screen and (max-width: 30em) {
   #restaurant-bg-img-container {
-    display: none;
+  }
+
+  .dish-frontpage {
+    font-size: 0.8em;
   }
 
   section#restaurant-dishes > .dishes-container > .dish-frontpage > #dish-bg-img {
-    height: 50px;
-    width: 50px;
-    border: 1px solid red;
+    border-radius: 4px;
   }
 }
