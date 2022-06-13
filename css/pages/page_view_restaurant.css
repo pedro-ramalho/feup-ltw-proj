@@ -439,9 +439,6 @@ section#restaurant-reviews > .reviews-container > #review-form > form label > in
 }
 
 @media screen and (max-width: 30em) {
-  #restaurant-bg-img-container {
-  }
-
   .dish-frontpage {
     font-size: 0.8em;
   }

@@ -114,3 +114,32 @@ main > section#signin > h5 > a:hover {
 main > section#signin > h5 > a:visited {
   color: var(--sign-in-h5-a-visited-text-color);
 }
+
+
+@media screen and (max-width: 60em) {
+  body {
+    background-image: none;
+    background-color: rgb(40, 40, 40);
+  }
+
+  body > main > section#signin {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  body {
+    background-image: none;
+    background-color: rgb(40, 40, 40);
+  }
+
+  body > main > section#signin {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+}
