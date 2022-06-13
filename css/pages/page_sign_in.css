@@ -115,6 +115,9 @@ main > section#signin > h5 > a:visited {
   color: var(--sign-in-h5-a-visited-text-color);
 }
 
+.icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
+}
 
 @media screen and (max-width: 60em) {
   body {

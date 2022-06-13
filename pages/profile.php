@@ -41,6 +41,7 @@
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/previews.css">
   <link rel="stylesheet" href="../css/orders/orders_layout.css">
   <link rel="stylesheet" href="../css/orders/orders_customer.css">
   <link rel="stylesheet" href="../css/previews/preview_restaurant.css">
@@ -49,6 +50,8 @@
   <link rel="icon" href="../assets/logo/favicon.png">
   <script src="../javascript/profile.js" defer></script>
   <script src="../javascript/sidebar_button.js" defer></script>
+  <script src="../javascript/favorite_button.js" defer></script>
+  <script src="../javascript/dynamic_search.js" defer></script>
   <title>Profile</title>
 </head>
 <body>
@@ -57,26 +60,21 @@
   <main>
   <nav id="profile-options">
     <div class="profile-section">
-      <img src="../assets/icons/account.svg"> 
-      <a id="acc-anchor" href="#" class="selected">Account</a>
+      <a id="acc-anchor" href="#" class="selected"><img src="../assets/icons/account.svg"> <p>Account</p></a>
     </div>
     <div class="profile-section">
-      <img src="../assets/icons/orders.svg">
-      <a id="orders-anchor" href="#">Orders</a>
+      <a id="orders-anchor" href="#"><img src="../assets/icons/orders.svg"> <p>Orders</p></a>
     </div>
     <div class="profile-section">
-      <img src="../assets/icons/owner.svg">
-      <a id="owned-res-anchor" href="#">Owned restaurants</a>
+      <a id="owned-res-anchor" href="#"><img src="../assets/icons/owner.svg"> <p>Owned restaurants</p></a>
     </div>
     <h1>Favorites</h1>
     <section id="favorites">
       <div class="profile-section">
-        <img src="../assets/icons/dish.svg">
-        <a id="fav-dishes-anchor" href="#">Favorite dishes</a>
+        <a id="fav-dishes-anchor" href="#"><img src="../assets/icons/dish.svg"> <p>Favorite dishes</p></a>
       </div>
       <div class="profile-section">
-        <img src="../assets/icons/restaurant.svg">
-        <a id="fav-res-anchor" href="#">Favorite restaurants</a>
+        <a id="fav-res-anchor" href="#"><img src="../assets/icons/restaurant.svg"> <p>Favorite restaurants</p></a>
       </div>
     </section>
   </nav>
@@ -115,9 +113,11 @@
       </section>
     </section>
     <section id="owned-restaurants" hidden>
+      <a href="add_restaurant.php" id="add-restaurant-link">Create your own restaurant</a>
+      
       <?php
       if ($owned_restaurants && count($owned_restaurants) > 0) {
-        echo "<a href=\"#\" id=\"add-restaurant-link\">+</a>";
+        ?> <div class="preview-flex-container"> <?php
         foreach ($owned_restaurants as $owned_restaurant) {
           $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ? ORDER BY id DESC');
           $stmt->execute(array($owned_restaurant->id));
@@ -127,8 +127,10 @@
           
           if ($img) 
             $path = "../assets/img/preview/restaurants/" . $img['id'];
+
           draw_restaurant_preview($owned_restaurant, $path, $session);
         }
+        ?></div><?php
       }
       else
         echo "<p class=\"none-found-message\">You own no restaurants yet. <a href=\"#\">Create your restaurant</a></p>"
@@ -137,7 +139,8 @@
     <section id="favorite-dishes" hidden>
       <h1 class="content-header">Your favorite dishes</h1>
       <?php
-        if ($fav_dishes && count($fav_dishes) > 0)
+        if ($fav_dishes && count($fav_dishes) > 0) {
+        ?> <div class="preview-flex-container"> <?php
           foreach ($fav_dishes as $fav_dish) {
             $stmt = $db->prepare('SELECT * FROM DishImage WHERE dish_id = ? ORDER BY id DESC');
             $stmt->execute(array($dish->id));
@@ -150,30 +153,36 @@
 
             draw_dish_preview($fav_dish, $path, $session);
           }
+          ?></div><?php
+          }
         else
           echo "<p class=\"none-found-message\">You haven't favorited any dishes yet.</p>";
       ?>
     </section>
     <section id="favorite-restaurants" hidden>
       <h1 class="content-header">Your favorite restaurants</h1>
-      <?php
-        if ($fav_restaurants && count($fav_restaurants) > 0) {
-          foreach ($fav_restaurants as $fav_restaurant) {
-            $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ? ORDER BY id DESC');
-          $stmt->execute(array($fav_restaurant->id));
-          $img = $stmt->fetch();
+      
+        <?php
+          if ($fav_restaurants && count($fav_restaurants) > 0) {
+            ?> <div class="preview-flex-container"> <?php
+            foreach ($fav_restaurants as $fav_restaurant) {
+              $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ? ORDER BY id DESC');
+            $stmt->execute(array($fav_restaurant->id));
+            $img = $stmt->fetch();
 
-          $path = "../assets/img/default";
-          
-          if ($img) 
-            $path = "../assets/img/preview/restaurants/" . $img['id'];
-            draw_restaurant_preview($fav_restaurant, $path, $session);
+            $path = "../assets/img/default";
+            
+            if ($img) 
+              $path = "../assets/img/preview/restaurants/" . $img['id'];
+              draw_restaurant_preview($fav_restaurant, $path, $session);
+            }
+            ?></div><?php
           }
-        }
-        else {
-          echo "<p class=\"none-found-message\">You haven't favorited any restaurants yet!</p>";
-        }
-      ?>
+          else {
+            echo "<p class=\"none-found-message\">You haven't favorited any restaurants yet.</p>";
+          }
+        ?>
+      </div>
     </section>
   </section>
   </main>

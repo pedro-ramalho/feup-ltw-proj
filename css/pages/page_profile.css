@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --selected-border-color: white;
+  --selected-background-color: rgb(26, 25, 25);
 }
 
 * {
@@ -34,6 +34,8 @@ body > main {
   grid-template-areas: "profile-options option-content";
   grid-template-columns: 20% 80%;
   column-gap: 0;
+  min-height: 70vh;
+  max-height: 70vh;
 }
 
 body > main > nav#profile-options {
@@ -59,14 +61,6 @@ body > main > nav#profile-options {
   filter: invert(27%) sepia(0%) saturate(1491%) hue-rotate(145deg) brightness(88%) contrast(86%);
 }
 
-body > main > section#option-content {
-  grid-area: option-content;
-
-  background-color: rgb(70, 70, 70);
-  padding: 1em;
-  max-height: 100%;
-}
-
 .content-header {
   border-bottom: 1px solid rgb(60, 60, 60);
   padding-bottom: 0.5em;
@@ -84,6 +78,10 @@ nav#profile-options > h1 {
 
 nav#profile-options  a {
   padding: 0.5em;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  column-gap: 2px;
 }
 
 nav#profile-options > section#favorites {
@@ -95,6 +93,10 @@ nav#profile-options > section#favorites {
 
 nav#profile-options > section#owned-restaurants {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5px;
+  row-gap: 5px;
 }
 
 .save {
@@ -102,19 +104,21 @@ nav#profile-options > section#owned-restaurants {
 }
 
 section#owned-restaurants a#add-restaurant-link {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  padding: 5px;
-
-  border: 0.5px solid white;
-  border-radius: 50%;
+  display: block;
+  width: fit-content;
+  padding: 0.5em;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 15px;
   color: white;
-  font-family: 'Raleway'
+  font-family: 'Raleway';
+  text-align: center;
 }
 
 nav#profile-options a.selected {
-  border: 0.5px solid var(--selected-border-color);
+  background-color: var(--selected-background-color);
+  border-left: 4px solid rgb(75, 75, 75);
   border-radius: 5px;
 } 
 
@@ -132,14 +136,29 @@ nav#profile-options p.none-found-message a:visited {
   color: inherit;
 }
 
+.preview-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2em;
+  row-gap: 2em;
+  justify-content: center;
+  align-items: center;
+}
+
 /* account form */
 
 section#option-content {
+  grid-area: option-content;
+
+  background-color: rgb(70, 70, 70);
+  padding: 1em;
+  height: 100%;
+  overflow-y: scroll;
+
   display: flex;
   flex-direction: column;
-  align-content: center;
-  justify-items: center;
-  justify-content: center;
+  align-content: left;
+  justify-content: start;
 }
 
 
@@ -171,13 +190,89 @@ section#option-content > section#user-credentials > form#account-form > label in
   color: white;
 }
 
+#acc-anchor, #orders-anchor, #owned-res-anchor, #fav-dishes-anchor, #fav-res-anchor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
+}
+
 .save {
   align-items: flex-start;
 }
 
-@media screen and (max-width: 30em) {
-  main * {
-    font-size: 0.8em;
+
+
+@media screen and (max-width: 60em) {
+
+  body > main {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    row-gap: 10px;
   }
+
+  body > main > nav#profile-options {
+    flex-direction: row;
+    min-width: 90%;
+    max-width: 90%;
+    justify-content: space-between;
+  }
+
+  body > main > section#option-content {
+    min-width: 90vw;
+    max-width: 90vw;
+  }
+
+  body > main > nav#profile-options > div {
+    flex-grow: 1;
+  }
+
+  body > main > nav#profile-options > div a {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  section#user-orders * {
+    font-size: 10px;
+  }
+
+  section#user-orders h1 {
+    font-size: 16px;
+  }
+
+  body > main > nav#profile-options section#favorites {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-grow: 2;
+  }
+
+  nav#profile-options a > p, nav#profile-options h1 {
+    display: none;
+  }
+
+  nav#profile-options a.selected {
+    border-left: none;
+    border-top: 4px solid rgb(75, 75, 75);
+
+  }
+
+  section.orders table {
+    max-width: 100%;
+  }
+
+  section.orders table tr {
+    max-width: 100%;
+  }
+
+  .preview {
+    border-top: 0.5px solid rgba(128, 128, 128, 0.402);
+    border-radius: 0;
+  }
+
+
 }
 

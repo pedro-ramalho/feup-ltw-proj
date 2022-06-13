@@ -113,6 +113,10 @@ section#signup > h5 > a:visited {
   color: var(--sign-up-h5-a-visited-text-color);
 }
 
+.icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(108deg) brightness(104%) contrast(104%);
+}
+
 
 @media screen and (max-width: 60em) {
   body {
@@ -121,7 +125,7 @@ section#signup > h5 > a:visited {
   }
 
   body > main > section#signup {
-    position: inherit;
+    position: static;
     top: 0;
     left: 0;
     margin: 0 auto;
@@ -135,7 +139,7 @@ section#signup > h5 > a:visited {
   }
 
   body > main > section#signup {
-    position: inherit;
+    position: static;
     top: 0;
     left: 0;
     margin: 0 auto;
