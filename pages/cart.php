@@ -40,53 +40,19 @@
   <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/previews.css">
   <link rel="stylesheet" href="../css/previews/preview_dish.css">
-  <link rel="stylesheet" href="../css/pages/page_view_restaurant.css">
   <link rel="icon" href="../assets/logo/favicon.png">
   <title><?=$restaurant->res_name?></title>
   <script src="../javascript/header_scroll.js" defer></script>
   <script src="../javascript/sidebar_button.js" defer></script>
   <script src="../javascript/dynamic_search.js" defer></script>
   <script src="../javascript/favorite_button.js" defer></script>
-  <script src="../javascript/order_button.js" defer></script>
   <script src="../javascript/messages.js" defer></script>
 </head>
 <body>
   <?php draw_sidebar($session) ?>
   <?php draw_header($session) ?>
   <main>
-    <section id="restaurant-info">
-      <?php 
-          $stmt = $db->prepare('SELECT * FROM RestaurantImage WHERE restaurant_id = ? ORDER BY id DESC');
-          $stmt->execute(array($restaurant->id));
-          $img = $stmt->fetch();
-
-          $path = "../assets/img/default";
-          
-          if ($img) 
-            $path = "../assets/img/display/restaurants/" . $img['id'];
-
-        draw_restaurant($restaurant, $path, $session) 
-      ?>
-    </section>
-    <section id="restaurant-dishes">
-      <h1>Dishes</h1>
-      <div class="dishes-container">
-      <?php
-        foreach ($dishes as $dish)
-          draw_dish($dish, $session);
-      ?>
-      </div>
-    </section>
-    <section id="restaurant-reviews">
-      <h1>Reviews</h1>
-      <div class="reviews-container">
-        <?php 
-          draw_review_form($restaurant_id, $session);
-          foreach ($reviews as $review) 
-            draw_review($review);
-        ?>
-      </div>
-    </section>
+    <form action="save_orders" method="post"></form>
   </main>
   <?php draw_footer() ?>
 </body>

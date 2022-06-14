@@ -13,6 +13,15 @@
       return isset($_SESSION['id']);    
     }
 
+    public function thereAreOrders() : bool {
+      if (isset($_SESSION['orders'])) {
+        return (count($_SESSION['orders']) > 0);
+      }
+      else {
+        return false;
+      }
+    }
+
     public function logout() {
       session_destroy();
     }
@@ -40,8 +49,28 @@
       $_SESSION['messages'][] = array('type' => $type, 'text' => $text, 'index' => count($_SESSION['messages']));
     }
 
+    public function addOrder(int $dish_id) {
+      if (!isset($_SESSION['orders'])) {
+        $_SESSION['orders'] = array();
+        $_SESSION['orders'][] = array('dish_id' => $dish_id, 'user_id' => $_SESSION['id'], 'quantity' => 1);
+        return;
+      }
+      
+      foreach ($_SESSION['orders'] as $order) {
+        if ($order['dish_id'] == $dish_id) {
+          $order['quantity'] += 1;
+          return;
+        }
+      }
+      $_SESSION['orders'][] = array('dish_id' => $dish_id, 'user_id' => $_SESSION['id'], 'quantity' => 1);
+    }
+
     public function getMessages() {
       return $this->messages;
+    }
+
+    public function getOrders() {
+      return isset($_SESSION['orders']) ? $_SESSION['orders'] : array();
     }
   }
 ?>

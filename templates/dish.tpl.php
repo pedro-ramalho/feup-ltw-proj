@@ -25,7 +25,7 @@
       </div>
       <div class="dish-price-favorite-container">
         <p class="dish-price"><img class="dish-price-icon" src="../assets/icons/price.svg"><?=$dish->price?></p>
-        <p id="dish-order"><img id="dish-shopping-bag-icon" class="icon" src="../assets/icons/shopping_bag.svg">Order</p>
+        <p id="dish-order"><img class="icon dish-shopping-bag-icon<?php if (!$session->isLoggedIn()) {echo ' not-logged-in';} else {echo '';}?>" src="../assets/icons/shopping_bag.svg">Order</p>
         <img src=<?php 
         if(!$session->isLoggedIn()) {
           echo '"../assets/icons/favorite.svg" class="not-logged-in dish-favorite-icon"';
@@ -53,9 +53,7 @@
     <p hidden="hidden" class="dish-id-holder"><?=$dish->id?></p>
     <section class="info">
       <div class="order">
-        <form method="post">
-          <input id="shopping-bag" class="icon" type="image" src="../assets/icons/shopping_bag.svg">
-        </form>
+        <img class="icon dish-shopping-bag-icon<?php if (!$session->isLoggedIn()) {echo ' not-logged-in';} else {echo '';}?>" src="../assets/icons/shopping_bag.svg">
         <h1><?=$dish->name?></h1>
       </div>
       <h2><?=$restaurant->res_name?></h2>

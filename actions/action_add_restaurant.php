@@ -14,7 +14,18 @@
   $owner_id = intval($_POST['owner-id']);
 
   $restaurant_name = $_POST['res-name'];
-  $restaurant_category = $_POST['res-category'];
+  
+  $categories = $_POST['categories'];
+
+  $restaurant_categories = array();
+
+  foreach ($categories as $category) {
+    if (isset($category)) {
+      $restaurant_categories[] = intval($category);
+    }
+  }
+
+
   $restaurant_address = $_POST['res-address'];
   $restaurant_coordinates = $_POST['res-coords'];
 
@@ -22,11 +33,6 @@
 
   if (!valid_restaurant_name($restaurant_name)) {
     echo 'Invalid restaurant name';
-    die();
-  }
-
-  if (!valid_category($restaurant_category)) {
-    echo 'Invalid category';
     die();
   }
 
@@ -41,7 +47,7 @@
   }
 
   Restaurant::add_restaurant(
-    $db, $owner_id, $restaurant_name, $restaurant_address, $restaurant_coordinates
+    $db, $owner_id, $restaurant_name, $restaurant_categories, $restaurant_address, $restaurant_coordinates
   );
 
   $stmt = $db->prepare('SELECT id FROM Restaurant WHERE owner_id = ? AND res_name = ?');

@@ -36,7 +36,8 @@
         <div id="res-categories-container">
           <img id="res-category-icon" class="icon" src="../assets/icons/category.svg">
           <?php
-          foreach($restaurant->categories as $category) {
+            $categories = Restaurant::get_categories($db, $restaurant->id);
+            foreach($categories as $category) {
             ?> <h5 class="res-preview-category"><?=$category?></h5>
           <?php } ?>
         </div>
@@ -120,8 +121,27 @@
         <label for="res-name">
           Restaurant name<input id="res-name" name="res-name" type="text" placeholder="name">
         </label>
-        <label for="category">
-          Category<input id="res-category" name="res-category" type="text" placeholder="category">
+        <label for="category">Categories
+          <div class="category-input-container">
+            <label for="fast-food">
+              <input id="fast-food" class="category-checkbox" type="checkbox" name="categories[]" value="2">Fast-food
+            </label>
+            <label for="premium">
+              <input id="premium" class="category-checkbox" type="checkbox" name="categories[]" value="6">Premium
+            </label>
+            <label for="affordable">
+              <input id="affordable" class="category-checkbox" type="checkbox" name="categories[]" value="7">Affordable
+            </label>
+            <label for="sushi">
+              <input id="sushi" class="category-checkbox" type="checkbox" name="categories[]" value="8">Sushi
+            </label>
+            <label for="vegan">
+              <input id="vegan" class="category-checkbox" type="checkbox" name="categories[]" value="1">Vegan
+            </label>
+            <label for="vegetarian">
+              <input id="vegetarian" class="category-checkbox" type="checkbox" name="categories[]" value="3">Vegetarian
+            </label>
+          </div>
         </label>
         <label for="address">
           Address<input id="res-address" name="res-address" type="text" placeholder="address">

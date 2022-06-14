@@ -13,6 +13,27 @@ main > h1 {
   text-align: center;
 }
 
+.category-input-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  row-gap: 0.5em;
+  padding: 1em;
+}
+
+
+.setup-restaurant > form  .category-input-container  {
+  font-size: 0.8em;
+}
+
+.category-input-container > label {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  font-size: 0.5em;
+}
+
 .setup-restaurant { 
   display: flex;
   flex-direction: column;
@@ -40,7 +61,6 @@ main > h1 {
   row-gap: 1em;
   align-items: center;
 }
-
 
 .setup-restaurant > form label {
   font-size: 1.2em;

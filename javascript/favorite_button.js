@@ -1,6 +1,6 @@
-const dish_array = document.querySelectorAll(".dish-array-element")
-const restaurant_array = document.querySelectorAll(".restaurant-array-element")
-let messages_container = document.querySelector("#messages-container")
+const dish_array_favorite = document.querySelectorAll(".dish-array-element")
+const restaurant_array_favorite = document.querySelectorAll(".restaurant-array-element")
+let messages_container_favorite = document.querySelector("#messages-container")
 
 function createAndAddMessage(messageClass, messageText) {
   const msgArticle = document.createElement('article')
@@ -15,9 +15,9 @@ function createAndAddMessage(messageClass, messageText) {
     msgArticle.classList.remove("hovered")
   })
   msgArticle.addEventListener('click', () => {
-    messages_container.removeChild(msgArticle);
+    messages_container_favorite.removeChild(msgArticle);
   })
-  messages_container.appendChild(msgArticle)
+  messages_container_favorite.appendChild(msgArticle)
 }
 
 async function favoriteDish(event) {
@@ -184,8 +184,8 @@ async function setup_restaurant_buttons(restaurantElementArray) {
 }
 
 async function main() {
-  await setup_dish_buttons(dish_array)
-  await setup_restaurant_buttons(restaurant_array)
+  await setup_dish_buttons(dish_array_favorite)
+  await setup_restaurant_buttons(restaurant_array_favorite)
 }
 
 main();

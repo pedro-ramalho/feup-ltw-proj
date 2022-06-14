@@ -71,6 +71,30 @@
       
       return $restaurants;
     }
+
+    static function get_categories(PDO $db, int $restaurant_id) : array {
+      $category_names = array(
+        1 => 'Vegan',
+        2 => 'Fast-food',
+        3 => 'Vegetarian',
+        4 => 'Gluten-free',
+        5 => 'Lactose-free',
+        6 => 'Premium',
+        7 => 'Affordable',
+        8 => 'Sushi',
+        9 => 'Diet'
+      ); 
+
+      $stmt = $db->prepare('SELECT restaurant, category FROM RestaurantCategory WHERE restaurant = ?');
+      $stmt->execute(array($restaurant_id));
+      
+      $categories = array();
+
+      while ($category = $stmt->fetch())
+      $categories[] = $category_names[$category['category']];
+
+      return $categories;
+    }
     
     static function get_limited_restaurants(PDO $db, int $limit) : array {
       $stmt = $db->prepare('SELECT id, owner_id, score, res_name, addr, coords FROM Restaurant LIMIT ?');
@@ -125,11 +149,38 @@
       return $restaurants;
     }
 
-    static function add_restaurant(PDO $db, int $owner_id, string $res_name, string $addr, string $coords) : void {
+    static function add_restaurant(PDO $db, int $owner_id, string $res_name, array $res_categories, string $addr, string $coords) : void {
+      echo "im in add_restaurant";
+      print_r($res_categories);
+      $size = count($res_categories);
+
+      /* insert restaurant into the table Restaurant */
+
       $stmt = $db->prepare(
         'INSERT INTO Restaurant(owner_id, score, res_name, addr, coords) VALUES(?, ?, ?, ?, ?)'
       );
       $stmt->execute(array($owner_id, 3, $res_name, $addr, $coords));
+
+
+      /* fetch the id of the recently inserted restaurant */
+
+      $last_restaurant_id = $db->lastInsertId();
+      
+      echo "last inserted id = $last_restaurant_id";
+      echo "categories size = $size";
+      /* insert the restaurant categories */
+
+      foreach ($res_categories as $category) {
+        Restaurant::add_restaurant_category($db, intval($last_restaurant_id), intval($category));
+      }
+    }
+
+    static function add_restaurant_category(PDO $db, int $id, int $category) {
+      $stmt = $db->prepare(
+        'INSERT INTO RestaurantCategory(restaurant, category) VALUES(?, ?)'
+      );
+
+      $stmt->execute(array($id, $category));
     }
 
     static function update_restaurant(PDO $db, int $id, string $new_name, array $new_categories, string $new_coords) : void {
