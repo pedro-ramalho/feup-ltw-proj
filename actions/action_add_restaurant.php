@@ -1,10 +1,14 @@
 <?php
   declare(strict_types = 1);
 
-  session_start();
+  require_once(__DIR__ . '/../utils/session.php');
+  $session = new Session();
 
-  if (!isset($_SESSION['id']))
+  if (!$session->isLoggedIn()) {
+    $session->addMessage("error", "You need to be logged in!");
+    header('Location: localhost:9000/pages/sign-in.php');
     die();
+  }
   
   require_once(__DIR__ . '/../database/connection.php');
   require_once(__DIR__ . '/../classes/user.class.php');

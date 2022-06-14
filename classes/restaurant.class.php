@@ -175,6 +175,15 @@
       }
     }
 
+    static function get_owner_id(PDO $db, int $restaurant_id) : int {
+      $stmt = $db->prepare(
+        'SELECT owner_id FROM Restaurant WHERE id = ?'
+      );
+      $stmt->execute(array($restaurant_id));
+
+      return intval($stmt->fetch()['owner_id']);
+    }
+
     static function add_restaurant_category(PDO $db, int $id, int $category) {
       $stmt = $db->prepare(
         'INSERT INTO RestaurantCategory(restaurant, category) VALUES(?, ?)'

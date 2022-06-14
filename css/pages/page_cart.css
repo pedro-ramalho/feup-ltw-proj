@@ -1,0 +1,18 @@
+section.orders-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+section.orders-container > form.order-form {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  justify-content: space-between;
+}
+
+section.orders-container > form.order-form p {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}

@@ -1,5 +1,5 @@
-<?php 
-  declare(strict_types = 1);  
+<?php
+  declare(strict_types = 1);
   require_once(__DIR__ . '/../utils/session.php');
   $session = new Session();
 
@@ -17,17 +17,6 @@
   require_once(__DIR__ . '/../templates/restaurant.tpl.php');
   require_once(__DIR__ . '/../templates/dish.tpl.php');
 
-  $db = get_db();
-  
-  $restaurant_id = intval($_GET['id']);
-
-  if ($_SESSION['id'] !== Restaurant::get_owner_id($db, $restaurant_id)) {
-    require(__DIR__ . '/not_found.php');
-    die();
-  }
-  
-  $restaurant = Restaurant::get_restaurant($db, $restaurant_id);
-  $dishes = Dish::get_restaurant_dishes($db, $restaurant_id);
 ?>
 
 <!DOCTYPE html>
@@ -41,25 +30,20 @@
   <link rel="stylesheet" href="../css/sidebar.css">
   <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/responsive.css">
-  <link rel="stylesheet" href="../css/pages/main-page.css">
-  <link rel="stylesheet" href="../css/pages/page_edit_restaurants.css">
+  <link rel="stylesheet" href="../css/pages/page_edit_dishes.css">
   <link rel="icon" href="../assets/logo/favicon.png">
-  <title>Edit Restaurant</title>
-  <script src="../javascript/sidebar_button.js" defer></script>
   <script src="../javascript/dynamic_search.js" defer></script>
   <script src="../javascript/messages.js"  defer></script>
   <script src="../javascript/header_scroll.js"  defer></script>
+  <script src="../javascript/categories.js" defer></script>
+  <title>Setup Dish</title>
 </head>
 <body>
   <?php draw_sidebar($session) ?>
-  <?php draw_header($session); ?>
+  <?php draw_header($session) ?>
   <main>
-    <div id="edit-restaurant">
-      <section class="restaurant">
-        <?php edit_restaurant_form($restaurant) ?>
-      </section>
-    </div>
+    <?php draw_dish_setup() ?>
   </main>
-  <?php draw_footer(); ?>
+  <?php draw_footer() ?>
 </body>
 </html>

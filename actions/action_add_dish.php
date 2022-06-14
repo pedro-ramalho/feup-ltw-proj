@@ -15,28 +15,33 @@
 
   $db = get_db();
 
-  $dish_id = intval($_POST['dish-id-holder']);
 
-  $dish_name = $_POST['dish-name'];
+  $restaurant_id = intval($_POST['restaurant-id']);
 
-  $categories = $_POST['dish-categories'];
+  $dish_name = $_POST['add-dish-name'];
+
+  $categories = $_POST['add-dish-categories'];
 
   $dish_categories = array();
 
   foreach ($categories as $category) {
     if (isset($category)) {
-      $dish_categorie[] = intval($category);
+      $dish_categories[] = intval($category);
     }
   }
 
-  $price = floatval($_POST['dish-price']);
+  $price = floatval($_POST['add-dish-price']);
 
-  Dish::update_dish($db, $dish_id, $dish_name, $price, $dish_categories);
+  Dish::add_dish($db, $restaurant_id, $dish_name, $price, $dish_categories);
+
+  $stmt = $db->prepare('SELECT id FROM Dish WHERE dish_name = ?');
+  $stmt->execute(array($dish_name));
+  $id = intval($stmt->fetch()['id']);
 
   $stmt = $db->prepare('INSERT INTO DishImage(dish_id) VALUES(?)');
-  $stmt->execute(array($dish_id));
+  $stmt->execute(array($id));
 
-  $id = $db->lastInsertId();
+
 
   $original_file = "../assets/img/original/dishes/$id.jpg";
   $preview_file = "../assets/img/preview/dishes/$id.jpg";

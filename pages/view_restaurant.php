@@ -72,8 +72,18 @@
       <h1>Dishes</h1>
       <div class="dishes-container">
       <?php
-        foreach ($dishes as $dish)
-          draw_dish($dish, $session);
+        foreach ($dishes as $dish) {
+          $stmt = $db->prepare('SELECT * FROM DishImage WHERE dish_id = ? ORDER BY id DESC');
+          $stmt->execute(array($dish->id));
+          $img = $stmt->fetch();
+          
+          $path = "../assets/img/default";
+          
+          if ($img) 
+            $path = "../assets/img/preview/dishes/" . $img['id'];
+          
+          draw_dish($dish, $path, $session);
+        }
       ?>
       </div>
     </section>

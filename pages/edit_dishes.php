@@ -21,7 +21,7 @@
   
   $restaurant_id = intval($_GET['id']);
 
-  if ($_SESSION['id'] !== $restaurant_id) {
+  if ($_SESSION['id'] !== Restaurant::get_owner_id($db, $restaurant_id)) {
     require(__DIR__ . '/not_found.php');
     die();
   }
@@ -56,10 +56,9 @@
   <main>
     <div id="edit-dishes">
       <?php foreach($dishes as $dish) { ?>
-        <section class="dishes">
+        <div class="dishes">
           <?php edit_dish_form($dish) ?>
-          <?php edit_dish_form($dish) ?>
-        </section>
+        </div>
       <?php } ?>
     </div>
   </main>

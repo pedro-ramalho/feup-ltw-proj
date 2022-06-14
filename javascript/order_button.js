@@ -28,7 +28,7 @@ async function addOrderDish(event) {
   while (!aParent.classList.contains("dish-array-element")) aParent = aParent.parentNode;
   const id_p = parseInt(aParent.querySelector(".dish-id-holder").textContent);
 
-  let response = await fetch('http://localhost:9000/api_add_order.php?dish_id=' + id_p)
+  let response = await fetch('http://localhost:9000/api_add_order.php?dish_id=' + id_p.toString())
   response = await response.json()
   if (response['response'] === "error" ) {
     createAndAddMessage("error", "There was a problem ordering that dish!")

@@ -31,7 +31,7 @@
         9 => 'Diet'
       ); 
 
-      $stmt = $db->prepare('SELECT id, restaurant, price, dish_name AS name FROM dish WHERE id = ?');
+      $stmt = $db->prepare('SELECT id, restaurant, price, dish_name FROM dish WHERE id = ?');
       $stmt->execute(array($id));
 
       $dish = $stmt->fetch();
@@ -48,7 +48,7 @@
         intval($dish['id']), 
         intval($dish['restaurant']), 
         floatval($dish['price']), 
-        $dish['name'], 
+        $dish['dish_name'], 
         $categories
       );
     }
@@ -126,6 +126,58 @@
       }
       
       return $dishes;
+    }
+
+    static function add_dish(PDO $db, int $restaurant_id, string $name, float $price, array $categories) : void {
+      $stmt = $db->prepare('INSERT INTO Dish(restaurant, price, dish_name) VALUES(?, ?, ?)');
+      $stmt->execute(array($restaurant_id, $price, $name));
+
+      $id = $db->lastInsertId();
+
+      foreach ($categories as $category) {
+        Dish::add_dish_category($db, intval($id), intval($category));
+      }
+    }
+
+    static function get_dish_categories(PDO $db, int $dish_id) : array {
+      $category_names = array(
+        1 => 'Vegan',
+        2 => 'Fast-food',
+        3 => 'Vegetarian',
+        4 => 'Gluten-free',
+        5 => 'Lactose-free',
+        6 => 'Premium',
+        7 => 'Affordable',
+        8 => 'Sushi',
+        9 => 'Diet'
+      ); 
+
+      $stmt = $db->prepare('SELECT dish, category FROM DishCategory WHERE dish = ?');
+      $stmt->execute(array($dish_id));
+      
+      $categories = array();
+
+      while ($category = $stmt->fetch())
+      $categories[] = $category_names[$category['category']];
+
+      return $categories;
+    }
+
+    static function update_dish(PDO $db, int $dish_id, string $name, float $price, array $dish_categories) : void {
+      $stmt = $db->prepare('UPDATE Dish SET dish_name = ?, price = ? WHERE id = ?');
+      $stmt->execute(array($name, $price, $dish_id));
+
+      foreach ($dish_categories as $category) {
+        Dish::add_dish_category($db, intval($dish_id), intval($category));
+      }
+    }
+
+    static function add_dish_category(PDO $db, int $id, int $category) : void {
+      $stmt = $db->prepare(
+        'INSERT INTO DishCategory(dish, category) VALUES(?, ?)'
+      );
+
+      $stmt->execute(array($id, $category));
     }
 
     static function is_favorited(PDO $db, int $userID, int $dishID) {

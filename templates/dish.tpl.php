@@ -6,20 +6,21 @@
   require_once(__DIR__ . '/../classes/dish.class.php');
 ?>
 
-<?php function draw_dish(Dish $dish, Session $session) { ?>
+<?php function draw_dish(Dish $dish, $image, Session $session) { ?>
   <?php
   $db = get_db();
 ?>
   <div class="dish-frontpage dish-array-element">
     <p hidden="hidden" class="dish-id-holder"><?=$dish->id?></p>
-    <img id="dish-bg-img" src="../assets/temp.jpg" alt="dish's preview image">
+    <img id="dish-bg-img" src="<?=$image?>.jpg" alt="dish's preview image">
     <div class="dish-description">
       <div id="dish-header">
         <p id="dish-shopping-bag"><?=$dish->name?></p>
       </div>
       <div class="dish-categories-container">
         <?php
-        foreach($dish->categories as $category) {
+        $dish_categories = Dish::get_dish_categories($db, $dish->id);
+        foreach($dish_categories as $category) {
           ?> <h5 class="dish-preview-category"><?=$category?></h5>
         <?php } ?>
       </div>
@@ -113,16 +114,36 @@
 <?php function edit_dish_form(Dish $dish) { ?>
   <div class="edit-dish">
     <h1>Edit dish</h1>
-    <form method="post">
+    <form method="post" action="../actions/action_edit_dish.php" enctype="multipart/form-data">
+      <input type="hidden" name="dish-id-holder" class="dish-id-holder" value="<?=$dish->id?>">
       <div class="dish-info">
         <label for="dish-name">
-          Name<input id="dish-name" type="text" value="<?=$dish->name?>">
+          Name<input id="dish-name" name="dish-name" type="text" value="<?=$dish->name?>">
         </label>
-        <label for="category">
-          Categories<input type="text" placeholder="category">
+        <label for="category">Categories
+          <div class="category-input-container">
+            <label for="fast-food">
+              <input id="fast-food" class="category-checkbox" type="checkbox" name="dish-categories[]" value="2">Fast-food
+            </label>
+            <label for="premium">
+              <input id="premium" class="category-checkbox" type="checkbox" name="dish-categories[]" value="6">Premium
+            </label>
+            <label for="affordable">
+              <input id="affordable" class="category-checkbox" type="checkbox" name="dish-categories[]" value="7">Affordable
+            </label>
+            <label for="sushi">
+              <input id="sushi" class="category-checkbox" type="checkbox" name="dish-categories[]" value="8">Sushi
+            </label>
+            <label for="vegan">
+              <input id="vegan" class="category-checkbox" type="checkbox" name="dish-categories[]" value="1">Vegan
+            </label>
+            <label for="vegetarian">
+              <input id="vegetarian" class="category-checkbox" type="checkbox" name="dish-categories[]" value="3">Vegetarian
+            </label>
+          </div>
         </label>
         <label for="price">
-          Price<input id="price" type="text" value="<?=$dish->price?>">
+          Price<input id="price" name="dish-price" type="text" value="<?=$dish->price?>">
         </label>
         <div id="upload-img">
           <label class="upload-img" id="file-upload">
@@ -133,7 +154,52 @@
       </div>
     </form>
   </div>
-<?php } ?> 
+<?php } ?>
+
+<?php function draw_dish_setup() { ?>
+  <div class="add-dish">
+    <h1>Edit dish</h1>
+    <form method="post" action="../actions/action_add_dish.php" enctype="multipart/form-data">
+      <input type="hidden" name="restaurant-id" value="<?=$_GET['id']?>">
+      <div class="dish-info">
+        <label for="add-dish-name">
+          Name<input id="dish-name" name="add-dish-name" type="text">
+        </label>
+        <label for="category">Categories
+          <div class="category-input-container">
+            <label for="fast-food">
+              <input id="fast-food" class="category-checkbox" type="checkbox" name="add-dish-categories[]" value="2">Fast-food
+            </label>
+            <label for="premium">
+              <input id="premium" class="category-checkbox" type="checkbox" name="add-dish-categories[]" value="6">Premium
+            </label>
+            <label for="affordable">
+              <input id="affordable" class="category-checkbox" type="checkbox" name="add-dish-categories[]" value="7">Affordable
+            </label>
+            <label for="sushi">
+              <input id="sushi" class="category-checkbox" type="checkbox" name="add-dish-categories[]" value="8">Sushi
+            </label>
+            <label for="vegan">
+              <input id="vegan" class="category-checkbox" type="checkbox" name="add-dish-categories[]" value="1">Vegan
+            </label>
+            <label for="vegetarian">
+              <input id="vegetarian" class="category-checkbox" type="checkbox" name="add-dish-categories[]" value="3">Vegetarian
+            </label>
+          </div>
+        </label>
+        <label for="price">
+          Price<input id="price" name="add-dish-price" type="text">
+        </label>
+        <div id="upload-img">
+          <label class="upload-img" id="file-upload">
+            <input type="file" name="image">Upload image
+          </label>
+          <button class="save" type="submit" value="Save">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+<?php } ?>
 
 <?php function draw_dish_showcase(Dish $dish, $image) { ?>
   <div class="showcase">

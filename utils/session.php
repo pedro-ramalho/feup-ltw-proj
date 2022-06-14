@@ -72,5 +72,9 @@
     public function getOrders() {
       return isset($_SESSION['orders']) ? $_SESSION['orders'] : array();
     }
+
+    public function removeOrders() {
+      unset($_SESSION['orders']);
+    }
   }
 ?>
