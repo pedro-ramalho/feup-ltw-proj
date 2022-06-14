@@ -36,6 +36,7 @@
   <script src="../javascript/dynamic_search.js" defer></script>
   <script src="../javascript/messages.js"  defer></script>
   <script src="../javascript/header_scroll.js"  defer></script>
+  <script src="../javascript/categories.js" defer></script>
   <title>Setup Restaurant</title>
 </head>
 <body>

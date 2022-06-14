@@ -20,6 +20,11 @@
   $db = get_db();
   
   $restaurant_id = intval($_GET['id']);
+
+  if ($_SESSION['id'] !== $restaurant_id) {
+    require(__DIR__ . '/not_found.php');
+    die();
+  }
   
   $restaurant = Restaurant::get_restaurant($db, $restaurant_id);
   $dishes = Dish::get_restaurant_dishes($db, $restaurant_id);

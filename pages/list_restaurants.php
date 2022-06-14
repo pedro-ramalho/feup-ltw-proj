@@ -113,8 +113,7 @@
             $path = "../assets/img/preview/restaurants/" . $img['id'];
           
           draw_restaurant_preview($restaurant, $path, $session);
-        } 
-      ?>
+        }       ?>
     </section>
   </main>
   <?php draw_footer() ?>

@@ -39,6 +39,7 @@
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/previews.css">
+  <link rel="stylesheet" href="../css/previews/preview_dish.css">
   <link rel="stylesheet" href="../css/pages/page_view_restaurant.css">
   <link rel="icon" href="../assets/logo/favicon.png">
   <title><?=$restaurant->res_name?></title>

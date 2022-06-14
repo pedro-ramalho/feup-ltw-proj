@@ -12,11 +12,10 @@
 ?>
   <div class="dish-frontpage dish-array-element">
     <p hidden="hidden" class="dish-id-holder"><?=$dish->id?></p>
-    <img id="dish-bg-img" src="../assets/temp.jpg" alt="restaurant's preview image">
+    <img id="dish-bg-img" src="../assets/temp.jpg" alt="dish's preview image">
     <div class="dish-description">
       <div id="dish-header">
         <p id="dish-shopping-bag"><?=$dish->name?></p>
-        <img id="dish-favorite-icon" src="../assets/icons/favorite.svg">
       </div>
       <div class="dish-categories-container">
         <?php
@@ -26,7 +25,7 @@
       </div>
       <div class="dish-price-favorite-container">
         <p class="dish-price"><img class="dish-price-icon" src="../assets/icons/price.svg"><?=$dish->price?></p>
-        <p id="dish-order"><img id="dish-shopping-bag-icon" src="../assets/icons/shopping_bag.svg">Order</p>
+        <p id="dish-order"><img id="dish-shopping-bag-icon" class="icon" src="../assets/icons/shopping_bag.svg">Order</p>
         <img src=<?php 
         if(!$session->isLoggedIn()) {
           echo '"../assets/icons/favorite.svg" class="not-logged-in dish-favorite-icon"';

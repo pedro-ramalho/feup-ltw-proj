@@ -121,7 +121,7 @@
           Restaurant name<input id="res-name" name="res-name" type="text" placeholder="name">
         </label>
         <label for="category">
-          Cagegory<input id="res-category" name="res-category" type="text" placeholder="category">
+          Category<input id="res-category" name="res-category" type="text" placeholder="category">
         </label>
         <label for="address">
           Address<input id="res-address" name="res-address" type="text" placeholder="address">

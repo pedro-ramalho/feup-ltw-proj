@@ -76,7 +76,7 @@
         <a id="fav-dishes-anchor" href="#"><img src="../assets/icons/dish.svg"> <p>Favorite dishes</p></a>
       </div>
       <div class="profile-section">
-        <a id="fav-res-anchor" href="#"><img src="../assets/icons/restaurant.svg"> <p>Favorite restaurants</p></a>
+        <a id="fav-res-anchor" hqref="#"><img src="../assets/icons/restaurant.svg"> <p>Favorite restaurants</p></a>
       </div>
     </section>
   </nav>
