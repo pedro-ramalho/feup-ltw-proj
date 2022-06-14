@@ -13,8 +13,6 @@
     <p hidden="hidden" class="res-id-holder"><?=$restaurant->id?></p>
     <div id="restaurant-bg-img-container">
      <img id="res-bg-image" src="<?=$image?>.jpg" alt="restaurant background image">
-      <!--<img id="add-res-to-favorites" class="icon res-favorite-button" src="../assets/icons/favorite.svg" alt="add to favorite" title="add restaurant to favorites">
-      <img id="remove-res-from-favorites" class="icon res-favorite-button" src="../assets/icons/favorite.svg" alt="remove from favorites" title="remove restaurant from favorites">-->
       <img src=<?php 
         if(!$session->isLoggedIn()) {
           echo '"../assets/icons/favorite.svg" class="not-logged-in res-favorite-button icon"';
@@ -43,6 +41,14 @@
         </div>
       </div>
     </div>
+    <?php
+        if (intval($session->getId()) == intval(Restaurant::get_owner_id($db, $restaurant->id))) {
+          echo '<div id="owner-links-container">';
+          echo '<a id="add-dish-link" href="add_dish.php?id=' . $restaurant->id . '">Add dish</a>';
+          echo '<a id="edit-dishes-link" href="edit_dishes.php?id=' . $restaurant->id . '">Edit dishes</a>';
+          echo '</div>';
+         }
+      ?>
   </div>
 <?php } ?>
 

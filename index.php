@@ -84,7 +84,7 @@
         <p>VEGETARIAN</p>
         <p>SUSHI</p>
         <p>LACTOSE-FREE</p>
-        <p>FAST-FOOD</p>
+        <p>GLUTEN-FREE</p>
       </div>    
     </section>
 

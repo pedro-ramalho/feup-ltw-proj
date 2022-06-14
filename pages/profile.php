@@ -54,6 +54,7 @@
   <script src="../javascript/dynamic_search.js" defer></script>
   <script src="../javascript/messages.js" defer></script>
   <script src="../javascript/header_scroll.js" defer></script>
+  <script src="../javascript/update_order_states.js" defer></script>
   <title>Profile</title>
 </head>
 <body>
@@ -76,7 +77,7 @@
         <a id="fav-dishes-anchor" href="#"><img src="../assets/icons/dish.svg"> <p>Favorite dishes</p></a>
       </div>
       <div class="profile-section">
-        <a id="fav-res-anchor" hqref="#"><img src="../assets/icons/restaurant.svg"> <p>Favorite restaurants</p></a>
+        <a id="fav-res-anchor" href="#"><img src="../assets/icons/restaurant.svg"> <p>Favorite restaurants</p></a>
       </div>
     </section>
   </nav>
@@ -100,7 +101,6 @@
       </section>
       <section class="orders" id="restaurant-orders">
         <h1 class="content-header">Orders made by other customers</h1>
-        <form method="post" action="#">
           <table>
             <tr class="table-header">
               <td>Order</td><td>Customer</td><td>Restaurant</td><td>Dish</td><td>Price</td><td>State</td>
@@ -110,8 +110,7 @@
                 draw_restaurant_order($order);
             ?>
           </table>
-          <button class="save" type="submit">Save</button>
-        </form>
+          <button id="save-orders-state-button" class="save">Save</button>
       </section>
     </section>
     <section id="owned-restaurants" hidden>

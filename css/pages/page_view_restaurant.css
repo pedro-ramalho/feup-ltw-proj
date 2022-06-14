@@ -432,6 +432,17 @@ section#restaurant-reviews > .reviews-container > #review-form > form label > in
   filter: invert(27%) sepia(0%) saturate(1491%) hue-rotate(145deg) brightness(88%) contrast(86%);
 }
 
+a#add-dish-link, a#edit-dishes-link {
+  color: white;
+  text-align: none;
+}
+
+#owner-links-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1em;
+}
+
 @media screen and (max-width: 60em) {
   main {
     padding: 1em;

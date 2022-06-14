@@ -36,16 +36,16 @@
         <section id="highlight" class="sidebar-section">
           <ul>
             <li id="sidebar-home"><a href="/"><span>Home</span></a></li>
-            <li><a href="#"><span>Hot Deals</span></a></li>
+            <li><a href="../pages/cart.php"><span>Cart</span></a></li>
           </ul>
         </section>  
         <section id="browse" class="sidebar-section">
           <h1>BROWSE</h1>
           <ul>
-            <li><a href=""><span>Browse dishes</span></a></li>
-            <li><a href=""><span>Random dish</span></a></li>
-            <li><a href=""><span>Browse restaurants</span></a></li>
-            <li><a href=""><span>Random restaurant</span></a></li>
+            <li><a href="../pages/list_dishes.php"><span>Browse dishes</span></a></li>
+            <li><a href="../pages/view_restaurant.php?id=1#restaurant-dishes"><span>Random dish</span></a></li>
+            <li><a href="../pages/list_restaurants.php"><span>Browse restaurants</span></a></li>
+            <li><a href="../pages/view_restaurant.php?id=2"><span>Random restaurant</span></a></li>
           </ul>
         </section>
         <section id="account" class="sidebar-section">
@@ -80,15 +80,15 @@
   function draw_sb_acc(Session $session) { 
     if (!$session->isLoggedIn()) { ?>
     <ul>
-      <li><a href=""><span>Sign in</span></a></li>
-      <li><a href=""><span>Sign up</span></a></li>
+      <li><a href="../pages/sign_in.php"><span>Sign in</span></a></li>
+      <li><a href="../pages/sign_up.php"><span>Sign up</span></a></li>
     </ul>
     <?php } 
     else { ?>
       <ul>
-        <li><a href="#"><span>Profile</span></a></li>
-        <li><a href="#"><span>Favorites</span></a></li>
-        <li><a href="#"><span>Sign out</span></a></li>
+        <li><a href="../pages/profile.php"><span>Profile</span></a></li>
+        <li><a href="../pages/profile.php"><span>Favorites</span></a></li>
+        <li><a href="../actions/action_sign_out.php"><span>Sign out</span></a></li>
       </ul>
     <?php 
     } 

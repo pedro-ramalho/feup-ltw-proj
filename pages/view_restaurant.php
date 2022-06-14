@@ -65,7 +65,7 @@
           if ($img) 
             $path = "../assets/img/display/restaurants/" . $img['id'];
 
-        draw_restaurant($restaurant, $path, $session) 
+        draw_restaurant($restaurant, $path, $session);
       ?>
     </section>
     <section id="restaurant-dishes">

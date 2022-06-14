@@ -58,7 +58,7 @@
       
       foreach ($_SESSION['orders'] as $order) {
         if ($order['dish_id'] == $dish_id) {
-          $order['quantity'] += 1;
+          $order['quantity'] = intval($order['quantity']) + 1;
           return;
         }
       }

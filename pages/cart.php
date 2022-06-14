@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../css/previews/preview_dish.css">
   <link rel="stylesheet" href="../css/pages/page_cart.css">
   <link rel="icon" href="../assets/logo/favicon.png">
-  <title><?=$restaurant->res_name?></title>
+  <title>Cart</title>
   <script src="../javascript/header_scroll.js" defer></script>
   <script src="../javascript/sidebar_button.js" defer></script>
   <script src="../javascript/dynamic_search.js" defer></script>
@@ -53,13 +53,12 @@
       foreach($session->getOrders() as $order) {
         $dish = Dish::get_dish($db, intval($order['dish_id']));
         ?>
-        
         <form action="../actions/action_order_dish.php" method="post" class="order-form">
           <input type="number" name="dish_id" hidden="" value="<?=$dish->id?>" readonly="readonly">
           <input type="number" class="dish-quantity-form" name="dish_quantity" hidden="" value="<?=$order['quantity']?>">
           <input type="number" name="user_id" hidden="" value="<?=$order['user_id']?>">
           <input type="number" name="restaurant_id" hidden="" value="<?=$dish->restaurant?>">
-          <p class="base-price" hidden=""><?=$dish->price?></p>
+          <p class="base-price"><?=$dish->price?></p>
           <p class="order-dish-name"><?=$dish->name?></p> 
           <div class="quantity-container">
             <button type="button" class="increase-quantity">+</button>

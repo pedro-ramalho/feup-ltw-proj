@@ -38,12 +38,15 @@
     <td><?=$order->id?></td><td><?=$user->username?></td><td><?=$restaurant->res_name?></td>
     <td><?=$dish->name?></td><td><?=$dish->price?>€</td>
     <td>
-      <select class="order-state">
+      <form class="order-state-form" action="../actions/action_update_order_state.php" method="post">
+      <input class="order-id-input" type="number" name="order_id" hidden="" value="<?=$order->id?>">
+      <select class="order-state" name="order_state">
         <option value="received">received</option>
         <option value="preparing">preparing</option>
         <option value="ready">ready</option>
         <option value="delivered">delivered</option>
       </select>
+      </form>
     </td>
   </tr>    
 <?php } ?>
