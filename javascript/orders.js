@@ -2,6 +2,12 @@ let form_container = document.querySelector("section#orders-container")
 let forms = document.querySelectorAll("form.order-form")
 let submit_button = document.querySelector("button#submit-orders")
 
+function encodeForAjax(data) {
+  return Object.keys(data).map(function(k){
+    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+  }).join('&')
+}
+
 for (let form of forms) {
   const dish_quantity_form = form.querySelector("input.dish-quantity-form")
   const base_price = parseFloat(form.querySelector("p.base-price").textContent)
@@ -45,7 +51,10 @@ if (submit_button !== null) {
     event.stopPropagation();
     const all_forms = form_container.querySelectorAll("form.order-form")
     for (const aForm of all_forms) {
-      aForm.submit();
+      const request = new XMLHttpRequest()
+      request.open("post", "../actions/action_order_dish.php", true)
+      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+      request.send(encodeForAjax({user_id: aForm.querySelector(".user-id-container").value, dish_id: aForm.querySelector(".dish-id-container").value, dish_quantity: aForm.querySelector(".dish-quantity-container").value, restaurant_id: aForm.querySelector(".restaurant-id-container").value}))
     }
     await fetch('http://localhost:9000/api_remove_orders.php')
     console.log("Clicked submit button")

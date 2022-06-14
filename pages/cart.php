@@ -54,10 +54,10 @@
         $dish = Dish::get_dish($db, intval($order['dish_id']));
         ?>
         <form action="../actions/action_order_dish.php" method="post" class="order-form">
-          <input type="number" name="dish_id" hidden="" value="<?=$dish->id?>" readonly="readonly">
-          <input type="number" class="dish-quantity-form" name="dish_quantity" hidden="" value="<?=$order['quantity']?>">
-          <input type="number" name="user_id" hidden="" value="<?=$order['user_id']?>">
-          <input type="number" name="restaurant_id" hidden="" value="<?=$dish->restaurant?>">
+          <input class="dish-id-container" type="number" name="dish_id" hidden="" value="<?=$dish->id?>" readonly="readonly">
+          <input class="dish-quantity-container" type="number" class="dish-quantity-form" name="dish_quantity" hidden="" value="<?=$order['quantity']?>">
+          <input class="user-id-container" type="number" name="user_id" hidden="" value="<?=$order['user_id']?>">
+          <input class="restaurant-id-container" type="number" name="restaurant_id" hidden="" value="<?=$dish->restaurant?>">
           <p class="base-price"><?=$dish->price?></p>
           <p class="order-dish-name"><?=$dish->name?></p> 
           <div class="quantity-container">
